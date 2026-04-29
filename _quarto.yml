@@ -5,10 +5,10 @@ project:
 book:
   title: "The Morishima Track"
   subtitle: "A Computational-Economics Curriculum from Multivariable Calculus to Climate-Constrained Planning"
-  author: "[author name placeholder]"
+  author: "MetaCoding Solutions"
   date: "today"
   search: true
-  repo-url: "https://github.com/[username]/morishima-track"
+  repo-url: "https://github.com/jquacinella/EconomicPlanningCourse.git"
   repo-actions: [edit, source, issue]
   downloads: [pdf, epub]
   sharing: [twitter, mastodon]
