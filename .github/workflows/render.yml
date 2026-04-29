@@ -10,6 +10,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -44,7 +47,7 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: "pre-release"
+          version: "release"
 
       - name: Install Typst (PDF engine)
         uses: typst-community/setup-typst@v3
