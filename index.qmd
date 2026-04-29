@@ -99,6 +99,32 @@ curve_demo = {
 }
 ```
 
+### A JSXGraph widget
+
+JSXGraph is the project's primary tool for inline math interactives — "type a function, drag a slider, see a curve respond." The block below is a slider-controlled function plot, embedded as raw HTML so it works whether or not the `jsxgraph/jsxgraph-quarto` extension has been installed yet (see PRD Addendum 1 §1.5; once installed, prefer the extension's shortcode). The JSXGraph runtime is loaded globally via `include-in-header` in `_quarto.yml`.
+
+```{=html}
+<div id="jxg-demo-index" class="jxgbox" style="width: 600px; height: 400px;"></div>
+<script>
+(function() {
+  const board = JXG.JSXGraph.initBoard("jxg-demo-index", {
+    boundingbox: [-0.5, 12, 11, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false
+  });
+  const alpha = board.create("slider",
+    [[1, 10], [9, 10], [0.05, 0.4, 0.95]],
+    { name: "&#945;", snapWidth: 0.05 });
+  board.create("functiongraph",
+    [function(x) { return Math.pow(x, alpha.Value()); }, 0.01, 10],
+    { strokeColor: "steelblue", strokeWidth: 2 });
+})();
+</script>
+```
+
+JSXGraph widgets render only in HTML; the PDF build skips them. For chapters with critical JSXGraph content, ship a static SVG fallback (see `assets/scripts/render-jsxgraph-fallback.py`, currently a stub).
+
 ### Hypothesis-annotatable paragraph
 
 The paragraph below has nothing structurally special — every paragraph in this site is annotatable via Hypothesis, because `comments: hypothesis: true` is set globally in `_quarto.yml`. The point of the paragraph is to give the reader something concrete to try.

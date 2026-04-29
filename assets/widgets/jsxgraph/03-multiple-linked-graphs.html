@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JSXGraph reference: multiple linked graphs</title>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"
+        type="text/javascript" charset="UTF-8"></script>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2em; max-width: 900px; }
+  .row { display: flex; gap: 1em; flex-wrap: wrap; }
+  .jxgbox { width: 380px; height: 300px; }
+</style>
+</head>
+<body>
+<h1>Multiple linked graphs — shared parameter</h1>
+<p>One slider, two boards. Board A plots <code>f(x) = sin(kx)</code>; board B
+   plots its derivative <code>f'(x) = k·cos(kx)</code>. Useful for
+   side-by-side &ldquo;function and its derivative&rdquo; pedagogy.</p>
+
+<div id="control" class="jxgbox" style="width: 600px; height: 80px;"></div>
+<div class="row">
+  <div id="boardA" class="jxgbox"></div>
+  <div id="boardB" class="jxgbox"></div>
+</div>
+
+<script>
+  const ctrl = JXG.JSXGraph.initBoard("control", {
+    boundingbox: [-0.5, 1, 5.5, -1],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+  const k = ctrl.create("slider",
+    [[0.5, 0], [4.5, 0], [0.1, 1.0, 5.0]],
+    { name: "k", snapWidth: 0.1 });
+
+  const A = JXG.JSXGraph.initBoard("boardA", {
+    boundingbox: [-2 * Math.PI, 1.5, 2 * Math.PI, -1.5],
+    axis: true, showCopyright: false, showNavigation: false
+  });
+  A.create("functiongraph",
+    [x => Math.sin(k.Value() * x), -2 * Math.PI, 2 * Math.PI],
+    { strokeColor: "steelblue" });
+
+  const B = JXG.JSXGraph.initBoard("boardB", {
+    boundingbox: [-2 * Math.PI, 6, 2 * Math.PI, -6],
+    axis: true, showCopyright: false, showNavigation: false
+  });
+  B.create("functiongraph",
+    [x => k.Value() * Math.cos(k.Value() * x), -2 * Math.PI, 2 * Math.PI],
+    { strokeColor: "darkorange" });
+
+  // re-render dependent boards when the slider moves.
+  ctrl.addChild(A);
+  ctrl.addChild(B);
+</script>
+</body>
+</html>

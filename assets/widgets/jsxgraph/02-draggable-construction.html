@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JSXGraph reference: draggable construction</title>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"
+        type="text/javascript" charset="UTF-8"></script>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2em; max-width: 720px; }
+  #board { width: 600px; height: 400px; }
+</style>
+</head>
+<body>
+<h1>Draggable construction — midpoint &amp; circle</h1>
+<p>Drag points <em>A</em> and <em>B</em>. The midpoint <em>M</em> and the
+   circle through <em>A</em> centered at <em>M</em> update automatically.
+   This is the dynamic-geometry pattern: declare relationships, let
+   JSXGraph re-render dependent objects.</p>
+<div id="board" class="jxgbox"></div>
+<script>
+  const board = JXG.JSXGraph.initBoard("board", {
+    boundingbox: [-6, 6, 6, -6],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false
+  });
+
+  const A = board.create("point", [-3, -1], { name: "A", color: "#1f77b4" });
+  const B = board.create("point", [ 3,  2], { name: "B", color: "#1f77b4" });
+  const M = board.create("midpoint", [A, B], { name: "M", color: "#d62728" });
+  board.create("segment", [A, B], { strokeColor: "#888", dash: 2 });
+  board.create("circle", [M, A], { strokeColor: "#2ca02c", fillOpacity: 0 });
+</script>
+</body>
+</html>

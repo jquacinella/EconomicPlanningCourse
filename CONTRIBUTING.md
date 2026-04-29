@@ -104,6 +104,97 @@ Each Dash app is a self-contained Python project under `apps/<app-name>/`.
 6. Deploy to Render via the blueprint flow (`render.yaml`).
 7. Once a public URL exists, **link it from the relevant chapter** with a `:::{.callout-note}` block, replacing the placeholder URL. See `weeks/week-02-constrained.qmd` for the pattern.
 
+## Adding a JSXGraph widget
+
+JSXGraph is the primary tool for inline math interactives — "type a function, drag a slider, see a curve respond" — and for dynamic-geometry constructions. Dual-licensed LGPL/MIT; no API key; integrated via the `jsxgraph/jsxgraph-quarto` extension installed in `_extensions/jsxgraph/jsxgraph/`.
+
+### When to use JSXGraph (vs. other widget tools)
+
+- **JSXGraph** — function plots with parameter sliders, parametric curves, dynamic geometry (drag a point, watch dependent objects update), wage–profit frontiers (Controversy 4), eigenvector visualizations (Week 4), indifference-curve / budget-line plots (Week 2). 2D only.
+- **Observable JS** — structured visualizations with custom non-mathematical UI (multi-input forms, network-graph layer toggles, dropdown selectors). See "Adding an Observable widget" below.
+- **Plotly Python** — static-but-interactive plots and figures, especially 3D surfaces (rotation, zoom). Rendered into HTML at build time by Quarto's Jupyter engine.
+- **Plotly Dash** — full-scale interactive applications with state and routing. See "Adding a Dash app".
+
+### Reference patterns
+
+Working standalone HTML examples live in `assets/widgets/jsxgraph/`:
+
+- `01-function-plot-with-slider.html` — function plot with parameter slider.
+- `02-draggable-construction.html` — draggable points, dependent objects.
+- `03-multiple-linked-graphs.html` — two boards sharing a parameter.
+- `04-mathjax-labels.html` — MathJax-typeset labels on a JSXGraph board.
+
+Open one in a browser to see it run; copy the configuration into your `.qmd` file.
+
+### Embedding pattern (Quarto extension)
+
+The extension provides a shortcode for inline JSXGraph blocks. Inside a `.qmd`:
+
+````markdown
+```{=html}
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+<div id="jxg-demo" class="jxgbox" style="width: 600px; height: 400px;"></div>
+<script>
+  const board = JXG.JSXGraph.initBoard("jxg-demo", {
+    boundingbox: [-0.5, 12, 11, -1], axis: true,
+    showCopyright: false, showNavigation: false
+  });
+  const a = board.create("slider",
+    [[1,10],[9,10],[0.05,0.4,0.95]], { name: "α", snapWidth: 0.05 });
+  board.create("functiongraph",
+    [x => Math.pow(x, a.Value()), 0.01, 10],
+    { strokeColor: "steelblue", strokeWidth: 2 });
+</script>
+```
+````
+
+When the `jsxgraph/jsxgraph-quarto` extension is installed, prefer its shortcode (consult the extension's README in `_extensions/jsxgraph/jsxgraph/` after install) over the raw `{=html}` block above. The raw form above is a portable fallback.
+
+### PDF fallback
+
+JSXGraph widgets render only in HTML. For chapters with critical JSXGraph widgets, ship a static SVG/PNG fallback inline (or in the margin) so the PDF reader still sees the relevant figure. v1 ships a stub helper at `assets/scripts/render-jsxgraph-fallback.py` — implement when the first chapter actually needs it (PRD Addendum 1, Open Question §5.1).
+
+## System-dynamics tool positioning
+
+For the project's macroeconomic stock-flow-consistent (SFC) modeling work — primarily Controversy 6 — the tool decision is layered. Use this section as a reference when picking a tool for new SFC content.
+
+### Primary: `sfc_models`
+
+`sfc_models` (Brian Romanchuk; Apache 2.0; on PyPI; pinned in `pyproject.toml`) is the **primary** SFC tool. It implements the major Godley–Lavoie *Monetary Economics* models (SIM, PC, LP, BMW, OPEN, REG) under `sfc_models.gl_book`, validated against the textbook's eViews implementations. Its key feature is high-level sector specification: declare economic sectors (households, firms, government, banks); the package generates the equations.
+
+For Controversy 6 capstone Versions 1–3 (baseline SIM, endogenous bank credit, Minsky-Keen fragility), build on `sfc_models.gl_book` baselines. Version 4 (planned-economy transformation) is the project's original contribution and replaces `sfc_models`'s banking sector with the Cockshott-Cottrell-Dapprich token apparatus.
+
+Reference notebooks live in `sfc-notebooks/` (stubs in v1, populated as Controversy 6 work proceeds).
+
+### Complementary: `pysolve`
+
+`pysolve` (kennt; on PyPI; pinned) is a constraint solver. Used by `sfc_models` internally and available directly when fine-grained control over the solver is wanted.
+
+### Optional: `pysd` (under the `extended` extra)
+
+`pysd` (system-dynamics interoperability with Vensim / XMILE) is **optional**. Install via `pip install -e ".[extended]"` or `uv sync --extra extended`. Reach for it only if you need to load externally-published SD models (e.g., a published climate model in Vensim format).
+
+### Optional teaching companions: Minsky and Ravel
+
+Minsky and Ravel are positioned as **optional teaching companions**, not primary tooling.
+
+- **Minsky** (Steve Keen; GPL; `minsky-models/`) — visual SD modelling with built-in Godley-table accounting. Recommended use for Controversy 6: after implementing a Godley-Lavoie model in `sfc_models`, optionally rebuild it in Minsky to show how the visual representation differs from code. One-paragraph optional exercise, not a primary deliverable.
+- **Ravel** (Steve Keen; commercial / Patreon-distributed; `ravel-files/`) — multidimensional data exploration. Recommended optional use for Controversy 5 (BEA profit-rate empirical work) and Controversy 7 (emissions data). Author's working files only; do not redistribute (`.rvl` files are gitignored by default).
+
+The **build never depends on Minsky or Ravel being installed**. Files in `minsky-models/` and `ravel-files/` are author-side artifacts; the rendered book may reference exported screenshots, but the rendering pipeline never opens these files.
+
+### Agent-based modeling: Mesa
+
+Mesa (Apache 2.0; pinned) is the agent-based modeling tool, primarily for the 201 placeholder course (Zhang-program work — producer competition, realization uncertainty, primitive accumulation) and for the optional ergodicity-economics extension to Controversy 6 Version 3 (multi-firm leverage-dynamics fan chart).
+
+### Climate-LP (Controversy 7)
+
+The 30-year decarbonization LP is built directly with **cvxpy**, not `sfc_models`. SFC and LP are different modeling paradigms.
+
+For an advanced reference on what a more sophisticated climate-economy SFC model looks like, see **EcoDyco** — open-source thermodynamic-SFC, Gaël Giraud's group, *Scientific Reports* 2023, "Macroeconomic dynamics in a finite world based on thermodynamic potential." Editorial reference only; no code dependency.
+
 ## Adding an Observable widget
 
 Observable JS embeds inline. Pattern:
