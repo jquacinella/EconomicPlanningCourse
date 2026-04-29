@@ -46,6 +46,9 @@ jobs:
         with:
           version: "pre-release"
 
+      - name: Install Typst (PDF engine)
+        uses: typst-community/setup-typst@v3
+
       - name: Render HTML
         run: uv run quarto render --to html
 
