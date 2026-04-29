@@ -5,7 +5,7 @@ description = "Computational-economics curriculum from multivariable calculus to
 readme = "README.md"
 license = { text = "CC-BY-SA-4.0" }
 authors = [
-    { name = "[author name placeholder]" },
+    { name = "MetaCoding Solutions" },
 ]
 requires-python = ">=3.11,<3.13"
 

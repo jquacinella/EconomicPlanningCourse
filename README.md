@@ -13,7 +13,7 @@ Plus a small set of **standalone interactive companions** (Plotly Dash apps depl
 ## Quick start
 
 ```bash
-git clone https://github.com/[username]/morishima-track.git
+git clone https://github.com/jquacinella/EconomicPlanningCourse.git.git
 cd morishima-track
 uv sync                      # installs Python dependencies
 quarto preview               # serves the site at http://localhost:4444 with live reload
