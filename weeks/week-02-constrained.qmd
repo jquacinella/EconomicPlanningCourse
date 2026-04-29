@@ -15,6 +15,16 @@ A live version of this week's Cobb-Douglas constrained optimization is available
 
 Economics is almost never unconstrained. The method of Lagrange multipliers is the workhorse: it's how you get from "maximize utility" to "marginal rate of substitution equals price ratio" — and the multiplier itself turns out to be a shadow price, the economic meaning that makes the whole machinery sing.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-02-constrained/reading-notes/)
+- [Open questions](/notes/weeks/week-02-constrained/questions/)
+- [Insights and connections](/notes/weeks/week-02-constrained/insights/)
+- [References to revisit](/notes/weeks/week-02-constrained/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-02-constrained/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 You can set up and solve a constrained max/min problem with one equality constraint by Lagrange multipliers; state and apply the bordered-Hessian second-order condition for whether a critical point is a local max, min, or saddle; interpret the multiplier λ as the sensitivity of the optimum value to a relaxation of the constraint (i.e., a shadow price); do basic comparative statics via the implicit function theorem.

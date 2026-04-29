@@ -12,18 +12,39 @@ Plus a small set of **standalone interactive companions** (Plotly Dash apps depl
 
 ## Quick start
 
+The project has two parallel tracks rendered by two different tools and stitched into a single deployed site:
+
+- **Book** — polished chapters under `weeks/`, `controversies/`, `201/`, etc., rendered by **Quarto** to HTML/PDF/EPUB. Served at the site root.
+- **Notes** — an Obsidian vault under `notes/`, rendered by **Quartz** to HTML. Served under `/notes/`. Excluded from the print artifact.
+
 ```bash
-git clone https://github.com/jquacinella/EconomicPlanningCourse.git.git
-cd morishima-track
-uv sync                      # installs Python dependencies
-quarto preview               # serves the site at http://localhost:4444 with live reload
+git clone https://github.com/jquacinella/EconomicPlanningCourse.git
+cd EconomicPlanningCourse
+uv sync                      # installs Python dependencies for the book
+quarto preview               # serves the book at http://localhost:4444 with live reload
 ```
 
-To build the book:
+For the notes track:
+
+```bash
+cd quartz
+bash setup.sh                # first time only — fetches Quartz alongside our overrides
+npm ci                       # installs Node dependencies
+npx quartz build --serve     # serves the notes at http://localhost:8080, watches ../notes/
+```
+
+To build the book artifacts:
 
 ```bash
 quarto render                # all formats (HTML, PDF, EPUB)
 quarto render --to html      # one format only
+```
+
+To produce a print-targeted PDF (strips author-notes callouts first):
+
+```bash
+python assets/scripts/strip-author-notes.py
+QUARTO_PROFILE=print quarto render build-print/ --to pdf
 ```
 
 The Cobb-Douglas demo Dash app is in `apps/demo-budget-explorer/`:
@@ -42,6 +63,8 @@ python app.py                # http://localhost:8050
 - `controversies/` — the seven heterodox controversies + the Chinese-critique seminar (Part II).
 - `201/placeholder.qmd` — sketch of a follow-on course.
 - `appendices/` — pre-course checklist, extra-depth pointers, absorption diagnostics.
+- `notes/` — Obsidian vault for the notes track. Rendered by Quartz to `/notes/` on the deployed site. See `notes/README.md` and `notes/_meta/workflow.md`.
+- `quartz/` — Quartz installation that renders the notes vault. See `quartz/README.md`.
 - `apps/` — standalone Dash apps. Each subdirectory has its own `requirements.txt`, `Dockerfile`, and `render.yaml`.
 - `notebooks/` — working Jupyter notebooks before content gets pulled into `.qmd`.
 - `data/` — checked-in data files. Provenance is documented in `data/README.md`.

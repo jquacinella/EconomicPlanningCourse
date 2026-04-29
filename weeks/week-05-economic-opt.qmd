@@ -8,6 +8,16 @@ order: 5
 
 Where Week 2 dealt with equality constraints and smooth interiors, the economics of planning and trade involves *inequality* constraints ("we have at most X units of steel"), non-negativity ("you can't produce −5 tons of wheat"), and corner solutions. Kuhn-Tucker conditions are Lagrange multipliers generalized to this world — and they're the theoretical bridge to linear programming.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-05-economic-opt/reading-notes/)
+- [Open questions](/notes/weeks/week-05-economic-opt/questions/)
+- [Insights and connections](/notes/weeks/week-05-economic-opt/insights/)
+- [References to revisit](/notes/weeks/week-05-economic-opt/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-05-economic-opt/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Set up and analyze unconstrained optimization with second-order conditions for multivariable functions. State and apply the Kuhn-Tucker (KKT) conditions for inequality-constrained problems. Understand convexity and why convex problems have unique global optima. Write and solve a consumer or firm problem in Python using scipy.optimize or cvxpy.

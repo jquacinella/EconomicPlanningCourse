@@ -8,6 +8,16 @@ order: 5
 
 Marx's "law of the tendential fall in the rate of profit" (LTFRP), laid out in *Capital* Vol. III Part III, is one of the most politically consequential claims in his system: it's the theoretical engine of his prediction that capitalism is prone to recurrent crisis. The argument: as capitalists accumulate, the organic composition of capital (ratio of constant capital to variable capital) rises, and so the rate of profit r = S/(C + V) tends to fall despite rising labor productivity. In 1961 the Japanese Marxian economist Nobuo Okishio proved a theorem that appeared to demolish this: if a new technique is cost-reducing at current prices and the real wage is held constant, then the rate of profit at the new equilibrium prices *must rise*. Provable, clean, and for thirty years taken as settled — if you wanted a theory of falling profits you had to look elsewhere. Then, starting in the 1990s, the TSSI school (Kliman, Freeman, McGlone) challenged not Okishio's theorem as a theorem but its relevance to Marx: they argued the theorem assumes simultaneist valuation, which misrepresents what Marx was doing. The debate is fully live. And the empirical evidence — Dumenil & Levy, Shaikh, Moseley, Kliman, Roberts — finds genuine falling profit rates in post-WWII OECD economies, though the interpretation is contested.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/controversies/controversy-05-okishio/reading-notes/)
+- [Open questions](/notes/controversies/controversy-05-okishio/questions/)
+- [Insights and connections](/notes/controversies/controversy-05-okishio/insights/)
+- [References to revisit](/notes/controversies/controversy-05-okishio/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/controversies/controversy-05-okishio/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 State the LTFRP precisely as Marx made it. State Okishio's theorem precisely and understand why it's mathematically unassailable *given its assumptions*. Implement both Okishio's result and the TSSI temporal alternative in the same economy, and see the same underlying technical change produce a *rising* profit rate under one interpretation and a *falling* one under the other. Know the empirical record: what do real-world profit rates actually do, and what methodological choices matter for the answer? Understand this as a debate about interpretation as much as about economics.

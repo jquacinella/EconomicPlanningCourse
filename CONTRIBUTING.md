@@ -256,6 +256,98 @@ Common gotchas:
 - The Typst PDF backend handles most of the substantive content fine, but a few features (extreme float layout, very long single math lines) occasionally need manual help. If something looks broken in PDF, switch the engine in `_quarto.yml` to `xelatex` and document the issue here. As of the v1 bootstrap no such fallback has been needed — but the option exists.
 - LaTeX fallback: set `pdf-engine: xelatex` and `documentclass: tufte-book` (or `scrbook` with the existing setup). The `tufte-book` document class gives you Tufte-style PDF marginalia via the `tufte-latex` package. Note that `tufte-latex` has known compile issues with some Quarto preambles — see the Warrick Ball blog post for the `sed`-out-problematic-preamble-lines workaround.
 
+## Adding notes (the Obsidian vault under `notes/`)
+
+The `notes/` directory is an Obsidian vault, rendered to the deployed site at `/notes/` by [Quartz](https://quartz.jzhao.xyz/). It's the working layer behind the polished book — reading notes, questions, insights, methodological decisions, progress logs.
+
+The conventions:
+
+- Open `notes/` as a vault in Obsidian. No front matter is required; plain Markdown with wiki-links is the default.
+- Per-week notes live under `notes/weeks/week-NN-<slug>/` and per-controversy notes under `notes/controversies/controversy-NN-<slug>/`. The starting set of files in each is `index.md`, `reading-notes.md`, `questions.md`, `insights.md`, `refs.md`. Rename, merge, or delete as the work demands — the structure is a starting suggestion, not a contract.
+- Project-meta lives in `notes/_meta/`: `workflow.md` (orientation), `progress.md` (running log), `deferred.md` (parking lot), `decisions.md` (methodological choices), `glossary.md` (optional shared vocabulary).
+- Drag images and PDFs into `notes/attachments/`. Obsidian wires the attachments folder up by default.
+- Tags work — `#confused`, `#reread`, `#publishable` for things that might graduate into the book later.
+
+What goes in notes vs. book:
+
+- **Notes** is the default. Reading notes, half-formed questions, scratch calculations, intuition you wished someone had told you. Date-stamp entries.
+- **Book** is for polished, citation-ready content. Things graduate from notes → book when they're ready. Going back the other way (pulling polished content back into scratch) is a sign of premature commitment.
+
+For the full daily-use workflow, see [`notes/_meta/workflow.md`](notes/_meta/workflow.md).
+
+## The `.author-notes` callout class (mandatory for the strip script)
+
+Every book chapter (`.qmd` under `weeks/`, `controversies/`, `201/`, `appendices/`, plus the top-level `index.qmd` and friends) contains a single "Author's notes" callout near the top, immediately after the chapter's framing paragraph. The callout is collapsed by default, so casual readers don't see notes prominently; clicking the header expands it.
+
+The callout pattern:
+
+```markdown
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-NN-<slug>/reading-notes/)
+- [Open questions](/notes/weeks/week-NN-<slug>/questions/)
+- [Insights and connections](/notes/weeks/week-NN-<slug>/insights/)
+- [References to revisit](/notes/weeks/week-NN-<slug>/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-NN-<slug>/scratchpad.ipynb)
+:::
+```
+
+**The `.author-notes` class is mandatory.** It is the marker the strip script (`assets/scripts/strip-author-notes.py`) uses to identify and remove these callouts when producing a print-targeted manuscript. A callout that's missing the class will leak into the print PDF.
+
+To produce a print-targeted PDF:
+
+```bash
+python assets/scripts/strip-author-notes.py
+QUARTO_PROFILE=print quarto render build-print/ --to pdf
+```
+
+The script reads source `.qmd` files, writes stripped copies to `build-print/`, and never modifies the originals. The `print` profile in `_quarto.yml` controls which chapters belong in the print artifact.
+
+## The alias-page convention (notes → book cross-links)
+
+Within the Obsidian vault, you reference book chapters via wiki-links, e.g. `[[week-01]]` or `[[controversy-04]]`. These resolve to short alias pages under `notes/_book-aliases/` that link out to the corresponding book chapter and notes index.
+
+When adding a new book chapter, also add a matching alias file:
+
+```markdown
+<!-- notes/_book-aliases/week-NN.md -->
+# Week N — <Title> (book chapter)
+
+This page is an alias. The polished chapter lives in the book.
+
+- **Open in book**: <{{SITE_URL}}/weeks/week-NN-<slug>/>
+- **Edit source**: <https://github.com/{{USERNAME}}/morishima-track/blob/main/weeks/week-NN-<slug>.qmd>
+- **Notes for this unit**: [[weeks/week-NN-<slug>/index|Week N notes]]
+```
+
+Replace `{{SITE_URL}}` and `{{USERNAME}}` with the deployed values once they're stable. Two-hop is intentional and preserves Obsidian's wiki-link autocomplete and backlinks. If the two-hop becomes annoying, see PRD Addendum 2 §6.1 for the link-rewriter alternative — defer until you've felt the friction.
+
+Notes-to-notes wiki-links work natively with no special convention: `[[insights]]` resolves to the most-relevant insights file via Obsidian's vault-wide search.
+
+## The two-build-tool model
+
+Two pipelines, two preview commands, one stitched output site:
+
+- **Quarto** renders the book (`weeks/`, `controversies/`, etc.) to `_book/`. `quarto preview` from the repo root watches sources and serves at `localhost:4444`.
+- **Quartz** renders the notes vault (`notes/`) to `quartz/public/`. `cd quartz && npx quartz build --serve` watches the vault and serves at `localhost:8080`.
+
+In CI (`.github/workflows/render.yml`), both run sequentially, and their outputs are stitched into `_site/`:
+
+```
+_site/
+├── index.html               # Book landing page (Quarto)
+├── weeks/                   # Book chapters
+├── controversies/
+└── notes/                   # Notes site (Quartz)
+    ├── index.html
+    ├── weeks/
+    ├── controversies/
+    └── _meta/
+```
+
+First-time setup of the Quartz install on a new machine: `cd quartz && bash setup.sh && npm ci`. After that, `npx quartz build --serve` is the daily command. See `quartz/README.md` for details. The local URLs (`localhost:4444` vs. `localhost:8080`) differ from the deployed URLs (no port; notes under `/notes/`); periodically check that cross-links work in the deployed site.
+
 ## Hypothesis annotation: etiquette and groups
 
 - Public Hypothesis annotations on the deployed site are visible to anyone. Treat them as you would a public comment thread.

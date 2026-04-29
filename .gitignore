@@ -31,8 +31,17 @@ Thumbs.db
 *.swp
 *.swo
 
-# Personal notes (gitignored on purpose; can be re-included on a separate branch)
-/notes/
+# Notes vault — partially committed (Addendum 2 reverses the original PRD §6 decision).
+# Editor settings, plugin lists, and CSS snippets ARE committed under notes/.obsidian/.
+# Local window state and caches are not.
+notes/.obsidian/workspace*.json
+notes/.obsidian/cache
+notes/.obsidian/plugins/*/data.json
+
+# Quartz build artifacts
+quartz/public/
+quartz/.quartz-cache/
+quartz/node_modules/
 
 # Ravel commercial files — author's working files, not redistributable by default
 ravel-files/*.rvl

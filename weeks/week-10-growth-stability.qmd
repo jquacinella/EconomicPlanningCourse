@@ -8,6 +8,16 @@ order: 10
 
 This is synthesis week. You'll look at three classes of dynamic economic model — the Solow-Swan neoclassical model, the Goodwin growth-cycle model (inspired by predator-prey dynamics and the class struggle), and the von Neumann balanced growth model — and in each case you'll (a) write down the dynamics, (b) find equilibria, (c) analyze stability via linearization, and (d) simulate. By the end you have the vocabulary and the tools to read Morishima, Barro-Sala-i-Martin, and the modern planning literature with comprehension.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-10-growth-stability/reading-notes/)
+- [Open questions](/notes/weeks/week-10-growth-stability/questions/)
+- [Insights and connections](/notes/weeks/week-10-growth-stability/insights/)
+- [References to revisit](/notes/weeks/week-10-growth-stability/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-10-growth-stability/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Derive steady states of a growth model. Linearize around a steady state and use the Jacobian's eigenvalues to classify stability. Draw a phase plane for a 2D economic model, including nullclines, fixed points, and sample trajectories. Connect discrete-time stability (|λ| < 1) to continuous-time stability (Re(λ) < 0). Read and interpret the first chapters of Morishima's *Theory of Economic Growth*.

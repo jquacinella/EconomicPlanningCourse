@@ -8,6 +8,16 @@ order: 3
 
 The economics from Week 7 onward is fundamentally matrix economics: every sector is a row, every good is a column, and the relationships are linear. This week you make sure you can read a matrix as a transformation and not just a grid of numbers.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-03-linear-algebra/reading-notes/)
+- [Open questions](/notes/weeks/week-03-linear-algebra/questions/)
+- [Insights and connections](/notes/weeks/week-03-linear-algebra/insights/)
+- [References to revisit](/notes/weeks/week-03-linear-algebra/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-03-linear-algebra/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Fluent matrix-vector and matrix-matrix multiplication, including the "row picture" and "column picture" interpretations. Solve Ax = b by row reduction by hand on small cases. Compute rank and determinant of small matrices. Know when an inverse exists and what "linear independence" means geometrically. Read Ax = b as "find the combination of columns of A that equals b."

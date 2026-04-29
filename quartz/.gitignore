@@ -1,0 +1,23 @@
+# Quartz build artifacts
+public/
+.quartz-cache/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Files fetched by setup.sh from upstream Quartz. We commit only our overrides;
+# everything else is pulled in on first `bash setup.sh`.
+quartz/
+docs/
+content/.gitkeep
+*.lock
+package-lock.json
+
+# But DO commit our config and layout overrides — they are at the top of
+# this directory and not in the ignored subpaths.
+!quartz.config.ts
+!quartz.layout.ts
+
+# OS junk
+.DS_Store

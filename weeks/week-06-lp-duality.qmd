@@ -8,6 +8,16 @@ order: 6
 
 In 1939, Leonid Kantorovich — working on plywood-cutting optimization for a Soviet industry ministry — invented linear programming, and won the only Nobel Prize in economics ever given to a Soviet citizen. Every LP has a *dual* problem, and the duality theorem is the mathematical foundation of planning prices. This week you learn to use an LP solver, read the shadow-price output, and understand why Kantorovich's machinery is a direct answer to the Mises-Hayek calculation argument.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-06-lp-duality/reading-notes/)
+- [Open questions](/notes/weeks/week-06-lp-duality/questions/)
+- [Insights and connections](/notes/weeks/week-06-lp-duality/insights/)
+- [References to revisit](/notes/weeks/week-06-lp-duality/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-06-lp-duality/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Set up an LP in standard form. Solve LPs in Python using scipy's `linprog`, PuLP, or cvxpy. State and interpret the LP duality theorem. Read dual variables (shadow prices) off a solver output and explain what they mean in the original problem. Work the Kantorovich plywood example.

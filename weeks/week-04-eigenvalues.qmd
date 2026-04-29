@@ -8,6 +8,16 @@ order: 4
 
 Eigenvalues are how we detect whether a dynamical system converges or blows up, and how we identify the "natural directions" of a linear process. In economics, the largest (Perron-Frobenius) eigenvalue of a nonnegative matrix is the maximal balanced growth rate, and the condition for a Leontief economy to be viable is that this eigenvalue be less than one.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-04-eigenvalues/reading-notes/)
+- [Open questions](/notes/weeks/week-04-eigenvalues/questions/)
+- [Insights and connections](/notes/weeks/week-04-eigenvalues/insights/)
+- [References to revisit](/notes/weeks/week-04-eigenvalues/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-04-eigenvalues/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Compute eigenvalues and eigenvectors of 2×2 and 3×3 matrices by hand via det(A − λI) = 0, and in NumPy for larger. Diagonalize a matrix when possible. State the Perron-Frobenius theorem for nonnegative matrices. Understand how eigenvalues of the Jacobian determine local stability of a fixed point — this is foreshadowing Week 10.
