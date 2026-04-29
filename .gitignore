@@ -40,3 +40,5 @@ ravel-files/*.rvl
 # Local environment overrides
 .env
 .env.local
+
+**/*.quarto_ipynb
