@@ -8,6 +8,16 @@ order: 1
 
 Before you can formalize a consumer choosing a bundle or a planner choosing an output vector, you need to be fluent in functions of several variables: surfaces, level sets, gradients, and chain rules.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-01-multivariable/reading-notes/)
+- [Open questions](/notes/weeks/week-01-multivariable/questions/)
+- [Insights and connections](/notes/weeks/week-01-multivariable/insights/)
+- [References to revisit](/notes/weeks/week-01-multivariable/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-01-multivariable/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 By Sunday, you can: take partial and directional derivatives by hand and symbolically; read and draw contour maps of a 2-variable function; compute and interpret a gradient geometrically as "the direction of steepest ascent, perpendicular to the level set"; write out and use the multivariable chain rule; assemble a Hessian and know what it represents.

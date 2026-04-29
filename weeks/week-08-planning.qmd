@@ -8,6 +8,16 @@ order: 8
 
 This is the keystone week. You combine LP (Week 6) with input-output analysis (Week 7) to formulate the full economic planning problem that Kantorovich and then Cockshott/Cottrell have worked on. Everything you've done feeds in here.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-08-planning/reading-notes/)
+- [Open questions](/notes/weeks/week-08-planning/questions/)
+- [Insights and connections](/notes/weeks/week-08-planning/insights/)
+- [References to revisit](/notes/weeks/week-08-planning/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-08-planning/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Set up a multi-sector planning problem: given technology A, labor coefficients v, labor endowment L̄, and a desired composition of final demand, find the plan that maximizes scale (or utility of a final-demand bundle) subject to resource constraints. Compute planning prices as LP dual variables. Contrast quantity-targeting with price-targeting. Understand the Cockshott-Cottrell "labour-time" proposal and its difference from conventional shadow-price approaches. Understand why planning is computationally tractable at realistic scale.

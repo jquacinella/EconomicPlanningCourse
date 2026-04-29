@@ -1,0 +1,15 @@
+{
+  "name": "morishima-track-notes",
+  "description": "Quartz wrapper that renders the Obsidian vault at ../notes/. Quartz itself is fetched on first install via setup.sh.",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "bash setup.sh",
+    "build": "npx quartz build",
+    "serve": "npx quartz build --serve"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

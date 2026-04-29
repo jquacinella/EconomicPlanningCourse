@@ -8,6 +8,16 @@ order: 7
 
 Wassily Leontief won the 1973 Nobel Prize for showing how an economy's inter-industry structure can be represented as a single matrix A, where Aᵢⱼ is the amount of good i needed to produce one unit of good j. Every result in the first half of Morishima's *Marx's Economics* is a statement about the algebra of this matrix. If you understand (I − A)⁻¹, you understand the backbone of mathematical Marxian and planning economics.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-07-input-output/reading-notes/)
+- [Open questions](/notes/weeks/week-07-input-output/questions/)
+- [Insights and connections](/notes/weeks/week-07-input-output/insights/)
+- [References to revisit](/notes/weeks/week-07-input-output/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-07-input-output/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 State the Leontief model. Compute the Leontief inverse L = (I − A)⁻¹ and interpret its entries (Lᵢⱼ = total — direct plus indirect — units of good i needed for one unit of *final demand* for good j). State the Hawkins-Simon productivity condition. Set up the dual price system pᵀ = pᵀA + vᵀ (where v is value added per unit, e.g. labor) and derive labor values. Simulate and interpret a demand shock.

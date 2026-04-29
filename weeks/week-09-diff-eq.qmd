@@ -8,6 +8,16 @@ order: 9
 
 The economy moves. Capital accumulates, population grows, technology advances. The mathematics of continuous-time change is differential equations, and the specific tools you need for economics are: first-order linear ODEs (Solow model), systems of linear ODEs (Goodwin model, linearized growth), phase portraits (geometric understanding), and numerical simulation (when the equations aren't solvable by hand).
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/weeks/week-09-diff-eq/reading-notes/)
+- [Open questions](/notes/weeks/week-09-diff-eq/questions/)
+- [Insights and connections](/notes/weeks/week-09-diff-eq/insights/)
+- [References to revisit](/notes/weeks/week-09-diff-eq/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-09-diff-eq/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Solve first-order linear and separable ODEs analytically. Solve 2×2 linear systems of ODEs by finding eigenvalues and eigenvectors of the system matrix. Classify equilibria of 2D systems (node, saddle, spiral, center) by the trace-determinant criterion. Simulate ODEs numerically with Euler's method and with `scipy.integrate.solve_ivp`. Draw and interpret a phase portrait.

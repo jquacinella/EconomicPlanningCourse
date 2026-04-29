@@ -8,6 +8,16 @@ order: 6
 
 This is a seminar, not a full controversy — three open-access papers, a day or two of reading, a 500-word reflection, and you move on. But the position is distinctive enough and sufficiently underrepresented in Anglophone debates to deserve its own stop on the tour. Since roughly the 2010s, a coordinated cluster of Chinese Marxist economists — centered on Sichuan University, the Chinese Academy of Social Sciences' Academy of Marxism, and the World Association for Political Economy's *World Review of Political Economy* journal — has been developing a systematic critique of the Japanese School of Mathematical Marxian Economics (Morishima, Okishio, Seton). The Anglophone transformation-problem debate you met in Controversy 3 (Morishima vs Steedman vs Kliman-TSSI) and the Okishio debate in Controversy 5 (Okishio vs TSSI vs empirical school) largely operate within the same mathematical framework they argue about — they disagree about interpretation, timing, or valuation within a shared input-output/wage-normalized apparatus. The Chinese school you're about to read argues that the shared apparatus itself inherits Smithian rather than Marxian value theory, and that a different formalization is both possible and already underway. Whether you find this convincing is your call — but having it in your head before the money chapter sharpens your sense of what "formalization" can and cannot do.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/controversies/seminar-chinese-critique/reading-notes/)
+- [Open questions](/notes/controversies/seminar-chinese-critique/questions/)
+- [Insights and connections](/notes/controversies/seminar-chinese-critique/insights/)
+- [References to revisit](/notes/controversies/seminar-chinese-critique/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/controversies/seminar-chinese-critique/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Understand the specific technical claim the Chinese critique makes about Morishima's wage-numeraire construction (p_{i,w} = p_i/w collapses into Adam Smith's labor-commanded value theory, not Marx's labor-consumed value theory). Understand how this same objection applies to Okishio's proof and why the Chinese critique treats it as an independent third position rather than a variant of TSSI. Know the positive program Zhang is building in his 2023 paper — what it preserves from Marx's Vol I apparatus, what mathematical tools it adds (game theory, probability, cybernetic control) beyond the linear-algebra toolkit you used in Weeks 3-4, and where it's still incomplete. Situate this within the Chinese-Marxist institutional ecosystem (WAPE, WRPE, CASS Academy of Marxism) and understand why a Chinese-language critical tradition engages Morishima and Okishio differently than the Anglophone one.

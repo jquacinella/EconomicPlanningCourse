@@ -8,6 +8,16 @@ order: 7
 
 The 20th-century Marxian tradition inherited Sraffa's neglect of money. Modern mainstream macroeconomics has a theory of money that is demonstrably wrong about how banks actually work (it's been admitted by the Bank of England itself, in a now-famous 2014 paper). In parallel, a heterodox tradition — post-Keynesian, circuitist, Minskyan — has developed the **monetary theory of production**, centered on the claim that money is endogenously created by banks through the act of lending, and that this monetary circuit is essential to how capitalism actually functions. Key figures: Wynne Godley and Marc Lavoie, who gave us stock-flow consistent (SFC) modeling; Augusto Graziani and the Italian circuitists; Hyman Minsky and his intellectual heir Steve Keen. This controversy is the direct answer to a question your Week 8 project merely gestured at: once you have a planned-economy LP, how do *investment*, *intertemporal coordination*, and *transition from capitalism* work? The Cockshott-Cottrell proposal uses labor tokens (IOUs for consumer goods, non-circulating, redeemable in consumption); Dapprich's 2023 extension lets token prices on consumer goods adjust toward market-clearing rates. This is the capstone. Everything connects.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/controversies/controversy-06-money/reading-notes/)
+- [Open questions](/notes/controversies/controversy-06-money/questions/)
+- [Insights and connections](/notes/controversies/controversy-06-money/insights/)
+- [References to revisit](/notes/controversies/controversy-06-money/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/controversies/controversy-06-money/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 State the endogenous vs exogenous money debate precisely and know why endogenous is now the empirically settled position. Understand Graziani's monetary circuit as a distinct theoretical framework from both mainstream monetarism and traditional Marxism. Build a stock-flow consistent macroeconomic model from scratch and use it to show why "loans create deposits, not the other way round." Understand Minsky-Keen debt-dynamic models as genuine nonlinear systems that can endogenously produce crises. Know what functions money serves in a capitalist economy and, for each function, know the specific institutional substitute proposed in the Cockshott-Cottrell-Dapprich tradition. Finally: have *computationally verified* that a planned economy can coordinate investment without money, using your Week 8 planning LP extended intertemporally.

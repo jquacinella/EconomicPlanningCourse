@@ -8,6 +8,16 @@ order: 1
 
 You have been happily using the Cobb-Douglas form throughout Weeks 1–9 as a teaching example: smooth, concave, closed-form everything. It turns out that one of the most famous papers in heterodox economics — Anwar Shaikh's 1974 "Humbug Production Function" — is a full-frontal demolition of the Cobb-Douglas production function's claim to be a *law of production*. Shaikh's argument, sitting on top of the older **Cambridge Capital Controversy** (Robinson 1953 → Sraffa 1960 → Samuelson's 1966 concession), was later extended by Jesus Felipe and John McCombie into a systematic attack on the entire aggregate-production-function empirical literature. This week you reproduce the Humbug result in Python, derive the accounting-identity trick on paper, and understand exactly why the Morishima/Cockshott tradition works in the disaggregated input-output framework of Week 7 rather than in aggregate Y = F(K, L) land.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/controversies/controversy-01-cobb-douglas/reading-notes/)
+- [Open questions](/notes/controversies/controversy-01-cobb-douglas/questions/)
+- [Insights and connections](/notes/controversies/controversy-01-cobb-douglas/insights/)
+- [References to revisit](/notes/controversies/controversy-01-cobb-douglas/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/controversies/controversy-01-cobb-douglas/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 By the end of this week you can: (1) state Shaikh's argument in three sentences without notes; (2) derive the Y = A·Lᵅ·K¹⁻ᵅ "shape" from the accounting identity Y ≡ wL + rK plus constant factor shares, using total differentials from Week 1; (3) reproduce the humbug experiment computationally — generate nonsense data, regress it, and watch a Cobb-Douglas fit come out with high R²; (4) explain the Cambridge circularity argument (capital can't be measured without prices, prices depend on the rate of profit, the rate of profit is what the production function is meant to explain); (5) explain to a non-specialist why Morishima's multi-sector input-output apparatus is not just stylistic preference but a considered response to these critiques.

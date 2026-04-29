@@ -8,6 +8,16 @@ order: 4
 
 Piero Sraffa's 1960 book *Production of Commodities by Means of Commodities: Prelude to a Critique of Economic Theory* is 99 pages of dense algebra, forty years in the writing, and arguably the most influential short book in 20th-century political economy outside Keynes. Its achievement: a complete theory of prices and income distribution derived from the technical structure of production plus *one* distributional parameter (wage or profit rate), with no reference to marginal utility, subjective preferences, or aggregate production functions. It provides the formal machinery that sank Samuelson's "surrogate production function" defense in the Cambridge Capital Controversy (via the reswitching paradox), offers a clean alternative to Marxian value theory for determining prices (Steedman's case in Controversy 3), and reconstructs a classical (Ricardo-Marx) tradition of price theory that had been dormant since the marginalist revolution. For your purposes, Sraffa is the keystone that connects the input-output machinery of Week 7 to the distributional questions at the center of political economy.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/controversies/controversy-04-sraffa/reading-notes/)
+- [Open questions](/notes/controversies/controversy-04-sraffa/questions/)
+- [Insights and connections](/notes/controversies/controversy-04-sraffa/insights/)
+- [References to revisit](/notes/controversies/controversy-04-sraffa/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/controversies/controversy-04-sraffa/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 Set up and solve Sraffa's price equation for a multi-sector economy. Compute and plot the wage-profit frontier. Construct the "standard commodity" and understand why it matters (the frontier is linear in its units). Demonstrate reswitching on a two-technique example — this is the computational exhibit that ended the Cambridge Capital Controversy in Cambridge UK's favor. Explain what Sraffa's framework shares with Leontief (Week 7) and where it diverges. Understand why Sraffian prices don't require marginal productivity theory and what that means for the neoclassical story of factor returns.

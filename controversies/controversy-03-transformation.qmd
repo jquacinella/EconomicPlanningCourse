@@ -8,6 +8,16 @@ order: 3
 
 This is the most famous internal-consistency charge against Marx's value theory, and it has been the central technical dispute inside Marxian economics for over a century. In *Capital* Vol. III, Ch. 9, Marx attempts to "transform" labor values into competitive prices of production (prices at which profit rates equalize across sectors), and claims that two aggregate identities hold: sum of prices = sum of values, and sum of profits = sum of surplus values. Bortkiewicz in 1907 pointed out that Marx's algorithm transformed outputs but not inputs — incomplete. When the full transformation is done (simultaneous equations for prices and rate of profit), *generically only one of the two aggregate identities can be preserved by choice of numeraire*. Whether this breaks Marx or merely revises him has divided the Marxian tradition ever since: Morishima and Seton rescued the core proposition with their Fundamental Marxian Theorem; Steedman in *Marx After Sraffa* argued values are "redundant"; Kliman and the Temporal Single-System Interpretation (TSSI) argue the whole "problem" is an artifact of simultaneist interpretation and disappears under temporal valuation. All the math you need is in your Week 7 toolkit.
 
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/controversies/controversy-03-transformation/reading-notes/)
+- [Open questions](/notes/controversies/controversy-03-transformation/questions/)
+- [Insights and connections](/notes/controversies/controversy-03-transformation/insights/)
+- [References to revisit](/notes/controversies/controversy-03-transformation/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/controversies/controversy-03-transformation/scratchpad.ipynb)
+:::
+
 ## Learning objectives
 
 State the transformation problem precisely. Compute the value system and the price-of-production system for a three-sector economy. Show which of Marx's two aggregate identities holds and which fails in a Bortkiewicz-style simultaneous solution, and watch how the answer depends on the choice of numeraire. Prove (computationally) the Morishima-Seton Fundamental Marxian Theorem: rate of profit is positive iff rate of exploitation is positive. Implement the TSSI temporal alternative and see what changes. Come away with a clear view of what's really at stake: what parts of Marx survive the critique, what parts don't, and what this means — or doesn't — for Cockshott's planning program.
