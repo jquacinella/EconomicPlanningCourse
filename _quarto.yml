@@ -56,7 +56,7 @@ format:
   html:
     theme:
       light: [cosmo, assets/css/custom.scss]
-      dark: [cosmo, assets/css/custom-dark.scss]
+      dark: [darkly, assets/css/custom-dark.scss]
     toc: true
     toc-depth: 3
     toc-location: right
