@@ -22,6 +22,44 @@ Budget **10–15 hours per week**. Videos alone take 3–5 hours; the project an
 
 The end-state after Week 10: you crack open Morishima's Chapter 1 and think "I know exactly what this matrix is doing." We end with a post-course reading ladder that walks you into Morishima and the planning literature.
 
+## Where to start
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### Part I — The Mathematics
+
+Ten weeks from multivariable calculus to LP duality, input–output, and growth stability. The mathematical spine of the curriculum.
+
+[Start with Week 1 →](weeks/week-01-multivariable.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Part II — The Controversies
+
+Seven debates the math just unlocked: Cobb–Douglas, the calculation problem, the transformation problem, Sraffa, Okishio, money, climate.
+
+[Open Part II →](controversies/controversy-01-cobb-douglas.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Post-course reading ladder
+
+Where to go after Week 10 — Morishima's *Marx's Economics*, Cockshott/Cottrell, and the planning literature, in reading order.
+
+[See the ladder →](post-course.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Appendices
+
+Prerequisites refresher, extra-depth material for stronger backgrounds, and an absorption-economics primer.
+
+[Browse appendices →](appendices/appendix-a-prereq.qmd)
+:::
+
+:::
+
 ---
 
 ## Style and rendering reference {#sec-style-reference}
