@@ -61,7 +61,10 @@ format:
     toc-depth: 3
     toc-location: right
     grid:
+      sidebar-width: 200px
+      body-width: 1100px
       margin-width: 350px
+      gutter-width: 1.5rem
     reference-location: margin
     citation-location: margin
     code-tools: true
