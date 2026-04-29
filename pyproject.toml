@@ -20,16 +20,21 @@ dependencies = [
     "statsmodels>=0.14",
     "pulp>=2.8",
     "cvxpy>=1.5",
-    "mesa>=2.3",
+    "mesa>=2.3.0",
     "jupyter>=1.0",
     "jupyterlab>=4.1",
     "quantecon>=0.7",
+    "sfc-models>=0.3.0",
+    "pysolve>=0.1.0",
 ]
 
 [project.optional-dependencies]
 dev = [
     "ruff>=0.4",
     "pytest>=8.0",
+]
+extended = [
+    "pysd>=3.14.0",
 ]
 
 [build-system]

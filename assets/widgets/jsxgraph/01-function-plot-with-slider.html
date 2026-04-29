@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JSXGraph reference: function plot with slider</title>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"
+        type="text/javascript" charset="UTF-8"></script>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2em; max-width: 720px; }
+  #board { width: 600px; height: 400px; }
+</style>
+</head>
+<body>
+<h1>Function plot with slider — <code>f(x) = x<sup>α</sup></code></h1>
+<p>Drag the α slider to update the curve. This is the canonical
+   &ldquo;type-a-function, drag-a-slider, watch-the-curve-respond&rdquo; pattern.</p>
+<div id="board" class="jxgbox"></div>
+<script>
+  const board = JXG.JSXGraph.initBoard("board", {
+    boundingbox: [-0.5, 12, 11, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false
+  });
+
+  const alpha = board.create("slider",
+    [[1, 10], [9, 10], [0.05, 0.4, 0.95]],
+    { name: "&#945;", snapWidth: 0.05 });
+
+  board.create("functiongraph",
+    [x => Math.pow(x, alpha.Value()), 0.01, 10],
+    { strokeColor: "steelblue", strokeWidth: 2 });
+</script>
+</body>
+</html>

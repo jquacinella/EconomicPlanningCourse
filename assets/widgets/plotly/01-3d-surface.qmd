@@ -1,0 +1,33 @@
+---
+title: "Plotly Python reference — 3D surface"
+description: "Static-interactive 3D surface plot using plotly.graph_objects."
+---
+
+Reference implementation of a 3D surface plot using Plotly Python. Quarto's Jupyter engine executes the cell at build time and embeds an interactive (rotation, zoom, hover) HTML snippet into the rendered page.
+
+```{python}
+#| label: fig-cobb-douglas-surface
+#| fig-cap: "Cobb-Douglas utility surface, u(x, y) = x^α · y^(1−α)."
+#| fig-cap-location: margin
+
+import numpy as np
+import plotly.graph_objects as go
+
+x = np.linspace(0.1, 10, 60)
+y = np.linspace(0.1, 10, 60)
+X, Y = np.meshgrid(x, y)
+alpha = 0.4
+U = X ** alpha * Y ** (1 - alpha)
+
+fig = go.Figure(data=[go.Surface(x=X, y=Y, z=U, colorscale="Viridis")])
+fig.update_layout(
+    title="u(x, y) = x^0.4 · y^0.6",
+    scene=dict(xaxis_title="x", yaxis_title="y", zaxis_title="u"),
+    width=600,
+    height=450,
+    margin=dict(l=0, r=0, b=0, t=40),
+)
+fig.show()
+```
+
+For Week 1's Cobb-Douglas surface project, the recommended pattern is: this 3D surface plot via Plotly Python, plus a 2D contour with draggable parameters via JSXGraph (see `../jsxgraph/`). Each tool does what it does best.

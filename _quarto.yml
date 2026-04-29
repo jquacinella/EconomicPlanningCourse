@@ -64,6 +64,11 @@ format:
     code-tools: true
     code-fold: show
     fig-cap-location: margin
+    # JSXGraph runtime, loaded on every HTML page so chapter widgets work.
+    # Once `quarto add jsxgraph/jsxgraph-quarto` has been run (see PRD
+    # Addendum 1 §1.5), the extension supersedes this include.
+    include-in-header:
+      - assets/jsxgraph-include.html
     comments:
       hypothesis: true
 
