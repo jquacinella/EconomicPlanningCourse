@@ -49,6 +49,15 @@ jobs:
       - name: Render HTML
         run: uv run quarto render --to html
 
+      - name: Verify HTML render produced an index page
+        run: |
+          if [ ! -f _book/index.html ]; then
+            echo "::error::_book/index.html missing after render — refusing to deploy."
+            ls -la _book/ || echo "_book/ does not exist"
+            exit 1
+          fi
+          echo "OK: _book/index.html exists ($(wc -c < _book/index.html) bytes)"
+
       - name: Render PDF
         run: uv run quarto render --to pdf
         continue-on-error: true
