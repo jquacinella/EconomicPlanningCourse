@@ -1,0 +1,12 @@
+---
+title: "Appendix C — Signs you're actually absorbing it"
+description: "Diagnostic markers that the course is doing what it should."
+---
+
+- You start seeing level sets everywhere (indifference curves, isoquants, production possibility frontiers are all the same geometric object).
+- You stop thinking "inverse of a matrix" and start thinking "undo the linear transformation."
+- The LP dual stops being a computational curiosity and starts being where the economic interpretation *lives*.
+- When you read an economics paper with matrix notation, you immediately picture what each matrix is *doing* rather than what its entries literally are.
+- You can explain why Cockshott's "economic planning is ~ N log N" claim is plausible to a non-specialist.
+
+That last one is roughly the test of whether this course worked.

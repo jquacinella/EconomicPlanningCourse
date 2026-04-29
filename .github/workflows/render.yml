@@ -1,0 +1,67 @@
+name: Render and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Build budget: this should complete in well under 10 minutes for the v1
+# skeleton, since the migrated markdown content has no executable code yet.
+# Revisit this budget as the author adds executable Python in the per-chapter
+# `.qmd` files — a full re-execution of every notebook will dominate runtime.
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install Python dependencies
+        run: |
+          if [ -f uv.lock ]; then
+            uv sync --frozen
+          else
+            uv sync
+          fi
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "pre-release"
+
+      - name: Render HTML
+        run: uv run quarto render --to html
+
+      - name: Render PDF
+        run: uv run quarto render --to pdf
+        continue-on-error: true
+
+      - name: Render EPUB
+        run: uv run quarto render --to epub
+        continue-on-error: true
+
+      - name: Deploy to gh-pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_book
+
+      - name: Upload PDF and EPUB on tagged release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            _book/*.pdf
+            _book/*.epub

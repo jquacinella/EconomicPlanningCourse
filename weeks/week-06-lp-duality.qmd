@@ -1,0 +1,38 @@
+---
+title: "Week 6 — Linear Programming and Duality"
+description: "Kantorovich's machinery, LP duality, and shadow prices as planning prices."
+order: 6
+---
+
+## Framing
+
+In 1939, Leonid Kantorovich — working on plywood-cutting optimization for a Soviet industry ministry — invented linear programming, and won the only Nobel Prize in economics ever given to a Soviet citizen. Every LP has a *dual* problem, and the duality theorem is the mathematical foundation of planning prices. This week you learn to use an LP solver, read the shadow-price output, and understand why Kantorovich's machinery is a direct answer to the Mises-Hayek calculation argument.
+
+## Learning objectives
+
+Set up an LP in standard form. Solve LPs in Python using scipy's `linprog`, PuLP, or cvxpy. State and interpret the LP duality theorem. Read dual variables (shadow prices) off a solver output and explain what they mean in the original problem. Work the Kantorovich plywood example.
+
+## Core concepts
+
+Standard form: min cᵀx s.t. Ax = b, x ≥ 0 (with inequality forms as variants). Feasible region = polytope = intersection of half-spaces. The simplex method traverses vertices. Every LP has a dual: max bᵀy s.t. Aᵀy ≤ c. **Weak duality** (primal objective ≥ dual objective always) and **strong duality** (when solutions exist, the two objectives are equal). Shadow prices = optimal dual variables = ∂(optimal value)/∂(constraint RHS). Complementary slackness in LP form.
+
+## Resource schedule
+
+- **Anchor reading: Chiang Ch 13 (sections on Kuhn-Tucker and quasi-concave programming) continues from Week 5 directly into LP territory.** If you worked through it last week, the transition is seamless — LP is the specialization of KKT where objective and constraints are all linear, and Chiang's exposition of how shadow prices emerge from the Lagrangian makes the economic interpretation of LP duals click without further explanation.
+- Day 1: QuantEcon's LP introduction lecture (read + run the code): <https://intro.quantecon.org/lp_intro.html>. Work both of the example problems (production, investment).
+- Day 2: IBM CPLEX Part 1 LP tutorial <https://ibmdecisionoptimization.github.io/tutorials/html/Linear_Programming.html>. Skip the CPLEX-specific syntax; read for the concepts: feasible region, extreme points, slack, degeneracy.
+- Day 3: Duality. Watch Jim Dai or Ashwin Pananjady's LP duality lectures on YouTube (search "LP duality lecture"), or read Chapter 3 of Chvátal's *Linear Programming* if you have access. The clearest short treatment is in the QuantEcon "Optimal Transport" lecture: <https://python.quantecon.org/opt_transport.html> — pay attention to how the dual variables are interpreted as "ship-out values" and "ship-in values".
+- Day 4: Read Cockshott's blog post *Returning to Kantorovich*: <https://paulcockshott.wordpress.com/returning-to-kantorovich/>. This works the original plywood example and then extends it to an economy-wide plan. This single post is the most important primary reading of Week 6.
+- Day 5–6: Project.
+
+## Mini project — Production LP with shadow-price analysis
+
+A factory produces two products, P1 and P2. P1 needs 2 units of material and 4 units of labor per unit; P2 needs 5 units of material and 2 units of labor. Revenues are \$3/unit (P1) and \$4/unit (P2). Material available: 30 units. Labor available: 20 units. Both products must be non-negative. (This is QuantEcon's first example.) Step 1: solve with PuLP *and* with scipy's `linprog`, compare. Step 2: print the optimal dual variables — read off the shadow prices of material and labor. Step 3: verify the shadow price story empirically — add 1 to the material constraint (31 units), re-solve, and check that the objective increases by approximately the material shadow price. Step 4: write 150 words in the notebook connecting what you just computed to the *planning* interpretation: these shadow prices are the "scarcity prices" that a planner in the Kantorovich tradition would use to coordinate decisions across the economy even without a market.
+
+## Self-check
+
+If a constraint is non-binding at the optimum, what is its shadow price? Why? State the duality theorem in one sentence. Why can the simplex method be slow in the worst case but usually fast in practice? What is the dual of the dual?
+
+## Bridge
+
+Week 7 applies exactly this LP machinery to an entire economy described as a matrix of input-output coefficients. That's Leontief's contribution — and it's the technical core of what Morishima and Cockshott both build on.

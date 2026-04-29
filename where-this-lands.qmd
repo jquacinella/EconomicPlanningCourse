@@ -1,0 +1,8 @@
+---
+title: "Where this lands"
+description: "Closing reflection on what the full arc adds up to."
+---
+
+If you've worked through the full arc — ten weeks of mathematical foundation plus seven deep controversies — you're holding something genuinely rare. A Jupyter notebook that contains: a working Leontief input-output economy, a working Sraffian price system, a full transformation-problem implementation in three different valuation conventions, a stock-flow consistent capitalist macro model with endogenous money and financial fragility, a stock-flow consistent *planned* economy with labor tokens and intertemporal LP investment, and a thirty-year decarbonization plan with explicit emissions constraints and endogenous carbon shadow prices. Plus, underneath, a grasp of why this tradition of thought — input-output analysis, Sraffa-Pasinetti-Kurz price theory, Morishima's mathematical Marxism, Cockshott-Cottrell-Dapprich cyber-socialism, Godley-Lavoie stock-flow modeling, and climate-constrained planning — belongs together rather than being six separate niches.
+
+From here, the natural next steps are: publishing (your SemPKM project is already adjacent to economic-knowledge infrastructure, and a heterodox-computational-economics replication notebook is a natural extension); direct modeling work with one of the Marxian computational-economics groups (Cogliano-Veneziani-Yoshihara at Queen Mary; the Cockshott circle at Glasgow; Dapprich at Potsdam); or — most interesting given your FreeCell platform and infrastructure-automation background — building actual planning and climate-transition software tooling that Left organising ecosystems could use. The tools are now yours.

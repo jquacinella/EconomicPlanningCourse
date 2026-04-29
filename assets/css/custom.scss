@@ -1,0 +1,16 @@
+/*-- scss:defaults --*/
+
+// Light-theme overrides for the morishima-track Quarto book.
+// Initially mostly empty; add SCSS variables here when the design starts to
+// diverge from cosmo defaults.
+
+/*-- scss:rules --*/
+
+// Make margin notes visually distinct from body text.
+.column-margin {
+  font-size: 0.85rem;
+  color: #555;
+  border-left: 2px solid #ccc;
+  padding-left: 0.6rem;
+  line-height: 1.4;
+}

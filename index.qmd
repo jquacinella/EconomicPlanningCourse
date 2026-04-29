@@ -1,0 +1,125 @@
+---
+title: "The Morishima Track"
+subtitle: "How to use this document"
+description: "A 10-week mathematical-economics bootcamp plus seven controversies, designed to get you reading Morishima."
+---
+
+*Central source document. Everything you need to execute the plan is linked from here.*
+
+## How to use this document
+
+This is a 10-week mathematical-economics bootcamp designed to get you from multivariable calculus to the point where you can read Michio Morishima's *Marx's Economics: A Dual Theory of Value and Growth* (1973) and Cockshott/Cottrell's planning literature with full mathematical comprehension. Each week has the same structure:
+
+1. **One-sentence framing** — why this week exists in the arc
+2. **Learning objectives** — what you can do by Sunday night
+3. **Core concepts** — the actual math, stated precisely
+4. **Resource schedule** — a day-by-day pacing with linked videos and readings
+5. **Mini project** — a concrete Python deliverable that locks the concepts in
+6. **Self-check** — questions you should be able to answer without notes
+7. **Bridge** — how this week feeds into the next
+
+Budget **10–15 hours per week**. Videos alone take 3–5 hours; the project and self-check take another 5–8. If you have a heavier week at work, skip the extra-depth material at the bottom of each week, never the core.
+
+The end-state after Week 10: you crack open Morishima's Chapter 1 and think "I know exactly what this matrix is doing." We end with a post-course reading ladder that walks you into Morishima and the planning literature.
+
+---
+
+## Style and rendering reference {#sec-style-reference}
+
+::: {.callout-warning}
+This section is a developer reference, not part of the substantive book. It exists so the author has a single living place to copy-paste known-good patterns when adding new content. It will not be cut from the rendered output during v1, but it should be read as documentation rather than as content.
+:::
+
+### Marginalia (`.column-margin`)
+
+The next paragraph has a margin note attached to it. On screens wider than ~1100px the note appears in the right-hand margin; on narrower screens it falls below the paragraph. In the PDF (Typst) build the same content appears as a Tufte-style sidenote on the outer edge of the page.
+
+This is body text. The margin note is the subject of much of this project's design intent — it lets the author put parenthetical commentary, references, definitional asides, and pedagogical scaffolding *next to* the line of argument it qualifies, rather than below it as a footnote or buried inside parentheses.
+
+::: {.column-margin}
+This is a margin note. Use `:::{.column-margin}` blocks for editorial asides — short context, references, "see also Chapter X" pointers. Long technical sidebars belong in callout boxes inline.
+:::
+
+### Footnotes pushed to the margin
+
+The Quarto book is configured with `reference-location: margin`, so a footnote like this one[^demo-fn] renders as a sidenote in HTML and a Tufte-style sidenote in PDF.
+
+[^demo-fn]: This is a demo footnote. Because of the project's configuration it appears in the margin rather than at the bottom of the page.
+
+### A Plotly Python figure
+
+The figure below is rendered inline by Quarto's Jupyter engine. It serves as a reference implementation: any chapter that wants an interactive Python plot can copy this code-block pattern.
+
+```{python}
+#| label: fig-demo-plotly
+#| fig-cap: "Demo: a Cobb-Douglas utility surface as a Plotly figure."
+#| fig-cap-location: margin
+
+import numpy as np
+import plotly.graph_objects as go
+
+x = np.linspace(0.1, 10, 60)
+y = np.linspace(0.1, 10, 60)
+X, Y = np.meshgrid(x, y)
+alpha = 0.4
+U = X ** alpha * Y ** (1 - alpha)
+
+fig = go.Figure(data=[go.Surface(x=X, y=Y, z=U, colorscale="Viridis")])
+fig.update_layout(
+    title="u(x, y) = x^0.4 · y^0.6",
+    scene=dict(xaxis_title="x", yaxis_title="y", zaxis_title="u"),
+    width=600,
+    height=450,
+    margin=dict(l=0, r=0, b=0, t=40),
+)
+fig.show()
+```
+
+### An Observable widget (OJS)
+
+The next block is an Observable JS slider tied to a simple plot. It demonstrates the OJS embedding pattern for inline interactive widgets — the kind that drag-a-slider-watch-the-curve-move pedagogy benefits from.
+
+```{ojs}
+//| label: fig-demo-ojs
+
+viewof alpha_demo = Inputs.range([0.05, 0.95], {value: 0.4, step: 0.05, label: "Cobb-Douglas α"})
+
+curve_demo = {
+  const xs = d3.range(0.1, 10, 0.1);
+  const ys = xs.map(x => Math.pow(x, alpha_demo) * Math.pow(5, 1 - alpha_demo));
+  return Plot.plot({
+    width: 600,
+    height: 300,
+    x: { label: "x" },
+    y: { label: "u(x, 5)" },
+    marks: [
+      Plot.line(xs.map((x, i) => ({x, y: ys[i]})), { x: "x", y: "y", stroke: "steelblue" })
+    ]
+  });
+}
+```
+
+### Hypothesis-annotatable paragraph
+
+The paragraph below has nothing structurally special — every paragraph in this site is annotatable via Hypothesis, because `comments: hypothesis: true` is set globally in `_quarto.yml`. The point of the paragraph is to give the reader something concrete to try.
+
+> **Try it.** Click the Hypothesis tab on the right edge of the page (a small arrow). The Hypothesis client will open. Highlight any phrase in this paragraph and click "Annotate" or "Highlight". You will need a free Hypothesis account (<https://hypothes.is>). Annotations you create here are public by default. The author may at some point set up a private group for early-draft annotation; if so, the group code will be added in `CONTRIBUTING.md`.
+
+### A link to the demo Dash app
+
+The reference standalone application for the project is `apps/demo-budget-explorer/`. It implements a Cobb-Douglas budget-line explorer with two sliders (α and income M), two fixed-input fields (prices p₁ and p₂), and a plot showing the budget line, three indifference curves, and the optimum. It is the smoke-test for the Dash deployment pattern.
+
+Run locally:
+
+```bash
+cd apps/demo-budget-explorer
+pip install -r requirements.txt
+python app.py
+# then open http://localhost:8050
+```
+
+Once deployed to Render, the URL will be linked from `weeks/week-02-constrained.qmd`.
+
+---
+
+*End of style reference. The remainder of the book is substantive content.*

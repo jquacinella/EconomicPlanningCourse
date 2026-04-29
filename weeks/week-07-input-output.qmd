@@ -1,0 +1,37 @@
+---
+title: "Week 7 — Input-Output Analysis"
+description: "Leontief inverses, Hawkins-Simon, the dual price system, and labor values."
+order: 7
+---
+
+## Framing
+
+Wassily Leontief won the 1973 Nobel Prize for showing how an economy's inter-industry structure can be represented as a single matrix A, where Aᵢⱼ is the amount of good i needed to produce one unit of good j. Every result in the first half of Morishima's *Marx's Economics* is a statement about the algebra of this matrix. If you understand (I − A)⁻¹, you understand the backbone of mathematical Marxian and planning economics.
+
+## Learning objectives
+
+State the Leontief model. Compute the Leontief inverse L = (I − A)⁻¹ and interpret its entries (Lᵢⱼ = total — direct plus indirect — units of good i needed for one unit of *final demand* for good j). State the Hawkins-Simon productivity condition. Set up the dual price system pᵀ = pᵀA + vᵀ (where v is value added per unit, e.g. labor) and derive labor values. Simulate and interpret a demand shock.
+
+## Core concepts
+
+The matrix A of technical coefficients. Gross output x, final demand d, intermediate consumption Ax. The fundamental identity: x = Ax + d, hence x = (I − A)⁻¹ d = Ld. Neumann series interpretation: L = I + A + A² + A³ + ... (first-round, second-round, ... effects). Hawkins-Simon condition: all leading principal minors of (I − A) are positive — equivalently, Perron-Frobenius eigenvalue of A is less than 1. Price-value duality: p = pA + v (row vector equation) gives p = v(I − A)⁻¹ — which, when v is a vector of unit labor requirements, gives a vector of *labor values* in the Marxian sense. Output multipliers as column sums of L.
+
+## Resource schedule
+
+- Day 1–2: QuantEcon's *Input-Output Models* lecture, all the way through: <https://intro.quantecon.org/input_output.html>. Run all the code. This lecture uses real US BEA data and builds up the full machinery.
+- Day 3: Wikipedia's input-output model article, focus on the mathematical formulation and the extensions (dynamic IO, regional IO): <https://en.wikipedia.org/wiki/Input%E2%80%93output_model>
+- Day 4: Morishima, *Marx's Economics*, Chapter 1 "Dual definition of value" and Chapter 3 "Quantitative determination of relative value". PDF: <http://digamo.free.fr/morishimarx.pdf>. You're going to read this slowly and with a notebook open. Morishima introduces value as a solution to a simultaneous linear system, which is exactly the dual price system you set up computationally.
+- Day 5: Morishima Chapter 5 "Surplus value and exploitation" — the Fundamental Marxian Theorem (rate of exploitation > 0 iff rate of profit > 0) is stated in matrix form and proven in pages you can now follow. *Optional companion for critical reading*: alongside Morishima's Chapter 1 and 3, read Zhang's "Notes on Michio Morishima's Understanding of Marxian Economics" (*World Review of Political Economy* 10(3), 2019), open-access at <https://www.scienceopen.com/hosted-document?doi=10.13169/worlrevipoliecon.10.3.0280>. Zhang — a Chinese Marxist economist at Sichuan University — gives Morishima real credit for the mathematization but argues that the core formalization choices (value-as-aggregation-tool, the wage-numeraire in price equations) inherit Smithian rather than Marxian value theory. You'll get the full weight of this argument in a short seminar between Controversies 5 and 6, but reading Zhang alongside Morishima now means the critical frame is in your head while you're doing the absorption.
+- Day 6: Project.
+
+## Mini project — Two-sector IO model and demand shock
+
+Build a 2-sector economy (say, "food" and "machines") with technical matrix A = [[0.2, 0.3], [0.4, 0.1]] and direct labor coefficients v = [0.5, 0.6] (hours per unit of output). Final demand d = [100, 50]. Compute: (1) required gross outputs x; (2) Leontief inverse L; (3) total labor embodied in each unit of final demand — equivalently, the labor values of the two goods, p = v(I − A)⁻¹; (4) total labor used in the economy, vᵀ x. Now impose a demand shock: a 20% increase in food demand (d_food: 100 → 120). Compute the new x, the *change* in x for each sector, and decompose it into direct effects (A applied once) versus indirect effects (higher-order). Make a bar chart.
+
+## Self-check
+
+Why does the Leontief inverse capture both direct and indirect requirements? What's the economic meaning of the row sums versus column sums of L? In what sense is the labor-value vector p the "dual" of the output vector x? If A had a Perron-Frobenius eigenvalue greater than 1, what would (I − A)⁻¹ look like, and what would that mean for the economy?
+
+## Bridge
+
+You've now done input-output analysis as an accounting exercise. Week 8 turns it into a *planning* exercise: given resources and a set of final-demand targets, find a feasible plan — and if multiple plans are feasible, find the best one using LP.

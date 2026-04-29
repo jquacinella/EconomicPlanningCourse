@@ -1,0 +1,37 @@
+---
+title: "Week 3 — Linear Algebra Basics"
+description: "Matrix-vector multiplication, row/column pictures, rank, and the Leontief baby system."
+order: 3
+---
+
+## Framing
+
+The economics from Week 7 onward is fundamentally matrix economics: every sector is a row, every good is a column, and the relationships are linear. This week you make sure you can read a matrix as a transformation and not just a grid of numbers.
+
+## Learning objectives
+
+Fluent matrix-vector and matrix-matrix multiplication, including the "row picture" and "column picture" interpretations. Solve Ax = b by row reduction by hand on small cases. Compute rank and determinant of small matrices. Know when an inverse exists and what "linear independence" means geometrically. Read Ax = b as "find the combination of columns of A that equals b."
+
+## Core concepts
+
+Vectors in ℝⁿ as points and as arrows. Linear combinations, span, linear independence, basis. Matrix multiplication as composition of linear transformations. Row reduction / Gaussian elimination to RREF. Rank, column space, null space. Inverse matrices and when they exist (square + full rank). Determinant as "signed volume scaling factor of the transformation." Transpose and its geometric meaning (subtly: not "the inverse in disguise").
+
+## Resource schedule
+
+- Day 1: 3Blue1Brown *Essence of Linear Algebra* Chapters 1–4 (vectors, linear combinations, span, linear transformations, matrix multiplication). Watch these before everything else — the mental model you gain here compounds.
+- Day 2: Strang MIT 18.06 Lectures 1–3 (geometry of linear equations, elimination, multiplication and inverses). Strang's "row picture vs column picture" framing is the clearest in mathematics.
+- Day 3: 3Blue1Brown Chapters 5–8 (three-dimensional transforms, determinant, inverse, nonsquare matrices, dot products).
+- Day 4: Strang Lecture 4–5 (A = LU factorization, transposes, permutations) — watch lightly, you'll revisit if needed.
+- Day 5–6: Strang Lectures 9–10 on independence, basis, dimension; Lecture 6–7 on column space and null space. This is where abstract and concrete fuse. Work at least five exercises by hand from Strang's textbook Ch. 3 (a PDF copy is in most university libraries; the official book link is <https://math.mit.edu/linearalgebra/>).
+
+## Mini project — Solve a 3-sector mini-IO system in NumPy
+
+Build a 3×3 technical-coefficients matrix A (rows = sectors, columns = sectors) where A[i,j] = the amount of sector-i output needed to produce one unit of sector-j output. Make up plausible numbers, e.g. A = [[0.1, 0.2, 0.1], [0.3, 0.1, 0.2], [0.1, 0.3, 0.1]]. Pick a final-demand vector d = [100, 50, 80]. Compute x that solves (I − A)·x = d using three different methods — `np.linalg.solve`, explicit `np.linalg.inv(I − A) @ d`, and by implementing row reduction yourself using elementary row ops on the augmented matrix [I − A | d]. Verify they all agree. This is the baby version of the Leontief inverse you'll meet properly in Week 7.
+
+## Self-check
+
+What is the rank of a 3×5 matrix with three linearly independent columns? What does it mean geometrically that det(A) = 0? If Ax = b has no solution, what does that say about b relative to the column space of A? Why is `np.linalg.solve(A, b)` preferred over `np.linalg.inv(A) @ b` numerically?
+
+## Bridge
+
+Week 4 takes the matrix as transformation and asks: what are the special vectors that it just *scales* rather than rotates? Those are eigenvectors, and the scaling factors are eigenvalues — and they turn out to be the key to stability analysis, growth rates, and the Perron-Frobenius theorem that sits at the heart of Leontief economics.

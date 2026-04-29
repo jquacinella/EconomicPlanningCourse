@@ -1,0 +1,38 @@
+---
+title: "Week 1 — Multivariable Calculus"
+description: "Functions of several variables, gradients, contour maps, and the chain rule."
+order: 1
+---
+
+## Framing
+
+Before you can formalize a consumer choosing a bundle or a planner choosing an output vector, you need to be fluent in functions of several variables: surfaces, level sets, gradients, and chain rules.
+
+## Learning objectives
+
+By Sunday, you can: take partial and directional derivatives by hand and symbolically; read and draw contour maps of a 2-variable function; compute and interpret a gradient geometrically as "the direction of steepest ascent, perpendicular to the level set"; write out and use the multivariable chain rule; assemble a Hessian and know what it represents.
+
+## Core concepts
+
+Functions f: ℝⁿ → ℝ and their graphs as surfaces. Level sets {x : f(x) = c} and contour plots. Partial derivatives ∂f/∂xᵢ, the gradient vector ∇f, and directional derivatives Dᵥf = ∇f · v̂. The tangent plane and linearization f(x) ≈ f(x₀) + ∇f(x₀)·(x - x₀). The multivariable chain rule in matrix form: if x = x(t), then df/dt = ∇f · x'(t). The Hessian matrix of second partials.
+
+## Resource schedule
+
+Roughly 6 study days.
+
+- Day 1–2: 3Blue1Brown *Essence of Calculus* Chapters 1–7 (refresher on the single-variable story — derivatives, chain rule, integration). This is fast and visual; treat it as priming.
+- Day 3–4: MIT 18.02SC, Unit 2 — "Partial Derivatives" sessions. Work the session videos plus at least two recitation problems each on partials, gradients, and directional derivatives.
+- Day 5: MIT 18.02SC sessions on tangent planes and linearization + the Chain Rule session.
+- Day 6: The Hessian. No single great video here; read Evan Chen's Fall 2024 MIT notes on second-derivative tests: <https://ocw.mit.edu/courses/res-18-016-multivariable-calculus-recitation-notes-fall-2024/>
+
+## Mini project — Utility surface and contour map
+
+Pick a Cobb-Douglas utility function u(x, y) = x^α · y^(1-α) with α = 0.4. Using matplotlib, produce three linked plots: (1) a 3D surface plot of u over [0, 10] × [0, 10]; (2) a contour plot at the same domain with 10 level curves; (3) the contour plot overlaid with gradient vectors on a grid, computed from the analytic formula ∇u = (α·y/x · u, (1-α)·x/y · u) — equivalently just (∂u/∂x, ∂u/∂y). Visually verify: gradients are perpendicular to level curves. Then change α to 0.5 and to 0.2 and commit in-line notes on how the contour shape changes. This is the same object that becomes an "indifference curve" in Week 2.
+
+## Self-check
+
+State the definition of ∇f in one sentence, then draw why ∇f ⊥ level set. Take f(x, y) = x² + 3xy — compute the Hessian. If g(x, y, z) = ln(x) + ln(y) + ln(z) and (x, y, z) = (t, t², t³), compute dg/dt two ways (direct substitution and chain rule) and check they agree.
+
+## Bridge
+
+Everything here stays with you. In Week 2 the level set becomes a budget constraint, and the gradient's relationship to it becomes the first-order condition of constrained optimization.

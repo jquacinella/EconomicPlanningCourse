@@ -1,0 +1,24 @@
+---
+title: "Post-course: reading Morishima and beyond"
+description: "A reading ladder from the trilogy through Cockshott, the Chinese critical canon, and modern growth theory."
+---
+
+The 10 weeks were designed to get you to the point where you can open *Marx's Economics* and follow it. Here's the recommended reading order after Week 10:
+
+1. **Morishima, *Marx's Economics: A Dual Theory of Value and Growth* (1973).** PDF: <http://digamo.free.fr/morishimarx.pdf>. Read Part I and Part II carefully (you have the tools). Part III (the transformation problem) is historically important but computationally dense; skim on first pass. Part IV (reproduction scheme) rewards careful reading; Part V (capital and value) is the peak.
+
+2. **Cockshott & Cottrell, *Towards a New Socialism* (1993).** You already read Chapters 3 and 9 in Week 8. Now read the whole book. The critique of Soviet planning (Chapter 5), the treatment of labor tokens (Chapter 2), and the political-constitutional argument (Chapters 13–14) were only tangentially mathematical and you'll find you can engage with them at a new level having done the math.
+
+3. **Morishima, *Theory of Economic Growth* (1969).** This is the middle volume of the Morishima trilogy and the systematic treatment of multi-sector growth, including Morishima's extensions of von Neumann. It's the bridge between Marxian and modern growth theory.
+
+4. **Morishima, *Equilibrium, Stability and Growth* (1964).** The mathematical appendix of the trilogy — only dip in if you want to see the proofs.
+
+5. **The Chinese critical canon on the Japanese School of Mathematical Marxian Economics.** Before concluding the Morishima trilogy is the last word, read the three-paper sequence of Xian Zhang's critique and positive program — "Notes on Michio Morishima's Understanding of Marxian Economics" (*WRPE* 10(3), 2019), "A Critical Deconstruction of the Okishio Theorem" with Yufeng Xue (*WRPE* 13(2), 2022), and "The Formalization of Marx's Economics" (*WRPE* 14(1), 2023) — plus Bin Yu's companion "Analysis of the Okishio Theorem" (*WRPE* 13(2), 2022). All open-access on ScienceOpen. You'll have hit some of this in the between-controversies seminar; the full sequence is worth the revisit in light of the trilogy.
+
+6. **Barro & Sala-i-Martin, *Economic Growth* (2nd ed.).** The mainstream graduate growth theory textbook. Read Chapters 1–5 for the neoclassical backbone, Chapter 6 onward for endogenous growth.
+
+7. **Cockshott, *How the World Works* (2019).** A more recent and more accessible Cockshott book — worth reading as a capstone.
+
+8. **Paul Cockshott's YouTube channel** and academic papers — his *Computers and Economic Democracy* papers (co-authored with various Greek and Spanish economists in the 2010s) extend the planning LP machinery in directions your Week 8 project merely glimpsed.
+
+If you find yourself wanting deeper math: **Boyd & Vandenberghe, *Convex Optimization*** (free PDF), and **Bertsimas & Tsitsiklis, *Introduction to Linear Optimization***, are the two standard references. **Acemoglu, *Introduction to Modern Economic Growth*** is the most mathematically rigorous modern growth textbook.

@@ -1,0 +1,9 @@
+---
+title: "Appendix B — If you have extra time or want deeper depth"
+description: "Optional extensions for the over-achieving learner."
+---
+
+- Work selected exercises from Strang's *Introduction to Linear Algebra* textbook each week.
+- Re-derive Morishima's Chapter 3 results on your own after Week 7 before checking against his text.
+- Read Kantorovich's 1939 *Mathematical Methods of Organizing and Planning Production* (English translation available in *Management Science*, 1960) after Week 6 for historical context.
+- Implement a proper simplex method from scratch (not just calling a solver) as an extra Week 6 exercise.
