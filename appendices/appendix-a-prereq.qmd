@@ -1,0 +1,10 @@
+---
+title: "Appendix A — Pre-course checklist"
+description: "What to have set up before Week 1 begins."
+---
+
+- [ ] Python environment set up with the packages listed in the Master Resource section.
+- [ ] Jupyter or VS Code+Jupyter working.
+- [ ] A dedicated notebook per week, committed somewhere (GitHub private repo recommended given your setup).
+- [ ] Calendar blocks for the week — 2–3 hour sessions × 4 per week is a workable pattern.
+- [ ] Accept that you will fall behind at least once. That's fine. Don't skip weeks; slow down and catch up on the weekend.

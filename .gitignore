@@ -1,0 +1,42 @@
+# Quarto build output
+/_book/
+/_site/
+/.quarto/
+/_freeze/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+morishima-env/
+.python-version.local
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# uv / pip
+# (uv.lock IS checked in)
+pip-log.txt
+pip-wheel-metadata/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Personal notes (gitignored on purpose; can be re-included on a separate branch)
+/notes/
+
+# Ravel commercial files — author's working files, not redistributable by default
+ravel-files/*.rvl
+
+# Local environment overrides
+.env
+.env.local

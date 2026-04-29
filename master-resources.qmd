@@ -1,0 +1,51 @@
+---
+title: "Master resource list"
+description: "Linked once here, referenced by shorthand throughout."
+---
+
+## Primary video courses
+
+- **MIT 18.02SC Multivariable Calculus** (Auroux, Fall 2010 — Scholar edition, designed for independent learners): <https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/>
+- **MIT 18.06 Linear Algebra** (Gilbert Strang, Spring 2005, the canonical version): course page <https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2005/> · YouTube playlist <https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8>
+- **MIT 18.03SC Differential Equations** (Mattuck/Miller, Fall 2011 — Scholar edition): <https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/>
+- **3Blue1Brown — Essence of Calculus** (13 videos, ~3h total, visual intuition): <https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr>
+- **3Blue1Brown — Essence of Linear Algebra** (15 videos, ~3h total): <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>
+
+## QuantEcon lectures (the computational-economics backbone)
+
+- **Linear Programming** (intro): <https://intro.quantecon.org/lp_intro.html>
+- **Input-Output Models**: <https://intro.quantecon.org/input_output.html>
+- **The Solow-Swan Growth Model**: <https://intro.quantecon.org/solow.html>
+- **Dynamics in One Dimension** (useful for Week 10 stability intuition): <https://intro.quantecon.org/scalar_dynam.html>
+- Full undergraduate series landing page: <https://intro.quantecon.org/intro.html>
+
+## Planning-economics primary texts (free, legal PDFs)
+
+- **Cockshott & Cottrell, *Towards a New Socialism*** (1993, 2000 edition — author-hosted PDF): <https://users.wfu.edu/cottrell/socialism_book/new_socialism.pdf>
+- **"Mathematics to Plan an Economy"** (cibcom.org, Cockshott-tradition introduction to cyber-socialist calculation): <https://cibcom.org/wp-content/uploads/2022/06/Mathematics_to_plan_an_economy_.pdf>
+- **Cockshott, "Returning to Kantorovich"** (a full LP planning tutorial with lp_solve code): <https://paulcockshott.wordpress.com/returning-to-kantorovich/>
+- **Morishima, *Marx's Economics: A Dual Theory of Value and Growth*** (1973 — Internet Archive scan): <http://digamo.free.fr/morishimarx.pdf> · Archive.org mirror: <https://archive.org/details/marxseconomicsdu0000mori>
+
+## Books worth buying if you want the full-depth version
+
+- **Alpha C. Chiang & Kevin Wainwright, *Fundamental Methods of Mathematical Economics* (4th ed., McGraw-Hill 2005)** — the canonical math-econ textbook. This is the book graduate programs use for their "math camp" before first-year theory sequences. Written in a patient, economist-motivated style: each technique is introduced, worked through, then immediately shown doing economic work. It's the natural companion across Weeks 2–9, but especially Weeks 5–6 (Ch 9, 11, 12, 13 on unconstrained, multi-variable, equality-constrained, and Kuhn-Tucker optimization) and Week 9 (Ch 15–17 on differential equations). Worth owning; used copies of the 4th edition are cheap.
+- **Gilbert Strang, *Introduction to Linear Algebra* (6th ed.)** — the 18.06 companion. Strang's prose is as good as the lectures.
+- **Morishima, *Theory of Economic Growth* (1969)** and **Morishima, *Equilibrium, Stability and Growth* (1964)** — the other two volumes of the "Morishima trilogy". The 1973 *Marx's Economics* is written assuming you've read these; you haven't, but you'll get most of it anyway.
+- **Barro & Sala-i-Martin, *Economic Growth* (2nd ed., MIT Press)** — the standard graduate growth-theory reference. Read selectively for Week 10.
+
+## Extra tools
+
+- **IBM CPLEX LP Tutorial** (good, hands-on LP walk-through): <https://ibmdecisionoptimization.github.io/tutorials/html/Linear_Programming.html>
+- **Brad DeLong's Solow notebook** (a Jupyter version of the QuantEcon Solow model): <https://nbviewer.jupyter.org/github/braddelong/LS2019/blob/master/2019-08-08-Sargent-Stachurski.ipynb>
+- **Paul Cockshott's YouTube lectures** (Marx, materialism, mathematics and computing): search the channel for "Cockshott Lecture 1" — a full Fall 2021 course you can sample.
+
+## Python environment (do this once, before Week 1)
+
+```bash
+python -m venv morishima-env
+source morishima-env/bin/activate
+pip install numpy scipy sympy matplotlib jupyter pulp cvxpy networkx pandas
+pip install quantecon quantecon_book_networks
+```
+
+You own a MacBook Pro M1 Max with 32GB RAM — more than enough. Use VS Code with the Jupyter and Python extensions, or plain JupyterLab, whichever you already prefer.
