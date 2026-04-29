@@ -10,7 +10,10 @@ book:
   search: true
   repo-url: "https://github.com/jquacinella/EconomicPlanningCourse.git"
   repo-actions: [edit, source, issue]
-  downloads: [pdf, epub]
+  # PDF/EPUB build only on tagged releases for now — the Quarto Typst
+  # format currently emits an undefined `#callout(...)` and breaks per-push
+  # PDF renders. Restore `downloads: [pdf, epub]` once that's resolved.
+  # downloads: [pdf, epub]
   sharing: [twitter]
   cover-image: assets/images/cover.png
   page-navigation: true
