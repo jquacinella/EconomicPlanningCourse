@@ -1,7 +1,6 @@
 # Shared Quarto base configuration.
 # Every course's _quarto.yml inherits from this file via:
-#   profile:
-#     inherits: ../../shared/_quarto-base.yml
+#   inherits: ../../shared/_quarto-base.yml
 #
 # Paths here are relative to the course directory (two levels up from shared/).
 # Courses run `quarto render` from inside their own directory, so
@@ -10,17 +9,18 @@
 format:
   html:
     theme:
-      light: [cosmo, ../../shared/assets/css/custom.scss]
+      # Dark listed first → dark is the default; light available via toggle.
       dark: [superhero, ../../shared/assets/css/custom-dark.scss]
+      light: [cosmo, ../../shared/assets/css/custom.scss]
     toc: true
     toc-depth: 3
     toc-location: right
     number-sections: false
     grid:
-      sidebar-width: 300px
-      body-width: 1100px
-      margin-width: 300px
-      gutter-width: 1.0rem
+      sidebar-width: 250px
+      body-width: 1200px
+      margin-width: 250px
+      gutter-width: 1.5rem
     reference-location: margin
     citation-location: margin
     code-tools: true
