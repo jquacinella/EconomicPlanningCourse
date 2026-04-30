@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: _book
+  preview:
+    port: 4444
+    browser: false
 
 book:
   title: "The Calculation Course"

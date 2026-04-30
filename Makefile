@@ -24,7 +24,8 @@ CALC_DIR   := courses/the_calculation_course
 dev:
 	@echo "Starting quarto preview for the_calculation_course ..."
 	@echo "Open http://localhost:4444 — saves trigger instant rebuild."
-	cd $(CALC_DIR) && uv run quarto preview --port 4444 --no-browser
+	@echo "(port and no-browser are set in courses/the_calculation_course/_quarto.yml)"
+	cd $(CALC_DIR) && uv run quarto preview
 
 ## dev-notes: Live-reload Quartz notes site
 dev-notes:
