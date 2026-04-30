@@ -11,10 +11,10 @@ Piero Sraffa's 1960 book *Production of Commodities by Means of Commodities: Pre
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](/notes/the_calculation_course/controversies/controversy-04-sraffa/reading-notes/)
-- [Open questions](/notes/the_calculation_course/controversies/controversy-04-sraffa/questions/)
-- [Insights and connections](/notes/the_calculation_course/controversies/controversy-04-sraffa/insights/)
-- [References to revisit](/notes/the_calculation_course/controversies/controversy-04-sraffa/refs/)
+- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-04-sraffa/reading-notes/)
+- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-04-sraffa/questions/)
+- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-04-sraffa/insights/)
+- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-04-sraffa/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-04-sraffa/scratchpad.ipynb)
 :::
 

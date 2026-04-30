@@ -11,10 +11,10 @@ Where Week 2 dealt with equality constraints and smooth interiors, the economics
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](/notes/the_calculation_course/weeks/week-05-economic-opt/reading-notes/)
-- [Open questions](/notes/the_calculation_course/weeks/week-05-economic-opt/questions/)
-- [Insights and connections](/notes/the_calculation_course/weeks/week-05-economic-opt/insights/)
-- [References to revisit](/notes/the_calculation_course/weeks/week-05-economic-opt/refs/)
+- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-05-economic-opt/reading-notes/)
+- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-05-economic-opt/questions/)
+- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-05-economic-opt/insights/)
+- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-05-economic-opt/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-05-economic-opt/scratchpad.ipynb)
 :::
 

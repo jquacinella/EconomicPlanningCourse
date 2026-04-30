@@ -11,10 +11,10 @@ You have been happily using the Cobb-Douglas form throughout Weeks 1–9 as a te
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/reading-notes/)
-- [Open questions](/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/questions/)
-- [Insights and connections](/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/insights/)
-- [References to revisit](/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/refs/)
+- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/reading-notes/)
+- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/questions/)
+- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/insights/)
+- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-01-cobb-douglas/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-01-cobb-douglas/scratchpad.ipynb)
 :::
 

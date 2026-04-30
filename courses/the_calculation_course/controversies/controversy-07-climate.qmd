@@ -11,10 +11,10 @@ In October 2022 Cockshott, Cottrell, and Dapprich published *Economic Planning i
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](/notes/the_calculation_course/controversies/controversy-07-climate/reading-notes/)
-- [Open questions](/notes/the_calculation_course/controversies/controversy-07-climate/questions/)
-- [Insights and connections](/notes/the_calculation_course/controversies/controversy-07-climate/insights/)
-- [References to revisit](/notes/the_calculation_course/controversies/controversy-07-climate/refs/)
+- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-07-climate/reading-notes/)
+- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-07-climate/questions/)
+- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-07-climate/insights/)
+- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-07-climate/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-07-climate/scratchpad.ipynb)
 :::
 

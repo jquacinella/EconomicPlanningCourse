@@ -11,10 +11,10 @@ This is synthesis week. You'll look at three classes of dynamic economic model â
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](/notes/the_calculation_course/weeks/week-10-growth-stability/reading-notes/)
-- [Open questions](/notes/the_calculation_course/weeks/week-10-growth-stability/questions/)
-- [Insights and connections](/notes/the_calculation_course/weeks/week-10-growth-stability/insights/)
-- [References to revisit](/notes/the_calculation_course/weeks/week-10-growth-stability/refs/)
+- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-10-growth-stability/reading-notes/)
+- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-10-growth-stability/questions/)
+- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-10-growth-stability/insights/)
+- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-10-growth-stability/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-10-growth-stability/scratchpad.ipynb)
 :::
 
