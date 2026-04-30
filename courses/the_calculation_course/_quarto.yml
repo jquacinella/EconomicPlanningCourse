@@ -5,16 +5,6 @@ project:
     port: 4444
     browser: false
 
-# notes-base: base URL for the companion Quartz notes site.
-# Production value is set here. Override locally by running:
-#   QUARTO_PROFILE=local quarto preview
-# which merges _quarto-local.yml (sets notes-base to http://localhost:8080).
-website:
-  site-url: "https://jquacinella.github.io/EconomicPlanningCourse/courses/the_calculation_course"
-
-params:
-  notes-base: "https://jquacinella.github.io/EconomicPlanningCourse/notes"
-
 book:
   title: "The Calculation Course"
   subtitle: "A Computational-Economics Curriculum from Multivariable Calculus to Climate-Constrained Planning"
