@@ -58,19 +58,21 @@ def lerp_color(t: float, lo: str, hi: str) -> str:
 
 
 def main() -> None:
-    fig = plt.figure(figsize=(8, 10), dpi=200)
+    # 2.5:1 aspect ratio (3000x1200 at dpi=200) — Notion / banner proportions.
+    fig = plt.figure(figsize=(15, 6), dpi=200)
     fig.patch.set_facecolor(BG)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_facecolor(BG)
-    ax.set_xlim(-1.4, 1.4)
-    ax.set_ylim(-2.1, 1.4)
+    ax.set_xlim(-3.5, 3.5)
+    ax.set_ylim(-1.4, 1.4)
     ax.set_axis_off()
 
-    # Lay nodes out on a circle.
+    # Graph sits on the right; title block on the left.
+    GRAPH_CX = 1.7
     n = len(SECTORS)
     angles = np.linspace(np.pi / 2, np.pi / 2 + 2 * np.pi, n, endpoint=False)
     radius = 0.95
-    pos = {i: (radius * math.cos(a), radius * math.sin(a)) for i, a in enumerate(angles)}
+    pos = {i: (GRAPH_CX + radius * math.cos(a), radius * math.sin(a)) for i, a in enumerate(angles)}
 
     # Edges, weighted by A[i, j].
     G = nx.DiGraph()
@@ -111,21 +113,22 @@ def main() -> None:
         ax.scatter([x], [y], s=300, c=ACCENT, alpha=0.9, zorder=4)
         # Label outside the ring.
         a = angles[i]
-        lx = 1.18 * math.cos(a)
+        lx = GRAPH_CX + 1.18 * math.cos(a)
         ly = 1.18 * math.sin(a)
         ha = "left" if math.cos(a) > 0.05 else ("right" if math.cos(a) < -0.05 else "center")
         va = "bottom" if math.sin(a) > 0.05 else ("top" if math.sin(a) < -0.05 else "center")
-        ax.text(lx, ly, SECTORS[i], color=FG, fontsize=10, ha=ha, va=va,
+        ax.text(lx, ly, SECTORS[i], color=FG, fontsize=13, ha=ha, va=va,
                 fontweight="medium", zorder=5)
 
-    # Title block (well below the bottom-most "Construction" label).
-    ax.text(0, -1.55, "The Calculation Course", color=FG, fontsize=26,
+    # Title block on the left, vertically centered against the graph.
+    TITLE_X = -1.7
+    ax.text(TITLE_X, 0.32, "The Calculation Course", color=FG, fontsize=36,
             ha="center", va="center", fontweight="bold", family="serif")
-    ax.text(0, -1.80, "A Computational-Economics Curriculum",
-            color=FG, fontsize=12, ha="center", va="center",
+    ax.text(TITLE_X, -0.07, "A Computational-Economics Curriculum",
+            color=FG, fontsize=17, ha="center", va="center",
             alpha=0.85, family="serif", style="italic")
-    ax.text(0, -1.97, "from Multivariable Calculus to Climate-Constrained Planning",
-            color=FG, fontsize=10, ha="center", va="center",
+    ax.text(TITLE_X, -0.36, "from Multivariable Calculus to Climate-Constrained Planning",
+            color=FG, fontsize=14, ha="center", va="center",
             alpha=0.7, family="serif", style="italic")
 
     OUT.parent.mkdir(parents=True, exist_ok=True)

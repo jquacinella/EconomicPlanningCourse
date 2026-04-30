@@ -11,3 +11,13 @@
   padding-left: 0.6rem;
   line-height: 1.4;
 }
+
+figure:has(> .cover-banner),
+.cover-banner {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 1.5rem 0;
+  border-radius: 4px;
+}
