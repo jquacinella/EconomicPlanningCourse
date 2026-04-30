@@ -5,6 +5,9 @@ project:
     port: 4444
     browser: false
 
+website:
+  site-url: "https://jquacinella.github.io/EconomicPlanningCourse/courses/the_calculation_course"
+
 book:
   title: "The Calculation Course"
   subtitle: "A Computational-Economics Curriculum from Multivariable Calculus to Climate-Constrained Planning"

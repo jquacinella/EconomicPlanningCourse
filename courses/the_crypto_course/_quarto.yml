@@ -5,6 +5,9 @@ project:
     port: 4446
     browser: false
 
+website:
+  site-url: "https://jquacinella.github.io/EconomicPlanningCourse/courses/the_crypto_course"
+
 book:
   title: "The Crypto Calculation Course"
   subtitle: "Cryptocurrency, Blockchain, and the Ecosocialist Planning System"

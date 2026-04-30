@@ -5,6 +5,9 @@ project:
     port: 4445
     browser: false
 
+website:
+  site-url: "https://jquacinella.github.io/EconomicPlanningCourse/courses/201"
+
 book:
   title: "201 — Computational Reconstruction of Zhang's Marxian Formalization"
   subtitle: "A Sequel Course: Game Theory, Probability, and Cybernetics in Marxian Economics"
