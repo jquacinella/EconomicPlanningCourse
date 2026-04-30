@@ -11,11 +11,12 @@ TMPDIR="$(mktemp -d)"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 
 # Files we own and must never overwrite, even if Quartz upstream ships them.
+# NOTE: package.json and package-lock.json come from upstream Quartz on
+# purpose — they declare the `quartz` CLI bin and the v4 dependency tree
+# that `npm ci` and `npx quartz build` rely on. Don't add them here.
 PROTECTED=(
   quartz.config.ts
   quartz.layout.ts
-  package.json
-  package-lock.json
   README.md
   setup.sh
   .gitignore

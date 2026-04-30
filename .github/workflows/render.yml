@@ -26,15 +26,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v3
+        uses: astral-sh/setup-uv@v6
 
       - name: Install Python dependencies
         run: |
@@ -92,9 +92,10 @@ jobs:
       # ---------- Notes track (Quartz) ----------
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          # Quartz v4 requires Node >=22; using the current LTS.
+          node-version: "22"
 
       - name: Install Quartz (clones jackyzha0/quartz#v4 alongside our overrides)
         working-directory: ./quartz
@@ -103,6 +104,9 @@ jobs:
       - name: Install Quartz Node dependencies
         working-directory: ./quartz
         run: |
+          # setup.sh just brought in upstream's package.json and
+          # package-lock.json. `npm ci` installs the locked dependency tree
+          # and wires up the local `quartz` bin used in the next step.
           if [ -f package-lock.json ]; then
             npm ci
           else
@@ -111,6 +115,8 @@ jobs:
 
       - name: Build notes site with Quartz
         working-directory: ./quartz
+        # `npx quartz build` resolves to ./node_modules/.bin/quartz, which
+        # `npm ci` linked from upstream Quartz's package.json `bin` entry.
         run: npx quartz build
 
       - name: Verify Quartz build produced an index page
