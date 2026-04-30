@@ -11,10 +11,10 @@ Marx's "law of the tendential fall in the rate of profit" (LTFRP), laid out in *
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/reading-notes/)
-- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/questions/)
-- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/insights/)
-- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/reading-notes)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/questions)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/insights)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-05-okishio/refs)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-05-okishio/scratchpad.ipynb)
 :::
 

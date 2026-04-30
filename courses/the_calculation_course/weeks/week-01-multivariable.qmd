@@ -11,10 +11,10 @@ Before you can formalize a consumer choosing a bundle or a planner choosing an o
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/reading-notes/)
-- [Open questions]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/questions/)
-- [Insights and connections]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/insights/)
-- [References to revisit]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/reading-notes)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/questions)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/insights)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/weeks/week-01-multivariable/refs)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-01-multivariable/scratchpad.ipynb)
 :::
 
