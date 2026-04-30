@@ -17,10 +17,5 @@ book:
 
 # Inherit shared format/theme/execute settings from the monorepo base config.
 # Run `quarto render` from inside courses/the_crypto_course/.
-profile:
-  default:
-    inherits: ../../shared/_quarto-base.yml
-  print:
-    inherits: ../../shared/_quarto-base.yml
-    format:
-      pdf: {}
+# Print-profile overrides live in _quarto-print.yml (activated via QUARTO_PROFILE=print).
+inherits: ../../shared/_quarto-base.yml
