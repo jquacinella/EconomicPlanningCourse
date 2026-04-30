@@ -1,0 +1,41 @@
+# Print profile — activated via: QUARTO_PROFILE=print quarto render build-print/ --to pdf
+#
+# Overrides the default chapter list so the print artifact can be scoped
+# independently of the web edition. v1 ships identical to the default list;
+# edit when ready to produce a publication-targeted manuscript.
+
+book:
+  chapters:
+    - index.qmd
+    - master-resources.qmd
+    - part: weeks/part-i.qmd
+      chapters:
+        - weeks/week-01-multivariable.qmd
+        - weeks/week-02-constrained.qmd
+        - weeks/week-03-linear-algebra.qmd
+        - weeks/week-04-eigenvalues.qmd
+        - weeks/week-05-economic-opt.qmd
+        - weeks/week-06-lp-duality.qmd
+        - weeks/week-07-input-output.qmd
+        - weeks/week-08-planning.qmd
+        - weeks/week-09-diff-eq.qmd
+        - weeks/week-10-growth-stability.qmd
+    - post-course.qmd
+    - part: controversies/part-ii.qmd
+      chapters:
+        - controversies/controversy-01-cobb-douglas.qmd
+        - controversies/controversy-02-calculation.qmd
+        - controversies/controversy-03-transformation.qmd
+        - controversies/controversy-04-sraffa.qmd
+        - controversies/controversy-05-okishio.qmd
+        - controversies/seminar-chinese-critique.qmd
+        - controversies/controversy-06-money.qmd
+        - controversies/controversy-07-climate.qmd
+    - 201/placeholder.qmd
+    - where-this-lands.qmd
+
+format:
+  pdf:
+    # Print-specific styling overrides (margins, font sizes, etc.) go here
+    # when the author is ready to produce a print-targeted manuscript.
+    keep-tex: false
