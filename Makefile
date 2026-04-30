@@ -78,6 +78,7 @@ stitch:
 	mkdir -p $(SITE)
 	# Landing page at root
 	cp site-root/index.html $(SITE)/index.html
+	cp site-root/favicon.svg $(SITE)/favicon.svg
 	# Each course book at /courses/<name>/
 	@for course in $(COURSES); do \
 		if [ -d "courses/$$course/_book" ]; then \
