@@ -6,15 +6,21 @@ public/
 node_modules/
 npm-debug.log*
 
-# Files fetched by setup.sh from upstream Quartz. We commit only our overrides;
-# everything else is pulled in on first `bash setup.sh`.
+# Files fetched by setup.sh from upstream Quartz on first install. We commit
+# only our overrides (quartz.config.ts, quartz.layout.ts, README.md, setup.sh,
+# .gitignore, content symlink); everything below is pulled in on first
+# `bash setup.sh && npm ci`.
 quartz/
 docs/
 content/.gitkeep
 *.lock
+package.json
 package-lock.json
+tsconfig.json
+globals.d.ts
+index.d.ts
 
-# But DO commit our config and layout overrides — they are at the top of
+# But DO commit our config and layout overrides — they live at the top of
 # this directory and not in the ignored subpaths.
 !quartz.config.ts
 !quartz.layout.ts
