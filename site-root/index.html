@@ -175,26 +175,6 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    /* Local-dev notice shown only on localhost */
-    .local-notice {
-      display: none;
-      background: #fffbe6;
-      border: 1px solid #f0d060;
-      border-radius: 6px;
-      padding: 0.75rem 1rem;
-      font-size: 0.85rem;
-      color: #5a4a00;
-      margin-bottom: 2rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .local-notice {
-        background: #2a2500;
-        border-color: #6a5a00;
-        color: #e0c840;
-      }
-    }
   </style>
 </head>
 <body>
@@ -203,14 +183,6 @@
       <h1>Heterodox Econ Courses</h1>
       <p>A collection of computational-economics courses built as Quarto books with executable Python, interactive widgets, and Obsidian notes. Each course has a polished book track and a working notes track.</p>
     </header>
-
-    <div class="local-notice" id="local-notice">
-      <strong>Local preview:</strong> Course links point to the live deployed site at
-      <a href="https://jquacinella.github.io/EconomicPlanningCourse/" target="_blank" rel="noopener">
-        jquacinella.github.io/EconomicPlanningCourse
-      </a>.
-      To preview course books locally, run <code>quarto preview</code> from inside each course directory.
-    </div>
 
     <div class="courses">
 
@@ -222,8 +194,8 @@
             Ten weeks of mathematical foundations (calculus, linear algebra, optimization, input-output analysis, differential equations) followed by seven in-depth heterodox-economics controversies (Cobb-Douglas, socialist calculation, transformation problem, Sraffa, Okishio, monetary theory, climate planning). Designed to get you reading Morishima and Cockshott/Cottrell with full mathematical comprehension.
           </div>
           <div class="course-links">
-            <a class="course-link" data-path="/courses/the_calculation_course/">Open book →</a>
-            <a class="course-link" data-path="/notes/the_calculation_course/">Open notes →</a>
+            <a href="/courses/the_calculation_course/">Open book →</a>
+            <a href="/notes/the_calculation_course/">Open notes →</a>
           </div>
         </div>
         <div class="course-meta">
@@ -239,8 +211,8 @@
             A sequel to the Calculation Course. Implements Zhang Xian's game-theoretic, probabilistic, and cybernetic extensions to Marxian economics — the positive program sketched in his 2023 <em>WRPE</em> paper. Prerequisite: complete the Calculation Course including the Chinese-critique seminar.
           </div>
           <div class="course-links">
-            <a class="course-link" data-path="/courses/201/">Open book →</a>
-            <a class="course-link" data-path="/notes/201/">Open notes →</a>
+            <a href="/courses/201/">Open book →</a>
+            <a href="/notes/201/">Open notes →</a>
           </div>
         </div>
         <div class="course-meta">
@@ -256,8 +228,8 @@
             Examines cryptocurrency and blockchain technology through the lens of heterodox political economy. Covers cryptographic foundations, Bitcoin's Austrian ideological roots, Ethereum and programmable money, DeFi financialization, and the ecosocialist critique — asking what a socialist blockchain would actually need to do. Prerequisite: Calculation Course through Week 8 and Controversies 2 and 6.
           </div>
           <div class="course-links">
-            <a class="course-link" data-path="/courses/the_crypto_course/">Open book →</a>
-            <a class="course-link" data-path="/notes/the_crypto_course/">Open notes →</a>
+            <a href="/courses/the_crypto_course/">Open book →</a>
+            <a href="/notes/the_crypto_course/">Open notes →</a>
           </div>
         </div>
         <div class="course-meta">
@@ -275,44 +247,5 @@
       </p>
     </footer>
   </div>
-
-  <script>
-    /**
-     * Resolve course-link hrefs.
-     *
-     * On GitHub Pages the site is served from:
-     *   https://jquacinella.github.io/EconomicPlanningCourse/
-     * and the stitched _site/ layout means /courses/<name>/ and /notes/<name>/
-     * resolve correctly as root-relative paths.
-     *
-     * When opened locally (file:// or localhost) those root-relative paths
-     * don't resolve. Instead we rewrite them to absolute URLs on the live site
-     * and show a notice explaining what's happening.
-     */
-    (function () {
-      const DEPLOYED = "https://jquacinella.github.io/EconomicPlanningCourse";
-      const isLocal = location.protocol === "file:" ||
-                      location.hostname === "localhost" ||
-                      location.hostname === "127.0.0.1";
-
-      document.querySelectorAll("a.course-link").forEach(function (a) {
-        const path = a.getAttribute("data-path");
-        if (isLocal) {
-          // Point at the live deployed site so the links actually work.
-          a.href = DEPLOYED + path;
-          a.target = "_blank";
-          a.rel = "noopener";
-        } else {
-          // On the deployed site, use root-relative paths (no full origin
-          // needed; works for any custom domain too).
-          a.href = path;
-        }
-      });
-
-      if (isLocal) {
-        document.getElementById("local-notice").style.display = "block";
-      }
-    })();
-  </script>
 </body>
 </html>

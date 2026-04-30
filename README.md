@@ -83,19 +83,25 @@ npx quartz build --serve     # serve notes at http://localhost:8080
 
 Same pattern — `cd courses/<name>` then `uv sync` and `quarto preview`.
 
-### Course-catalog landing page (`site-root/index.html`)
+### Preview the full stitched site locally
 
-The top-level landing page is a plain static HTML file — no build step required. To preview it locally:
+The landing page (`site-root/index.html`) uses root-relative links (`/courses/...`, `/notes/...`) that only work when the full stitched `_site/` is served from its root — the same layout the CI produces for GitHub Pages. Use the `Makefile` to build and serve it:
 
 ```bash
-# Any of these work:
-python -m http.server 8000 --directory site-root   # then open http://localhost:8000
-npx serve site-root                                 # if you have Node
-open site-root/index.html                           # macOS direct open
-xdg-open site-root/index.html                       # Linux direct open
+# Build everything (all courses + Quartz notes) and serve at http://localhost:8000
+make preview
+
+# Or build without serving:
+make build
+
+# Build only the Calculation Course (faster during active study):
+make build-calc   # then: make stitch && python3 -m http.server 8000 --directory _site
+
+# Clean all build outputs:
+make clean
 ```
 
-In production the CI stitches it to `_site/index.html` (the root of the GitHub Pages site), so it's what visitors see at `https://jquacinella.github.io/EconomicPlanningCourse/`. The course cards link to `/courses/<name>/` (Quarto books) and `/notes/<name>/` (Quartz notes), which are the other two outputs stitched alongside it.
+`make help` lists all targets. Prerequisites: `quarto`, `uv`, `node`/`npm` (with Quartz set up via `quartz/setup.sh`).
 
 To edit the landing page, open `site-root/index.html` directly — it's self-contained HTML/CSS with no dependencies or framework. Add a new course card by copying one of the existing `<div class="course-card">` blocks and updating the title, description, links, and badge.
 
