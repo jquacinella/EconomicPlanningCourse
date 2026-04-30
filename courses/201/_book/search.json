@@ -1,0 +1,32 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "201 — Computational Reconstruction of Zhang’s Marxian Formalization",
+    "section": "",
+    "text": "0.1 About this course\nThis course is a sequel to The Calculation Course. It is currently a stub — the syllabus will be written after completing the seminar between Controversies 5 and 6 in the 101 course, once the author has real views about what the sequel should look like.\nSee the placeholder in the Calculation Course (201/placeholder.qmd) for the full rationale and planned scope.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>201 — Computational Reconstruction of Zhang's Marxian Formalization</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "201 — Computational Reconstruction of Zhang’s Marxian Formalization",
+    "section": "0.2 Prerequisites",
+    "text": "0.2 Prerequisites\nComplete all 10 weeks and all 7 controversies of The Calculation Course, with particular attention to:\n\nThe seminar on the Chinese critique of the Japanese School (between Controversies 5 and 6)\nControversy 3 (Transformation Problem) and Controversy 5 (Okishio’s Theorem)\nThe Zhang 2023 paper: “The Formalization of Marx’s Economics” (WRPE 14(1))",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>201 — Computational Reconstruction of Zhang's Marxian Formalization</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#planned-scope",
+    "href": "index.html#planned-scope",
+    "title": "201 — Computational Reconstruction of Zhang’s Marxian Formalization",
+    "section": "0.3 Planned scope",
+    "text": "0.3 Planned scope\nRoughly 8–10 weeks covering Zhang’s Vol I formalization program:\n\nValue theory formalization (the mapping f: A → w)\nCompetition as a dynamic game (prisoner’s dilemma payoff matrices)\nRealization uncertainty and crisis probability\nThe labor process as a cybernetic system\nUnemployment dynamics (Zhang’s differential equation)\nCapital accumulation and the LTFRP (game-theoretic route)\nPrimitive accumulation / deprivation process\nUnified computational framework\n\nThis page will be expanded into a full syllabus when the time comes.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>201 — Computational Reconstruction of Zhang's Marxian Formalization</span>"
+    ]
+  }
+]
