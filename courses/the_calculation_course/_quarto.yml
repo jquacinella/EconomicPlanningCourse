@@ -13,6 +13,7 @@ book:
   subtitle: "A Computational-Economics Curriculum from Multivariable Calculus to Climate-Constrained Planning"
   author: "MetaCoding Solutions"
   date: "today"
+  favicon: assets/images/favicon.svg
   search: true
   repo-url: "https://github.com/jquacinella/EconomicPlanningCourse.git"
   repo-actions: [edit, source, issue]
