@@ -11,10 +11,10 @@ The 20th-century Marxian tradition inherited Sraffa's neglect of money. Modern m
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-06-money/reading-notes/)
-- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-06-money/questions/)
-- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-06-money/insights/)
-- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-06-money/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/reading-notes/)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/questions/)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/insights/)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-06-money/scratchpad.ipynb)
 :::
 

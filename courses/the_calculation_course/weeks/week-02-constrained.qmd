@@ -18,10 +18,10 @@ Economics is almost never unconstrained. The method of Lagrange multipliers is t
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-02-constrained/reading-notes/)
-- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-02-constrained/questions/)
-- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-02-constrained/insights/)
-- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-02-constrained/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/weeks/week-02-constrained/reading-notes/)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/weeks/week-02-constrained/questions/)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/weeks/week-02-constrained/insights/)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/weeks/week-02-constrained/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-02-constrained/scratchpad.ipynb)
 :::
 

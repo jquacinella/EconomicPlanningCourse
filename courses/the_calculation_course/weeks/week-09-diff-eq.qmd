@@ -11,10 +11,10 @@ The economy moves. Capital accumulates, population grows, technology advances. T
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-09-diff-eq/reading-notes/)
-- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-09-diff-eq/questions/)
-- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-09-diff-eq/insights/)
-- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-09-diff-eq/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/weeks/week-09-diff-eq/reading-notes/)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/weeks/week-09-diff-eq/questions/)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/weeks/week-09-diff-eq/insights/)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/weeks/week-09-diff-eq/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-09-diff-eq/scratchpad.ipynb)
 :::
 

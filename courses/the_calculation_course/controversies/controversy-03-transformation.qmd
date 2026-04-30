@@ -11,10 +11,10 @@ This is the most famous internal-consistency charge against Marx's value theory,
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-03-transformation/reading-notes/)
-- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-03-transformation/questions/)
-- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-03-transformation/insights/)
-- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/controversies/controversy-03-transformation/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-03-transformation/reading-notes/)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-03-transformation/questions/)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-03-transformation/insights/)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-03-transformation/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-03-transformation/scratchpad.ipynb)
 :::
 

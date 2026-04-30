@@ -11,10 +11,10 @@ Wassily Leontief won the 1973 Nobel Prize for showing how an economy's inter-ind
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-07-input-output/reading-notes/)
-- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-07-input-output/questions/)
-- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-07-input-output/insights/)
-- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-07-input-output/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/weeks/week-07-input-output/reading-notes/)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/weeks/week-07-input-output/questions/)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/weeks/week-07-input-output/insights/)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/weeks/week-07-input-output/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-07-input-output/scratchpad.ipynb)
 :::
 

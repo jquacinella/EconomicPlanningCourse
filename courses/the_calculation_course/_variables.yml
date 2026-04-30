@@ -1,0 +1,4 @@
+# Quarto variables — referenced in .qmd files as {{< var notes-base >}}
+# Production value (GitHub Pages). Override locally with _quarto-local.yml:
+#   QUARTO_PROFILE=local quarto preview
+notes-base: "https://jquacinella.github.io/EconomicPlanningCourse/notes"

@@ -1,0 +1,30 @@
+<!-- notes-links.html: rewrites notes links at runtime based on hostname.
+     On localhost → points to http://localhost:8080 (make dev-notes)
+     On GitHub Pages → points to https://jquacinella.github.io/EconomicPlanningCourse/notes
+     Injected via include-in-header in _quarto.yml. -->
+<script>
+(function () {
+  const PROD_BASE = 'https://jquacinella.github.io/EconomicPlanningCourse/notes';
+  const LOCAL_BASE = 'http://localhost:8080';
+
+  function notesBase() {
+    return (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+      ? LOCAL_BASE
+      : PROD_BASE;
+  }
+
+  function rewriteNotesLinks() {
+    const base = notesBase();
+    // Rewrite any <a> whose href contains the production notes URL
+    document.querySelectorAll('a[href*="jquacinella.github.io/EconomicPlanningCourse/notes"]').forEach(function (a) {
+      a.href = a.href.replace(PROD_BASE, base);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteNotesLinks);
+  } else {
+    rewriteNotesLinks();
+  }
+})();
+</script>

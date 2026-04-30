@@ -11,10 +11,10 @@ This is the keystone week. You combine LP (Week 6) with input-output analysis (W
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-08-planning/reading-notes/)
-- [Open questions](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-08-planning/questions/)
-- [Insights and connections](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-08-planning/insights/)
-- [References to revisit](https://jquacinella.github.io/EconomicPlanningCourse/notes/the_calculation_course/weeks/week-08-planning/refs/)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/weeks/week-08-planning/reading-notes/)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/weeks/week-08-planning/questions/)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/weeks/week-08-planning/insights/)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/weeks/week-08-planning/refs/)
 - [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-08-planning/scratchpad.ipynb)
 :::
 
