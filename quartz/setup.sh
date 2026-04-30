@@ -61,11 +61,12 @@ declare -A COURSE_LINKS=(
 for name in "${!COURSE_LINKS[@]}"; do
   target="${COURSE_LINKS[$name]}"
   link="$HERE/content/$name"
-  if [[ ! -e "$link" ]]; then
+  if [[ -L "$link" ]]; then
+    # Symlink already exists (committed to git or from a previous run) — leave it alone.
+    echo "  exists: content/$name"
+  else
     ln -s "$target" "$link"
     echo "  created symlink: content/$name -> $target"
-  else
-    echo "  exists: content/$name"
   fi
 done
 
