@@ -1,0 +1,21 @@
+---
+title: "Part II — The Controversies"
+description: "Seven heterodox-economics controversies, plus a Chinese-critique seminar."
+---
+
+Part I gave you tools. Part II points them at the disputes the tools were forged in. The seven controversies and the seminar are not a survey — they are the arguments where the choice of mathematics actually mattered.
+
+Each controversy follows the same shape: a clear statement of what is being argued about, the formal models on each side, a computation you run yourself, and a verdict on what the math can and cannot settle.
+
+## The sequence
+
+1. **Cobb-Douglas** — does the production function describe technology, or just an accounting identity?
+2. **The Socialist Calculation Debate** — Mises, Hayek, Lange, and what Cockshott / Cottrell did to it once computers were cheap.
+3. **The transformation problem** — values to prices of production, and whether the system is determined.
+4. **Sraffa** — the standard commodity, capital reswitching, and the Cambridge UK critique of marginal productivity.
+5. **The Okishio theorem** — is the falling rate of profit a theorem, an artifact, or a misformulation?
+6. **The Chinese-school critique** *(seminar)* — Xian Zhang and Bin Yu on the Japanese School's reading of Marx.
+7. **Money and endogenous credit** — Minsky, Keen, and what happens when the model has a banking sector.
+8. **Climate-constrained planning** — a thirty-year multi-sector model with carbon as a hard constraint, the capstone the whole course is aimed at.
+
+The capstone (Controversy 7) uses every tool from Part I: input-output, optimization, duality, dynamics, and stability. If you've made it this far, you can build it.

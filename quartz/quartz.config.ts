@@ -2,14 +2,22 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz configuration for the Calculation Course notes section.
+ * Quartz configuration for the multi-course notes section.
  *
- * The notes site is published as a sub-section of the main book site at
- * `/notes/`. The book itself (Quarto) is served at the root.
+ * The notes site is published as a sub-section of the main site at `/notes/`.
+ * Content is organized by course under quartz/content/:
+ *   content/the_calculation_course/ -> courses/the_calculation_course/notes/
+ *   content/201/                    -> courses/201/notes/
+ *   content/the_crypto_course/      -> courses/the_crypto_course/notes/
+ *
+ * Resulting URLs:
+ *   /notes/the_calculation_course/weeks/...
+ *   /notes/201/weeks/...
+ *   /notes/the_crypto_course/weeks/...
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "The Calculation Course — Notes",
+    pageTitle: "Heterodox Econ Courses — Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -19,8 +27,14 @@ const config: QuartzConfig = {
     ignorePatterns: [
       "private",
       "templates",
-      ".obsidian",
-      "attachments/**/*.pdf",
+      // Obsidian vault config dirs (one per course vault)
+      "the_calculation_course/.obsidian",
+      "201/.obsidian",
+      "the_crypto_course/.obsidian",
+      // Don't serve raw PDF attachments
+      "the_calculation_course/attachments/**/*.pdf",
+      "201/attachments/**/*.pdf",
+      "the_crypto_course/attachments/**/*.pdf",
     ],
     defaultDateType: "modified",
     theme: {

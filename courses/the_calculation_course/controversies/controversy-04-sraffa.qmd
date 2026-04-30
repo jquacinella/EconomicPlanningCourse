@@ -1,0 +1,49 @@
+---
+title: "Controversy 4 — Sraffa vs. Marginalist Value Theory"
+description: "Production of Commodities by Means of Commodities — wage-profit frontier, the standard commodity, and reswitching."
+order: 4
+---
+
+## Framing
+
+Piero Sraffa's 1960 book *Production of Commodities by Means of Commodities: Prelude to a Critique of Economic Theory* is 99 pages of dense algebra, forty years in the writing, and arguably the most influential short book in 20th-century political economy outside Keynes. Its achievement: a complete theory of prices and income distribution derived from the technical structure of production plus *one* distributional parameter (wage or profit rate), with no reference to marginal utility, subjective preferences, or aggregate production functions. It provides the formal machinery that sank Samuelson's "surrogate production function" defense in the Cambridge Capital Controversy (via the reswitching paradox), offers a clean alternative to Marxian value theory for determining prices (Steedman's case in Controversy 3), and reconstructs a classical (Ricardo-Marx) tradition of price theory that had been dormant since the marginalist revolution. For your purposes, Sraffa is the keystone that connects the input-output machinery of Week 7 to the distributional questions at the center of political economy.
+
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/the_calculation_course/controversies/controversy-04-sraffa/reading-notes/)
+- [Open questions](/notes/the_calculation_course/controversies/controversy-04-sraffa/questions/)
+- [Insights and connections](/notes/the_calculation_course/controversies/controversy-04-sraffa/insights/)
+- [References to revisit](/notes/the_calculation_course/controversies/controversy-04-sraffa/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-04-sraffa/scratchpad.ipynb)
+:::
+
+## Learning objectives
+
+Set up and solve Sraffa's price equation for a multi-sector economy. Compute and plot the wage-profit frontier. Construct the "standard commodity" and understand why it matters (the frontier is linear in its units). Demonstrate reswitching on a two-technique example — this is the computational exhibit that ended the Cambridge Capital Controversy in Cambridge UK's favor. Explain what Sraffa's framework shares with Leontief (Week 7) and where it diverges. Understand why Sraffian prices don't require marginal productivity theory and what that means for the neoclassical story of factor returns.
+
+## Core concepts
+
+Sraffa's price equation: p = (1 + r)(pA + wl), where A is the technology matrix, l the labor coefficients, w the wage, r the uniform rate of profit, and p the price row-vector. n+2 unknowns, n equations — fix a numeraire and one of (r, w). Wage-profit frontier: as r ranges from 0 to its maximum r_max (the Perron-Frobenius eigenvalue of A in a particular normalization), w traces out a downward-sloping curve. The **standard commodity**: Sraffa's construction of a composite commodity in whose units the wage-profit relationship is *linear* — w = 1 − r/r_max. This is connected to the right eigenvector of A at the PF eigenvalue: the standard commodity has the same value composition as the economy's input structure. **Reswitching**: for two available techniques (A₁, l₁) and (A₂, l₂), technique 1 can be cost-minimizing at both r = 0 and r = r_high while technique 2 dominates at intermediate r. This violates the neoclassical story that lower interest rates always induce more "capital-intensive" production. The Cambridge critique of aggregate capital (Controversy 1) gets its sharpest mathematical form here: there is no well-defined "quantity of capital" that monotonically substitutes for labor as interest rates change. Ricardian invariable measure of value: what the standard commodity provides, solving a problem Ricardo wrestled with for his last years. Marx connection: Sraffian prices = prices of production from Controversy 3, reached without any detour through labor values.
+
+## Resource schedule
+
+Approximately 6 days.
+
+- Day 1–2: Sraffa, *Production of Commodities by Means of Commodities* (Cambridge University Press, 1960). Ninety-nine pages. Read slowly with pen and paper. Sraffa's examples are small — work them out by hand before moving on. Widely available through university libraries; out of print in some editions but easy to find secondhand.
+- Day 3: Pasinetti, *Lectures on the Theory of Production* (Columbia University Press, 1977), Chapters 4–5 — the cleanest pedagogical presentation of Sraffa's apparatus.
+- Day 4: Kurz & Salvadori, *Theory of Production: A Long-Period Analysis* (Cambridge 1995) — the modern comprehensive reference. Chapter 4 on single-product systems, Chapter 5 on joint production.
+- Day 5: Reswitching. Samuelson's 1966 *Quarterly Journal of Economics* "Summing Up" piece is the famous concession: read the final few pages. For worked reswitching examples in detail, Robert Vienneau's blog has dozens: <http://robertvienneau.blogspot.com>. For the definitive modern treatment of reswitching and capital reversing, see Petri's *General Equilibrium, Capital and Macroeconomics* (Elgar, 2004).
+- Day 6: Project.
+
+## Mini project — Sraffian prices, wage-profit frontier, and reswitching
+
+(1) Set up a two-sector Sraffian economy: technology matrix A (2×2 nonnegative, PF eigenvalue < 1), labor coefficient vector l. Compute the maximum rate of profit r_max as 1/(PF eigenvalue of A) − 1, using linalg machinery from Week 4. (2) For twenty values of r ∈ [0, r_max], solve for the corresponding wage w(r) with the numeraire "price of sector 1 = 1", and plot the wage-profit frontier. (3) Construct the standard commodity: find the right eigenvector of A corresponding to r_max, normalize, use as the numeraire. Re-plot the wage-profit relationship in standard-commodity units. Verify it's linear: w = 1 − r/r_max. Marvel. (4) Build a reswitching example: two techniques (A₁, l₁) and (A₂, l₂) chosen such that the cost functions cross twice as r varies. For each technique compute the wage-profit frontier; on a single plot show both frontiers and mark the switching points; annotate the reswitching region. (5) Compare with Marxian values: using the same A and l, compute the labor-value vector λ from Week 7. Check — are Sraffian prices at r = 0 (maximum wage) equal to labor values? (Yes.) Are they proportional to values at positive r? (Only if organic compositions are uniform across sectors — generally not.) (6) Write 300 words: what does your reswitching plot *mean* in plain English about the neoclassical story of factor returns? What does it say about the Cambridge Capital Controversy (Controversy 1)?
+
+## Self-check
+
+What role does marginal utility play in Sraffian price theory? (Answer: none.) What's the economic content of the standard commodity — why does Sraffa bother constructing it? Why is the wage-profit frontier always downward-sloping for a given technique? State the reswitching phenomenon in one sentence. What does Sraffa's framework share with the Leontief input-output framework (Week 7), and where does it diverge? Is the Sraffian framework compatible with the Marxian one? (Yes — they compute the same prices of production — though Sraffians tend to treat values as optional.)
+
+## Bridge
+
+Controversy 5 is the famous late-Marx claim that Sraffa's apparatus most directly endangers: the tendential fall in the rate of profit. If Sraffa lets you compute r directly from (A, l, w) with no reference to organic composition or values, then *what is Marx's LTFRP a claim about*, exactly? Okishio's 1961 theorem sharpens this into a counter-claim: productivity-enhancing technical change must *raise*, not lower, the rate of profit. The TSSI response challenges the foundation. The empirical evidence is real and contested.

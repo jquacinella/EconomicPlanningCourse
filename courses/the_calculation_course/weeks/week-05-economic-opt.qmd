@@ -1,0 +1,51 @@
+---
+title: "Week 5 — Economic Optimization"
+description: "Convexity, KKT conditions, and the bridge to linear programming."
+order: 5
+---
+
+## Framing
+
+Where Week 2 dealt with equality constraints and smooth interiors, the economics of planning and trade involves *inequality* constraints ("we have at most X units of steel"), non-negativity ("you can't produce −5 tons of wheat"), and corner solutions. Kuhn-Tucker conditions are Lagrange multipliers generalized to this world — and they're the theoretical bridge to linear programming.
+
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/the_calculation_course/weeks/week-05-economic-opt/reading-notes/)
+- [Open questions](/notes/the_calculation_course/weeks/week-05-economic-opt/questions/)
+- [Insights and connections](/notes/the_calculation_course/weeks/week-05-economic-opt/insights/)
+- [References to revisit](/notes/the_calculation_course/weeks/week-05-economic-opt/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-05-economic-opt/scratchpad.ipynb)
+:::
+
+## Learning objectives
+
+Set up and analyze unconstrained optimization with second-order conditions for multivariable functions. State and apply the Kuhn-Tucker (KKT) conditions for inequality-constrained problems. Understand convexity and why convex problems have unique global optima. Write and solve a consumer or firm problem in Python using scipy.optimize or cvxpy.
+
+## Core concepts
+
+Unconstrained optimization: ∇f = 0, Hessian negative-definite for maximum. Convex sets and convex functions: epigraph, convex combination. Why convex problems are "easy" — any local optimum is global. The KKT conditions: stationarity of Lagrangian, primal feasibility, dual feasibility (λ ≥ 0 for ≤ constraints), complementary slackness (λᵢ·gᵢ(x) = 0 — either the constraint binds or its multiplier is zero). Constraint qualifications (you can mostly ignore these but should know they exist).
+
+## Resource schedule
+
+<!-- TODO: marginalia candidate — the Chiang & Wainwright companion-text note could be a margin sidebar -->
+
+- **Primary text for this week and next: Chiang & Wainwright Ch 9, 11, 12, 13.** If you own the book, Chapter 9 (unconstrained optimization, one and n variables, second-order conditions), Chapter 11 (multi-variable maxima with economic applications — profit-max, cost-min), Chapter 12 (equality-constrained optimization with a clean treatment of the bordered Hessian that's better than most), and Chapter 13 (the KKT conditions and quasi-concavity) are the most direct path through this material in the whole literature. The examples are all economic — firms, consumers, production functions — which makes the mathematics feel earned rather than imposed. Work at least a dozen exercises across these four chapters; they are where the understanding actually settles.
+- Day 1: Convexity. The most accessible resource is Stephen Boyd's Stanford EE364a (Convex Optimization) Lecture 1–2 on YouTube: <https://www.youtube.com/playlist?list=PL3940DD956CDF0622>. Watch at 1.5× and don't try to absorb everything — you're building intuition.
+- Day 2: Boyd Lecture 3–4 (convex functions, operations that preserve convexity).
+- Day 3: KKT conditions. Boyd Lecture 9–10 covers duality and KKT. Also read Section 5.5 of the Boyd & Vandenberghe textbook, *Convex Optimization*, free PDF: <https://web.stanford.edu/~boyd/cvxbook/>. Then read Chiang Ch 13 alongside — Chiang's exposition of KKT is specifically aimed at economists and will stick better.
+- Day 4: Application to consumer theory. Read McAfee's *Introduction to Economic Analysis* Chapter 12 (consumer theory) and Chapter 14 (producer theory), free at <http://www.mcafee.cc/Introecon/>. Watch how corner solutions and non-negativity naturally produce KKT-style conditions.
+- Day 5: cvxpy. Do the cvxpy getting-started tutorial: <https://www.cvxpy.org/tutorial/intro/index.html>
+- Day 6: Project.
+
+## Mini project — Firm cost-minimization with cvxpy
+
+A firm produces a good with the Cobb-Douglas technology y = L^0.5 · K^0.5. Wage is w = 20, rental rate is r = 10. The firm wants to produce y = 100 at minimum cost, with L, K ≥ 0. Solve this three ways: (1) analytically using Lagrange — derive the cost function C(y, w, r); (2) numerically with cvxpy, reading off the optimal L, K; (3) verify Shephard's lemma — that ∂C/∂w = L* at the optimum. Then add a second constraint: L ≤ 40 (union-imposed labor cap). Re-solve with cvxpy. Report which constraints bind, what the dual variables are, and interpret.
+
+## Self-check
+
+What is the economic content of complementary slackness? Why is the sum of two convex functions convex, but not necessarily the product? State Jensen's inequality in your own words. When does the Lagrange method from Week 2 give you the KKT-correct answer without explicitly writing out the inequality constraints?
+
+## Bridge
+
+When the objective and all constraints are linear, the KKT framework specializes to the beautifully clean world of linear programming — with its own celebrated duality theorem, which turns out to be *exactly* the price-system duality of economic theory. That's Week 6.

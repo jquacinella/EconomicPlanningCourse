@@ -1,0 +1,27 @@
+---
+title: "The Crypto Calculation Course"
+description: "Cryptocurrency, blockchain technology, and their relationship to ecosocialist planning systems — a computational investigation."
+---
+
+## About this course
+
+This course is a companion to [The Calculation Course](/courses/the_calculation_course/). It is currently a **stub** — the syllabus is under development.
+
+The course examines cryptocurrency and blockchain technology through the lens of heterodox political economy, asking: what do these technologies actually do, what do they claim to do, and how do they relate to the ecosocialist planning tradition developed in the Calculation Course?
+
+## Planned scope
+
+The course will cover:
+
+- **Cryptographic and technical foundations** — hash functions, public-key cryptography, consensus mechanisms, smart contracts
+- **Bitcoin and the Austrian connection** — the ideological roots of Bitcoin in Austrian economics; Hayek's denationalization of money; what the calculation debate says about decentralized coordination
+- **Ethereum and programmable money** — smart contracts as planning primitives; DAOs as coordination mechanisms; the limits of on-chain governance
+- **DeFi and financialization** — automated market makers, liquidity pools, yield farming; how DeFi reproduces and amplifies capitalist financial dynamics
+- **The ecosocialist critique** — can blockchain technology serve planning rather than markets? Token systems, labor tokens, and the Cockshott-Dapprich tradition; what a socialist blockchain would actually need to do
+- **Empirical analysis** — on-chain data analysis with Python; measuring concentration, energy use, and financial flows
+
+## Prerequisites
+
+[The Calculation Course](/courses/the_calculation_course/) through at least Week 8 (Planning and Allocation) and Controversy 2 (The Socialist Calculation Debate) and Controversy 6 (Monetary Theory of Production).
+
+*This page will be expanded into a full syllabus when the time comes.*

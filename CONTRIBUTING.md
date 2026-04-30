@@ -1,18 +1,22 @@
-# Contributing to the Calculation Course
+# Contributing to the Heterodox Econ Courses Monorepo
 
 Conventions for adding new content. Aimed at the author, future collaborators, and Claude Code on follow-up tasks.
 
-The infrastructure is a Quarto book project with a Python execution engine, Tufte-style marginalia in both HTML and PDF outputs, Hypothesis annotation enabled on the deployed site, and standalone Dash apps as separately-deployed companions to specific chapters.
+The infrastructure is a multi-course monorepo. Each course is a Quarto book project with a Python execution engine, Tufte-style marginalia in both HTML and PDF outputs, Hypothesis annotation enabled on the deployed site, and standalone Dash apps as separately-deployed companions to specific chapters. All courses share a common theme via `shared/_quarto-base.yml`.
+
+**All course content lives under `courses/<name>/`.** Run `quarto render` and `uv sync` from inside the course directory, not from the repo root.
 
 If something below contradicts the actual behaviour of the build, the build is right and this file should be updated.
 
 ## Adding a new chapter or week
 
+All paths below are relative to the course directory (e.g. `courses/the_calculation_course/`).
+
 1. Choose the right directory:
    - `weeks/` for any new 101-arc mathematical week.
    - `controversies/` for any new Part II controversy or seminar.
    - `appendices/` for an appendix.
-   - `201/` for follow-on-course material.
+   - `201/` for follow-on-course material (within the calculation course).
 2. Pick a filename. Existing convention is `<area>-<NN>-<slug>.qmd`, e.g. `week-11-something.qmd`. Two-digit zero-padded ordering keeps the directory listing sorted.
 3. YAML front matter template (every `.qmd` file should have it):
 
@@ -25,7 +29,7 @@ If something below contradicts the actual behaviour of the build, the build is r
    ```
 
    The `order` is optional but useful for sorting; `description` is the social-card / TOC subtitle.
-4. Add the file to `_quarto.yml` under the right `chapters:` or `appendices:` block. Order within a Part is determined by listing order in `_quarto.yml`, not by the `order` front-matter field.
+4. Add the file to the course's `_quarto.yml` under the right `chapters:` or `appendices:` block. Order within a Part is determined by listing order in `_quarto.yml`, not by the `order` front-matter field.
 5. The week heading is *implicit* — it comes from the YAML `title`. Do not write `# Week N — Title` at the top of the body. Use `## Section` for within-chapter sections (Framing, Learning objectives, Core concepts, Resource schedule, Mini project, Self-check, Bridge).
 
 ## Adding marginalia
@@ -279,26 +283,27 @@ For the full daily-use workflow, see [`notes/_meta/workflow.md`](notes/_meta/wor
 
 Every book chapter (`.qmd` under `weeks/`, `controversies/`, `201/`, `appendices/`, plus the top-level `index.qmd` and friends) contains a single "Author's notes" callout near the top, immediately after the chapter's framing paragraph. The callout is collapsed by default, so casual readers don't see notes prominently; clicking the header expands it.
 
-The callout pattern:
+The callout pattern (for the Calculation Course; adapt paths for other courses):
 
 ```markdown
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes](/notes/weeks/week-NN-<slug>/reading-notes/)
-- [Open questions](/notes/weeks/week-NN-<slug>/questions/)
-- [Insights and connections](/notes/weeks/week-NN-<slug>/insights/)
-- [References to revisit](/notes/weeks/week-NN-<slug>/refs/)
-- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/notes/weeks/week-NN-<slug>/scratchpad.ipynb)
+- [Reading notes](/notes/the_calculation_course/weeks/week-NN-<slug>/reading-notes/)
+- [Open questions](/notes/the_calculation_course/weeks/week-NN-<slug>/questions/)
+- [Insights and connections](/notes/the_calculation_course/weeks/week-NN-<slug>/insights/)
+- [References to revisit](/notes/the_calculation_course/weeks/week-NN-<slug>/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-NN-<slug>/scratchpad.ipynb)
 :::
 ```
 
-**The `.author-notes` class is mandatory.** It is the marker the strip script (`assets/scripts/strip-author-notes.py`) uses to identify and remove these callouts when producing a print-targeted manuscript. A callout that's missing the class will leak into the print PDF.
+**The `.author-notes` class is mandatory.** It is the marker the strip script (`shared/assets/scripts/strip-author-notes.py`) uses to identify and remove these callouts when producing a print-targeted manuscript. A callout that's missing the class will leak into the print PDF.
 
-To produce a print-targeted PDF:
+To produce a print-targeted PDF (run from inside the course directory):
 
 ```bash
-python assets/scripts/strip-author-notes.py
+cd courses/the_calculation_course
+python ../../shared/assets/scripts/strip-author-notes.py
 QUARTO_PROFILE=print quarto render build-print/ --to pdf
 ```
 
@@ -308,20 +313,20 @@ The script reads source `.qmd` files, writes stripped copies to `build-print/`, 
 
 Within the Obsidian vault, you reference book chapters via wiki-links, e.g. `[[week-01]]` or `[[controversy-04]]`. These resolve to short alias pages under `notes/_book-aliases/` that link out to the corresponding book chapter and notes index.
 
-When adding a new book chapter, also add a matching alias file:
+When adding a new book chapter to the Calculation Course, also add a matching alias file:
 
 ```markdown
-<!-- notes/_book-aliases/week-NN.md -->
+<!-- courses/the_calculation_course/notes/_book-aliases/week-NN.md -->
 # Week N — <Title> (book chapter)
 
 This page is an alias. The polished chapter lives in the book.
 
-- **Open in book**: <{{SITE_URL}}/weeks/week-NN-<slug>/>
-- **Edit source**: <https://github.com/{{USERNAME}}/calculation-course/blob/main/weeks/week-NN-<slug>.qmd>
+- **Open in book**: <https://jquacinella.github.io/EconomicPlanningCourse/courses/the_calculation_course/weeks/week-NN-<slug>/>
+- **Edit source**: <https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/weeks/week-NN-<slug>.qmd>
 - **Notes for this unit**: [[weeks/week-NN-<slug>/index|Week N notes]]
 ```
 
-Replace `{{SITE_URL}}` and `{{USERNAME}}` with the deployed values once they're stable. Two-hop is intentional and preserves Obsidian's wiki-link autocomplete and backlinks. If the two-hop becomes annoying, see PRD Addendum 2 §6.1 for the link-rewriter alternative — defer until you've felt the friction.
+Two-hop is intentional and preserves Obsidian's wiki-link autocomplete and backlinks. If the two-hop becomes annoying, see PRD Addendum 2 §6.1 for the link-rewriter alternative — defer until you've felt the friction.
 
 Notes-to-notes wiki-links work natively with no special convention: `[[insights]]` resolves to the most-relevant insights file via Obsidian's vault-wide search.
 
@@ -329,24 +334,25 @@ Notes-to-notes wiki-links work natively with no special convention: `[[insights]
 
 Two pipelines, two preview commands, one stitched output site:
 
-- **Quarto** renders the book (`weeks/`, `controversies/`, etc.) to `_book/`. `quarto preview` from the repo root watches sources and serves at `localhost:4444`.
-- **Quartz** renders the notes vault (`notes/`) to `quartz/public/`. `cd quartz && npx quartz build --serve` watches the vault and serves at `localhost:8080`.
+- **Quarto** renders each course book to `courses/<name>/_book/`. Run `quarto preview` from inside the course directory (e.g. `courses/the_calculation_course/`); serves at `localhost:4444`.
+- **Quartz** renders all course notes vaults to `quartz/public/`. Run `cd quartz && npx quartz build --serve` from the repo root; serves at `localhost:8080`.
 
-In CI (`.github/workflows/render.yml`), both run sequentially, and their outputs are stitched into `_site/`:
+In CI (`.github/workflows/render.yml`), all course books render in parallel (matrix strategy), Quartz builds the notes, and the outputs are stitched into `_site/`:
 
 ```
 _site/
-├── index.html               # Book landing page (Quarto)
-├── weeks/                   # Book chapters
-├── controversies/
-└── notes/                   # Notes site (Quartz)
-    ├── index.html
-    ├── weeks/
-    ├── controversies/
-    └── _meta/
+├── index.html                          # Course catalog landing page (site-root/index.html)
+├── courses/
+│   ├── the_calculation_course/         # Quarto book output
+│   ├── 201/
+│   └── the_crypto_course/
+└── notes/                              # Quartz notes output
+    ├── the_calculation_course/
+    ├── 201/
+    └── the_crypto_course/
 ```
 
-First-time setup of the Quartz install on a new machine: `cd quartz && bash setup.sh && npm ci`. After that, `npx quartz build --serve` is the daily command. See `quartz/README.md` for details. The local URLs (`localhost:4444` vs. `localhost:8080`) differ from the deployed URLs (no port; notes under `/notes/`); periodically check that cross-links work in the deployed site.
+First-time setup of the Quartz install on a new machine: `cd quartz && bash setup.sh && npm ci`. After that, `npx quartz build --serve` is the daily command. See `quartz/README.md` for details. The local URLs (`localhost:4444` vs. `localhost:8080`) differ from the deployed URLs (no port; notes under `/notes/<course>/`); periodically check that cross-links work in the deployed site.
 
 ## Hypothesis annotation: etiquette and groups
 

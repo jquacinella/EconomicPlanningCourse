@@ -1,0 +1,53 @@
+[project]
+name = "201-zhang-formalization"
+version = "0.1.0"
+description = "Computational reconstruction of Zhang's Marxian formalization program"
+readme = "../../README.md"
+license = { text = "CC-BY-SA-4.0" }
+authors = [
+    { name = "MetaCoding Solutions" },
+]
+requires-python = ">=3.11,<3.13"
+
+dependencies = [
+    # Scientific Python core (shared with the_calculation_course)
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "sympy>=1.12",
+    "matplotlib>=3.8",
+    "plotly>=5.20",
+    "pandas>=2.2",
+    "networkx>=3.2",
+    "statsmodels>=0.14",
+    "pulp>=2.8",
+    "cvxpy>=1.5",
+    "jupyter>=1.0",
+    "jupyterlab>=4.1",
+    "quantecon>=0.7",
+    # Agent-based modeling (Zhang's competition-as-game and realization-uncertainty models)
+    "mesa>=2.3.0",
+    # Game theory (Zhang's prisoner's dilemma and repeated-game extensions)
+    "nashpy>=0.0.19",
+    # Stochastic processes / Markov chains (realization uncertainty, unemployment dynamics)
+    "markovchain>=0.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4",
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]

@@ -1,0 +1,50 @@
+---
+title: "Controversy 3 — The Transformation Problem"
+description: "Marx, Bortkiewicz, Morishima-Seton, Steedman, and the TSSI — three valuation conventions on the same three-sector economy."
+order: 3
+---
+
+## Framing
+
+This is the most famous internal-consistency charge against Marx's value theory, and it has been the central technical dispute inside Marxian economics for over a century. In *Capital* Vol. III, Ch. 9, Marx attempts to "transform" labor values into competitive prices of production (prices at which profit rates equalize across sectors), and claims that two aggregate identities hold: sum of prices = sum of values, and sum of profits = sum of surplus values. Bortkiewicz in 1907 pointed out that Marx's algorithm transformed outputs but not inputs — incomplete. When the full transformation is done (simultaneous equations for prices and rate of profit), *generically only one of the two aggregate identities can be preserved by choice of numeraire*. Whether this breaks Marx or merely revises him has divided the Marxian tradition ever since: Morishima and Seton rescued the core proposition with their Fundamental Marxian Theorem; Steedman in *Marx After Sraffa* argued values are "redundant"; Kliman and the Temporal Single-System Interpretation (TSSI) argue the whole "problem" is an artifact of simultaneist interpretation and disappears under temporal valuation. All the math you need is in your Week 7 toolkit.
+
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/the_calculation_course/controversies/controversy-03-transformation/reading-notes/)
+- [Open questions](/notes/the_calculation_course/controversies/controversy-03-transformation/questions/)
+- [Insights and connections](/notes/the_calculation_course/controversies/controversy-03-transformation/insights/)
+- [References to revisit](/notes/the_calculation_course/controversies/controversy-03-transformation/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-03-transformation/scratchpad.ipynb)
+:::
+
+## Learning objectives
+
+State the transformation problem precisely. Compute the value system and the price-of-production system for a three-sector economy. Show which of Marx's two aggregate identities holds and which fails in a Bortkiewicz-style simultaneous solution, and watch how the answer depends on the choice of numeraire. Prove (computationally) the Morishima-Seton Fundamental Marxian Theorem: rate of profit is positive iff rate of exploitation is positive. Implement the TSSI temporal alternative and see what changes. Come away with a clear view of what's really at stake: what parts of Marx survive the critique, what parts don't, and what this means — or doesn't — for Cockshott's planning program.
+
+## Core concepts
+
+Value system: λ = λA + l (where l is unit labor requirements per sector), solved as λ = l(I − A)⁻¹. Price of production system: p = (1 + r)(pA + wl), with w the wage and r the uniform rate of profit — n equations in n+2 unknowns (n prices, r, w), so we fix a numeraire and one distribution parameter. Marx's two aggregate identities: Σpᵢxᵢ = Σλᵢxᵢ and Σπᵢ = Σsvᵢ. Bortkiewicz's result: choose the numeraire such that one identity holds, the other generically fails. Morishima-Seton Fundamental Marxian Theorem: r > 0 iff exploitation rate e > 0, regardless of whether the two aggregate identities hold — this is what rescues the core Marxian proposition. Steedman's position (*Marx After Sraffa*, 1977): labor values are formally redundant — you can compute p and r from (A, l) and the real wage directly via Sraffa's machinery (Controversy 4), so why bother with the value system at all? The TSSI (Kliman, Freeman, McGlone): drop simultaneist valuation, interpret Marx temporally — inputs valued at prior-period prices, outputs at current prices — and both identities can be made to hold.
+
+## Resource schedule
+
+Approximately 6 days.
+
+- Day 1: Marx, *Capital* Vol. III, Ch. 9 ("Formation of a General Rate of Profit and Transformation of Commodity Values into Prices of Production"). Free at marxists.org: <https://www.marxists.org/archive/marx/works/1894-c3/ch09.htm>. This is the primary source of everything that follows. Read slowly, work his numerical example by hand.
+- Day 2: Morishima, *Marx's Economics*, Part III ("The Transformation Problem"), Chapters 6–7 — the mathematical statement. You already have the PDF: <http://digamo.free.fr/morishimarx.pdf>.
+- Day 3: Steedman's critique. *Marx After Sraffa* (1977) is widely available through libraries. The short version is Steedman's 1977 paper "Marx on the Rate of Profit" in *Capital and Class*. For a free summary from the critical perspective, Robert Vienneau's blog has good exposition: <http://robertvienneau.blogspot.com>.
+- Day 4: The TSSI response. Kliman, *Reclaiming Marx's Capital: A Refutation of the Myth of Inconsistency* (2007), selected chapters — especially Ch. 6 on the transformation problem. If you don't have access, Kliman's papers are partially free on the Marxist-Humanist Initiative site.
+- Day 5: Shaikh's defense via iterative transformation: "Marx's Theory of Value and the Transformation Problem" (1977, in *The Subtle Anatomy of Capitalism*, Jesse Schwartz ed.). Also relevant is Shaikh's more recent *Capitalism: Competition, Conflict, Crises* (Oxford 2016), Chapter 9.
+- Day 6: Project.
+
+## Mini project — Transform a three-sector economy three ways
+
+Set up the classic three-sector example: Sector I (means of production), Sector II (wage goods), Sector III (luxury goods). Use Marx's original numerical values from *Capital* Vol. III Ch. 9 (constant capital, variable capital, surplus value per sector). (1) Compute the value vector λ from λ = l(I − A)⁻¹. Verify that total value equals Marx's "value of product." (2) Attempt Marx's own (incomplete) transformation — transform output values at the average rate of profit, see what breaks. (3) Implement the proper Bortkiewicz-style simultaneous transformation: solve p = (1 + r)(pA + wl) together with a chosen numeraire. Show that, with the standard numeraire (say, sum of prices = sum of values), the aggregate profit identity fails by a small amount; switch to the alternative numeraire (sum of profits = sum of surplus values), show the price-value identity now fails. Report both. (4) Implement the Morishima-Seton FMT numerically: vary the real wage across a range, compute r and the exploitation rate e at each wage, plot both, and verify they change sign together. (5) Implement the TSSI temporal version: two-period model where t=0 prices value inputs into t=1 outputs, compute period-by-period profits, show how both identities can be preserved. (6) Write 400 words: does the transformation problem actually undermine Cockshott's program? (Main point: probably not — Cockshott uses labor values *directly* for planning, doesn't claim they equal prices of production, so the transformation problem is about an internal debate in interpretive Marxism rather than a load-bearing element of planning theory. But the debate matters for whether "exploitation" remains a coherent category.)
+
+## Self-check
+
+State Marx's two aggregate identities. Why can both not generically hold simultaneously in the Bortkiewicz solution? State the Morishima-Seton Fundamental Marxian Theorem in one sentence. What does TSSI *concede* to Bortkiewicz and what does it *reject*? What does Steedman's "redundancy" critique amount to — is he denying labor values exist, or denying they're *necessary* for determining prices? Does the transformation problem matter for Cockshott's planning apparatus? Why or why not?
+
+## Bridge
+
+Steedman's critique points directly forward: he argues that since Sraffa showed you can determine prices and distribution from (A, l) and one distribution parameter without reference to values, the Marxian value system is redundant. Controversy 4 is the serious study of that Sraffian apparatus — which turns out to have devastating independent implications for neoclassical theory too, as the Cambridge Capital Controversy already hinted.

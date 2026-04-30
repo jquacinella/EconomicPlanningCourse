@@ -14,10 +14,15 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
           globs: |
-            **/*.qmd
-            **/*.md
-            !_book/**
-            !.quarto/**
+            courses/**/*.qmd
+            courses/**/*.md
+            shared/**/*.md
+            site-root/**/*.md
+            README.md
+            CONTRIBUTING.md
+            !courses/**/_book/**
+            !courses/**/_freeze/**
+            !courses/**/.quarto/**
         continue-on-error: true
 
   links:
@@ -33,6 +38,7 @@ jobs:
             --exclude-mail
             --exclude '^https?://localhost'
             --exclude '^https?://[^/]*calculation-course\.app'
-            './**/*.qmd'
-            './**/*.md'
+            './courses/**/*.qmd'
+            './courses/**/*.md'
+            './shared/**/*.md'
           fail: false

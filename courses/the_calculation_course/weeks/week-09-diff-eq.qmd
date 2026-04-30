@@ -1,0 +1,48 @@
+---
+title: "Week 9 — Differential Equations"
+description: "First-order ODEs, linear systems, phase portraits, and the Solow simulation."
+order: 9
+---
+
+## Framing
+
+The economy moves. Capital accumulates, population grows, technology advances. The mathematics of continuous-time change is differential equations, and the specific tools you need for economics are: first-order linear ODEs (Solow model), systems of linear ODEs (Goodwin model, linearized growth), phase portraits (geometric understanding), and numerical simulation (when the equations aren't solvable by hand).
+
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/the_calculation_course/weeks/week-09-diff-eq/reading-notes/)
+- [Open questions](/notes/the_calculation_course/weeks/week-09-diff-eq/questions/)
+- [Insights and connections](/notes/the_calculation_course/weeks/week-09-diff-eq/insights/)
+- [References to revisit](/notes/the_calculation_course/weeks/week-09-diff-eq/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-09-diff-eq/scratchpad.ipynb)
+:::
+
+## Learning objectives
+
+Solve first-order linear and separable ODEs analytically. Solve 2×2 linear systems of ODEs by finding eigenvalues and eigenvectors of the system matrix. Classify equilibria of 2D systems (node, saddle, spiral, center) by the trace-determinant criterion. Simulate ODEs numerically with Euler's method and with `scipy.integrate.solve_ivp`. Draw and interpret a phase portrait.
+
+## Core concepts
+
+First-order linear ODE: dy/dt = ay + f(t). Separable ODEs. Systems: ẋ = Ax. Solution via eigenvalue decomposition: if A = PDP⁻¹ then x(t) = P·e^(Dt)·P⁻¹·x(0). Phase plane: plot trajectories in (x, y) space. Fixed points (equilibria): where ẋ = 0. Linearization around an equilibrium: Jacobian J; local behavior classified by Re(λ(J)). Classification: two negative reals = stable node; one positive one negative = saddle (unstable); complex with negative real parts = stable spiral; etc. Euler method: xₙ₊₁ = xₙ + h·f(xₙ). Its numerical instability for large h.
+
+## Resource schedule
+
+- **Companion reading: Chiang Ch 15 ("Continuous Time: First-Order Differential Equations"), Ch 16 ("Higher-Order Differential Equations"), and Ch 17 ("Discrete Time: First-Order Difference Equations").** If you own the book, these three chapters are a clean parallel track to MIT 18.03SC, worked entirely with economic examples (debt dynamics, market-stability models, cobweb theorems). Chiang's treatment of the discrete-time case (Ch 17) is especially good — MIT 18.03 only covers continuous time, and a lot of the economics literature is discrete-time.
+- Day 1: MIT 18.03SC Unit 1 — Introduction to ODEs, direction fields, separable and first-order linear equations. <https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/>
+- Day 2: MIT 18.03SC Unit 2 — Second-order linear equations (skim) and Unit 3 — Fourier (skip; optional). Main event is next day.
+- Day 3–4: MIT 18.03SC Unit 4 — "Linear Systems of First Order ODEs" — the whole unit. Phase portraits, eigenvalue-based classification, the trace-determinant plane. This is the conceptual core of the week.
+- Day 5: Numerical simulation. Read the `scipy.integrate.solve_ivp` documentation and work the examples: <https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html>. Do a side-by-side comparison of Euler vs RK4 on a known equation.
+- Day 6: Project.
+
+## Mini project — Solow growth dynamics via Euler
+
+The Solow model in continuous time: dk/dt = s·f(k) − δ·k, with f(k) = A·k^α. Take A = 2, α = 0.3, s = 0.3, δ = 0.1. Find the steady state k* analytically. Then: (1) simulate the ODE using your own hand-coded Euler method with step size h = 0.1, starting from three different initial capital levels k₀ ∈ {0.5, 3, 10}, and plot all three trajectories converging to k* on the same axes. (2) Reduce h to 0.01 and re-run — comment on any differences. (3) Redo with `scipy.integrate.solve_ivp` using RK45 and compare. (4) Plot the "Solow diagram": s·f(k) and δ·k on the same axes, with the intersection at k*. The story is done — you've now written the software version of the foundational growth model in economics.
+
+## Self-check
+
+For a 2D linear system ẋ = Ax, if trace(A) < 0 and det(A) > 0, what type of equilibrium is the origin? Why does the Solow model have a unique positive steady state when f is strictly concave? Why does Euler become unstable if h is too large, and what heuristic controls the safe step size? What's the relationship between the eigenvalues of the Jacobian and local stability?
+
+## Bridge
+
+Week 10 closes the loop: you take everything you've built — IO matrices, LP planning, linear algebra, eigenvalues, ODEs — and apply it to the central dynamic questions of economics: when do economies converge to a steady state, when do they grow in balance, and when do they oscillate or crash. You'll end the course ready to read Morishima.

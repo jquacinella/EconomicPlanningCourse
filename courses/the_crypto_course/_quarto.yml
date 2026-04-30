@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "The Crypto Calculation Course"
+  subtitle: "Cryptocurrency, Blockchain, and the Ecosocialist Planning System"
+  author: "MetaCoding Solutions"
+  date: "today"
+  search: true
+  repo-url: "https://github.com/jquacinella/EconomicPlanningCourse.git"
+  repo-actions: [edit, source, issue]
+  page-navigation: true
+
+  chapters:
+    - index.qmd
+
+# Inherit shared format/theme/execute settings from the monorepo base config.
+# Run `quarto render` from inside courses/the_crypto_course/.
+profile:
+  default:
+    inherits: ../../shared/_quarto-base.yml
+  print:
+    inherits: ../../shared/_quarto-base.yml
+    format:
+      pdf: {}

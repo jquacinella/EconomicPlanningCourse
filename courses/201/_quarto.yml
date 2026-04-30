@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "201 — Computational Reconstruction of Zhang's Marxian Formalization"
+  subtitle: "A Sequel Course: Game Theory, Probability, and Cybernetics in Marxian Economics"
+  author: "MetaCoding Solutions"
+  date: "today"
+  search: true
+  repo-url: "https://github.com/jquacinella/EconomicPlanningCourse.git"
+  repo-actions: [edit, source, issue]
+  page-navigation: true
+
+  chapters:
+    - index.qmd
+
+# Inherit shared format/theme/execute settings from the monorepo base config.
+# Run `quarto render` from inside courses/201/.
+profile:
+  default:
+    inherits: ../../shared/_quarto-base.yml
+  print:
+    inherits: ../../shared/_quarto-base.yml
+    format:
+      pdf: {}

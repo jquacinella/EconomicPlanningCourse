@@ -1,0 +1,51 @@
+# Shared Quarto base configuration.
+# Every course's _quarto.yml inherits from this file via:
+#   profile:
+#     inherits: ../../shared/_quarto-base.yml
+#
+# Paths here are relative to the course directory (two levels up from shared/).
+# Courses run `quarto render` from inside their own directory, so
+# ../../shared/... resolves correctly.
+
+format:
+  html:
+    theme:
+      light: [cosmo, ../../shared/assets/css/custom.scss]
+      dark: [superhero, ../../shared/assets/css/custom-dark.scss]
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    number-sections: false
+    grid:
+      sidebar-width: 300px
+      body-width: 1100px
+      margin-width: 300px
+      gutter-width: 1.0rem
+    reference-location: margin
+    citation-location: margin
+    code-tools: true
+    code-fold: show
+    fig-cap-location: margin
+    # JSXGraph runtime — loaded on every HTML page so chapter widgets work.
+    include-in-header:
+      - ../../shared/assets/jsxgraph-include.html
+    comments:
+      hypothesis: true
+
+  pdf:
+    documentclass: scrbook
+    papersize: a4
+    pdf-engine: typst
+    # If Typst proves insufficient, fall back to:
+    # pdf-engine: xelatex
+    # documentclass: tufte-book
+
+  epub:
+    toc: true
+    toc-depth: 2
+    cover-image: ../../shared/assets/images/cover.png
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false

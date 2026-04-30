@@ -1,0 +1,57 @@
+---
+title: "Week 2 — Constrained Optimization"
+description: "Lagrange multipliers, shadow prices, and the envelope theorem."
+order: 2
+---
+
+::: {.callout-note}
+## Interactive companion
+A live version of this week's Cobb-Douglas constrained optimization is available at: [budget-explorer.calculation-course.app](#)
+
+(Replace with actual deployed URL once the Dash app is deployed.)
+:::
+
+## Framing
+
+Economics is almost never unconstrained. The method of Lagrange multipliers is the workhorse: it's how you get from "maximize utility" to "marginal rate of substitution equals price ratio" — and the multiplier itself turns out to be a shadow price, the economic meaning that makes the whole machinery sing.
+
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/the_calculation_course/weeks/week-02-constrained/reading-notes/)
+- [Open questions](/notes/the_calculation_course/weeks/week-02-constrained/questions/)
+- [Insights and connections](/notes/the_calculation_course/weeks/week-02-constrained/insights/)
+- [References to revisit](/notes/the_calculation_course/weeks/week-02-constrained/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-02-constrained/scratchpad.ipynb)
+:::
+
+## Learning objectives
+
+You can set up and solve a constrained max/min problem with one equality constraint by Lagrange multipliers; state and apply the bordered-Hessian second-order condition for whether a critical point is a local max, min, or saddle; interpret the multiplier λ as the sensitivity of the optimum value to a relaxation of the constraint (i.e., a shadow price); do basic comparative statics via the implicit function theorem.
+
+## Core concepts
+
+The Lagrangian L(x, y, λ) = f(x, y) - λ·(g(x, y) - c). First-order conditions ∇f = λ·∇g — geometrically, "at the optimum, the level set of the objective is tangent to the constraint." Interpretation of λ: d(max value)/dc = λ. Second-order conditions and the bordered Hessian. Extension to multiple constraints. Implicit function theorem for comparative statics: if F(x, p) = 0 pins down x as a function of p, then dx/dp = -(∂F/∂x)⁻¹ (∂F/∂p). Envelope theorem as a cleaner statement of the same thing.
+
+## Resource schedule
+
+<!-- TODO: marginalia candidate — Chiang Ch 12 companion reading note could be margin material -->
+
+- **Companion reading: Chiang Ch 12 ("Optimization with Equality Constraints").** If you have the book, read this alongside the MIT videos. Chiang's treatment of the bordered Hessian and the envelope theorem is clearer than most, and his worked examples (utility maximization with Cobb-Douglas, cost minimization, output maximization subject to a cost constraint) are exactly the problems you'll meet in the mini project.
+- Day 1–2: MIT 18.02SC Unit 2, Part C sessions on Lagrange multipliers. Work the session problems and recitation videos. The Auroux lecture on Lagrange is especially clean.
+- Day 3: Khan Academy multivariable calculus section on constrained optimization (supplementary, visual). Search "Khan Academy Lagrange multipliers" on YouTube; the playlist is by Grant Sanderson (same person as 3B1B).
+- Day 4: The shadow-price interpretation. Read Simon & Blume (if you can get a copy) Chapter 19 — the envelope theorem section. If not, read Preston McAfee's free *Introduction to Economic Analysis* <http://www.mcafee.cc/Introecon/> on consumer choice; it does this exposition in clean, applied language.
+- Day 5: Implicit function theorem. MIT 18.02SC "Non-independent variables" session + Mattuck's supplementary note *N* on the 18.02 Fall 2007 page: <https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/pages/readings/supp_notes/>
+- Day 6: Project work.
+
+## Mini project — Constrained utility max in SymPy
+
+Using the same Cobb-Douglas u(x, y) = x^0.4 · y^0.6 from Week 1, set up the consumer problem max u subject to p₁·x + p₂·y = M, with p₁ = 2, p₂ = 3, M = 100. Solve it symbolically with SymPy: define variables, the Lagrangian, and use `sp.solve` on the three FOCs. Print out x*, y*, λ*, and the value u*. Then reproduce the *graphical* story: plot the budget line, three or four indifference curves, and the optimum point where the highest feasible indifference curve is tangent to the budget line. Finally, do an envelope-theorem check: re-solve with M = 101 and verify numerically that (new u*) − (old u*) ≈ λ*.
+
+## Self-check
+
+Why is λ called a "shadow price"? State the envelope theorem in words. At a Cobb-Douglas optimum, what is the relationship between the share parameter α and the fraction of income spent on good x? (Answer: α itself — derive it.) Geometrically, what is the bordered Hessian doing?
+
+## Bridge
+
+You've now used linear algebra informally — gradients, Jacobians. Week 3 steps back and builds the linear-algebraic apparatus properly, so that by Week 4 eigenvalues let you analyze large-scale economic systems.

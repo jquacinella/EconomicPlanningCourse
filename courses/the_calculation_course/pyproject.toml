@@ -1,0 +1,55 @@
+[project]
+name = "calculation-course"
+version = "0.1.0"
+description = "Computational-economics curriculum from multivariable calculus to climate-constrained planning"
+readme = "../../README.md"
+license = { text = "CC-BY-SA-4.0" }
+authors = [
+    { name = "MetaCoding Solutions" },
+]
+requires-python = ">=3.11,<3.13"
+
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "sympy>=1.12",
+    "matplotlib>=3.8",
+    "plotly>=5.20",
+    "pandas>=2.2",
+    "networkx>=3.2",
+    "statsmodels>=0.14",
+    "pulp>=2.8",
+    "cvxpy>=1.5",
+    "mesa>=2.3.0",
+    "jupyter>=1.0",
+    "jupyterlab>=4.1",
+    "quantecon>=0.7",
+    "sfc-models>=0.3.0",
+    "pysolve>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4",
+    "pytest>=8.0",
+]
+extended = [
+    "pysd>=3.14.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+# This project ships content, not a Python package. The wheel target exists
+# only so `uv sync` works against pyproject.toml; there are no Python modules
+# to install at the project root.
+bypass-selection = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]

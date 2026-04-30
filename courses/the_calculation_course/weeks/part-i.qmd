@@ -1,0 +1,27 @@
+---
+title: "Part I — The Mathematics"
+description: "A ten-week mathematical-economics bootcamp."
+---
+
+The first ten weeks build the mathematical apparatus you will need to read mid-twentieth-century mathematical Marxian economics, the planning literature, and the controversies in Part II without skipping equations.
+
+The arc is cumulative. Each week leans on the previous one and feeds the next; the bridge sentences at the end of every chapter make the dependency explicit. If you find yourself stuck, the prerequisite checklist in [Appendix A](../appendices/appendix-a-prereq.qmd) is the place to back up to.
+
+## The arc
+
+1. **Multivariable calculus** — partial derivatives, gradients, the geometry of the optimum.
+2. **Constrained optimization** — Lagrange multipliers and the Cobb-Douglas demo.
+3. **Linear algebra** — vectors, matrices, the column picture.
+4. **Eigenvalues and eigenvectors** — diagonalization, the spectral story.
+5. **Economic optimization** — production sets, profit maximization, cost minimization.
+6. **Linear programming and duality** — the simplex method and the dual.
+7. **Input-output analysis** — Leontief's matrix, $(I - A)^{-1}$, sectoral interdependence.
+8. **Planning models** — labor-time accounting, multi-sector planning under constraint.
+9. **Differential equations** — linear systems, phase portraits, equilibria.
+10. **Growth and stability** — von Neumann growth, Goodwin cycles, stability of the planned economy.
+
+By Sunday of Week 10 you should be able to crack open Morishima's *Marx's Economics: A Dual Theory of Value and Growth* (1973) and follow Chapter 1 as math, not as ideology.
+
+## What comes after
+
+[Post-course](../post-course.qmd) gives a reading ladder into the trilogy and the planning literature; [Part II](../controversies/part-ii.qmd) puts the math you just built up against seven of the disputes that define the field.

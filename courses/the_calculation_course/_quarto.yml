@@ -1,0 +1,98 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "The Calculation Course"
+  subtitle: "A Computational-Economics Curriculum from Multivariable Calculus to Climate-Constrained Planning"
+  author: "MetaCoding Solutions"
+  date: "today"
+  search: true
+  repo-url: "https://github.com/jquacinella/EconomicPlanningCourse.git"
+  repo-actions: [edit, source, issue]
+  # PDF/EPUB build only on tagged releases for now — the Quarto Typst
+  # format currently emits an undefined `#callout(...)` and breaks per-push
+  # PDF renders. Restore `downloads: [pdf, epub]` once that's resolved.
+  # downloads: [pdf, epub]
+  sharing: [twitter]
+  # cover-image is rendered explicitly as a banner at the top of index.qmd.
+  # Kept here only for EPUB output (which uses it as the proper cover page).
+  page-navigation: true
+
+  chapters:
+    - index.qmd
+    - master-resources.qmd
+    - part: weeks/part-i.qmd
+      chapters:
+        - weeks/week-01-multivariable.qmd
+        - weeks/week-02-constrained.qmd
+        - weeks/week-03-linear-algebra.qmd
+        - weeks/week-04-eigenvalues.qmd
+        - weeks/week-05-economic-opt.qmd
+        - weeks/week-06-lp-duality.qmd
+        - weeks/week-07-input-output.qmd
+        - weeks/week-08-planning.qmd
+        - weeks/week-09-diff-eq.qmd
+        - weeks/week-10-growth-stability.qmd
+    - post-course.qmd
+    - part: controversies/part-ii.qmd
+      chapters:
+        - controversies/controversy-01-cobb-douglas.qmd
+        - controversies/controversy-02-calculation.qmd
+        - controversies/controversy-03-transformation.qmd
+        - controversies/controversy-04-sraffa.qmd
+        - controversies/controversy-05-okishio.qmd
+        - controversies/seminar-chinese-critique.qmd
+        - controversies/controversy-06-money.qmd
+        - controversies/controversy-07-climate.qmd
+    - 201/placeholder.qmd
+    - where-this-lands.qmd
+
+  appendices:
+    - appendices/appendix-a-prereq.qmd
+    - appendices/appendix-b-extra-depth.qmd
+    - appendices/appendix-c-absorption.qmd
+
+# Inherit shared format/theme/execute settings from the monorepo base config.
+# All paths in the base config are relative to this course directory.
+# Run `quarto render` from inside courses/the_calculation_course/.
+profile:
+  default:
+    inherits: ../../shared/_quarto-base.yml
+  print:
+    inherits: ../../shared/_quarto-base.yml
+    book:
+      chapters:
+        # v1 ships the print profile identical to the default chapter list.
+        # Edit this when ready to scope the print artifact.
+        - index.qmd
+        - master-resources.qmd
+        - part: weeks/part-i.qmd
+          chapters:
+            - weeks/week-01-multivariable.qmd
+            - weeks/week-02-constrained.qmd
+            - weeks/week-03-linear-algebra.qmd
+            - weeks/week-04-eigenvalues.qmd
+            - weeks/week-05-economic-opt.qmd
+            - weeks/week-06-lp-duality.qmd
+            - weeks/week-07-input-output.qmd
+            - weeks/week-08-planning.qmd
+            - weeks/week-09-diff-eq.qmd
+            - weeks/week-10-growth-stability.qmd
+        - post-course.qmd
+        - part: controversies/part-ii.qmd
+          chapters:
+            - controversies/controversy-01-cobb-douglas.qmd
+            - controversies/controversy-02-calculation.qmd
+            - controversies/controversy-03-transformation.qmd
+            - controversies/controversy-04-sraffa.qmd
+            - controversies/controversy-05-okishio.qmd
+            - controversies/seminar-chinese-critique.qmd
+            - controversies/controversy-06-money.qmd
+            - controversies/controversy-07-climate.qmd
+        - 201/placeholder.qmd
+        - where-this-lands.qmd
+    format:
+      pdf:
+        # Print-specific styling overrides (margins, font sizes, etc.) go here
+        # when the author is ready to produce a print-targeted manuscript.

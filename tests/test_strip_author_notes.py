@@ -1,4 +1,4 @@
-"""Round-trip tests for ``assets/scripts/strip-author-notes.py``."""
+"""Round-trip tests for ``shared/assets/scripts/strip-author-notes.py``."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import importlib.util
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SCRIPT_PATH = REPO_ROOT / "assets" / "scripts" / "strip-author-notes.py"
+SCRIPT_PATH = REPO_ROOT / "shared" / "assets" / "scripts" / "strip-author-notes.py"
 
 
 def _load_module():

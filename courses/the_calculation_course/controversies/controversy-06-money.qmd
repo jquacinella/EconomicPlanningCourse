@@ -1,0 +1,68 @@
+---
+title: "Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy"
+description: "From Godley-Lavoie SFC modelling to Keen's debt dynamics to Cockshott-Dapprich labor tokens — the capstone."
+order: 7
+---
+
+## Framing
+
+The 20th-century Marxian tradition inherited Sraffa's neglect of money. Modern mainstream macroeconomics has a theory of money that is demonstrably wrong about how banks actually work (it's been admitted by the Bank of England itself, in a now-famous 2014 paper). In parallel, a heterodox tradition — post-Keynesian, circuitist, Minskyan — has developed the **monetary theory of production**, centered on the claim that money is endogenously created by banks through the act of lending, and that this monetary circuit is essential to how capitalism actually functions. Key figures: Wynne Godley and Marc Lavoie, who gave us stock-flow consistent (SFC) modeling; Augusto Graziani and the Italian circuitists; Hyman Minsky and his intellectual heir Steve Keen. This controversy is the direct answer to a question your Week 8 project merely gestured at: once you have a planned-economy LP, how do *investment*, *intertemporal coordination*, and *transition from capitalism* work? The Cockshott-Cottrell proposal uses labor tokens (IOUs for consumer goods, non-circulating, redeemable in consumption); Dapprich's 2023 extension lets token prices on consumer goods adjust toward market-clearing rates. This is the capstone. Everything connects.
+
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/the_calculation_course/controversies/controversy-06-money/reading-notes/)
+- [Open questions](/notes/the_calculation_course/controversies/controversy-06-money/questions/)
+- [Insights and connections](/notes/the_calculation_course/controversies/controversy-06-money/insights/)
+- [References to revisit](/notes/the_calculation_course/controversies/controversy-06-money/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-06-money/scratchpad.ipynb)
+:::
+
+## Learning objectives
+
+State the endogenous vs exogenous money debate precisely and know why endogenous is now the empirically settled position. Understand Graziani's monetary circuit as a distinct theoretical framework from both mainstream monetarism and traditional Marxism. Build a stock-flow consistent macroeconomic model from scratch and use it to show why "loans create deposits, not the other way round." Understand Minsky-Keen debt-dynamic models as genuine nonlinear systems that can endogenously produce crises. Know what functions money serves in a capitalist economy and, for each function, know the specific institutional substitute proposed in the Cockshott-Cottrell-Dapprich tradition. Finally: have *computationally verified* that a planned economy can coordinate investment without money, using your Week 8 planning LP extended intertemporally.
+
+## Core concepts
+
+*Endogenous money*: banks create deposits when they make loans; the central bank accommodates reserve demand; the "money multiplier" of textbooks has the causality reversed. Empirically established: BoE 2014 paper. *Monetary theory of production* (Graziani): production takes time; firms need monetary finance *before* they can sell output; banks create the money that starts the productive cycle; M → M' is the fundamental circuit. *Profit paradox*: if firms collectively borrow M to pay wages and then sell output for M', where does the "extra" M' − M come from? Resolution (Lavoie, Godley): through credit expansion and stock-flow accounting, interest payments, and multi-period dynamics. *Stock-flow consistent (SFC) modeling* (Godley-Lavoie): every flow is a change in some stock; every financial asset is someone else's liability; no accounting black holes. The "three balances" identity: government balance + private balance + foreign balance = 0. *Minsky-Keen financial instability*: debt dynamics are endogenous; the economy moves through hedge, speculative, and Ponzi financing regimes; crisis is internally generated. *Relevance to planning*: in a market economy, money coordinates (a) spot exchange, (b) unit of account, (c) store of value, (d) means of financing production across time. In a planned economy, physical allocation replaces (a) and (d) directly; unit of account (b) can be labor-hours or physical units; store of value (c) can be a consumer-goods claim (labor tokens). *Cockshott-Cottrell labor tokens*: issued in exchange for hours worked, redeemable at labor-content prices of consumer goods, explicitly non-circulating (no firm-to-firm tokens). *Dapprich extension* (2023): token prices of consumer goods are adjusted to clear markets, not fixed at labor content — a concession to the argument that labor content alone doesn't reflect intensity of preference. *Intertemporal planning*: replace the interest rate with a social time-preference discount factor in a multi-period LP.
+
+<!-- TODO: marginalia candidate — the Ergodicity sidebar below is structurally sidebar-ish and could become a full-width sidebar or expanded marginal column -->
+
+## Ergodicity sidebar
+
+The Minsky-Keen debt dynamics you'll implement in Version 3 are a textbook example of what Peters and Adamou (ergodicity economics) call *non-ergodic multiplicative processes*: interest compounds, leverage evolves multiplicatively, and any individual firm's (or household's) trajectory has a time-average growth rate that can diverge sharply from the ensemble average computed across all firms. This provides the mathematical language for why Keen-style crises look benign in aggregate statistics and catastrophic for individual actors — the aggregate ensemble-average tells you the average of survivors weighted by survivor size, not the representative individual experience. If you want to push Version 3 further after building it, add a simple extension: rather than a single representative firm, simulate a distribution of N firms with idiosyncratic leverage shocks, plot both the ensemble-average debt-to-income trajectory and a fan-chart of individual trajectories, and watch ensemble averaging hide most of the fragility until catastrophic. This is a natural and short follow-up experiment if you're curious. Primary reference: Peters & Adamou, *An Introduction to Ergodicity Economics* (Cambridge 2025), with Peters's 2019 *Nature Physics* review "The Ergodicity Problem in Economics" as a free shorter alternative.
+
+## Resource schedule
+
+Approximately 8 days — this one is longer and it earns the space.
+
+- Day 1: Endogenous money orthodoxy. Bank of England Quarterly Bulletin 2014 Q1, "Money Creation in the Modern Economy" by McLeay, Radia, Thomas. Free: <https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy>. Short and authoritative; shorter than a *New Yorker* article. This is a central bank admitting the textbooks are wrong.
+- Day 2: Lavoie, *Introduction to Post-Keynesian Economics* (Palgrave 2006), Chapter 3 on money and credit. A clean pedagogical overview.
+- Day 3: Graziani, *The Monetary Theory of Production* (Cambridge, 2003). A short book, ~150 pages. The core of the circuitist tradition.
+- Day 4–5: Godley & Lavoie, *Monetary Economics: An Integrated Approach to Credit, Money, Income, Production and Wealth* (Palgrave 2007). Free PDF: <http://digamo.free.fr/godleylavoie7.pdf>. Read Chapter 2 (accounting) and Chapter 3 (the SIM model) carefully. Chapter 4 (PC model) for portfolio choice. This is the methodology you'll implement.
+- Day 6: SFC survey. Nikiforos & Zezza, "Stock-Flow Consistent Macroeconomic Models: A Survey," Levy Institute Working Paper 891 (2017). Free: <https://www.levyinstitute.org/pubs/wp_891.pdf>. A modern overview of where the field has gone.
+- Day 7: Keen on financial instability. *Can We Avoid Another Financial Crisis?* (Polity 2017) for the accessible version. Keen's academic papers for the math — especially his derivation of endogenous debt dynamics from a simple set of accounting identities.
+- Day 8: Money in a planned economy. Dapprich, "Tokens Make the World Go Round: Socialist Tokens as an Alternative to Money" (*Review of Evolutionary Political Economy* 4, 2023). Open access: <https://link.springer.com/article/10.1007/s43253-022-00091-6>. Plus Dapprich & Cockshott, "Input-Output Planning and Information" (*Journal of Economic Behavior & Organization* 205, 2023). Finally, Cockshott & Cottrell's chapters on labor tokens in *Towards a New Socialism* (Chapter 2 especially).
+- Days 9–10: The capstone project.
+
+## Mini project — From a capitalist SFC model to a planned economy, in four versions
+
+This is the capstone. All six Controversies, all ten Weeks, all your tooling — cashed out into a single coherent notebook. Build it incrementally.
+
+*Version 1 — Baseline SIM.* Implement the Godley-Lavoie SIM model (Chapter 3 of their book): three sectors (households, firms, government), no banks, pure government-money economy. Simulate the stationary state. Perturb: increase government spending by 20%, trace the dynamic response over 100 periods. Verify stock-flow consistency at every time step (no accounting leaks).
+
+*Version 2 — Add endogenous bank credit.* Extend to include a banking sector that creates deposits when it makes loans to firms. Firms borrow to finance wage payments; workers spend wages on consumer goods; firms receive revenue, repay loans (with interest); deposits are extinguished. Simulate a credit-financed expansion. Confirm Graziani's circuit: money originates in bank lending, is validated by production and sale, is destroyed by repayment. Address the profit paradox computationally: show that in a multi-period model with growing credit, aggregate monetary profits are reconciled.
+
+*Version 3 — Minsky-Keen financial fragility.* Extend again: households borrow to finance consumption; debt-to-income ratios rise; investment responds to the valuation ratio (Tobin's q); monetary expansion initially looks healthy but eventually debt-servicing costs crowd out demand. Reproduce a Keen-style endogenous crisis: no external shock, the system produces instability from its own dynamics. Plot the collapse trajectory.
+
+*Version 4 — THE PLANNED-ECONOMY TRANSFORMATION.* Replace the banking sector with the Cockshott-Cottrell-Dapprich apparatus. Investment decisions are made by a planning LP (the Week 8 machinery), extended intertemporally — multi-period horizon, explicit social-time-preference discount factor δ instead of a market interest rate. Labor is compensated in tokens. Tokens are redeemable for consumer goods at prices adjusted (à la Dapprich) toward market-clearing rates, without circulating between firms. Run on the same underlying technology and preferences as Version 3. Compare: (a) stability — does the planned economy avoid the endogenous crisis of the Keen-Minsky version? (b) investment allocation — does it differ systematically? (c) consumption trajectories for households; (d) response to a negative productivity shock, compared across all four versions.
+
+Write 1,000 words (notebook markdown) interpreting the results. What roles did money play in Versions 1–3? Which of those roles persist in Version 4 in transmuted form? What genuinely goes away? What new coordination problems appear — and how does the LP solve them? Where, specifically, do you *not* trust your Version 4? What would the Boettke-Candela Austrian critique (from Controversy 2) point to as failure modes of your Version 4 that your simulation cannot detect?
+
+## Self-check
+
+State the endogenous money thesis. Why does the textbook "loanable funds" story get the causality backwards? State Graziani's profit paradox and explain how a multi-period SFC framework resolves it. Why does stock-flow consistency discipline macroeconomic modeling in a way that DSGE models typically do not? What specific roles does money play in a capitalist economy, and which of these persist in the Cockshott-Dapprich token proposal? In your Version 4, how did you handle intertemporal coordination without an interest rate — and does the social time-preference discount factor feel like a first-class substitute, or a hack? After all four versions: do you believe a planned economy can coordinate investment at scale? What did the computation teach you that the reading alone did not?
+
+## Bridge
+
+There's one more controversy worth attending to before you step away from this framework and apply it — because the single most politically urgent use case for the whole Cockshott-Cottrell-Dapprich planning program is climate. Controversy 7 is where the tools stop being just mathematically interesting and start being a serious candidate for how humanity might actually organize the decarbonization transition. It's the capstone-after-the-capstone.

@@ -1,0 +1,62 @@
+---
+title: "Controversy 2 — The Socialist Calculation Debate"
+description: "Mises, Hayek, Lange, Cockshott — implementing both sides and watching them argue."
+order: 2
+---
+
+## Framing
+
+This is the longest-running and most politically consequential methodological debate in 20th-century economics. It opens in 1920 with Ludwig von Mises's claim that rational economic calculation under socialism is strictly *impossible*; it runs through Oskar Lange's 1936 "market socialist" reply, Friedrich Hayek's 1945 reformulation of the argument in informational terms, Don Lavoie's 1985 Austrian revival, and Cockshott & Cottrell's computational counter-argument from the early 1990s onward. For you — someone whose technical work is precisely in the territory of "can we use modern information systems to run better economic coordination" — this is the debate where your politics and your tooling meet. By the end of this week you will have implemented both sides: the one-shot central planning LP (Kantorovich-Cockshott) and the iterative Lange-Lerner tâtonnement, and you will know from the inside which of the classical arguments survive modern computing and which don't.
+
+::: {.callout-note appearance="minimal" collapse="true" .author-notes}
+## Author's notes for this chapter
+
+- [Reading notes](/notes/the_calculation_course/controversies/controversy-02-calculation/reading-notes/)
+- [Open questions](/notes/the_calculation_course/controversies/controversy-02-calculation/questions/)
+- [Insights and connections](/notes/the_calculation_course/controversies/controversy-02-calculation/insights/)
+- [References to revisit](/notes/the_calculation_course/controversies/controversy-02-calculation/refs/)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-02-calculation/scratchpad.ipynb)
+:::
+
+## Learning objectives
+
+You can state Mises's 1920 impossibility claim precisely (note: it's narrower than it's usually presented — it's specifically about the *means of production*, not consumer goods, and it's a calculation claim, not an information claim). You can state Lange's market-socialist response and the tâtonnement procedure he proposes. You can state Hayek's 1945 reformulation — *the knowledge problem* — and explain why it's a genuinely different argument from Mises's. You can state Cockshott's computational response, including the N log N complexity claim, and know what it depends on. You can implement a small multi-sector economy both ways (LP and tâtonnement) in Python and empirically compare convergence, information flow, and robustness. Finally, you can say in specific technical terms *which parts of the Austrian argument survive modern computing and which don't*, without either hero-worshipping or strawmanning the Austrians.
+
+## Core concepts
+
+Mises's calculation argument: without private ownership of the means of production, no exchange of them, therefore no market-clearing prices for capital goods, therefore no common unit in which to compare alternative production plans. (Consumer goods can still have prices even under socialism — this distinction matters and is often lost in popular retellings.) Lange's market socialism: planners play Walrasian auctioneer — announce prices, firms told to produce where marginal cost equals price, planners adjust prices in proportion to excess demand. Known as *Lange-Lerner pricing* or socialist tâtonnement. Hayek's 1945 reformulation: the hard problem isn't calculation, it's *knowledge* — specifically "knowledge of the particular circumstances of time and place," dispersed across millions of actors, tacit, local, partly non-articulable. The price system is valuable primarily as an information-aggregation and coordination mechanism, not primarily as a computational one. Post-1970s mechanism design (Hurwicz, Maskin): formalizes this as the question of what institutions minimize communication costs for implementing desired allocations. Cockshott's computational response: input-output planning has complexity O(N log N) in the number of goods N (using iterative methods that exploit the sparsity of real technology matrices), which is tractable for N ~ 10⁸ on a modern laptop — and the national accounts of a real economy have that many line items or fewer. Dapprich's 2022 extension: modern LP solvers handle choice *between* technologies, so the argument that planners need to know all feasible production methods in advance is also defused.
+
+## Resource schedule
+
+Approximately 7 study days; this one's a bit heavier.
+
+- Day 1: Mises, "Economic Calculation in the Socialist Commonwealth" (1920). Free PDF at Mises Institute: <https://cdn.mises.org/Economic%20Calculation%20in%20the%20Socialist%20Commonwealth_Vol_2_3.pdf>. It's 50 pages in the Salerno edition. Read it the way you'd read any primary source you disagree with: charitably, looking for the strongest version of the argument. The core of the claim sits in the middle of the essay (sections on calculation without money-prices for the means of production) — give that section two passes.
+- Day 2: Hayek, "The Use of Knowledge in Society" (*American Economic Review* 1945). University of Chicago PDF: <https://home.uchicago.edu/~vlima/courses/econ200/spring01/hayek.pdf>. Alternative copy at <https://kysq.org/docs/Hayek_45.pdf>. Twelve pages; read twice. This is one of the most influential economics papers ever written — and the argument is *not* the same as Mises's, though it's often conflated with it.
+- Day 3: Lange's side of the debate. If you can find a copy, read Lange's 1936 paper "On the Economic Theory of Socialism" (*Review of Economic Studies* 4). It's paywalled but available through most university libraries. For a free modern summary, read the *Socialist Calculation Debate* Wikipedia article's "Lange model" section: <https://en.wikipedia.org/wiki/Socialist_calculation_debate>. And for a clean exposition of the tâtonnement mechanism Lange borrowed from Walras, the QuantEcon lecture *Equalizing Difference* and its neighbours on market equilibrium are good priming material.
+- Day 4: Cockshott & Cottrell, "Information and Economics: A Critique of Hayek" (1997). PDF at Glasgow: <https://www.dcs.gla.ac.uk/~wpc/reports/hayek/hayek.pdf>; mirror at Wake Forest: <https://users.wfu.edu/cottrell/socialism_book/hayek_critique.pdf>. This is the paper that applies Shannon-style information theory to Hayek's argument and shows where it breaks down as a *specifically* informational claim. For the companion paper on Mises, read Cottrell & Cockshott's "Calculation, Complexity and Planning" (*Review of Political Economy* 1993).
+- Day 5: The state of the debate. Read Dapprich & Greenwood, "Cybersocialism and the Future of the Socialist Calculation Debate" (*Studies in Political Economy*, 2024), free PDF: <https://westminsterresearch.westminster.ac.uk/download/9a880fc75c3050f2def2f72fa685b90c8d5db4734bef96d7801677306bed3e50/191339/17-1-art-4.pdf>. This is a fair, recent academic summary that treats both sides seriously. Then for the contemporary Austrian counter-position, read Boettke & Candela (2023), "On the Feasibility of Technosocialism" (*Journal of Economic Behavior & Organization* 205) — it's paywalled but findable, and it's the sharpest recent formulation of why some Austrians still think Cockshott's program fails even granting modern computing.
+- Day 6–7: Project.
+
+## Mini project — Planning LP vs Lange-Lerner tâtonnement
+
+Set up a 5-sector economy: technology matrix A (5×5 nonnegative, Perron-Frobenius eigenvalue < 1), labor coefficients v (5-vector), labor endowment L = 1000 hours, and a consumer demand system D(p) that maps prices to final-good demands — use a Cobb-Douglas demand system with budget share vector β and total consumer income wL (so d_i(p) = β_i · wL / p_i, where w is the wage and p is the price of consumer good i).
+
+*Version A — Central Planning LP (the Cockshott-Kantorovich way).* Formulate as: given β (known preferences) and L (known endowment), find x such that (I − A)x ≥ d, v·x ≤ L, x ≥ 0, maximizing a social-welfare objective (e.g., maximize the scale factor α such that d = α·β). Solve once with cvxpy. Record: optimal x*, the dual variables on each constraint (these are your "planning prices"), and the wall-clock time.
+
+*Version B — Lange-Lerner Tâtonnement (the market-socialist way).* Don't assume the planner knows A or v. Instead, implement the iterative procedure:
+
+1. Planners announce a price vector p_t and wage w_t.
+2. Firms (each knowing only their own column of A and their own v_j) solve: produce x_j to match the demand signal they receive.
+3. Consumers generate demand d_i(p_t) = β_i · w_t L / p_{t,i}.
+4. Compute excess demand: ED_t = d − (I − A)x.
+5. Update: p_{t+1,i} = p_{t,i} · (1 + η · ED_{t,i}) for some step size η, and normalize. Repeat until ‖ED‖ < ε.
+
+Now do five things: (1) Run both versions on the same economy, plot the tâtonnement's price trajectory, check it converges to the LP's dual prices. (2) Count iterations and total number of floating-point operations for each; compare. (3) Vary η — too small is slow, too large diverges, find the stability region. (4) *Hayek's scenario* — perturb a single column of A by 5% only on the firm's side; re-run tâtonnement. Does it still converge? How quickly? Can it track a slowly-varying A(t)? (5) *Cockshott's scenario* — scale the problem up to 50 sectors, then 500 sectors; time both approaches; check the N log N complexity claim empirically. Write 500 words interpreting the results with explicit reference to the readings. Does your experiment support Mises? Hayek? Cockshott? Where do they each have a point?
+
+## Self-check
+
+Why does Mises's argument specifically target means of production rather than consumer goods? (If you can't answer this in a sentence, re-read the Mises.) What exactly does Lange's tâtonnement assume about planners' information, and is that assumption realistic? State Hayek's knowledge problem as an information-theoretic claim — where specifically does Cockshott & Cottrell's reply say Hayek is wrong, and where does it concede that Hayek has a point? What does Cockshott's N log N complexity claim actually depend on — sparsity of A, some algebraic structure of the iterative solver, something else? Is your empirical simulation consistent with the claim? What happens to Mises's argument if you accept that consumer goods can have markets within a planned economy (which both Lange and Cockshott explicitly allow)?
+
+## Bridge
+
+You now have a concrete, experimentally-tested sense of the socialist calculation debate — probably a sharper sense than 95% of people who opine about it. Controversy 3 examines the internal consistency of the Marxian value theory that underlies the entire Cockshott program. If Marx's labor theory of value is *internally incoherent* — as was argued throughout the 20th century under the heading of the **Transformation Problem** — then the labor-hour-pricing apparatus of Cockshott/Cottrell loses its theoretical anchor. The math you'll need is entirely in your toolkit from Week 7.
