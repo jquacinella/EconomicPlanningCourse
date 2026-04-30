@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: _book
+  preview:
+    port: 4446
+    browser: false
 
 book:
   title: "The Crypto Calculation Course"

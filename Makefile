@@ -1,8 +1,10 @@
 # Makefile for the Heterodox Econ Courses monorepo.
 #
 # Day-to-day editing (live reload):
-#   make dev            — quarto preview for the Calculation Course (live reload, fast)
-#   make dev-notes      — Quartz notes site with live reload
+#   make dev / dev-calc  — Calculation Course at http://localhost:4444
+#   make dev-201         — 201 course at http://localhost:4445
+#   make dev-crypto      — Crypto Course at http://localhost:4446
+#   make dev-notes       — Quartz notes site at http://localhost:8080
 #
 # Full-site build (one-shot, for checking before push):
 #   make build          — build all courses + notes into _site/
@@ -16,16 +18,26 @@
 COURSES    := the_calculation_course 201 the_crypto_course
 SITE       := _site
 PORT       := 9200
-CALC_DIR   := courses/the_calculation_course
 
-.PHONY: build preview dev dev-notes build-calc build-notes stitch clean help
+.PHONY: build preview dev dev-calc dev-201 dev-crypto dev-notes build-calc build-notes stitch clean help
 
-## dev: Live-reload quarto preview for the Calculation Course (use this day-to-day)
-dev:
-	@echo "Starting quarto preview for the_calculation_course ..."
-	@echo "Open http://localhost:4444 — saves trigger instant rebuild."
-	@echo "(port and no-browser are set in courses/the_calculation_course/_quarto.yml)"
-	cd $(CALC_DIR) && uv run quarto preview
+## dev-calc: Live-reload quarto preview for the Calculation Course (port 4444)
+dev-calc:
+	@echo "Starting quarto preview for the_calculation_course at http://localhost:4444"
+	cd courses/the_calculation_course && uv run quarto preview
+
+## dev-201: Live-reload quarto preview for the 201 course (port 4445)
+dev-201:
+	@echo "Starting quarto preview for 201 at http://localhost:4445"
+	cd courses/201 && uv run quarto preview
+
+## dev-crypto: Live-reload quarto preview for the Crypto Course (port 4446)
+dev-crypto:
+	@echo "Starting quarto preview for the_crypto_course at http://localhost:4446"
+	cd courses/the_crypto_course && uv run quarto preview
+
+## dev: Alias for dev-calc (default course)
+dev: dev-calc
 
 ## dev-notes: Live-reload Quartz notes site
 dev-notes:
@@ -52,7 +64,7 @@ build-courses:
 
 ## build-calc: Build only the Calculation Course
 build-calc:
-	cd $(CALC_DIR) && uv run quarto render --to html
+	cd courses/the_calculation_course && uv run quarto render --to html
 
 ## build-notes: Build the Quartz notes site into quartz/public/
 build-notes:
