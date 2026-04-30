@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0009a4030f8b573446c5eb18f8660956.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d467529ee50aac4903b480e488badc68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark-81fd8d4130ff963cba2fb35d4c73f6bf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -129,22 +129,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
      the extension's bundled assets. -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
 <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
-<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+<!-- Font picker: injected into every page via include-in-header in _quarto.yml -->
+<!-- Loads Google Fonts lazily, applies via CSS custom property, persists in localStorage -->
+<style>
+  /* ── Font definitions ─────────────────────────────────────────────────── */
+  /* Fonts are loaded on demand when selected, not all upfront. */
 
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script>
-window.PlotlyConfig = {MathJaxConfig: 'local'};
-if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-</script>
-<script type="module">import "https://cdn.plot.ly/plotly-3.5.0.min"</script>
+  :root {
+    --reader-font: 'Source Serif 4', Georgia, serif;
+  }
 
+  body {
+    font-family: var(--reader-font) !important;
+  }
 
+  /* ── Picker widget ────────────────────────────────────────────────────── */
+  #font-picker-container {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(30, 30, 40, 0.92);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.78rem;
+    color: #ccc;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    font-family: system-ui, sans-serif;
+    transition: opacity 0.2s;
+  }
 
-</head>
+  #font-picker-container:hover {
+    opacity: 1 !important;
+  }
 
-<body class="nav-sidebar floating slimcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+  #font-picker-container label {
+    white-space: nowrap;
+    user-select: none;
+    opacity: 0.7;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  #font-picker {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 5px;
+    color: #eee;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    cursor: pointer;
+    font-family: system-ui, sans-serif;
+    outline: none;
+  }
+
+  #font-picker:focus {
+    border-color: rgba(255,255,255,0.35);
+  }
+
+  #font-picker option {
+    background: #1e1e2e;
+    color: #eee;
+  }
+</style>
+
+</head><body class="nav-sidebar floating slimcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -304,7 +359,111 @@ if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.M
     } else {
       toggleColorMode(false);
     }
-  </script>
+  </script><div id="font-picker-container" title="Change reading font">
+  <label for="font-picker">Aa</label>
+  <select id="font-picker">
+    <option value="source-serif-4">Source Serif 4</option>
+    <option value="lora">Lora</option>
+    <option value="merriweather">Merriweather</option>
+    <option value="ibm-plex-serif">IBM Plex Serif</option>
+    <option value="inter">Inter</option>
+    <option value="system">System default</option>
+  </select>
+</div>
+
+<script>
+(function () {
+  const STORAGE_KEY = 'econ-course-font';
+
+  const FONTS = {
+    'source-serif-4': {
+      family: "'Source Serif 4', Georgia, serif",
+      gfUrl: 'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&display=swap',
+    },
+    'lora': {
+      family: "'Lora', Georgia, serif",
+      gfUrl: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap',
+    },
+    'merriweather': {
+      family: "'Merriweather', Georgia, serif",
+      gfUrl: 'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap',
+    },
+    'ibm-plex-serif': {
+      family: "'IBM Plex Serif', Georgia, serif",
+      gfUrl: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap',
+    },
+    'inter': {
+      family: "'Inter', system-ui, sans-serif",
+      gfUrl: 'https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap',
+    },
+    'system': {
+      family: 'system-ui, -apple-system, sans-serif',
+      gfUrl: null,
+    },
+  };
+
+  const loadedFonts = new Set();
+
+  function loadFont(key) {
+    const font = FONTS[key];
+    if (!font) return;
+    if (font.gfUrl && !loadedFonts.has(key)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = font.gfUrl;
+      document.head.appendChild(link);
+      loadedFonts.add(key);
+    }
+  }
+
+  function applyFont(key) {
+    const font = FONTS[key];
+    if (!font) return;
+    loadFont(key);
+    document.documentElement.style.setProperty('--reader-font', font.family);
+    // Also set directly on body for specificity
+    document.body.style.fontFamily = font.family;
+    localStorage.setItem(STORAGE_KEY, key);
+  }
+
+  function init() {
+    const select = document.getElementById('font-picker');
+    if (!select) return;
+
+    // Restore saved preference (default: source-serif-4)
+    const saved = localStorage.getItem(STORAGE_KEY) || 'source-serif-4';
+    select.value = saved;
+    applyFont(saved);
+
+    select.addEventListener('change', function () {
+      applyFont(this.value);
+    });
+  }
+
+  // Run after DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script>
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+</script>
+<script type="module">import "https://cdn.plot.ly/plotly-3.5.0.min"</script>
+
+
+
+
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
