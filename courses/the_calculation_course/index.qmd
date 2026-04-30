@@ -4,7 +4,7 @@ subtitle: "How to use this document"
 description: "A 10-week mathematical-economics bootcamp plus seven controversies, designed to get you reading Morishima."
 ---
 
-![](assets/images/cover.png){.cover-banner fig-alt="The Calculation Course — input-output network with Goodwin/Minsky time-series watermark"}
+![](../../shared/assets/images/cover.png){.cover-banner fig-alt="The Calculation Course — input-output network with Goodwin/Minsky time-series watermark"}
 
 *Central source document. Everything you need to execute the plan is linked from here.*
 
