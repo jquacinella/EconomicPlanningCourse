@@ -25,5 +25,10 @@ index.d.ts
 !quartz.config.ts
 !quartz.layout.ts
 
+# Un-ignore the static assets directory so globby (gitignore:true) copies
+# icon.png and og-image.png into public/static/ at build time.
+!quartz/static/
+!quartz/static/**
+
 # OS junk
 .DS_Store

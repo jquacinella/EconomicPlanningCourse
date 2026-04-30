@@ -53,9 +53,9 @@ done
 mkdir -p "$HERE/content"
 
 declare -A COURSE_LINKS=(
-  ["the_calculation_course"]="../../../courses/the_calculation_course/notes"
-  ["201"]="../../../courses/201/notes"
-  ["the_crypto_course"]="../../../courses/the_crypto_course/notes"
+  ["the_calculation_course"]="../../courses/the_calculation_course/notes"
+  ["201"]="../../courses/201/notes"
+  ["the_crypto_course"]="../../courses/the_crypto_course/notes"
 )
 
 for name in "${!COURSE_LINKS[@]}"; do
