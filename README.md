@@ -83,9 +83,23 @@ npx quartz build --serve     # serve notes at http://localhost:8080
 
 Same pattern — `cd courses/<name>` then `uv sync` and `quarto preview`.
 
-### Preview the full stitched site locally
+### Day-to-day editing (live reload)
 
-The landing page (`site-root/index.html`) uses root-relative links (`/courses/...`, `/notes/...`) that only work when the full stitched `_site/` is served from its root — the same layout the CI produces for GitHub Pages. Use the `Makefile` to build and serve it:
+For active study and writing, use the live-reload dev servers — not `make preview`:
+
+```bash
+# Calculation Course book — live reload at http://localhost:4444
+make dev
+
+# Notes site — live reload at http://localhost:8080
+make dev-notes
+```
+
+`make dev` runs `quarto preview` which watches `.qmd` files and rebuilds only the changed page on save. Code cells use `freeze: auto` caching so only cells whose source changed are re-executed — subsequent saves are near-instant.
+
+### Full-site preview (one-shot, before pushing)
+
+The landing page (`site-root/index.html`) uses root-relative links that only work when the full stitched `_site/` is served from its root. Use this to check the complete site before a push:
 
 ```bash
 # Build everything (all courses + Quartz notes) and serve at http://localhost:9200
@@ -94,11 +108,11 @@ make preview
 # Override the port:
 make preview PORT=8080
 
-# Or build without serving:
+# Build without serving:
 make build
 
-# Build only the Calculation Course (faster during active study):
-make build-calc   # then: make stitch && python3 -m http.server 8000 --directory _site
+# Build only the Calculation Course:
+make build-calc
 
 # Clean all build outputs:
 make clean

@@ -1,19 +1,36 @@
 # Makefile for the Heterodox Econ Courses monorepo.
 #
-# Targets:
+# Day-to-day editing (live reload):
+#   make dev            — quarto preview for the Calculation Course (live reload, fast)
+#   make dev-notes      — Quartz notes site with live reload
+#
+# Full-site build (one-shot, for checking before push):
 #   make build          — build all courses + notes into _site/
-#   make preview        — build everything then serve _site/ at http://localhost:$(PORT) (default 9200)
+#   make preview        — build then serve _site/ at http://localhost:$(PORT) (default 9200)
 #   make build-calc     — build only the Calculation Course
 #   make build-notes    — build only the Quartz notes site
 #   make clean          — remove _site/ and all course _book/ dirs
 #
 # Prerequisites: quarto, uv, node/npm (with Quartz set up via quartz/setup.sh)
 
-COURSES := the_calculation_course 201 the_crypto_course
-SITE    := _site
-PORT    := 9200
+COURSES    := the_calculation_course 201 the_crypto_course
+SITE       := _site
+PORT       := 9200
+CALC_DIR   := courses/the_calculation_course
 
-.PHONY: build preview build-calc build-notes clean help
+.PHONY: build preview dev dev-notes build-calc build-notes stitch clean help
+
+## dev: Live-reload quarto preview for the Calculation Course (use this day-to-day)
+dev:
+	@echo "Starting quarto preview for the_calculation_course ..."
+	@echo "Open http://localhost:4444 — saves trigger instant rebuild."
+	cd $(CALC_DIR) && uv run quarto preview --port 4444 --no-browser
+
+## dev-notes: Live-reload Quartz notes site
+dev-notes:
+	@echo "Starting Quartz notes site with live reload ..."
+	@echo "Open http://localhost:8080"
+	cd quartz && npx quartz build --serve --port 8080
 
 ## build: Build all courses and notes, stitch into _site/
 build: build-courses build-notes stitch
@@ -25,16 +42,16 @@ preview: build
 	@echo "Press Ctrl-C to stop."
 	python3 -m http.server $(PORT) --directory $(SITE)
 
-## build-courses: Render all course books to courses/<name>/_book/
+## build-courses: Render all course books (uses freeze cache — only re-executes changed cells)
 build-courses:
 	@for course in $(COURSES); do \
 		echo "==> Building $$course ..."; \
 		(cd courses/$$course && uv run quarto render --to html) || exit 1; \
 	done
 
-## build-calc: Build only the Calculation Course (faster during active study)
+## build-calc: Build only the Calculation Course
 build-calc:
-	cd courses/the_calculation_course && uv run quarto render --to html
+	cd $(CALC_DIR) && uv run quarto render --to html
 
 ## build-notes: Build the Quartz notes site into quartz/public/
 build-notes:
