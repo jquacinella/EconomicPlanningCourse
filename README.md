@@ -83,6 +83,22 @@ npx quartz build --serve     # serve notes at http://localhost:8080
 
 Same pattern — `cd courses/<name>` then `uv sync` and `quarto preview`.
 
+### Course-catalog landing page (`site-root/index.html`)
+
+The top-level landing page is a plain static HTML file — no build step required. To preview it locally:
+
+```bash
+# Any of these work:
+python -m http.server 8000 --directory site-root   # then open http://localhost:8000
+npx serve site-root                                 # if you have Node
+open site-root/index.html                           # macOS direct open
+xdg-open site-root/index.html                       # Linux direct open
+```
+
+In production the CI stitches it to `_site/index.html` (the root of the GitHub Pages site), so it's what visitors see at `https://jquacinella.github.io/EconomicPlanningCourse/`. The course cards link to `/courses/<name>/` (Quarto books) and `/notes/<name>/` (Quartz notes), which are the other two outputs stitched alongside it.
+
+To edit the landing page, open `site-root/index.html` directly — it's self-contained HTML/CSS with no dependencies or framework. Add a new course card by copying one of the existing `<div class="course-card">` blocks and updating the title, description, links, and badge.
+
 ### Build all artifacts
 
 ```bash
