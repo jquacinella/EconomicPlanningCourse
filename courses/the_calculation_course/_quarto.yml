@@ -18,10 +18,9 @@ book:
   # PDF renders. Restore `downloads: [pdf, epub]` once that's resolved.
   # downloads: [pdf, epub]
   sharing: [twitter]
-  # cover-image is rendered explicitly as a banner at the top of index.qmd.
-  # Kept here only for EPUB output (which uses it as the proper cover page).
   page-navigation: true
-  cover-image: assets/images/cover.png
+  # cover-image intentionally omitted here — rendered explicitly as a banner
+  # in index.qmd. Set only in epub: format for EPUB cover page.
 
   chapters:
     - index.qmd
