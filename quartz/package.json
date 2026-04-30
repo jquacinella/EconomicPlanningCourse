@@ -1,5 +1,5 @@
 {
-  "name": "morishima-track-notes",
+  "name": "calculation-course-notes",
   "description": "Quartz wrapper that renders the Obsidian vault at ../notes/. Quartz itself is fetched on first install via setup.sh.",
   "version": "0.1.0",
   "private": true,

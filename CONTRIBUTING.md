@@ -1,4 +1,4 @@
-# Contributing to the Morishima Track
+# Contributing to the Calculation Course
 
 Conventions for adding new content. Aimed at the author, future collaborators, and Claude Code on follow-up tasks.
 
@@ -317,7 +317,7 @@ When adding a new book chapter, also add a matching alias file:
 This page is an alias. The polished chapter lives in the book.
 
 - **Open in book**: <{{SITE_URL}}/weeks/week-NN-<slug>/>
-- **Edit source**: <https://github.com/{{USERNAME}}/morishima-track/blob/main/weeks/week-NN-<slug>.qmd>
+- **Edit source**: <https://github.com/{{USERNAME}}/calculation-course/blob/main/weeks/week-NN-<slug>.qmd>
 - **Notes for this unit**: [[weeks/week-NN-<slug>/index|Week N notes]]
 ```
 

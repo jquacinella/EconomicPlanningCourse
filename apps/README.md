@@ -36,7 +36,7 @@ python app.py
 1. Push the repository to GitHub (the Render blueprint reads from there).
 2. In the Render dashboard, create a new Blueprint instance and point it at `apps/<app-name>/render.yaml`.
 3. Render reads the manifest, builds the Docker image, and deploys.
-4. Once a deployed URL exists, **update the linked URL** in the relevant chapter's `.qmd` file. The PRD uses a placeholder of the form `[<app-slug>.morishima-track.app](#)`; replace `(#)` with the actual Render URL.
+4. Once a deployed URL exists, **update the linked URL** in the relevant chapter's `.qmd` file. The PRD uses a placeholder of the form `[<app-slug>.calculation-course.app](#)`; replace `(#)` with the actual Render URL.
 
 If Render is unavailable, Fly.io and Railway both work with the same Dockerfile — you'd just need a different deployment manifest.
 

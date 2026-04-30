@@ -1,5 +1,5 @@
 ---
-title: "The Morishima Track"
+title: "The Calculation Course"
 subtitle: "How to use this document"
 description: "A 10-week mathematical-economics bootcamp plus seven controversies, designed to get you reading Morishima."
 ---

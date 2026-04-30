@@ -1,10 +1,10 @@
-# Morishima Track — PRD Addendum 2
+# Calculation Course — PRD Addendum 2
 
-**Project name:** `morishima-track`
+**Project name:** `calculation-course`
 **Owner:** [your name]
 **Date:** April 2026
 **Status:** Draft for handoff to Claude Code
-**Supersedes:** None. Augments and modifies the original PRD (`morishima_track_PRD.md`) and Addendum 1 (`morishima_track_PRD_addendum1.md`).
+**Supersedes:** None. Augments and modifies the original PRD (`calculation_course_PRD.md`) and Addendum 1 (`calculation_course_PRD_addendum1.md`).
 
 ---
 
@@ -123,7 +123,7 @@ The four per-unit stub files (`reading-notes`, `questions`, `insights`, `refs`) 
 Quartz is added as a build dependency, not a vendored copy. The recommended pattern is to install Quartz as a sibling to the Quarto project rather than as a subdirectory of `notes/`. This keeps Quartz config out of the vault.
 
 ```
-morishima-track/
+calculation-course/
 ├── _quarto.yml
 ├── notes/                              # The Obsidian vault (content)
 ├── quartz/                             # Quartz installation (build tool)
@@ -148,8 +148,8 @@ This directory contains wiki-link target files that point back to the book chapt
 
 This page is an alias. The polished chapter lives in the book.
 
-- **Open in book**: <https://morishima-track.example.com/weeks/week-01-multivariable/>
-- **Edit source**: <https://github.com/USERNAME/morishima-track/blob/main/weeks/week-01-multivariable.qmd>
+- **Open in book**: <https://calculation-course.example.com/weeks/week-01-multivariable/>
+- **Edit source**: <https://github.com/USERNAME/calculation-course/blob/main/weeks/week-01-multivariable.qmd>
 - **Notes for this week**: [[weeks/week-01-multivariable/index|Week 1 notes]]
 ```
 
@@ -329,7 +329,7 @@ Each book chapter (every `.qmd` under `weeks/` or `controversies/`) gets a singl
 - [Open questions](/notes/weeks/week-01-multivariable/questions/)
 - [Insights and connections](/notes/weeks/week-01-multivariable/insights/)
 - [References to revisit](/notes/weeks/week-01-multivariable/refs/)
-- [Scratchpad notebook](https://github.com/USERNAME/morishima-track/blob/main/notes/weeks/week-01-multivariable/scratchpad.ipynb)
+- [Scratchpad notebook](https://github.com/USERNAME/calculation-course/blob/main/notes/weeks/week-01-multivariable/scratchpad.ipynb)
 :::
 ```
 

@@ -2,7 +2,7 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
 /**
- * Layout overrides for the Morishima Track notes section.
+ * Layout overrides for the Calculation Course notes section.
  *
  * The book proper is rendered by Quarto and lives at the root of the deployed
  * site. Quartz handles only the `/notes/` subtree. The header link back to the

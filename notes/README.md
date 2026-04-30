@@ -1,6 +1,6 @@
 # Notes vault
 
-This directory is an [Obsidian](https://obsidian.md/) vault. It's the working layer of the Morishima Track project — reading notes, questions, insights, methodological decisions, progress logs.
+This directory is an [Obsidian](https://obsidian.md/) vault. It's the working layer of the Calculation Course project — reading notes, questions, insights, methodological decisions, progress logs.
 
 The polished book content lives elsewhere (`weeks/`, `controversies/`, etc., at the repo root). This vault is the scratchpad behind it. Both render to the same deployed site under different URL prefixes; this vault is rendered by [Quartz](https://quartz.jzhao.xyz/) and served at `/notes/`.
 

@@ -6,7 +6,7 @@ order: 2
 
 ::: {.callout-note}
 ## Interactive companion
-A live version of this week's Cobb-Douglas constrained optimization is available at: [budget-explorer.morishima-track.app](#)
+A live version of this week's Cobb-Douglas constrained optimization is available at: [budget-explorer.calculation-course.app](#)
 
 (Replace with actual deployed URL once the Dash app is deployed.)
 :::

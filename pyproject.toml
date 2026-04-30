@@ -1,5 +1,5 @@
 [project]
-name = "morishima-track"
+name = "calculation-course"
 version = "0.1.0"
 description = "Computational-economics curriculum from multivariable calculus to climate-constrained planning"
 readme = "README.md"

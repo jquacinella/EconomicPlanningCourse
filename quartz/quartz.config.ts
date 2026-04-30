@@ -2,14 +2,14 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz configuration for the Morishima Track notes section.
+ * Quartz configuration for the Calculation Course notes section.
  *
  * The notes site is published as a sub-section of the main book site at
  * `/notes/`. The book itself (Quarto) is served at the root.
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "The Morishima Track — Notes",
+    pageTitle: "The Calculation Course — Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,

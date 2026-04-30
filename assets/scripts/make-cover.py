@@ -119,7 +119,7 @@ def main() -> None:
                 fontweight="medium", zorder=5)
 
     # Title block (well below the bottom-most "Construction" label).
-    ax.text(0, -1.55, "The Morishima Track", color=FG, fontsize=26,
+    ax.text(0, -1.55, "The Calculation Course", color=FG, fontsize=26,
             ha="center", va="center", fontweight="bold", family="serif")
     ax.text(0, -1.80, "A Computational-Economics Curriculum",
             color=FG, fontsize=12, ha="center", va="center",

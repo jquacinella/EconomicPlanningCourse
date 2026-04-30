@@ -21,7 +21,7 @@ The reason for the split is simple: the friction of writing publication-grade Qu
 A condensed view, with the parts you'll touch most often called out:
 
 ```
-morishima-track/
+calculation-course/
 ├── weeks/                              ← Book chapters (polished, you edit weekly)
 ├── controversies/                      ← Book chapters (polished, you edit during the controversies)
 ├── 201/, appendices/, ...              ← More book content (polished)

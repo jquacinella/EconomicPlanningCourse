@@ -1,10 +1,10 @@
-# Morishima Track — PRD Addendum 1
+# Calculation Course — PRD Addendum 1
 
-**Project name:** `morishima-track`
+**Project name:** `calculation-course`
 **Owner:** [your name]
 **Date:** April 2026
 **Status:** Draft for handoff to Claude Code
-**Supersedes:** None. Augments and modifies `morishima_track_PRD.md` (the original PRD).
+**Supersedes:** None. Augments and modifies `calculation_course_PRD.md` (the original PRD).
 
 ---
 

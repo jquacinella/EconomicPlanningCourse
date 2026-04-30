@@ -1,4 +1,4 @@
-# The Morishima Track
+# The Calculation Course
 
 A computational-economics curriculum that walks from multivariable calculus through linear algebra, optimization, input-output analysis, and dynamic systems, into a sequence of in-depth heterodox-economics controversies, ending at a thirty-year climate-constrained planning model — built as a Quarto book with executable Python, marginalia, and Hypothesis annotation.
 

@@ -32,7 +32,7 @@ jobs:
             --no-progress
             --exclude-mail
             --exclude '^https?://localhost'
-            --exclude '^https?://[^/]*morishima-track\.app'
+            --exclude '^https?://[^/]*calculation-course\.app'
             './**/*.qmd'
             './**/*.md'
           fail: false

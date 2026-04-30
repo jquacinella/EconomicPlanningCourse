@@ -1,6 +1,6 @@
 """Cobb-Douglas budget-line explorer.
 
-Reference Dash application for the morishima-track project. Implements a
+Reference Dash application for the calculation-course project. Implements a
 stripped-down version of the Week 2 constrained-utility-maximization project:
 
     max u(x, y) = x**alpha * y**(1 - alpha)
@@ -123,7 +123,7 @@ app.layout = html.Div(
     children=[
         html.H1("Cobb-Douglas budget explorer"),
         html.P(
-            "Reference Dash app for the Morishima Track project. "
+            "Reference Dash app for the Calculation Course project. "
             "Drag the sliders to vary the Cobb-Douglas exponent α and income M; "
             "edit the price boxes to vary p₁ and p₂. The plot updates with the "
             "budget line, three indifference curves, and the optimum point. "

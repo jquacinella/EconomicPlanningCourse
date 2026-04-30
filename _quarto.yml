@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "The Morishima Track"
+  title: "The Calculation Course"
   subtitle: "A Computational-Economics Curriculum from Multivariable Calculus to Climate-Constrained Planning"
   author: "MetaCoding Solutions"
   date: "today"

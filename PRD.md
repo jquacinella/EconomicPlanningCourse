@@ -1,6 +1,6 @@
-# Morishima Track — Repository Bootstrap PRD
+# Calculation Course — Repository Bootstrap PRD
 
-**Project name:** `morishima-track`
+**Project name:** `calculation-course`
 **Owner:** [your name]
 **Date:** April 2026
 **Status:** Draft for handoff to Claude Code
@@ -9,7 +9,7 @@
 
 ## 1. Background and motivation
 
-This document specifies the initial repository structure, build pipeline, and architectural conventions for a multi-output computational-economics learning project. The substantive content — a 10-week mathematical-economics syllabus plus 7 in-depth heterodox-economic controversies plus a placeholder for a 201-level follow-on — already exists as a single 138 KB markdown document called `morishima_syllabus.md`. This PRD does not specify the *content* of that work; it specifies the *infrastructure* to host, build, render, and extend it.
+This document specifies the initial repository structure, build pipeline, and architectural conventions for a multi-output computational-economics learning project. The substantive content — a 10-week mathematical-economics syllabus plus 7 in-depth heterodox-economic controversies plus a placeholder for a 201-level follow-on — already exists as a single 138 KB markdown document called `calculation_syllabus.md`. This PRD does not specify the *content* of that work; it specifies the *infrastructure* to host, build, render, and extend it.
 
 The project's deliverable is intentionally hybrid:
 
@@ -27,7 +27,7 @@ This is a learning project first, a publishable artifact second. The infrastruct
 
 ### Goals
 
-- A working Quarto book project at `/morishima-track/` with the existing syllabus split into per-chapter `.qmd` files.
+- A working Quarto book project at `/calculation-course/` with the existing syllabus split into per-chapter `.qmd` files.
 - Render targets: HTML site (primary), PDF book (secondary), EPUB (tertiary).
 - CI/CD pipeline that auto-builds and deploys the site on push to `main`.
 - Tufte-style marginalia working in both HTML and PDF outputs from the same source.
@@ -128,7 +128,7 @@ These are settled. Where a decision is genuinely contested, this section says so
 The skeleton to create. Each item is either `[file]`, `[dir]`, or `[stub]` (an empty placeholder file with a `.gitkeep` or minimal contents to make the directory commit cleanly).
 
 ```
-morishima-track/
+calculation-course/
 ├── README.md                          [file]   Brief project description, links to rendered site, build instructions
 ├── LICENSE                            [file]   MIT or CC-BY-SA 4.0; PRD says CC-BY-SA-4.0 since it's primarily a written work
 ├── CONTRIBUTING.md                    [file]   Conventions for adding content; see §6
@@ -238,7 +238,7 @@ project:
   output-dir: _book
 
 book:
-  title: "The Morishima Track"
+  title: "The Calculation Course"
   subtitle: "A Computational-Economics Curriculum from Multivariable Calculus to Climate-Constrained Planning"
   author: "MetaCoding Solutions"
   date: "today"
@@ -326,7 +326,7 @@ The build must verify that `quarto render` succeeds for HTML, PDF, and EPUB targ
 
 ## 6. Content extraction and migration
 
-The existing 138 KB `morishima_syllabus.md` lives in the project root at the start of this work and should be extracted into the per-chapter `.qmd` files specified in §4.
+The existing 138 KB `calculation_syllabus.md` lives in the project root at the start of this work and should be extracted into the per-chapter `.qmd` files specified in §4.
 
 ### Extraction rules
 
@@ -406,7 +406,7 @@ In `weeks/week-02-constrained.qmd`, the migrated content should include a callou
 ```markdown
 ::: {.callout-note}
 ## Interactive companion
-A live version of this week's Cobb-Douglas constrained optimization is available at: [budget-explorer.morishima-track.app](#)
+A live version of this week's Cobb-Douglas constrained optimization is available at: [budget-explorer.calculation-course.app](#)
 
 (Replace with actual deployed URL once Dash app is deployed.)
 :::
@@ -538,7 +538,7 @@ If you (Claude Code) are reading this PRD as a task brief:
 - The Cobb-Douglas demo Dash app in §7 should be a real, working app with the specified features, not a placeholder. It exists to validate the deployment pattern end-to-end.
 - For the demo Observable widget in §6, a single-slider example tied to a single plot is sufficient — does not need to be substantively interesting; it just needs to demonstrate the OJS pipeline works.
 - If any of the Typst PDF marginalia rendering has unresolved issues, document them in `CONTRIBUTING.md` and fall back to LaTeX with `tufte-latex`. Do not block the rest of the build on this.
-- When in doubt about content, *do not invent*. The existing `morishima_syllabus.md` is the source of truth for content. The PRD is the source of truth for infrastructure.
+- When in doubt about content, *do not invent*. The existing `calculation_syllabus.md` is the source of truth for content. The PRD is the source of truth for infrastructure.
 - Verify all internal links and cross-references in the rendered output before declaring acceptance. Broken links are a common failure mode in book-style projects with many chapters.
 - The `notes/` directory is gitignored on purpose. Do not check in placeholder content there.
 - After the bootstrap is complete, write a short `BOOTSTRAP_REPORT.md` at the repo root summarizing what was built, any deviations from the PRD, and any open issues. Delete the file after the author reads it.

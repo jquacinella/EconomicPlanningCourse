@@ -1,4 +1,4 @@
-# Morishima Track — A 10-Week Syllabus for Mathematical Economics & Planning
+# Calculation Course — A 10-Week Syllabus for Mathematical Economics & Planning
 
 *Central source document. Everything you need to execute the plan is linked from here.*
 

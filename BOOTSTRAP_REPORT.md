@@ -1,12 +1,12 @@
 # Bootstrap report
 
-Status: complete on branch `claude/implement-bootstrap-mjH1Y`. The infrastructure described in `PRD.md` §§4–9 is in place and the existing `morishima_syllabus.md` content has been extracted into per-chapter `.qmd` files per §6. No substantive content beyond what was in the syllabus has been added.
+Status: complete on branch `claude/implement-bootstrap-mjH1Y`. The infrastructure described in `PRD.md` §§4–9 is in place and the existing `calculation_syllabus.md` content has been extracted into per-chapter `.qmd` files per §6. No substantive content beyond what was in the syllabus has been added.
 
 ## What was built
 
 ### Repository skeleton (PRD §4)
 
-All directories and files in the §4 tree exist. Empty directories carry `.gitkeep` placeholders. The original `morishima_syllabus.md` was left in place at the repo root; it can be removed once the author is satisfied with the extraction.
+All directories and files in the §4 tree exist. Empty directories carry `.gitkeep` placeholders. The original `calculation_syllabus.md` was left in place at the repo root; it can be removed once the author is satisfied with the extraction.
 
 ### Quarto book project (PRD §5)
 
@@ -14,7 +14,7 @@ All directories and files in the §4 tree exist. Empty directories carry `.gitke
 
 ### Content extraction (PRD §6)
 
-Every section of the existing `morishima_syllabus.md` has been split into the per-chapter `.qmd` file specified in §4:
+Every section of the existing `calculation_syllabus.md` has been split into the per-chapter `.qmd` file specified in §4:
 
 - `index.qmd` — extracts the "How to use this document" front matter, plus the new "Style and rendering reference" section required by §6 (a `.column-margin` div, a footnote pushed to the margin, a Plotly Python figure, an Observable JS slider+plot, a Hypothesis-annotatable paragraph with explicit instructions, and a link to the demo Dash app).
 - `master-resources.qmd` — the master resource list, extracted as-is.
@@ -57,12 +57,12 @@ The sidebar text itself was kept inline. The author is the one to decide what be
 
 `apps/README.md` documents the full convention.
 
-`weeks/week-02-constrained.qmd` includes the `:::{.callout-note}` "Interactive companion" block with a placeholder URL of `[budget-explorer.morishima-track.app](#)`, exactly as specified in §7.
+`weeks/week-02-constrained.qmd` includes the `:::{.callout-note}` "Interactive companion" block with a placeholder URL of `[budget-explorer.calculation-course.app](#)`, exactly as specified in §7.
 
 ### CI/CD (PRD §8)
 
 - `.github/workflows/render.yml`: on push to `main`, sets up Python 3.11, installs uv, installs Quarto (pre-release for Typst support), runs `quarto render` for HTML, PDF (with `continue-on-error` because Typst features may need work), and EPUB; deploys `_book/` to `gh-pages` via `peaceiris/actions-gh-pages@v3`; uploads PDF/EPUB as release assets on tagged releases. The 30-minute job timeout is generous for the v1 skeleton and a comment notes that this budget will need revisiting as executable code is added.
-- `.github/workflows/lint.yml`: on PR, runs `markdownlint-cli2-action` on `.qmd` and `.md` files (with `_book/` and `.quarto/` excluded), and `lycheeverse/lychee-action` for broken-link checking with the placeholder `*morishima-track.app` URL excluded so it doesn't fail the build before deployment exists.
+- `.github/workflows/lint.yml`: on PR, runs `markdownlint-cli2-action` on `.qmd` and `.md` files (with `_book/` and `.quarto/` excluded), and `lycheeverse/lychee-action` for broken-link checking with the placeholder `*calculation-course.app` URL excluded so it doesn't fail the build before deployment exists.
 
 ### Documentation (PRD §9)
 
@@ -97,12 +97,12 @@ Single combined file with CC-BY-SA-4.0 for content and MIT for code, as recommen
 ## Open issues for the author
 
 1. **Substitute author name.** Every `[author name placeholder]` in `README.md`, `LICENSE`, `pyproject.toml`, and `_quarto.yml` should be replaced with the author's actual choice (PRD §11(2)).
-2. **Substitute repository URL.** `_quarto.yml`'s `repo-url: "https://github.com/[username]/morishima-track"` should be replaced with the actual GitHub URL.
+2. **Substitute repository URL.** `_quarto.yml`'s `repo-url: "https://github.com/[username]/calculation-course"` should be replaced with the actual GitHub URL.
 3. **Run `uv lock` once locally** to generate `uv.lock`.
 4. **Verify the build locally on macOS** per PRD §10 acceptance criteria 1–7. In particular, confirm that Typst PDF rendering of the `.column-margin` divs gives the expected sidenote layout. If not, switch `pdf-engine: typst` to `pdf-engine: xelatex` and `documentclass: scrbook` to `documentclass: tufte-book`, then document the workaround in `CONTRIBUTING.md` per the PRD §6.5 fallback path.
-5. **Once the Dash app is deployed**, replace `[budget-explorer.morishima-track.app](#)` in `weeks/week-02-constrained.qmd` with the real URL.
+5. **Once the Dash app is deployed**, replace `[budget-explorer.calculation-course.app](#)` in `weeks/week-02-constrained.qmd` with the real URL.
 6. **Set up GitHub Pages.** Enable Pages in the repo settings, source = `gh-pages` branch. The `render.yml` workflow will populate it on the first push to `main`.
-7. **Consider whether to delete `morishima_syllabus.md`.** It's the source-of-truth file; now that everything is extracted, leaving it at the repo root is harmless but redundant. The PRD does not require its removal.
+7. **Consider whether to delete `calculation_syllabus.md`.** It's the source-of-truth file; now that everything is extracted, leaving it at the repo root is harmless but redundant. The PRD does not require its removal.
 
 ## Files added
 

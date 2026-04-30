@@ -2,9 +2,9 @@
 title: Notes
 ---
 
-# Morishima Track — Notes
+# Calculation Course — Notes
 
-Welcome to the notes section of the Morishima Track. This is the working layer behind the polished [book](/).
+Welcome to the notes section of the Calculation Course. This is the working layer behind the polished [book](/).
 
 The notes are organized by the same units as the book:
 

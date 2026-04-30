@@ -1,6 +1,6 @@
 # `demo-budget-explorer` — Cobb-Douglas budget explorer
 
-Reference Dash app for the Morishima Track project. Implements a stripped-down version of the Week 2 constrained-utility-maximization mini project as a smoke test for the standalone-app deployment pattern.
+Reference Dash app for the Calculation Course project. Implements a stripped-down version of the Week 2 constrained-utility-maximization mini project as a smoke test for the standalone-app deployment pattern.
 
 ## What it does
 
