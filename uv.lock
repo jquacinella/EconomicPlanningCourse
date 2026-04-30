@@ -184,6 +184,63 @@ css = [
 ]
 
 [[package]]
+name = "calculation-course"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "cvxpy" },
+    { name = "jupyter" },
+    { name = "jupyterlab" },
+    { name = "matplotlib" },
+    { name = "mesa", version = "3.3.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "mesa", version = "3.5.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "networkx" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "plotly" },
+    { name = "pulp" },
+    { name = "pysolve" },
+    { name = "quantecon" },
+    { name = "scipy" },
+    { name = "sfc-models" },
+    { name = "statsmodels" },
+    { name = "sympy" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "ruff" },
+]
+extended = [
+    { name = "pysd" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cvxpy", specifier = ">=1.5" },
+    { name = "jupyter", specifier = ">=1.0" },
+    { name = "jupyterlab", specifier = ">=4.1" },
+    { name = "matplotlib", specifier = ">=3.8" },
+    { name = "mesa", specifier = ">=2.3.0" },
+    { name = "networkx", specifier = ">=3.2" },
+    { name = "numpy", specifier = ">=1.26" },
+    { name = "pandas", specifier = ">=2.2" },
+    { name = "plotly", specifier = ">=5.20" },
+    { name = "pulp", specifier = ">=2.8" },
+    { name = "pysd", marker = "extra == 'extended'", specifier = ">=3.14.0" },
+    { name = "pysolve", specifier = ">=0.1.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
+    { name = "quantecon", specifier = ">=0.7" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.4" },
+    { name = "scipy", specifier = ">=1.12" },
+    { name = "sfc-models", specifier = ">=0.3.0" },
+    { name = "statsmodels", specifier = ">=0.14" },
+    { name = "sympy", specifier = ">=1.12" },
+]
+provides-extras = ["dev", "extended"]
+
+[[package]]
 name = "certifi"
 version = "2026.4.22"
 source = { registry = "https://pypi.org/simple" }
@@ -1227,63 +1284,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/9d/55/d01f0c4b45ade6536
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9b/f7/4a5e785ec9fbd65146a27b6b70b6cdc161a66f2024e4b04ac06a67f5578b/mistune-3.2.0-py3-none-any.whl", hash = "sha256:febdc629a3c78616b94393c6580551e0e34cc289987ec6c35ed3f4be42d0eee1", size = 53598, upload-time = "2025-12-23T11:36:33.211Z" },
 ]
-
-[[package]]
-name = "morishima-track"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "cvxpy" },
-    { name = "jupyter" },
-    { name = "jupyterlab" },
-    { name = "matplotlib" },
-    { name = "mesa", version = "3.3.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "mesa", version = "3.5.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "networkx" },
-    { name = "numpy" },
-    { name = "pandas" },
-    { name = "plotly" },
-    { name = "pulp" },
-    { name = "pysolve" },
-    { name = "quantecon" },
-    { name = "scipy" },
-    { name = "sfc-models" },
-    { name = "statsmodels" },
-    { name = "sympy" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "ruff" },
-]
-extended = [
-    { name = "pysd" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "cvxpy", specifier = ">=1.5" },
-    { name = "jupyter", specifier = ">=1.0" },
-    { name = "jupyterlab", specifier = ">=4.1" },
-    { name = "matplotlib", specifier = ">=3.8" },
-    { name = "mesa", specifier = ">=2.3.0" },
-    { name = "networkx", specifier = ">=3.2" },
-    { name = "numpy", specifier = ">=1.26" },
-    { name = "pandas", specifier = ">=2.2" },
-    { name = "plotly", specifier = ">=5.20" },
-    { name = "pulp", specifier = ">=2.8" },
-    { name = "pysd", marker = "extra == 'extended'", specifier = ">=3.14.0" },
-    { name = "pysolve", specifier = ">=0.1.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
-    { name = "quantecon", specifier = ">=0.7" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.4" },
-    { name = "scipy", specifier = ">=1.12" },
-    { name = "sfc-models", specifier = ">=0.3.0" },
-    { name = "statsmodels", specifier = ">=0.14" },
-    { name = "sympy", specifier = ">=1.12" },
-]
-provides-extras = ["dev", "extended"]
 
 [[package]]
 name = "mpmath"
