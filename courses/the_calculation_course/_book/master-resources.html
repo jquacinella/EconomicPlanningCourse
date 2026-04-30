@@ -8,7 +8,7 @@
 
 <meta name="description" content="Linked once here, referenced by shorthand throughout.">
 
-<title>2&nbsp; Master resource list – The Calculation Course</title>
+<title>Master resource list – The Calculation Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -77,10 +77,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6d3d4bddaec62baaf326ab8671832176.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0009a4030f8b573446c5eb18f8660956.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d467529ee50aac4903b480e488badc68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,11 +110,189 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<!-- Loaded into the <head> of every HTML page via _quarto.yml's
+     format.html.include-in-header. Provides the JSXGraph runtime
+     for any chapter that embeds a widget.
+
+     This is the project's interim setup until the
+     `jsxgraph/jsxgraph-quarto` extension is installed (run
+     `quarto add jsxgraph/jsxgraph-quarto` at the project root —
+     see PRD Addendum 1, §1.5). Once the extension is present,
+     this include can stay (harmless) or be removed in favor of
+     the extension's bundled assets. -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -121,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./master-resources.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Master resource list</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./master-resources.html"><span class="chapter-title">Master resource list</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -137,9 +317,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">The Calculation Course</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/jquacinella/EconomicPlanningCourse.git" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -152,14 +333,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Calculation Course</span></span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The Calculation Course</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./master-resources.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Master resource list</span></span></a>
+  <a href="./master-resources.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Master resource list</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -173,70 +352,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 1 — Multivariable Calculus</span></span></a>
+  <a href="./weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 — Multivariable Calculus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 2 — Constrained Optimization</span></span></a>
+  <a href="./weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 — Constrained Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 — Linear Algebra Basics</span></span></a>
+  <a href="./weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 — Linear Algebra Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 4 — Eigenvalues and Systems</span></span></a>
+  <a href="./weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 — Eigenvalues and Systems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 5 — Economic Optimization</span></span></a>
+  <a href="./weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 — Economic Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></span></a>
+  <a href="./weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 7 — Input-Output Analysis</span></span></a>
+  <a href="./weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7 — Input-Output Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-08-planning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week 8 — Planning and Allocation</span></span></a>
+  <a href="./weeks/week-08-planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8 — Planning and Allocation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Week 9 — Differential Equations</span></span></a>
+  <a href="./weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9 — Differential Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Week 10 — Growth and Stability</span></span></a>
+  <a href="./weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 10 — Growth and Stability</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./post-course.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Post-course: reading Morishima and beyond</span></span></a>
+  <a href="./post-course.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Post-course: reading Morishima and beyond</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -250,64 +418,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></span></a>
+  <a href="./controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></span></a>
+  <a href="./controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Controversy 3 — The Transformation Problem</span></span></a>
+  <a href="./controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 3 — The Transformation Problem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></span></a>
+  <a href="./controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></span></a>
+  <a href="./controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></span></a>
+  <a href="./controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></span></a>
+  <a href="./controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></span></a>
+  <a href="./controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./201/placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></span></a>
+  <a href="./201/placeholder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./where-this-lands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Where this lands</span></span></a>
+  <a href="./where-this-lands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Where this lands</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -321,20 +479,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A — Pre-course checklist</span></span></a>
+  <a href="./appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A — Pre-course checklist</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></span></a>
+  <a href="./appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></span></a>
+  <a href="./appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></a>
   </div>
 </li>
       </ul>
@@ -349,21 +504,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#primary-video-courses" id="toc-primary-video-courses" class="nav-link active" data-scroll-target="#primary-video-courses"><span class="header-section-number">2.1</span> Primary video courses</a></li>
-  <li><a href="#quantecon-lectures-the-computational-economics-backbone" id="toc-quantecon-lectures-the-computational-economics-backbone" class="nav-link" data-scroll-target="#quantecon-lectures-the-computational-economics-backbone"><span class="header-section-number">2.2</span> QuantEcon lectures (the computational-economics backbone)</a></li>
-  <li><a href="#planning-economics-primary-texts-free-legal-pdfs" id="toc-planning-economics-primary-texts-free-legal-pdfs" class="nav-link" data-scroll-target="#planning-economics-primary-texts-free-legal-pdfs"><span class="header-section-number">2.3</span> Planning-economics primary texts (free, legal PDFs)</a></li>
-  <li><a href="#books-worth-buying-if-you-want-the-full-depth-version" id="toc-books-worth-buying-if-you-want-the-full-depth-version" class="nav-link" data-scroll-target="#books-worth-buying-if-you-want-the-full-depth-version"><span class="header-section-number">2.4</span> Books worth buying if you want the full-depth version</a></li>
-  <li><a href="#extra-tools" id="toc-extra-tools" class="nav-link" data-scroll-target="#extra-tools"><span class="header-section-number">2.5</span> Extra tools</a></li>
-  <li><a href="#python-environment-do-this-once-before-week-1" id="toc-python-environment-do-this-once-before-week-1" class="nav-link" data-scroll-target="#python-environment-do-this-once-before-week-1"><span class="header-section-number">2.6</span> Python environment (do this once, before Week 1)</a></li>
+  <li><a href="#primary-video-courses" id="toc-primary-video-courses" class="nav-link active" data-scroll-target="#primary-video-courses">Primary video courses</a></li>
+  <li><a href="#quantecon-lectures-the-computational-economics-backbone" id="toc-quantecon-lectures-the-computational-economics-backbone" class="nav-link" data-scroll-target="#quantecon-lectures-the-computational-economics-backbone">QuantEcon lectures (the computational-economics backbone)</a></li>
+  <li><a href="#planning-economics-primary-texts-free-legal-pdfs" id="toc-planning-economics-primary-texts-free-legal-pdfs" class="nav-link" data-scroll-target="#planning-economics-primary-texts-free-legal-pdfs">Planning-economics primary texts (free, legal PDFs)</a></li>
+  <li><a href="#books-worth-buying-if-you-want-the-full-depth-version" id="toc-books-worth-buying-if-you-want-the-full-depth-version" class="nav-link" data-scroll-target="#books-worth-buying-if-you-want-the-full-depth-version">Books worth buying if you want the full-depth version</a></li>
+  <li><a href="#extra-tools" id="toc-extra-tools" class="nav-link" data-scroll-target="#extra-tools">Extra tools</a></li>
+  <li><a href="#python-environment-do-this-once-before-week-1" id="toc-python-environment-do-this-once-before-week-1" class="nav-link" data-scroll-target="#python-environment-do-this-once-before-week-1">Python environment (do this once, before Week 1)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/edit/main/master-resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/blob/main/master-resources.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Master resource list</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Master resource list</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -380,8 +536,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="primary-video-courses" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="primary-video-courses"><span class="header-section-number">2.1</span> Primary video courses</h2>
+<section id="primary-video-courses" class="level2">
+<h2 class="anchored" data-anchor-id="primary-video-courses">Primary video courses</h2>
 <ul>
 <li><strong>MIT 18.02SC Multivariable Calculus</strong> (Auroux, Fall 2010 — Scholar edition, designed for independent learners): <a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" class="uri">https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/</a></li>
 <li><strong>MIT 18.06 Linear Algebra</strong> (Gilbert Strang, Spring 2005, the canonical version): course page <a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2005/" class="uri">https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2005/</a> · YouTube playlist <a href="https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8" class="uri">https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8</a></li>
@@ -390,8 +546,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>3Blue1Brown — Essence of Linear Algebra</strong> (15 videos, ~3h total): <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" class="uri">https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab</a></li>
 </ul>
 </section>
-<section id="quantecon-lectures-the-computational-economics-backbone" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="quantecon-lectures-the-computational-economics-backbone"><span class="header-section-number">2.2</span> QuantEcon lectures (the computational-economics backbone)</h2>
+<section id="quantecon-lectures-the-computational-economics-backbone" class="level2">
+<h2 class="anchored" data-anchor-id="quantecon-lectures-the-computational-economics-backbone">QuantEcon lectures (the computational-economics backbone)</h2>
 <ul>
 <li><strong>Linear Programming</strong> (intro): <a href="https://intro.quantecon.org/lp_intro.html" class="uri">https://intro.quantecon.org/lp_intro.html</a></li>
 <li><strong>Input-Output Models</strong>: <a href="https://intro.quantecon.org/input_output.html" class="uri">https://intro.quantecon.org/input_output.html</a></li>
@@ -400,8 +556,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Full undergraduate series landing page: <a href="https://intro.quantecon.org/intro.html" class="uri">https://intro.quantecon.org/intro.html</a></li>
 </ul>
 </section>
-<section id="planning-economics-primary-texts-free-legal-pdfs" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="planning-economics-primary-texts-free-legal-pdfs"><span class="header-section-number">2.3</span> Planning-economics primary texts (free, legal PDFs)</h2>
+<section id="planning-economics-primary-texts-free-legal-pdfs" class="level2">
+<h2 class="anchored" data-anchor-id="planning-economics-primary-texts-free-legal-pdfs">Planning-economics primary texts (free, legal PDFs)</h2>
 <ul>
 <li><strong>Cockshott &amp; Cottrell, <em>Towards a New Socialism</em></strong> (1993, 2000 edition — author-hosted PDF): <a href="https://users.wfu.edu/cottrell/socialism_book/new_socialism.pdf" class="uri">https://users.wfu.edu/cottrell/socialism_book/new_socialism.pdf</a></li>
 <li><strong>“Mathematics to Plan an Economy”</strong> (cibcom.org, Cockshott-tradition introduction to cyber-socialist calculation): <a href="https://cibcom.org/wp-content/uploads/2022/06/Mathematics_to_plan_an_economy_.pdf" class="uri">https://cibcom.org/wp-content/uploads/2022/06/Mathematics_to_plan_an_economy_.pdf</a></li>
@@ -409,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Morishima, <em>Marx’s Economics: A Dual Theory of Value and Growth</em></strong> (1973 — Internet Archive scan): <a href="http://digamo.free.fr/morishimarx.pdf" class="uri">http://digamo.free.fr/morishimarx.pdf</a> · Archive.org mirror: <a href="https://archive.org/details/marxseconomicsdu0000mori" class="uri">https://archive.org/details/marxseconomicsdu0000mori</a></li>
 </ul>
 </section>
-<section id="books-worth-buying-if-you-want-the-full-depth-version" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="books-worth-buying-if-you-want-the-full-depth-version"><span class="header-section-number">2.4</span> Books worth buying if you want the full-depth version</h2>
+<section id="books-worth-buying-if-you-want-the-full-depth-version" class="level2">
+<h2 class="anchored" data-anchor-id="books-worth-buying-if-you-want-the-full-depth-version">Books worth buying if you want the full-depth version</h2>
 <ul>
 <li><strong>Alpha C. Chiang &amp; Kevin Wainwright, <em>Fundamental Methods of Mathematical Economics</em> (4th ed., McGraw-Hill 2005)</strong> — the canonical math-econ textbook. This is the book graduate programs use for their “math camp” before first-year theory sequences. Written in a patient, economist-motivated style: each technique is introduced, worked through, then immediately shown doing economic work. It’s the natural companion across Weeks 2–9, but especially Weeks 5–6 (Ch 9, 11, 12, 13 on unconstrained, multi-variable, equality-constrained, and Kuhn-Tucker optimization) and Week 9 (Ch 15–17 on differential equations). Worth owning; used copies of the 4th edition are cheap.</li>
 <li><strong>Gilbert Strang, <em>Introduction to Linear Algebra</em> (6th ed.)</strong> — the 18.06 companion. Strang’s prose is as good as the lectures.</li>
@@ -418,16 +574,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Barro &amp; Sala-i-Martin, <em>Economic Growth</em> (2nd ed., MIT Press)</strong> — the standard graduate growth-theory reference. Read selectively for Week 10.</li>
 </ul>
 </section>
-<section id="extra-tools" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="extra-tools"><span class="header-section-number">2.5</span> Extra tools</h2>
+<section id="extra-tools" class="level2">
+<h2 class="anchored" data-anchor-id="extra-tools">Extra tools</h2>
 <ul>
 <li><strong>IBM CPLEX LP Tutorial</strong> (good, hands-on LP walk-through): <a href="https://ibmdecisionoptimization.github.io/tutorials/html/Linear_Programming.html" class="uri">https://ibmdecisionoptimization.github.io/tutorials/html/Linear_Programming.html</a></li>
 <li><strong>Brad DeLong’s Solow notebook</strong> (a Jupyter version of the QuantEcon Solow model): <a href="https://nbviewer.jupyter.org/github/braddelong/LS2019/blob/master/2019-08-08-Sargent-Stachurski.ipynb" class="uri">https://nbviewer.jupyter.org/github/braddelong/LS2019/blob/master/2019-08-08-Sargent-Stachurski.ipynb</a></li>
 <li><strong>Paul Cockshott’s YouTube lectures</strong> (Marx, materialism, mathematics and computing): search the channel for “Cockshott Lecture 1” — a full Fall 2021 course you can sample.</li>
 </ul>
 </section>
-<section id="python-environment-do-this-once-before-week-1" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="python-environment-do-this-once-before-week-1"><span class="header-section-number">2.6</span> Python environment (do this once, before Week 1)</h2>
+<section id="python-environment-do-this-once-before-week-1" class="level2">
+<h2 class="anchored" data-anchor-id="python-environment-do-this-once-before-week-1">Python environment (do this once, before Week 1)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv morishima-env</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> morishima-env/bin/activate</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy scipy sympy matplotlib jupyter pulp cvxpy networkx pandas</span>
@@ -435,11 +591,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You own a MacBook Pro M1 Max with 32GB RAM — more than enough. Use VS Code with the Jupyter and Python extensions, or plain JupyterLab, whichever you already prefer.</p>
 
 
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -508,6 +679,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -841,7 +1063,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link" aria-label="The Calculation Course">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Calculation Course</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">The Calculation Course</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -849,7 +1071,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <span class="nav-page-text">Part I — The Mathematics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Master resource list"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Linked once here, referenced by shorthand throughout."</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Primary video courses</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**MIT 18.02SC Multivariable Calculus** (Auroux, Fall 2010 — Scholar edition, designed for independent learners): <span class="ot">&lt;https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**MIT 18.06 Linear Algebra** (Gilbert Strang, Spring 2005, the canonical version): course page <span class="ot">&lt;https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2005/&gt;</span> · YouTube playlist <span class="ot">&lt;https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**MIT 18.03SC Differential Equations** (Mattuck/Miller, Fall 2011 — Scholar edition): <span class="ot">&lt;https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**3Blue1Brown — Essence of Calculus** (13 videos, ~3h total, visual intuition): <span class="ot">&lt;https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**3Blue1Brown — Essence of Linear Algebra** (15 videos, ~3h total): <span class="ot">&lt;https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## QuantEcon lectures (the computational-economics backbone)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Linear Programming** (intro): <span class="ot">&lt;https://intro.quantecon.org/lp_intro.html&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Input-Output Models**: <span class="ot">&lt;https://intro.quantecon.org/input_output.html&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The Solow-Swan Growth Model**: <span class="ot">&lt;https://intro.quantecon.org/solow.html&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dynamics in One Dimension** (useful for Week 10 stability intuition): <span class="ot">&lt;https://intro.quantecon.org/scalar_dynam.html&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full undergraduate series landing page: <span class="ot">&lt;https://intro.quantecon.org/intro.html&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Planning-economics primary texts (free, legal PDFs)</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cockshott &amp; Cottrell, *Towards a New Socialism*** (1993, 2000 edition — author-hosted PDF): <span class="ot">&lt;https://users.wfu.edu/cottrell/socialism_book/new_socialism.pdf&gt;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**"Mathematics to Plan an Economy"** (cibcom.org, Cockshott-tradition introduction to cyber-socialist calculation): <span class="ot">&lt;https://cibcom.org/wp-content/uploads/2022/06/Mathematics_to_plan_an_economy_.pdf&gt;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cockshott, "Returning to Kantorovich"** (a full LP planning tutorial with lp_solve code): <span class="ot">&lt;https://paulcockshott.wordpress.com/returning-to-kantorovich/&gt;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Morishima, *Marx's Economics: A Dual Theory of Value and Growth*** (1973 — Internet Archive scan): <span class="ot">&lt;http://digamo.free.fr/morishimarx.pdf&gt;</span> · Archive.org mirror: <span class="ot">&lt;https://archive.org/details/marxseconomicsdu0000mori&gt;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Books worth buying if you want the full-depth version</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Alpha C. Chiang &amp; Kevin Wainwright, *Fundamental Methods of Mathematical Economics* (4th ed., McGraw-Hill 2005)** — the canonical math-econ textbook. This is the book graduate programs use for their "math camp" before first-year theory sequences. Written in a patient, economist-motivated style: each technique is introduced, worked through, then immediately shown doing economic work. It's the natural companion across Weeks 2–9, but especially Weeks 5–6 (Ch 9, 11, 12, 13 on unconstrained, multi-variable, equality-constrained, and Kuhn-Tucker optimization) and Week 9 (Ch 15–17 on differential equations). Worth owning; used copies of the 4th edition are cheap.</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Gilbert Strang, *Introduction to Linear Algebra* (6th ed.)** — the 18.06 companion. Strang's prose is as good as the lectures.</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Morishima, *Theory of Economic Growth* (1969)** and **Morishima, *Equilibrium, Stability and Growth* (1964)** — the other two volumes of the "Morishima trilogy". The 1973 *Marx's Economics* is written assuming you've read these; you haven't, but you'll get most of it anyway.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Barro &amp; Sala-i-Martin, *Economic Growth* (2nd ed., MIT Press)** — the standard graduate growth-theory reference. Read selectively for Week 10.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Extra tools</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**IBM CPLEX LP Tutorial** (good, hands-on LP walk-through): <span class="ot">&lt;https://ibmdecisionoptimization.github.io/tutorials/html/Linear_Programming.html&gt;</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Brad DeLong's Solow notebook** (a Jupyter version of the QuantEcon Solow model): <span class="ot">&lt;https://nbviewer.jupyter.org/github/braddelong/LS2019/blob/master/2019-08-08-Sargent-Stachurski.ipynb&gt;</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Paul Cockshott's YouTube lectures** (Marx, materialism, mathematics and computing): search the channel for "Cockshott Lecture 1" — a full Fall 2021 course you can sample.</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python environment (do this once, before Week 1)</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv morishima-env</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> morishima-env/bin/activate</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy scipy sympy matplotlib jupyter pulp cvxpy networkx pandas</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install quantecon quantecon_book_networks</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>You own a MacBook Pro M1 Max with 32GB RAM — more than enough. Use VS Code with the Jupyter and Python extensions, or plain JupyterLab, whichever you already prefer.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

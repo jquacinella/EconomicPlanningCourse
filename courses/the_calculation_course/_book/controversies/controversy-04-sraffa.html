@@ -8,7 +8,7 @@
 
 <meta name="description" content="Production of Commodities by Means of Commodities — wage-profit frontier, the standard commodity, and reswitching.">
 
-<title>17&nbsp; Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory – The Calculation Course</title>
+<title>Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory – The Calculation Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -42,10 +77,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6d3d4bddaec62baaf326ab8671832176.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0009a4030f8b573446c5eb18f8660956.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d467529ee50aac4903b480e488badc68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,11 +110,189 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<!-- Loaded into the <head> of every HTML page via _quarto.yml's
+     format.html.include-in-header. Provides the JSXGraph runtime
+     for any chapter that embeds a widget.
+
+     This is the project's interim setup until the
+     `jsxgraph/jsxgraph-quarto` extension is installed (run
+     `quarto add jsxgraph/jsxgraph-quarto` at the project root —
+     see PRD Addendum 1, §1.5). Once the extension is present,
+     this include can stay (harmless) or be removed in favor of
+     the extension's bundled assets. -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-04-sraffa.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-04-sraffa.html"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -102,9 +317,10 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">The Calculation Course</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/jquacinella/EconomicPlanningCourse.git" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -117,14 +333,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Calculation Course</span></span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The Calculation Course</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../master-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Master resource list</span></span></a>
+  <a href="../master-resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Master resource list</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -138,70 +352,59 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 1 — Multivariable Calculus</span></span></a>
+  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 — Multivariable Calculus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 2 — Constrained Optimization</span></span></a>
+  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 — Constrained Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 — Linear Algebra Basics</span></span></a>
+  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 — Linear Algebra Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 4 — Eigenvalues and Systems</span></span></a>
+  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 — Eigenvalues and Systems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 5 — Economic Optimization</span></span></a>
+  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 — Economic Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></span></a>
+  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 7 — Input-Output Analysis</span></span></a>
+  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7 — Input-Output Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week 8 — Planning and Allocation</span></span></a>
+  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8 — Planning and Allocation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Week 9 — Differential Equations</span></span></a>
+  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9 — Differential Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Week 10 — Growth and Stability</span></span></a>
+  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 10 — Growth and Stability</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../post-course.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Post-course: reading Morishima and beyond</span></span></a>
+  <a href="../post-course.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Post-course: reading Morishima and beyond</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -215,64 +418,54 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></span></a>
+  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></span></a>
+  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Controversy 3 — The Transformation Problem</span></span></a>
+  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 3 — The Transformation Problem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></span></a>
+  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></span></a>
+  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></span></a>
+  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></span></a>
+  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></span></a>
+  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></span></a>
+  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Where this lands</span></span></a>
+  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Where this lands</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -286,20 +479,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A — Pre-course checklist</span></span></a>
+  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A — Pre-course checklist</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></span></a>
+  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></span></a>
+  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></a>
   </div>
 </li>
       </ul>
@@ -314,22 +504,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing"><span class="header-section-number">17.1</span> Framing</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">17.2</span> Learning objectives</a></li>
-  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts"><span class="header-section-number">17.3</span> Core concepts</a></li>
-  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule"><span class="header-section-number">17.4</span> Resource schedule</a></li>
-  <li><a href="#mini-project-sraffian-prices-wage-profit-frontier-and-reswitching" id="toc-mini-project-sraffian-prices-wage-profit-frontier-and-reswitching" class="nav-link" data-scroll-target="#mini-project-sraffian-prices-wage-profit-frontier-and-reswitching"><span class="header-section-number">17.5</span> Mini project — Sraffian prices, wage-profit frontier, and reswitching</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">17.6</span> Self-check</a></li>
-  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge"><span class="header-section-number">17.7</span> Bridge</a></li>
+  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing">Framing</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core concepts</a></li>
+  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule">Resource schedule</a></li>
+  <li><a href="#mini-project-sraffian-prices-wage-profit-frontier-and-reswitching" id="toc-mini-project-sraffian-prices-wage-profit-frontier-and-reswitching" class="nav-link" data-scroll-target="#mini-project-sraffian-prices-wage-profit-frontier-and-reswitching">Mini project — Sraffian prices, wage-profit frontier, and reswitching</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-check</a></li>
+  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge">Bridge</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/edit/main/controversies/controversy-04-sraffa.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/blob/main/controversies/controversy-04-sraffa.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-04-sraffa.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a></li></ol></nav>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-04-sraffa.html"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -346,8 +537,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="framing" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="framing"><span class="header-section-number">17.1</span> Framing</h2>
+<section id="framing" class="level2">
+<h2 class="anchored" data-anchor-id="framing">Framing</h2>
 <p>Piero Sraffa’s 1960 book <em>Production of Commodities by Means of Commodities: Prelude to a Critique of Economic Theory</em> is 99 pages of dense algebra, forty years in the writing, and arguably the most influential short book in 20th-century political economy outside Keynes. Its achievement: a complete theory of prices and income distribution derived from the technical structure of production plus <em>one</em> distributional parameter (wage or profit rate), with no reference to marginal utility, subjective preferences, or aggregate production functions. It provides the formal machinery that sank Samuelson’s “surrogate production function” defense in the Cambridge Capital Controversy (via the reswitching paradox), offers a clean alternative to Marxian value theory for determining prices (Steedman’s case in Controversy 3), and reconstructs a classical (Ricardo-Marx) tradition of price theory that had been dormant since the marginalist revolution. For your purposes, Sraffa is the keystone that connects the input-output machinery of Week 7 to the distributional questions at the center of political economy.</p>
 <div class="author-notes callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -372,16 +563,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="learning-objectives" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">17.2</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>Set up and solve Sraffa’s price equation for a multi-sector economy. Compute and plot the wage-profit frontier. Construct the “standard commodity” and understand why it matters (the frontier is linear in its units). Demonstrate reswitching on a two-technique example — this is the computational exhibit that ended the Cambridge Capital Controversy in Cambridge UK’s favor. Explain what Sraffa’s framework shares with Leontief (Week 7) and where it diverges. Understand why Sraffian prices don’t require marginal productivity theory and what that means for the neoclassical story of factor returns.</p>
 </section>
-<section id="core-concepts" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="core-concepts"><span class="header-section-number">17.3</span> Core concepts</h2>
+<section id="core-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="core-concepts">Core concepts</h2>
 <p>Sraffa’s price equation: p = (1 + r)(pA + wl), where A is the technology matrix, l the labor coefficients, w the wage, r the uniform rate of profit, and p the price row-vector. n+2 unknowns, n equations — fix a numeraire and one of (r, w). Wage-profit frontier: as r ranges from 0 to its maximum r_max (the Perron-Frobenius eigenvalue of A in a particular normalization), w traces out a downward-sloping curve. The <strong>standard commodity</strong>: Sraffa’s construction of a composite commodity in whose units the wage-profit relationship is <em>linear</em> — w = 1 − r/r_max. This is connected to the right eigenvector of A at the PF eigenvalue: the standard commodity has the same value composition as the economy’s input structure. <strong>Reswitching</strong>: for two available techniques (A₁, l₁) and (A₂, l₂), technique 1 can be cost-minimizing at both r = 0 and r = r_high while technique 2 dominates at intermediate r. This violates the neoclassical story that lower interest rates always induce more “capital-intensive” production. The Cambridge critique of aggregate capital (Controversy 1) gets its sharpest mathematical form here: there is no well-defined “quantity of capital” that monotonically substitutes for labor as interest rates change. Ricardian invariable measure of value: what the standard commodity provides, solving a problem Ricardo wrestled with for his last years. Marx connection: Sraffian prices = prices of production from Controversy 3, reached without any detour through labor values.</p>
 </section>
-<section id="resource-schedule" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="resource-schedule"><span class="header-section-number">17.4</span> Resource schedule</h2>
+<section id="resource-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="resource-schedule">Resource schedule</h2>
 <p>Approximately 6 days.</p>
 <ul>
 <li>Day 1–2: Sraffa, <em>Production of Commodities by Means of Commodities</em> (Cambridge University Press, 1960). Ninety-nine pages. Read slowly with pen and paper. Sraffa’s examples are small — work them out by hand before moving on. Widely available through university libraries; out of print in some editions but easy to find secondhand.</li>
@@ -391,26 +582,41 @@ ul.task-list li input[type="checkbox"] {
 <li>Day 6: Project.</li>
 </ul>
 </section>
-<section id="mini-project-sraffian-prices-wage-profit-frontier-and-reswitching" class="level2" data-number="17.5">
-<h2 data-number="17.5" class="anchored" data-anchor-id="mini-project-sraffian-prices-wage-profit-frontier-and-reswitching"><span class="header-section-number">17.5</span> Mini project — Sraffian prices, wage-profit frontier, and reswitching</h2>
+<section id="mini-project-sraffian-prices-wage-profit-frontier-and-reswitching" class="level2">
+<h2 class="anchored" data-anchor-id="mini-project-sraffian-prices-wage-profit-frontier-and-reswitching">Mini project — Sraffian prices, wage-profit frontier, and reswitching</h2>
 <ol type="1">
 <li>Set up a two-sector Sraffian economy: technology matrix A (2×2 nonnegative, PF eigenvalue &lt; 1), labor coefficient vector l. Compute the maximum rate of profit r_max as 1/(PF eigenvalue of A) − 1, using linalg machinery from Week 4. (2) For twenty values of r ∈ [0, r_max], solve for the corresponding wage w(r) with the numeraire “price of sector 1 = 1”, and plot the wage-profit frontier. (3) Construct the standard commodity: find the right eigenvector of A corresponding to r_max, normalize, use as the numeraire. Re-plot the wage-profit relationship in standard-commodity units. Verify it’s linear: w = 1 − r/r_max. Marvel. (4) Build a reswitching example: two techniques (A₁, l₁) and (A₂, l₂) chosen such that the cost functions cross twice as r varies. For each technique compute the wage-profit frontier; on a single plot show both frontiers and mark the switching points; annotate the reswitching region. (5) Compare with Marxian values: using the same A and l, compute the labor-value vector λ from Week 7. Check — are Sraffian prices at r = 0 (maximum wage) equal to labor values? (Yes.) Are they proportional to values at positive r? (Only if organic compositions are uniform across sectors — generally not.) (6) Write 300 words: what does your reswitching plot <em>mean</em> in plain English about the neoclassical story of factor returns? What does it say about the Cambridge Capital Controversy (Controversy 1)?</li>
 </ol>
 </section>
-<section id="self-check" class="level2" data-number="17.6">
-<h2 data-number="17.6" class="anchored" data-anchor-id="self-check"><span class="header-section-number">17.6</span> Self-check</h2>
+<section id="self-check" class="level2">
+<h2 class="anchored" data-anchor-id="self-check">Self-check</h2>
 <p>What role does marginal utility play in Sraffian price theory? (Answer: none.) What’s the economic content of the standard commodity — why does Sraffa bother constructing it? Why is the wage-profit frontier always downward-sloping for a given technique? State the reswitching phenomenon in one sentence. What does Sraffa’s framework share with the Leontief input-output framework (Week 7), and where does it diverge? Is the Sraffian framework compatible with the Marxian one? (Yes — they compute the same prices of production — though Sraffians tend to treat values as optional.)</p>
 </section>
-<section id="bridge" class="level2" data-number="17.7">
-<h2 data-number="17.7" class="anchored" data-anchor-id="bridge"><span class="header-section-number">17.7</span> Bridge</h2>
+<section id="bridge" class="level2">
+<h2 class="anchored" data-anchor-id="bridge">Bridge</h2>
 <p>Controversy 5 is the famous late-Marx claim that Sraffa’s apparatus most directly endangers: the tendential fall in the rate of profit. If Sraffa lets you compute r directly from (A, l, w) with no reference to organic composition or values, then <em>what is Marx’s LTFRP a claim about</em>, exactly? Okishio’s 1961 theorem sharpens this into a counter-claim: productivity-enhancing technical change must <em>raise</em>, not lower, the rate of profit. The TSSI response challenges the foundation. The empirical evidence is real and contested.</p>
 
+
+<!-- -->
 
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -479,6 +685,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -812,15 +1069,65 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../controversies/controversy-03-transformation.html" class="pagination-link" aria-label="Controversy 3 — The Transformation Problem">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Controversy 3 — The Transformation Problem</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Controversy 3 — The Transformation Problem</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../controversies/controversy-05-okishio.html" class="pagination-link" aria-label="Controversy 5 — The Falling Rate of Profit and Okishio's Theorem">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Controversy 4 — Sraffa vs. Marginalist Value Theory"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Production of Commodities by Means of Commodities — wage-profit frontier, the standard commodity, and reswitching."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 4</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Framing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Piero Sraffa's 1960 book *Production of Commodities by Means of Commodities: Prelude to a Critique of Economic Theory* is 99 pages of dense algebra, forty years in the writing, and arguably the most influential short book in 20th-century political economy outside Keynes. Its achievement: a complete theory of prices and income distribution derived from the technical structure of production plus *one* distributional parameter (wage or profit rate), with no reference to marginal utility, subjective preferences, or aggregate production functions. It provides the formal machinery that sank Samuelson's "surrogate production function" defense in the Cambridge Capital Controversy (via the reswitching paradox), offers a clean alternative to Marxian value theory for determining prices (Steedman's case in Controversy 3), and reconstructs a classical (Ricardo-Marx) tradition of price theory that had been dormant since the marginalist revolution. For your purposes, Sraffa is the keystone that connects the input-output machinery of Week 7 to the distributional questions at the center of political economy.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="minimal" collapse="true" .author-notes}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Author's notes for this chapter</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Reading notes</span><span class="co">](/notes/the_calculation_course/controversies/controversy-04-sraffa/reading-notes/)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Open questions</span><span class="co">](/notes/the_calculation_course/controversies/controversy-04-sraffa/questions/)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Insights and connections</span><span class="co">](/notes/the_calculation_course/controversies/controversy-04-sraffa/insights/)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">References to revisit</span><span class="co">](/notes/the_calculation_course/controversies/controversy-04-sraffa/refs/)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Scratchpad notebook</span><span class="co">](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-04-sraffa/scratchpad.ipynb)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Set up and solve Sraffa's price equation for a multi-sector economy. Compute and plot the wage-profit frontier. Construct the "standard commodity" and understand why it matters (the frontier is linear in its units). Demonstrate reswitching on a two-technique example — this is the computational exhibit that ended the Cambridge Capital Controversy in Cambridge UK's favor. Explain what Sraffa's framework shares with Leontief (Week 7) and where it diverges. Understand why Sraffian prices don't require marginal productivity theory and what that means for the neoclassical story of factor returns.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Core concepts</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Sraffa's price equation: p = (1 + r)(pA + wl), where A is the technology matrix, l the labor coefficients, w the wage, r the uniform rate of profit, and p the price row-vector. n+2 unknowns, n equations — fix a numeraire and one of (r, w). Wage-profit frontier: as r ranges from 0 to its maximum r_max (the Perron-Frobenius eigenvalue of A in a particular normalization), w traces out a downward-sloping curve. The **standard commodity**: Sraffa's construction of a composite commodity in whose units the wage-profit relationship is *linear* — w = 1 − r/r_max. This is connected to the right eigenvector of A at the PF eigenvalue: the standard commodity has the same value composition as the economy's input structure. **Reswitching**: for two available techniques (A₁, l₁) and (A₂, l₂), technique 1 can be cost-minimizing at both r = 0 and r = r_high while technique 2 dominates at intermediate r. This violates the neoclassical story that lower interest rates always induce more "capital-intensive" production. The Cambridge critique of aggregate capital (Controversy 1) gets its sharpest mathematical form here: there is no well-defined "quantity of capital" that monotonically substitutes for labor as interest rates change. Ricardian invariable measure of value: what the standard commodity provides, solving a problem Ricardo wrestled with for his last years. Marx connection: Sraffian prices = prices of production from Controversy 3, reached without any detour through labor values.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resource schedule</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Approximately 6 days.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 1–2: Sraffa, *Production of Commodities by Means of Commodities* (Cambridge University Press, 1960). Ninety-nine pages. Read slowly with pen and paper. Sraffa's examples are small — work them out by hand before moving on. Widely available through university libraries; out of print in some editions but easy to find secondhand.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 3: Pasinetti, *Lectures on the Theory of Production* (Columbia University Press, 1977), Chapters 4–5 — the cleanest pedagogical presentation of Sraffa's apparatus.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 4: Kurz &amp; Salvadori, *Theory of Production: A Long-Period Analysis* (Cambridge 1995) — the modern comprehensive reference. Chapter 4 on single-product systems, Chapter 5 on joint production.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 5: Reswitching. Samuelson's 1966 *Quarterly Journal of Economics* "Summing Up" piece is the famous concession: read the final few pages. For worked reswitching examples in detail, Robert Vienneau's blog has dozens: &lt;http://robertvienneau.blogspot.com&gt;. For the definitive modern treatment of reswitching and capital reversing, see Petri's *General Equilibrium, Capital and Macroeconomics* (Elgar, 2004).</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 6: Project.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mini project — Sraffian prices, wage-profit frontier, and reswitching</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>(1) Set up a two-sector Sraffian economy: technology matrix A (2×2 nonnegative, PF eigenvalue &lt; 1), labor coefficient vector l. Compute the maximum rate of profit r_max as 1/(PF eigenvalue of A) − 1, using linalg machinery from Week 4. (2) For twenty values of r ∈ <span class="co">[</span><span class="ot">0, r_max</span><span class="co">]</span>, solve for the corresponding wage w(r) with the numeraire "price of sector 1 = 1", and plot the wage-profit frontier. (3) Construct the standard commodity: find the right eigenvector of A corresponding to r_max, normalize, use as the numeraire. Re-plot the wage-profit relationship in standard-commodity units. Verify it's linear: w = 1 − r/r_max. Marvel. (4) Build a reswitching example: two techniques (A₁, l₁) and (A₂, l₂) chosen such that the cost functions cross twice as r varies. For each technique compute the wage-profit frontier; on a single plot show both frontiers and mark the switching points; annotate the reswitching region. (5) Compare with Marxian values: using the same A and l, compute the labor-value vector λ from Week 7. Check — are Sraffian prices at r = 0 (maximum wage) equal to labor values? (Yes.) Are they proportional to values at positive r? (Only if organic compositions are uniform across sectors — generally not.) (6) Write 300 words: what does your reswitching plot *mean* in plain English about the neoclassical story of factor returns? What does it say about the Cambridge Capital Controversy (Controversy 1)?</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Self-check</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>What role does marginal utility play in Sraffian price theory? (Answer: none.) What's the economic content of the standard commodity — why does Sraffa bother constructing it? Why is the wage-profit frontier always downward-sloping for a given technique? State the reswitching phenomenon in one sentence. What does Sraffa's framework share with the Leontief input-output framework (Week 7), and where does it diverge? Is the Sraffian framework compatible with the Marxian one? (Yes — they compute the same prices of production — though Sraffians tend to treat values as optional.)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bridge</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Controversy 5 is the famous late-Marx claim that Sraffa's apparatus most directly endangers: the tendential fall in the rate of profit. If Sraffa lets you compute r directly from (A, l, w) with no reference to organic composition or values, then *what is Marx's LTFRP a claim about*, exactly? Okishio's 1961 theorem sharpens this into a counter-claim: productivity-enhancing technical change must *raise*, not lower, the rate of profit. The TSSI response challenges the foundation. The empirical evidence is real and contested.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

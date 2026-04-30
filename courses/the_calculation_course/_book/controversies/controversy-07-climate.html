@@ -8,7 +8,7 @@
 
 <meta name="description" content="A thirty-year decarbonization LP for a toy economy, stress-tested against the Austrian and Cosmonaut critiques.">
 
-<title>21&nbsp; Controversy 7 — Climate-Constrained Planning – The Calculation Course</title>
+<title>Controversy 7 — Climate-Constrained Planning – The Calculation Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -42,10 +77,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6d3d4bddaec62baaf326ab8671832176.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0009a4030f8b573446c5eb18f8660956.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d467529ee50aac4903b480e488badc68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,11 +110,189 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<!-- Loaded into the <head> of every HTML page via _quarto.yml's
+     format.html.include-in-header. Provides the JSXGraph runtime
+     for any chapter that embeds a widget.
+
+     This is the project's interim setup until the
+     `jsxgraph/jsxgraph-quarto` extension is installed (run
+     `quarto add jsxgraph/jsxgraph-quarto` at the project root —
+     see PRD Addendum 1, §1.5). Once the extension is present,
+     this include can stay (harmless) or be removed in favor of
+     the extension's bundled assets. -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-07-climate.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-07-climate.html"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -102,9 +317,10 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">The Calculation Course</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/jquacinella/EconomicPlanningCourse.git" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -117,14 +333,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Calculation Course</span></span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The Calculation Course</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../master-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Master resource list</span></span></a>
+  <a href="../master-resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Master resource list</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -138,70 +352,59 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 1 — Multivariable Calculus</span></span></a>
+  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 — Multivariable Calculus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 2 — Constrained Optimization</span></span></a>
+  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 — Constrained Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 — Linear Algebra Basics</span></span></a>
+  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 — Linear Algebra Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 4 — Eigenvalues and Systems</span></span></a>
+  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 — Eigenvalues and Systems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 5 — Economic Optimization</span></span></a>
+  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 — Economic Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></span></a>
+  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 7 — Input-Output Analysis</span></span></a>
+  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7 — Input-Output Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week 8 — Planning and Allocation</span></span></a>
+  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8 — Planning and Allocation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Week 9 — Differential Equations</span></span></a>
+  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9 — Differential Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Week 10 — Growth and Stability</span></span></a>
+  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 10 — Growth and Stability</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../post-course.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Post-course: reading Morishima and beyond</span></span></a>
+  <a href="../post-course.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Post-course: reading Morishima and beyond</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -215,64 +418,54 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></span></a>
+  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></span></a>
+  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Controversy 3 — The Transformation Problem</span></span></a>
+  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 3 — The Transformation Problem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></span></a>
+  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></span></a>
+  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></span></a>
+  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></span></a>
+  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></span></a>
+  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></span></a>
+  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Where this lands</span></span></a>
+  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Where this lands</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -286,20 +479,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A — Pre-course checklist</span></span></a>
+  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A — Pre-course checklist</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></span></a>
+  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></span></a>
+  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></a>
   </div>
 </li>
       </ul>
@@ -314,22 +504,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing"><span class="header-section-number">21.1</span> Framing</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">21.2</span> Learning objectives</a></li>
-  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts"><span class="header-section-number">21.3</span> Core concepts</a></li>
-  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule"><span class="header-section-number">21.4</span> Resource schedule</a></li>
-  <li><a href="#mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy" id="toc-mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy" class="nav-link" data-scroll-target="#mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy"><span class="header-section-number">21.5</span> Mini project — A thirty-year decarbonization LP for a toy economy</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">21.6</span> Self-check</a></li>
-  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge"><span class="header-section-number">21.7</span> Bridge</a></li>
+  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing">Framing</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core concepts</a></li>
+  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule">Resource schedule</a></li>
+  <li><a href="#mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy" id="toc-mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy" class="nav-link" data-scroll-target="#mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy">Mini project — A thirty-year decarbonization LP for a toy economy</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-check</a></li>
+  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge">Bridge</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/edit/main/controversies/controversy-07-climate.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/blob/main/controversies/controversy-07-climate.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-07-climate.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a></li></ol></nav>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-07-climate.html"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -346,8 +537,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="framing" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="framing"><span class="header-section-number">21.1</span> Framing</h2>
+<section id="framing" class="level2">
+<h2 class="anchored" data-anchor-id="framing">Framing</h2>
 <p>In October 2022 Cockshott, Cottrell, and Dapprich published <em>Economic Planning in an Age of Climate Crisis</em> — the trio’s argument that the climate transition cannot be accomplished through carbon pricing and market incentives, and requires explicit economy-wide planning of the sort they have been theorizing for thirty years. This is the book where the planning apparatus you’ve now built in Python gets pointed at the crisis that will define the 21st century. The argument is serious, and it has received serious heterodox critical attention — Michael Roberts is broadly sympathetic; the Cosmonaut review (“How (Not) to Economically Plan in the Age of Climate Crisis”) is sharply critical while engaging the substance. For a closing controversy this is the right one because it (a) synthesizes every piece of the prior arc — input-output, LP duality, Morishima-style multi-sector reasoning, labor tokens from Controversy 6, climate as a set of hard physical constraints — into a single concrete application, and (b) puts the whole tradition on trial against a real-world task with a deadline.</p>
 <div class="author-notes callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -372,16 +563,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="learning-objectives" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">21.2</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>Formulate a climate-constrained planning LP: standard multi-sector planning with the addition of CO₂ emission coefficients and a hard emissions cap that tightens over time. Understand why carbon pricing <em>alone</em> cannot accomplish the scale of transition required, and what the planning alternative adds. Know the historical precedent the authors lean on (UK wartime planning 1939–1945 and its continuation into the early postwar period). Be able to critique the book’s proposal using tools from Controversies 2 (Austrian critique), 3 (transformation problem — does labor-plus-CO₂ dual accounting hold together?), and 6 (money and investment). Have computationally executed a three-decade decarbonization plan for a toy economy and seen, concretely, how the planner’s choices trade off output, consumption, emissions, and investment in green capacity.</p>
 </section>
-<section id="core-concepts" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="core-concepts"><span class="header-section-number">21.3</span> Core concepts</h2>
+<section id="core-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="core-concepts">Core concepts</h2>
 <p>Dual accounting: every commodity has both a labor-time cost (as in Weeks 7–8) and a CO₂-emissions cost, with the emissions cost computed by a parallel Leontief inverse on the emissions matrix E. Planning objective: maximize welfare (output scale of a standard consumption basket) subject to labor endowment, resource endowments, <em>and</em> a time-varying emissions cap C(t) that falls toward zero. Shadow price of the emissions constraint: the LP’s dual variable on the emissions cap is the planning equivalent of a carbon price — but unlike a market carbon price, it’s computed self-consistently with the physical plan rather than emerging from a fiscal policy decision. The wartime-planning precedent: the UK from 1939 through the early 1950s ran what was in effect an input-output planning system (rationing, direction of labor, Board of Trade controls, sectoral priorities), and it worked well enough to win a total war and rebuild afterward. The authors’ claim: the climate transition is a wartime-scale mobilization, and wartime-scale mobilizations have historically been done through planning, not markets. The critical response (Cosmonaut review, arbeitszeit.noblogs analysis): the book’s novelty over <em>Towards a New Socialism</em> is limited; the ecological sections are thinner than the economic sections; and the relationship between labor-time and CO₂ as parallel accounting units needs more theoretical work than it receives. The Austrian response (implicit, derivable from Boettke-Candela lines): the emissions-abatement pathway requires <em>discovery</em> of technologies that don’t yet exist, which is exactly where Hayekian knowledge arguments have their strongest footing.</p>
 </section>
-<section id="resource-schedule" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="resource-schedule"><span class="header-section-number">21.4</span> Resource schedule</h2>
+<section id="resource-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="resource-schedule">Resource schedule</h2>
 <p>Approximately 7 days.</p>
 <ul>
 <li>Day 1–2: The book itself. Cockshott, Cottrell &amp; Dapprich, <em>Economic Planning in an Age of Climate Crisis</em> (Amazon self-published, 2022, ISBN 9798357728739). Not available as a free legal PDF — it’s cheap on Kindle ($10 or so). Chapters 1–3 (climate science and combat), 6–7 (theory of optimal planning, planning tractability), and 8 (planning and value) are the core for your purposes. The wartime-planning chapters (4–5) are worth reading as historical evidence that economy-wide planning has actually worked at scale under duress. Appendix A describes their software tools.</li>
@@ -392,8 +583,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Day 7: Project.</li>
 </ul>
 </section>
-<section id="mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy" class="level2" data-number="21.5">
-<h2 data-number="21.5" class="anchored" data-anchor-id="mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy"><span class="header-section-number">21.5</span> Mini project — A thirty-year decarbonization LP for a toy economy</h2>
+<section id="mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy" class="level2">
+<h2 class="anchored" data-anchor-id="mini-project-a-thirty-year-decarbonization-lp-for-a-toy-economy">Mini project — A thirty-year decarbonization LP for a toy economy</h2>
 <p>Take your planning LP machinery from Week 8 and Controversy 6 Version 4. Extend to include climate constraints and run a full transition scenario.</p>
 <p><em>Setup.</em> Build a 6-sector economy: (1) fossil electricity, (2) renewable electricity, (3) heavy industry, (4) agriculture, (5) consumer manufacturing, (6) services. Pick plausible technical coefficients A (6×6, Perron-Frobenius eigenvalue &lt; 1) and labor coefficients l. Critically: build an emissions-coefficient vector e, where eᵢ is direct CO₂ emissions per unit of sector-i output. Fossil electricity is by far the largest — say 10× any other sector. Renewable electricity is near zero. Heavy industry is moderately high. Agriculture is moderately high (methane, fertilizer). Consumer manufacturing and services are low. Compute <em>embodied</em> emissions per unit of final demand: ε = e(I − A)⁻¹, analogous to labor values.</p>
 <p><em>Part A: The status quo.</em> Solve the standard planning LP (maximize consumption scale, subject to labor endowment) with no emissions constraint. Report the associated emissions level per capita. This is the “unplanned baseline” — or equivalently, the emission level of a planner who doesn’t care about climate.</p>
@@ -403,20 +594,35 @@ ul.task-list li input[type="checkbox"] {
 <p><em>Part E: Stress-test the critical arguments.</em> (1) Boettke-Candela Austrian critique: randomize the emissions coefficients e by ±20% to simulate the planner being wrong about emissions intensities. Re-run Part C. How much does the plan degrade? (2) Cosmonaut critique: the labor-plus-CO₂ dual accounting — does it actually produce coherent shadow prices, or are the two constraints pulling in ways that create internal contradictions? Experiment. (3) Dapprich token extension: add consumer demand that responds to token prices. Does the plan still converge?</p>
 <p>Write 1,500 words in the notebook. Address: does your computational exercise support the Cockshott-Cottrell-Dapprich position? Where does carbon pricing look better and where does planning? What did the 30-year trajectory teach you that the equations alone did not? What would you tell someone in actual climate-policy circles who asked whether this kind of planning is feasible at national scale?</p>
 </section>
-<section id="self-check" class="level2" data-number="21.6">
-<h2 data-number="21.6" class="anchored" data-anchor-id="self-check"><span class="header-section-number">21.6</span> Self-check</h2>
+<section id="self-check" class="level2">
+<h2 class="anchored" data-anchor-id="self-check">Self-check</h2>
 <p>Why can’t a pure carbon price accomplish what the planning LP does? Why can the planning LP not accomplish what a carbon price does? What does the shadow price on the emissions cap mean, and why is it a more defensible “carbon price” than one set by political negotiation? State the Austrian critique of your Part E results, in its strongest form. What specifically does <em>Economic Planning in an Age of Climate Crisis</em> add beyond <em>Towards a New Socialism</em> — and what does the Cosmonaut review argue it fails to add? Is the wartime-planning historical precedent actually a good analogy for the climate transition? Where does it break down?</p>
 </section>
-<section id="bridge" class="level2" data-number="21.7">
-<h2 data-number="21.7" class="anchored" data-anchor-id="bridge"><span class="header-section-number">21.7</span> Bridge</h2>
+<section id="bridge" class="level2">
+<h2 class="anchored" data-anchor-id="bridge">Bridge</h2>
 <p>You’re out of controversies. What you’ve built, if you’ve done this seriously, is a working computational model of the climate transition under planned-economy assumptions, grounded in thirty years of heterodox-economic theory and stress-tested against the best critical arguments. That is a deliverable. Not many people anywhere have that.</p>
 
+
+<!-- -->
 
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -485,6 +691,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -818,15 +1075,80 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../controversies/controversy-06-money.html" class="pagination-link" aria-label="Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../201/placeholder.html" class="pagination-link" aria-label="201 — Placeholder for a Computational Reconstruction of Zhang's Marxian Formalization Program">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Controversy 7 — Climate-Constrained Planning"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "A thirty-year decarbonization LP for a toy economy, stress-tested against the Austrian and Cosmonaut critiques."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 8</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Framing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>In October 2022 Cockshott, Cottrell, and Dapprich published *Economic Planning in an Age of Climate Crisis* — the trio's argument that the climate transition cannot be accomplished through carbon pricing and market incentives, and requires explicit economy-wide planning of the sort they have been theorizing for thirty years. This is the book where the planning apparatus you've now built in Python gets pointed at the crisis that will define the 21st century. The argument is serious, and it has received serious heterodox critical attention — Michael Roberts is broadly sympathetic; the Cosmonaut review ("How (Not) to Economically Plan in the Age of Climate Crisis") is sharply critical while engaging the substance. For a closing controversy this is the right one because it (a) synthesizes every piece of the prior arc — input-output, LP duality, Morishima-style multi-sector reasoning, labor tokens from Controversy 6, climate as a set of hard physical constraints — into a single concrete application, and (b) puts the whole tradition on trial against a real-world task with a deadline.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="minimal" collapse="true" .author-notes}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Author's notes for this chapter</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Reading notes</span><span class="co">](/notes/the_calculation_course/controversies/controversy-07-climate/reading-notes/)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Open questions</span><span class="co">](/notes/the_calculation_course/controversies/controversy-07-climate/questions/)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Insights and connections</span><span class="co">](/notes/the_calculation_course/controversies/controversy-07-climate/insights/)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">References to revisit</span><span class="co">](/notes/the_calculation_course/controversies/controversy-07-climate/refs/)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Scratchpad notebook</span><span class="co">](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-07-climate/scratchpad.ipynb)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Formulate a climate-constrained planning LP: standard multi-sector planning with the addition of CO₂ emission coefficients and a hard emissions cap that tightens over time. Understand why carbon pricing *alone* cannot accomplish the scale of transition required, and what the planning alternative adds. Know the historical precedent the authors lean on (UK wartime planning 1939–1945 and its continuation into the early postwar period). Be able to critique the book's proposal using tools from Controversies 2 (Austrian critique), 3 (transformation problem — does labor-plus-CO₂ dual accounting hold together?), and 6 (money and investment). Have computationally executed a three-decade decarbonization plan for a toy economy and seen, concretely, how the planner's choices trade off output, consumption, emissions, and investment in green capacity.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Core concepts</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Dual accounting: every commodity has both a labor-time cost (as in Weeks 7–8) and a CO₂-emissions cost, with the emissions cost computed by a parallel Leontief inverse on the emissions matrix E. Planning objective: maximize welfare (output scale of a standard consumption basket) subject to labor endowment, resource endowments, *and* a time-varying emissions cap C(t) that falls toward zero. Shadow price of the emissions constraint: the LP's dual variable on the emissions cap is the planning equivalent of a carbon price — but unlike a market carbon price, it's computed self-consistently with the physical plan rather than emerging from a fiscal policy decision. The wartime-planning precedent: the UK from 1939 through the early 1950s ran what was in effect an input-output planning system (rationing, direction of labor, Board of Trade controls, sectoral priorities), and it worked well enough to win a total war and rebuild afterward. The authors' claim: the climate transition is a wartime-scale mobilization, and wartime-scale mobilizations have historically been done through planning, not markets. The critical response (Cosmonaut review, arbeitszeit.noblogs analysis): the book's novelty over *Towards a New Socialism* is limited; the ecological sections are thinner than the economic sections; and the relationship between labor-time and CO₂ as parallel accounting units needs more theoretical work than it receives. The Austrian response (implicit, derivable from Boettke-Candela lines): the emissions-abatement pathway requires *discovery* of technologies that don't yet exist, which is exactly where Hayekian knowledge arguments have their strongest footing.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resource schedule</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Approximately 7 days.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 1–2: The book itself. Cockshott, Cottrell &amp; Dapprich, *Economic Planning in an Age of Climate Crisis* (Amazon self-published, 2022, ISBN 9798357728739). Not available as a free legal PDF — it's cheap on Kindle ($10 or so). Chapters 1–3 (climate science and combat), 6–7 (theory of optimal planning, planning tractability), and 8 (planning and value) are the core for your purposes. The wartime-planning chapters (4–5) are worth reading as historical evidence that economy-wide planning has actually worked at scale under duress. Appendix A describes their software tools.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 3: The sympathetic critical review. Michael Roberts, "Planning and the Climate," *The Next Recession* (Dec 2022): <span class="ot">&lt;https://thenextrecession.wordpress.com/2022/12/15/planning-and-the-climate/&gt;</span>. Roberts is a Marxist economist who broadly agrees with the planning tradition but has real critiques; this is the most useful single secondary source.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 4: The harsh critical review. *Cosmonaut*, "How (Not) to Economically Plan in the Age of Climate Crisis" (July 2023): &lt;https://cosmonautmag.com/2023/07/how-not-to-economically-plan-in-the-age-of-climate-crisis/&gt;. From within the planning-sympathetic left, argues that the book is substantially weaker than *Towards a New Socialism* and that the ecological apparatus is underdeveloped. Read this even if you're sympathetic to the authors — especially if you're sympathetic.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 5: The left counter-proposal worth knowing. Troy Vettese &amp; Drew Pendergrass, *Half-Earth Socialism* (Verso, 2022). Different framework (explicitly anti-market, more radical on degrowth and land-use rewilding, uses GAMS-style LP), same political space. Read at least the introduction and the planning chapter. Interactive simulation at <span class="ot">&lt;https://half.earth&gt;</span>.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 6: Background — the economics of climate mitigation in the mainstream. Nicholas Stern's 2006 *Stern Review* executive summary, for a sense of what the "carbon pricing + growth" orthodoxy looks like. Then William Nordhaus's Nobel lecture (available free). The point is to know the mainstream position you're arguing against before you throw your planning LP at the problem.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 7: Project.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mini project — A thirty-year decarbonization LP for a toy economy</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Take your planning LP machinery from Week 8 and Controversy 6 Version 4. Extend to include climate constraints and run a full transition scenario.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>*Setup.* Build a 6-sector economy: (1) fossil electricity, (2) renewable electricity, (3) heavy industry, (4) agriculture, (5) consumer manufacturing, (6) services. Pick plausible technical coefficients A (6×6, Perron-Frobenius eigenvalue &lt; 1) and labor coefficients l. Critically: build an emissions-coefficient vector e, where eᵢ is direct CO₂ emissions per unit of sector-i output. Fossil electricity is by far the largest — say 10× any other sector. Renewable electricity is near zero. Heavy industry is moderately high. Agriculture is moderately high (methane, fertilizer). Consumer manufacturing and services are low. Compute *embodied* emissions per unit of final demand: ε = e(I − A)⁻¹, analogous to labor values.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>*Part A: The status quo.* Solve the standard planning LP (maximize consumption scale, subject to labor endowment) with no emissions constraint. Report the associated emissions level per capita. This is the "unplanned baseline" — or equivalently, the emission level of a planner who doesn't care about climate.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>*Part B: Hard-cap mitigation.* Add a constraint: total emissions ≤ C. Start with C equal to the baseline, solve; then reduce C by 5% each period over 30 periods (years), re-solving each time and tracking: (a) feasibility — does the LP remain feasible? (b) the shadow price of the emissions constraint — your endogenous "carbon price"; (c) sectoral output composition — how does the plan reallocate from fossil toward renewable as C tightens? (d) consumption scale — how much does welfare fall, and when (if ever) does it recover as green capacity grows?</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>*Part C: Green investment dynamics.* Extend to multi-period with explicit capital accumulation: green electricity capacity K_R(t) grows according to investment decisions; productive capacity of sector 2 is bounded by K_R. Same for fossil sector — K_F(t) doesn't grow but depreciates. Solve the planning problem as an intertemporal LP: 30-period horizon, endogenous investment allocation, the emissions cap C(t) falling linearly to zero by t=30. This is now a real decarbonization plan. Plot emissions, renewable capacity, fossil capacity, consumption, labor allocation across all sectors over the 30 years.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>*Part D: Compare with carbon pricing.* Implement the "mainstream" alternative: keep the plan as the baseline but add a Pigouvian carbon tax τ on emissions, adjust τ until total emissions equal the planned trajectory. Compare the two allocations — where do they diverge? What does the tax fail to do that the plan does, and vice versa? (Typical finding: the plan coordinates *timing* of capacity expansion in ways a tax alone struggles with; the tax is more robust to planner mistakes about future technology costs.)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>*Part E: Stress-test the critical arguments.* (1) Boettke-Candela Austrian critique: randomize the emissions coefficients e by ±20% to simulate the planner being wrong about emissions intensities. Re-run Part C. How much does the plan degrade? (2) Cosmonaut critique: the labor-plus-CO₂ dual accounting — does it actually produce coherent shadow prices, or are the two constraints pulling in ways that create internal contradictions? Experiment. (3) Dapprich token extension: add consumer demand that responds to token prices. Does the plan still converge?</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Write 1,500 words in the notebook. Address: does your computational exercise support the Cockshott-Cottrell-Dapprich position? Where does carbon pricing look better and where does planning? What did the 30-year trajectory teach you that the equations alone did not? What would you tell someone in actual climate-policy circles who asked whether this kind of planning is feasible at national scale?</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Self-check</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Why can't a pure carbon price accomplish what the planning LP does? Why can the planning LP not accomplish what a carbon price does? What does the shadow price on the emissions cap mean, and why is it a more defensible "carbon price" than one set by political negotiation? State the Austrian critique of your Part E results, in its strongest form. What specifically does *Economic Planning in an Age of Climate Crisis* add beyond *Towards a New Socialism* — and what does the Cosmonaut review argue it fails to add? Is the wartime-planning historical precedent actually a good analogy for the climate transition? Where does it break down?</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bridge</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>You're out of controversies. What you've built, if you've done this seriously, is a working computational model of the climate transition under planned-economy assumptions, grounded in thirty years of heterodox-economic theory and stress-tested against the best critical arguments. That is a deliverable. Not many people anywhere have that.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

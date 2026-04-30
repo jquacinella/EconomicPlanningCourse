@@ -8,7 +8,7 @@
 
 <meta name="description" content="Kantorovich’s machinery, LP duality, and shadow prices as planning prices.">
 
-<title>8&nbsp; Week 6 — Linear Programming and Duality – The Calculation Course</title>
+<title>Week 6 — Linear Programming and Duality – The Calculation Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -42,10 +77,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6d3d4bddaec62baaf326ab8671832176.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0009a4030f8b573446c5eb18f8660956.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d467529ee50aac4903b480e488badc68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,11 +110,189 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<!-- Loaded into the <head> of every HTML page via _quarto.yml's
+     format.html.include-in-header. Provides the JSXGraph runtime
+     for any chapter that embeds a widget.
+
+     This is the project's interim setup until the
+     `jsxgraph/jsxgraph-quarto` extension is installed (run
+     `quarto add jsxgraph/jsxgraph-quarto` at the project root —
+     see PRD Addendum 1, §1.5). Once the extension is present,
+     this include can stay (harmless) or be removed in favor of
+     the extension's bundled assets. -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/part-i.html">Part I — The Mathematics</a></li><li class="breadcrumb-item"><a href="../weeks/week-06-lp-duality.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/part-i.html">Part I — The Mathematics</a></li><li class="breadcrumb-item"><a href="../weeks/week-06-lp-duality.html"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -102,9 +317,10 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">The Calculation Course</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/jquacinella/EconomicPlanningCourse.git" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -117,14 +333,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Calculation Course</span></span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The Calculation Course</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../master-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Master resource list</span></span></a>
+  <a href="../master-resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Master resource list</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -138,70 +352,59 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 1 — Multivariable Calculus</span></span></a>
+  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 — Multivariable Calculus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 2 — Constrained Optimization</span></span></a>
+  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 — Constrained Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 — Linear Algebra Basics</span></span></a>
+  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 — Linear Algebra Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 4 — Eigenvalues and Systems</span></span></a>
+  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 — Eigenvalues and Systems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 5 — Economic Optimization</span></span></a>
+  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 — Economic Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></span></a>
+  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 7 — Input-Output Analysis</span></span></a>
+  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7 — Input-Output Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week 8 — Planning and Allocation</span></span></a>
+  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8 — Planning and Allocation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Week 9 — Differential Equations</span></span></a>
+  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9 — Differential Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Week 10 — Growth and Stability</span></span></a>
+  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 10 — Growth and Stability</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../post-course.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Post-course: reading Morishima and beyond</span></span></a>
+  <a href="../post-course.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Post-course: reading Morishima and beyond</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -215,64 +418,54 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></span></a>
+  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></span></a>
+  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Controversy 3 — The Transformation Problem</span></span></a>
+  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 3 — The Transformation Problem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></span></a>
+  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></span></a>
+  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></span></a>
+  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></span></a>
+  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></span></a>
+  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></span></a>
+  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Where this lands</span></span></a>
+  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Where this lands</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -286,20 +479,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A — Pre-course checklist</span></span></a>
+  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A — Pre-course checklist</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></span></a>
+  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></span></a>
+  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></a>
   </div>
 </li>
       </ul>
@@ -314,22 +504,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing"><span class="header-section-number">8.1</span> Framing</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">8.2</span> Learning objectives</a></li>
-  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts"><span class="header-section-number">8.3</span> Core concepts</a></li>
-  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule"><span class="header-section-number">8.4</span> Resource schedule</a></li>
-  <li><a href="#mini-project-production-lp-with-shadow-price-analysis" id="toc-mini-project-production-lp-with-shadow-price-analysis" class="nav-link" data-scroll-target="#mini-project-production-lp-with-shadow-price-analysis"><span class="header-section-number">8.5</span> Mini project — Production LP with shadow-price analysis</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">8.6</span> Self-check</a></li>
-  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge"><span class="header-section-number">8.7</span> Bridge</a></li>
+  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing">Framing</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core concepts</a></li>
+  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule">Resource schedule</a></li>
+  <li><a href="#mini-project-production-lp-with-shadow-price-analysis" id="toc-mini-project-production-lp-with-shadow-price-analysis" class="nav-link" data-scroll-target="#mini-project-production-lp-with-shadow-price-analysis">Mini project — Production LP with shadow-price analysis</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-check</a></li>
+  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge">Bridge</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/edit/main/weeks/week-06-lp-duality.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/blob/main/weeks/week-06-lp-duality.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/part-i.html">Part I — The Mathematics</a></li><li class="breadcrumb-item"><a href="../weeks/week-06-lp-duality.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></a></li></ol></nav>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/part-i.html">Part I — The Mathematics</a></li><li class="breadcrumb-item"><a href="../weeks/week-06-lp-duality.html"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -346,8 +537,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="framing" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="framing"><span class="header-section-number">8.1</span> Framing</h2>
+<section id="framing" class="level2">
+<h2 class="anchored" data-anchor-id="framing">Framing</h2>
 <p>In 1939, Leonid Kantorovich — working on plywood-cutting optimization for a Soviet industry ministry — invented linear programming, and won the only Nobel Prize in economics ever given to a Soviet citizen. Every LP has a <em>dual</em> problem, and the duality theorem is the mathematical foundation of planning prices. This week you learn to use an LP solver, read the shadow-price output, and understand why Kantorovich’s machinery is a direct answer to the Mises-Hayek calculation argument.</p>
 <div class="author-notes callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -372,16 +563,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="learning-objectives" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">8.2</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>Set up an LP in standard form. Solve LPs in Python using scipy’s <code>linprog</code>, PuLP, or cvxpy. State and interpret the LP duality theorem. Read dual variables (shadow prices) off a solver output and explain what they mean in the original problem. Work the Kantorovich plywood example.</p>
 </section>
-<section id="core-concepts" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="core-concepts"><span class="header-section-number">8.3</span> Core concepts</h2>
+<section id="core-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="core-concepts">Core concepts</h2>
 <p>Standard form: min cᵀx s.t. Ax = b, x ≥ 0 (with inequality forms as variants). Feasible region = polytope = intersection of half-spaces. The simplex method traverses vertices. Every LP has a dual: max bᵀy s.t. Aᵀy ≤ c.&nbsp;<strong>Weak duality</strong> (primal objective ≥ dual objective always) and <strong>strong duality</strong> (when solutions exist, the two objectives are equal). Shadow prices = optimal dual variables = ∂(optimal value)/∂(constraint RHS). Complementary slackness in LP form.</p>
 </section>
-<section id="resource-schedule" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="resource-schedule"><span class="header-section-number">8.4</span> Resource schedule</h2>
+<section id="resource-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="resource-schedule">Resource schedule</h2>
 <ul>
 <li><strong>Anchor reading: Chiang Ch 13 (sections on Kuhn-Tucker and quasi-concave programming) continues from Week 5 directly into LP territory.</strong> If you worked through it last week, the transition is seamless — LP is the specialization of KKT where objective and constraints are all linear, and Chiang’s exposition of how shadow prices emerge from the Lagrangian makes the economic interpretation of LP duals click without further explanation.</li>
 <li>Day 1: QuantEcon’s LP introduction lecture (read + run the code): <a href="https://intro.quantecon.org/lp_intro.html" class="uri">https://intro.quantecon.org/lp_intro.html</a>. Work both of the example problems (production, investment).</li>
@@ -391,24 +582,39 @@ ul.task-list li input[type="checkbox"] {
 <li>Day 5–6: Project.</li>
 </ul>
 </section>
-<section id="mini-project-production-lp-with-shadow-price-analysis" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="mini-project-production-lp-with-shadow-price-analysis"><span class="header-section-number">8.5</span> Mini project — Production LP with shadow-price analysis</h2>
+<section id="mini-project-production-lp-with-shadow-price-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="mini-project-production-lp-with-shadow-price-analysis">Mini project — Production LP with shadow-price analysis</h2>
 <p>A factory produces two products, P1 and P2. P1 needs 2 units of material and 4 units of labor per unit; P2 needs 5 units of material and 2 units of labor. Revenues are $3/unit (P1) and $4/unit (P2). Material available: 30 units. Labor available: 20 units. Both products must be non-negative. (This is QuantEcon’s first example.) Step 1: solve with PuLP <em>and</em> with scipy’s <code>linprog</code>, compare. Step 2: print the optimal dual variables — read off the shadow prices of material and labor. Step 3: verify the shadow price story empirically — add 1 to the material constraint (31 units), re-solve, and check that the objective increases by approximately the material shadow price. Step 4: write 150 words in the notebook connecting what you just computed to the <em>planning</em> interpretation: these shadow prices are the “scarcity prices” that a planner in the Kantorovich tradition would use to coordinate decisions across the economy even without a market.</p>
 </section>
-<section id="self-check" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="self-check"><span class="header-section-number">8.6</span> Self-check</h2>
+<section id="self-check" class="level2">
+<h2 class="anchored" data-anchor-id="self-check">Self-check</h2>
 <p>If a constraint is non-binding at the optimum, what is its shadow price? Why? State the duality theorem in one sentence. Why can the simplex method be slow in the worst case but usually fast in practice? What is the dual of the dual?</p>
 </section>
-<section id="bridge" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="bridge"><span class="header-section-number">8.7</span> Bridge</h2>
+<section id="bridge" class="level2">
+<h2 class="anchored" data-anchor-id="bridge">Bridge</h2>
 <p>Week 7 applies exactly this LP machinery to an entire economy described as a matrix of input-output coefficients. That’s Leontief’s contribution — and it’s the technical core of what Morishima and Cockshott both build on.</p>
 
+
+<!-- -->
 
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -477,6 +683,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -810,15 +1067,64 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../weeks/week-05-economic-opt.html" class="pagination-link" aria-label="Week 5 — Economic Optimization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 5 — Economic Optimization</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 5 — Economic Optimization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../weeks/week-07-input-output.html" class="pagination-link" aria-label="Week 7 — Input-Output Analysis">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 7 — Input-Output Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Week 7 — Input-Output Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 6 — Linear Programming and Duality"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Kantorovich's machinery, LP duality, and shadow prices as planning prices."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 6</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Framing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>In 1939, Leonid Kantorovich — working on plywood-cutting optimization for a Soviet industry ministry — invented linear programming, and won the only Nobel Prize in economics ever given to a Soviet citizen. Every LP has a *dual* problem, and the duality theorem is the mathematical foundation of planning prices. This week you learn to use an LP solver, read the shadow-price output, and understand why Kantorovich's machinery is a direct answer to the Mises-Hayek calculation argument.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="minimal" collapse="true" .author-notes}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Author's notes for this chapter</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Reading notes</span><span class="co">](/notes/the_calculation_course/weeks/week-06-lp-duality/reading-notes/)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Open questions</span><span class="co">](/notes/the_calculation_course/weeks/week-06-lp-duality/questions/)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Insights and connections</span><span class="co">](/notes/the_calculation_course/weeks/week-06-lp-duality/insights/)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">References to revisit</span><span class="co">](/notes/the_calculation_course/weeks/week-06-lp-duality/refs/)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Scratchpad notebook</span><span class="co">](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/weeks/week-06-lp-duality/scratchpad.ipynb)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Set up an LP in standard form. Solve LPs in Python using scipy's <span class="in">`linprog`</span>, PuLP, or cvxpy. State and interpret the LP duality theorem. Read dual variables (shadow prices) off a solver output and explain what they mean in the original problem. Work the Kantorovich plywood example.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Core concepts</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Standard form: min cᵀx s.t. Ax = b, x ≥ 0 (with inequality forms as variants). Feasible region = polytope = intersection of half-spaces. The simplex method traverses vertices. Every LP has a dual: max bᵀy s.t. Aᵀy ≤ c. **Weak duality** (primal objective ≥ dual objective always) and **strong duality** (when solutions exist, the two objectives are equal). Shadow prices = optimal dual variables = ∂(optimal value)/∂(constraint RHS). Complementary slackness in LP form.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resource schedule</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Anchor reading: Chiang Ch 13 (sections on Kuhn-Tucker and quasi-concave programming) continues from Week 5 directly into LP territory.** If you worked through it last week, the transition is seamless — LP is the specialization of KKT where objective and constraints are all linear, and Chiang's exposition of how shadow prices emerge from the Lagrangian makes the economic interpretation of LP duals click without further explanation.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 1: QuantEcon's LP introduction lecture (read + run the code): <span class="ot">&lt;https://intro.quantecon.org/lp_intro.html&gt;</span>. Work both of the example problems (production, investment).</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 2: IBM CPLEX Part 1 LP tutorial <span class="ot">&lt;https://ibmdecisionoptimization.github.io/tutorials/html/Linear_Programming.html&gt;</span>. Skip the CPLEX-specific syntax; read for the concepts: feasible region, extreme points, slack, degeneracy.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 3: Duality. Watch Jim Dai or Ashwin Pananjady's LP duality lectures on YouTube (search "LP duality lecture"), or read Chapter 3 of Chvátal's *Linear Programming* if you have access. The clearest short treatment is in the QuantEcon "Optimal Transport" lecture: <span class="ot">&lt;https://python.quantecon.org/opt_transport.html&gt;</span> — pay attention to how the dual variables are interpreted as "ship-out values" and "ship-in values".</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 4: Read Cockshott's blog post *Returning to Kantorovich*: <span class="ot">&lt;https://paulcockshott.wordpress.com/returning-to-kantorovich/&gt;</span>. This works the original plywood example and then extends it to an economy-wide plan. This single post is the most important primary reading of Week 6.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 5–6: Project.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mini project — Production LP with shadow-price analysis</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>A factory produces two products, P1 and P2. P1 needs 2 units of material and 4 units of labor per unit; P2 needs 5 units of material and 2 units of labor. Revenues are \$3/unit (P1) and \$4/unit (P2). Material available: 30 units. Labor available: 20 units. Both products must be non-negative. (This is QuantEcon's first example.) Step 1: solve with PuLP *and* with scipy's `linprog`, compare. Step 2: print the optimal dual variables — read off the shadow prices of material and labor. Step 3: verify the shadow price story empirically — add 1 to the material constraint (31 units), re-solve, and check that the objective increases by approximately the material shadow price. Step 4: write 150 words in the notebook connecting what you just computed to the *planning* interpretation: these shadow prices are the "scarcity prices" that a planner in the Kantorovich tradition would use to coordinate decisions across the economy even without a market.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Self-check</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>If a constraint is non-binding at the optimum, what is its shadow price? Why? State the duality theorem in one sentence. Why can the simplex method be slow in the worst case but usually fast in practice? What is the dual of the dual?</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bridge</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Week 7 applies exactly this LP machinery to an entire economy described as a matrix of input-output coefficients. That's Leontief's contribution — and it's the technical core of what Morishima and Cockshott both build on.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

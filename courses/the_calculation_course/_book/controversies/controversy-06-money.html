@@ -8,7 +8,7 @@
 
 <meta name="description" content="From Godley-Lavoie SFC modelling to Keen’s debt dynamics to Cockshott-Dapprich labor tokens — the capstone.">
 
-<title>20&nbsp; Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy – The Calculation Course</title>
+<title>Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy – The Calculation Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -42,10 +77,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6d3d4bddaec62baaf326ab8671832176.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0009a4030f8b573446c5eb18f8660956.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d467529ee50aac4903b480e488badc68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,11 +110,189 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<!-- Loaded into the <head> of every HTML page via _quarto.yml's
+     format.html.include-in-header. Provides the JSXGraph runtime
+     for any chapter that embeds a widget.
+
+     This is the project's interim setup until the
+     `jsxgraph/jsxgraph-quarto` extension is installed (run
+     `quarto add jsxgraph/jsxgraph-quarto` at the project root —
+     see PRD Addendum 1, §1.5). Once the extension is present,
+     this include can stay (harmless) or be removed in favor of
+     the extension's bundled assets. -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-06-money.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-06-money.html"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -102,9 +317,10 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">The Calculation Course</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/jquacinella/EconomicPlanningCourse.git" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -117,14 +333,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Calculation Course</span></span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The Calculation Course</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../master-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Master resource list</span></span></a>
+  <a href="../master-resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Master resource list</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -138,70 +352,59 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 1 — Multivariable Calculus</span></span></a>
+  <a href="../weeks/week-01-multivariable.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 — Multivariable Calculus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 2 — Constrained Optimization</span></span></a>
+  <a href="../weeks/week-02-constrained.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 — Constrained Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 — Linear Algebra Basics</span></span></a>
+  <a href="../weeks/week-03-linear-algebra.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 — Linear Algebra Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 4 — Eigenvalues and Systems</span></span></a>
+  <a href="../weeks/week-04-eigenvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 — Eigenvalues and Systems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 5 — Economic Optimization</span></span></a>
+  <a href="../weeks/week-05-economic-opt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 — Economic Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 6 — Linear Programming and Duality</span></span></a>
+  <a href="../weeks/week-06-lp-duality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6 — Linear Programming and Duality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 7 — Input-Output Analysis</span></span></a>
+  <a href="../weeks/week-07-input-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7 — Input-Output Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week 8 — Planning and Allocation</span></span></a>
+  <a href="../weeks/week-08-planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8 — Planning and Allocation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Week 9 — Differential Equations</span></span></a>
+  <a href="../weeks/week-09-diff-eq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9 — Differential Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Week 10 — Growth and Stability</span></span></a>
+  <a href="../weeks/week-10-growth-stability.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 10 — Growth and Stability</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../post-course.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Post-course: reading Morishima and beyond</span></span></a>
+  <a href="../post-course.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Post-course: reading Morishima and beyond</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -215,64 +418,54 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></span></a>
+  <a href="../controversies/controversy-01-cobb-douglas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 1 — The Cobb-Douglas Critique</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></span></a>
+  <a href="../controversies/controversy-02-calculation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 2 — The Socialist Calculation Debate</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Controversy 3 — The Transformation Problem</span></span></a>
+  <a href="../controversies/controversy-03-transformation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 3 — The Transformation Problem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></span></a>
+  <a href="../controversies/controversy-04-sraffa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 4 — Sraffa vs.&nbsp;Marginalist Value Theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></span></a>
+  <a href="../controversies/controversy-05-okishio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 5 — The Falling Rate of Profit and Okishio’s Theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></span></a>
+  <a href="../controversies/seminar-chinese-critique.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></span></a>
+  <a href="../controversies/controversy-06-money.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></span></a>
+  <a href="../controversies/controversy-07-climate.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></span></a>
+  <a href="../201/placeholder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">201 — Placeholder for a Computational Reconstruction of Zhang’s Marxian Formalization Program</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Where this lands</span></span></a>
+  <a href="../where-this-lands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Where this lands</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -286,20 +479,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A — Pre-course checklist</span></span></a>
+  <a href="../appendices/appendix-a-prereq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A — Pre-course checklist</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></span></a>
+  <a href="../appendices/appendix-b-extra-depth.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B — If you have extra time or want deeper depth</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></span></a>
+  <a href="../appendices/appendix-c-absorption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C — Signs you’re actually absorbing it</span></a>
   </div>
 </li>
       </ul>
@@ -314,23 +504,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing"><span class="header-section-number">20.1</span> Framing</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">20.2</span> Learning objectives</a></li>
-  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts"><span class="header-section-number">20.3</span> Core concepts</a></li>
-  <li><a href="#ergodicity-sidebar" id="toc-ergodicity-sidebar" class="nav-link" data-scroll-target="#ergodicity-sidebar"><span class="header-section-number">20.4</span> Ergodicity sidebar</a></li>
-  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule"><span class="header-section-number">20.5</span> Resource schedule</a></li>
-  <li><a href="#mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions" id="toc-mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions" class="nav-link" data-scroll-target="#mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions"><span class="header-section-number">20.6</span> Mini project — From a capitalist SFC model to a planned economy, in four versions</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">20.7</span> Self-check</a></li>
-  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge"><span class="header-section-number">20.8</span> Bridge</a></li>
+  <li><a href="#framing" id="toc-framing" class="nav-link active" data-scroll-target="#framing">Framing</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core concepts</a></li>
+  <li><a href="#ergodicity-sidebar" id="toc-ergodicity-sidebar" class="nav-link" data-scroll-target="#ergodicity-sidebar">Ergodicity sidebar</a></li>
+  <li><a href="#resource-schedule" id="toc-resource-schedule" class="nav-link" data-scroll-target="#resource-schedule">Resource schedule</a></li>
+  <li><a href="#mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions" id="toc-mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions" class="nav-link" data-scroll-target="#mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions">Mini project — From a capitalist SFC model to a planned economy, in four versions</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-check</a></li>
+  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge">Bridge</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/edit/main/controversies/controversy-06-money.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/blob/main/controversies/controversy-06-money.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/jquacinella/EconomicPlanningCourse.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-06-money.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a></li></ol></nav>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../controversies/part-ii.html">Part II — The Controversies</a></li><li class="breadcrumb-item"><a href="../controversies/controversy-06-money.html"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -347,8 +538,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="framing" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="framing"><span class="header-section-number">20.1</span> Framing</h2>
+<section id="framing" class="level2">
+<h2 class="anchored" data-anchor-id="framing">Framing</h2>
 <p>The 20th-century Marxian tradition inherited Sraffa’s neglect of money. Modern mainstream macroeconomics has a theory of money that is demonstrably wrong about how banks actually work (it’s been admitted by the Bank of England itself, in a now-famous 2014 paper). In parallel, a heterodox tradition — post-Keynesian, circuitist, Minskyan — has developed the <strong>monetary theory of production</strong>, centered on the claim that money is endogenously created by banks through the act of lending, and that this monetary circuit is essential to how capitalism actually functions. Key figures: Wynne Godley and Marc Lavoie, who gave us stock-flow consistent (SFC) modeling; Augusto Graziani and the Italian circuitists; Hyman Minsky and his intellectual heir Steve Keen. This controversy is the direct answer to a question your Week 8 project merely gestured at: once you have a planned-economy LP, how do <em>investment</em>, <em>intertemporal coordination</em>, and <em>transition from capitalism</em> work? The Cockshott-Cottrell proposal uses labor tokens (IOUs for consumer goods, non-circulating, redeemable in consumption); Dapprich’s 2023 extension lets token prices on consumer goods adjust toward market-clearing rates. This is the capstone. Everything connects.</p>
 <div class="author-notes callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -373,21 +564,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="learning-objectives" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">20.2</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>State the endogenous vs exogenous money debate precisely and know why endogenous is now the empirically settled position. Understand Graziani’s monetary circuit as a distinct theoretical framework from both mainstream monetarism and traditional Marxism. Build a stock-flow consistent macroeconomic model from scratch and use it to show why “loans create deposits, not the other way round.” Understand Minsky-Keen debt-dynamic models as genuine nonlinear systems that can endogenously produce crises. Know what functions money serves in a capitalist economy and, for each function, know the specific institutional substitute proposed in the Cockshott-Cottrell-Dapprich tradition. Finally: have <em>computationally verified</em> that a planned economy can coordinate investment without money, using your Week 8 planning LP extended intertemporally.</p>
 </section>
-<section id="core-concepts" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="core-concepts"><span class="header-section-number">20.3</span> Core concepts</h2>
+<section id="core-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="core-concepts">Core concepts</h2>
 <p><em>Endogenous money</em>: banks create deposits when they make loans; the central bank accommodates reserve demand; the “money multiplier” of textbooks has the causality reversed. Empirically established: BoE 2014 paper. <em>Monetary theory of production</em> (Graziani): production takes time; firms need monetary finance <em>before</em> they can sell output; banks create the money that starts the productive cycle; M → M’ is the fundamental circuit. <em>Profit paradox</em>: if firms collectively borrow M to pay wages and then sell output for M’, where does the “extra” M’ − M come from? Resolution (Lavoie, Godley): through credit expansion and stock-flow accounting, interest payments, and multi-period dynamics. <em>Stock-flow consistent (SFC) modeling</em> (Godley-Lavoie): every flow is a change in some stock; every financial asset is someone else’s liability; no accounting black holes. The “three balances” identity: government balance + private balance + foreign balance = 0. <em>Minsky-Keen financial instability</em>: debt dynamics are endogenous; the economy moves through hedge, speculative, and Ponzi financing regimes; crisis is internally generated. <em>Relevance to planning</em>: in a market economy, money coordinates (a) spot exchange, (b) unit of account, (c) store of value, (d) means of financing production across time. In a planned economy, physical allocation replaces (a) and (d) directly; unit of account (b) can be labor-hours or physical units; store of value (c) can be a consumer-goods claim (labor tokens). <em>Cockshott-Cottrell labor tokens</em>: issued in exchange for hours worked, redeemable at labor-content prices of consumer goods, explicitly non-circulating (no firm-to-firm tokens). <em>Dapprich extension</em> (2023): token prices of consumer goods are adjusted to clear markets, not fixed at labor content — a concession to the argument that labor content alone doesn’t reflect intensity of preference. <em>Intertemporal planning</em>: replace the interest rate with a social time-preference discount factor in a multi-period LP.</p>
 <!-- TODO: marginalia candidate — the Ergodicity sidebar below is structurally sidebar-ish and could become a full-width sidebar or expanded marginal column -->
 </section>
-<section id="ergodicity-sidebar" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="ergodicity-sidebar"><span class="header-section-number">20.4</span> Ergodicity sidebar</h2>
+<section id="ergodicity-sidebar" class="level2">
+<h2 class="anchored" data-anchor-id="ergodicity-sidebar">Ergodicity sidebar</h2>
 <p>The Minsky-Keen debt dynamics you’ll implement in Version 3 are a textbook example of what Peters and Adamou (ergodicity economics) call <em>non-ergodic multiplicative processes</em>: interest compounds, leverage evolves multiplicatively, and any individual firm’s (or household’s) trajectory has a time-average growth rate that can diverge sharply from the ensemble average computed across all firms. This provides the mathematical language for why Keen-style crises look benign in aggregate statistics and catastrophic for individual actors — the aggregate ensemble-average tells you the average of survivors weighted by survivor size, not the representative individual experience. If you want to push Version 3 further after building it, add a simple extension: rather than a single representative firm, simulate a distribution of N firms with idiosyncratic leverage shocks, plot both the ensemble-average debt-to-income trajectory and a fan-chart of individual trajectories, and watch ensemble averaging hide most of the fragility until catastrophic. This is a natural and short follow-up experiment if you’re curious. Primary reference: Peters &amp; Adamou, <em>An Introduction to Ergodicity Economics</em> (Cambridge 2025), with Peters’s 2019 <em>Nature Physics</em> review “The Ergodicity Problem in Economics” as a free shorter alternative.</p>
 </section>
-<section id="resource-schedule" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="resource-schedule"><span class="header-section-number">20.5</span> Resource schedule</h2>
+<section id="resource-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="resource-schedule">Resource schedule</h2>
 <p>Approximately 8 days — this one is longer and it earns the space.</p>
 <ul>
 <li>Day 1: Endogenous money orthodoxy. Bank of England Quarterly Bulletin 2014 Q1, “Money Creation in the Modern Economy” by McLeay, Radia, Thomas. Free: <a href="https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy" class="uri">https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy</a>. Short and authoritative; shorter than a <em>New Yorker</em> article. This is a central bank admitting the textbooks are wrong.</li>
@@ -400,8 +591,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Days 9–10: The capstone project.</li>
 </ul>
 </section>
-<section id="mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions"><span class="header-section-number">20.6</span> Mini project — From a capitalist SFC model to a planned economy, in four versions</h2>
+<section id="mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions" class="level2">
+<h2 class="anchored" data-anchor-id="mini-project-from-a-capitalist-sfc-model-to-a-planned-economy-in-four-versions">Mini project — From a capitalist SFC model to a planned economy, in four versions</h2>
 <p>This is the capstone. All six Controversies, all ten Weeks, all your tooling — cashed out into a single coherent notebook. Build it incrementally.</p>
 <p><em>Version 1 — Baseline SIM.</em> Implement the Godley-Lavoie SIM model (Chapter 3 of their book): three sectors (households, firms, government), no banks, pure government-money economy. Simulate the stationary state. Perturb: increase government spending by 20%, trace the dynamic response over 100 periods. Verify stock-flow consistency at every time step (no accounting leaks).</p>
 <p><em>Version 2 — Add endogenous bank credit.</em> Extend to include a banking sector that creates deposits when it makes loans to firms. Firms borrow to finance wage payments; workers spend wages on consumer goods; firms receive revenue, repay loans (with interest); deposits are extinguished. Simulate a credit-financed expansion. Confirm Graziani’s circuit: money originates in bank lending, is validated by production and sale, is destroyed by repayment. Address the profit paradox computationally: show that in a multi-period model with growing credit, aggregate monetary profits are reconciled.</p>
@@ -409,20 +600,35 @@ ul.task-list li input[type="checkbox"] {
 <p><em>Version 4 — THE PLANNED-ECONOMY TRANSFORMATION.</em> Replace the banking sector with the Cockshott-Cottrell-Dapprich apparatus. Investment decisions are made by a planning LP (the Week 8 machinery), extended intertemporally — multi-period horizon, explicit social-time-preference discount factor δ instead of a market interest rate. Labor is compensated in tokens. Tokens are redeemable for consumer goods at prices adjusted (à la Dapprich) toward market-clearing rates, without circulating between firms. Run on the same underlying technology and preferences as Version 3. Compare: (a) stability — does the planned economy avoid the endogenous crisis of the Keen-Minsky version? (b) investment allocation — does it differ systematically? (c) consumption trajectories for households; (d) response to a negative productivity shock, compared across all four versions.</p>
 <p>Write 1,000 words (notebook markdown) interpreting the results. What roles did money play in Versions 1–3? Which of those roles persist in Version 4 in transmuted form? What genuinely goes away? What new coordination problems appear — and how does the LP solve them? Where, specifically, do you <em>not</em> trust your Version 4? What would the Boettke-Candela Austrian critique (from Controversy 2) point to as failure modes of your Version 4 that your simulation cannot detect?</p>
 </section>
-<section id="self-check" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="self-check"><span class="header-section-number">20.7</span> Self-check</h2>
+<section id="self-check" class="level2">
+<h2 class="anchored" data-anchor-id="self-check">Self-check</h2>
 <p>State the endogenous money thesis. Why does the textbook “loanable funds” story get the causality backwards? State Graziani’s profit paradox and explain how a multi-period SFC framework resolves it. Why does stock-flow consistency discipline macroeconomic modeling in a way that DSGE models typically do not? What specific roles does money play in a capitalist economy, and which of these persist in the Cockshott-Dapprich token proposal? In your Version 4, how did you handle intertemporal coordination without an interest rate — and does the social time-preference discount factor feel like a first-class substitute, or a hack? After all four versions: do you believe a planned economy can coordinate investment at scale? What did the computation teach you that the reading alone did not?</p>
 </section>
-<section id="bridge" class="level2" data-number="20.8">
-<h2 data-number="20.8" class="anchored" data-anchor-id="bridge"><span class="header-section-number">20.8</span> Bridge</h2>
+<section id="bridge" class="level2">
+<h2 class="anchored" data-anchor-id="bridge">Bridge</h2>
 <p>There’s one more controversy worth attending to before you step away from this framework and apply it — because the single most politically urgent use case for the whole Cockshott-Cottrell-Dapprich planning program is climate. Controversy 7 is where the tools stop being just mathematically interesting and start being a serious candidate for how humanity might actually organize the decarbonization transition. It’s the capstone-after-the-capstone.</p>
 
+
+<!-- -->
 
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -491,6 +697,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -824,15 +1081,84 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../controversies/seminar-chinese-critique.html" class="pagination-link" aria-label="Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Seminar — The Chinese Critique of the Japanese School of Mathematical Marxian Economics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../controversies/controversy-07-climate.html" class="pagination-link" aria-label="Controversy 7 — Climate-Constrained Planning">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Controversy 7 — Climate-Constrained Planning</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "From Godley-Lavoie SFC modelling to Keen's debt dynamics to Cockshott-Dapprich labor tokens — the capstone."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 7</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Framing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The 20th-century Marxian tradition inherited Sraffa's neglect of money. Modern mainstream macroeconomics has a theory of money that is demonstrably wrong about how banks actually work (it's been admitted by the Bank of England itself, in a now-famous 2014 paper). In parallel, a heterodox tradition — post-Keynesian, circuitist, Minskyan — has developed the **monetary theory of production**, centered on the claim that money is endogenously created by banks through the act of lending, and that this monetary circuit is essential to how capitalism actually functions. Key figures: Wynne Godley and Marc Lavoie, who gave us stock-flow consistent (SFC) modeling; Augusto Graziani and the Italian circuitists; Hyman Minsky and his intellectual heir Steve Keen. This controversy is the direct answer to a question your Week 8 project merely gestured at: once you have a planned-economy LP, how do *investment*, *intertemporal coordination*, and *transition from capitalism* work? The Cockshott-Cottrell proposal uses labor tokens (IOUs for consumer goods, non-circulating, redeemable in consumption); Dapprich's 2023 extension lets token prices on consumer goods adjust toward market-clearing rates. This is the capstone. Everything connects.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="minimal" collapse="true" .author-notes}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Author's notes for this chapter</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Reading notes</span><span class="co">](/notes/the_calculation_course/controversies/controversy-06-money/reading-notes/)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Open questions</span><span class="co">](/notes/the_calculation_course/controversies/controversy-06-money/questions/)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Insights and connections</span><span class="co">](/notes/the_calculation_course/controversies/controversy-06-money/insights/)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">References to revisit</span><span class="co">](/notes/the_calculation_course/controversies/controversy-06-money/refs/)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Scratchpad notebook</span><span class="co">](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-06-money/scratchpad.ipynb)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>State the endogenous vs exogenous money debate precisely and know why endogenous is now the empirically settled position. Understand Graziani's monetary circuit as a distinct theoretical framework from both mainstream monetarism and traditional Marxism. Build a stock-flow consistent macroeconomic model from scratch and use it to show why "loans create deposits, not the other way round." Understand Minsky-Keen debt-dynamic models as genuine nonlinear systems that can endogenously produce crises. Know what functions money serves in a capitalist economy and, for each function, know the specific institutional substitute proposed in the Cockshott-Cottrell-Dapprich tradition. Finally: have *computationally verified* that a planned economy can coordinate investment without money, using your Week 8 planning LP extended intertemporally.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Core concepts</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>*Endogenous money*: banks create deposits when they make loans; the central bank accommodates reserve demand; the "money multiplier" of textbooks has the causality reversed. Empirically established: BoE 2014 paper. *Monetary theory of production* (Graziani): production takes time; firms need monetary finance *before* they can sell output; banks create the money that starts the productive cycle; M → M' is the fundamental circuit. *Profit paradox*: if firms collectively borrow M to pay wages and then sell output for M', where does the "extra" M' − M come from? Resolution (Lavoie, Godley): through credit expansion and stock-flow accounting, interest payments, and multi-period dynamics. *Stock-flow consistent (SFC) modeling* (Godley-Lavoie): every flow is a change in some stock; every financial asset is someone else's liability; no accounting black holes. The "three balances" identity: government balance + private balance + foreign balance = 0. *Minsky-Keen financial instability*: debt dynamics are endogenous; the economy moves through hedge, speculative, and Ponzi financing regimes; crisis is internally generated. *Relevance to planning*: in a market economy, money coordinates (a) spot exchange, (b) unit of account, (c) store of value, (d) means of financing production across time. In a planned economy, physical allocation replaces (a) and (d) directly; unit of account (b) can be labor-hours or physical units; store of value (c) can be a consumer-goods claim (labor tokens). *Cockshott-Cottrell labor tokens*: issued in exchange for hours worked, redeemable at labor-content prices of consumer goods, explicitly non-circulating (no firm-to-firm tokens). *Dapprich extension* (2023): token prices of consumer goods are adjusted to clear markets, not fixed at labor content — a concession to the argument that labor content alone doesn't reflect intensity of preference. *Intertemporal planning*: replace the interest rate with a social time-preference discount factor in a multi-period LP.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: marginalia candidate — the Ergodicity sidebar below is structurally sidebar-ish and could become a full-width sidebar or expanded marginal column --&gt;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ergodicity sidebar</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>The Minsky-Keen debt dynamics you'll implement in Version 3 are a textbook example of what Peters and Adamou (ergodicity economics) call *non-ergodic multiplicative processes*: interest compounds, leverage evolves multiplicatively, and any individual firm's (or household's) trajectory has a time-average growth rate that can diverge sharply from the ensemble average computed across all firms. This provides the mathematical language for why Keen-style crises look benign in aggregate statistics and catastrophic for individual actors — the aggregate ensemble-average tells you the average of survivors weighted by survivor size, not the representative individual experience. If you want to push Version 3 further after building it, add a simple extension: rather than a single representative firm, simulate a distribution of N firms with idiosyncratic leverage shocks, plot both the ensemble-average debt-to-income trajectory and a fan-chart of individual trajectories, and watch ensemble averaging hide most of the fragility until catastrophic. This is a natural and short follow-up experiment if you're curious. Primary reference: Peters &amp; Adamou, *An Introduction to Ergodicity Economics* (Cambridge 2025), with Peters's 2019 *Nature Physics* review "The Ergodicity Problem in Economics" as a free shorter alternative.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resource schedule</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Approximately 8 days — this one is longer and it earns the space.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 1: Endogenous money orthodoxy. Bank of England Quarterly Bulletin 2014 Q1, "Money Creation in the Modern Economy" by McLeay, Radia, Thomas. Free: <span class="ot">&lt;https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy&gt;</span>. Short and authoritative; shorter than a *New Yorker* article. This is a central bank admitting the textbooks are wrong.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 2: Lavoie, *Introduction to Post-Keynesian Economics* (Palgrave 2006), Chapter 3 on money and credit. A clean pedagogical overview.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 3: Graziani, *The Monetary Theory of Production* (Cambridge, 2003). A short book, ~150 pages. The core of the circuitist tradition.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 4–5: Godley &amp; Lavoie, *Monetary Economics: An Integrated Approach to Credit, Money, Income, Production and Wealth* (Palgrave 2007). Free PDF: <span class="ot">&lt;http://digamo.free.fr/godleylavoie7.pdf&gt;</span>. Read Chapter 2 (accounting) and Chapter 3 (the SIM model) carefully. Chapter 4 (PC model) for portfolio choice. This is the methodology you'll implement.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 6: SFC survey. Nikiforos &amp; Zezza, "Stock-Flow Consistent Macroeconomic Models: A Survey," Levy Institute Working Paper 891 (2017). Free: <span class="ot">&lt;https://www.levyinstitute.org/pubs/wp_891.pdf&gt;</span>. A modern overview of where the field has gone.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 7: Keen on financial instability. *Can We Avoid Another Financial Crisis?* (Polity 2017) for the accessible version. Keen's academic papers for the math — especially his derivation of endogenous debt dynamics from a simple set of accounting identities.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Day 8: Money in a planned economy. Dapprich, "Tokens Make the World Go Round: Socialist Tokens as an Alternative to Money" (*Review of Evolutionary Political Economy* 4, 2023). Open access: &lt;https://link.springer.com/article/10.1007/s43253-022-00091-6&gt;. Plus Dapprich &amp; Cockshott, "Input-Output Planning and Information" (*Journal of Economic Behavior &amp; Organization* 205, 2023). Finally, Cockshott &amp; Cottrell's chapters on labor tokens in *Towards a New Socialism* (Chapter 2 especially).</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Days 9–10: The capstone project.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mini project — From a capitalist SFC model to a planned economy, in four versions</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>This is the capstone. All six Controversies, all ten Weeks, all your tooling — cashed out into a single coherent notebook. Build it incrementally.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>*Version 1 — Baseline SIM.* Implement the Godley-Lavoie SIM model (Chapter 3 of their book): three sectors (households, firms, government), no banks, pure government-money economy. Simulate the stationary state. Perturb: increase government spending by 20%, trace the dynamic response over 100 periods. Verify stock-flow consistency at every time step (no accounting leaks).</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>*Version 2 — Add endogenous bank credit.* Extend to include a banking sector that creates deposits when it makes loans to firms. Firms borrow to finance wage payments; workers spend wages on consumer goods; firms receive revenue, repay loans (with interest); deposits are extinguished. Simulate a credit-financed expansion. Confirm Graziani's circuit: money originates in bank lending, is validated by production and sale, is destroyed by repayment. Address the profit paradox computationally: show that in a multi-period model with growing credit, aggregate monetary profits are reconciled.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>*Version 3 — Minsky-Keen financial fragility.* Extend again: households borrow to finance consumption; debt-to-income ratios rise; investment responds to the valuation ratio (Tobin's q); monetary expansion initially looks healthy but eventually debt-servicing costs crowd out demand. Reproduce a Keen-style endogenous crisis: no external shock, the system produces instability from its own dynamics. Plot the collapse trajectory.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>*Version 4 — THE PLANNED-ECONOMY TRANSFORMATION.* Replace the banking sector with the Cockshott-Cottrell-Dapprich apparatus. Investment decisions are made by a planning LP (the Week 8 machinery), extended intertemporally — multi-period horizon, explicit social-time-preference discount factor δ instead of a market interest rate. Labor is compensated in tokens. Tokens are redeemable for consumer goods at prices adjusted (à la Dapprich) toward market-clearing rates, without circulating between firms. Run on the same underlying technology and preferences as Version 3. Compare: (a) stability — does the planned economy avoid the endogenous crisis of the Keen-Minsky version? (b) investment allocation — does it differ systematically? (c) consumption trajectories for households; (d) response to a negative productivity shock, compared across all four versions.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Write 1,000 words (notebook markdown) interpreting the results. What roles did money play in Versions 1–3? Which of those roles persist in Version 4 in transmuted form? What genuinely goes away? What new coordination problems appear — and how does the LP solve them? Where, specifically, do you *not* trust your Version 4? What would the Boettke-Candela Austrian critique (from Controversy 2) point to as failure modes of your Version 4 that your simulation cannot detect?</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Self-check</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>State the endogenous money thesis. Why does the textbook "loanable funds" story get the causality backwards? State Graziani's profit paradox and explain how a multi-period SFC framework resolves it. Why does stock-flow consistency discipline macroeconomic modeling in a way that DSGE models typically do not? What specific roles does money play in a capitalist economy, and which of these persist in the Cockshott-Dapprich token proposal? In your Version 4, how did you handle intertemporal coordination without an interest rate — and does the social time-preference discount factor feel like a first-class substitute, or a hack? After all four versions: do you believe a planned economy can coordinate investment at scale? What did the computation teach you that the reading alone did not?</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bridge</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>There's one more controversy worth attending to before you step away from this framework and apply it — because the single most politically urgent use case for the whole Cockshott-Cottrell-Dapprich planning program is climate. Controversy 7 is where the tools stop being just mathematically interesting and start being a serious candidate for how humanity might actually organize the decarbonization transition. It's the capstone-after-the-capstone.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
