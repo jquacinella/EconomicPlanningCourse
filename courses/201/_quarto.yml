@@ -51,7 +51,7 @@ format:
   epub:
     toc: true
     toc-depth: 2
-    cover-image: ../../shared/assets/images/cover.png
+    cover-image: assets/images/cover.png
 
 execute:
   freeze: auto

@@ -3,7 +3,7 @@ title: "The Crypto Calculation Course"
 description: "Cryptocurrency, blockchain technology, and their relationship to ecosocialist planning systems — a computational investigation."
 ---
 
-![](../../shared/assets/images/cover.png){.cover-banner fig-alt="The Crypto Calculation Course — Cryptocurrency, Blockchain, and the Ecosocialist Planning System"}
+![](assets/images/cover.png){.cover-banner fig-alt="The Crypto Calculation Course — Cryptocurrency, Blockchain, and the Ecosocialist Planning System"}
 
 ## About this course
 

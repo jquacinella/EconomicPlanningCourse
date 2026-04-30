@@ -3,7 +3,7 @@ title: "201 — Computational Reconstruction of Zhang's Marxian Formalization"
 description: "A sequel course building on the Calculation Course: implementing Zhang's game-theoretic, probabilistic, and cybernetic extensions to Marxian economics."
 ---
 
-![](../../shared/assets/images/cover.png){.cover-banner fig-alt="201 — Zhang's Marxian Formalization"}
+![](assets/images/cover.png){.cover-banner fig-alt="201 — Zhang's Marxian Formalization"}
 
 ## About this course
 

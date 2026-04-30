@@ -18,6 +18,7 @@ book:
   # cover-image is rendered explicitly as a banner at the top of index.qmd.
   # Kept here only for EPUB output (which uses it as the proper cover page).
   page-navigation: true
+  cover-image: assets/images/cover.png
 
   chapters:
     - index.qmd
@@ -93,7 +94,7 @@ format:
   epub:
     toc: true
     toc-depth: 2
-    cover-image: ../../shared/assets/images/cover.png
+    cover-image: assets/images/cover.png
 
 execute:
   freeze: auto
