@@ -74,7 +74,7 @@ format:
     toc-location: right
     number-sections: false
     grid:
-      sidebar-width: 250px
+      sidebar-width: 300px
       body-width: 1200px
       margin-width: 250px
       gutter-width: 1.5rem
