@@ -1,26 +1,26 @@
 ---
-title: "Controversy 7 — Climate-Constrained Planning"
+title: "Controversy 8 — Climate-Constrained Planning"
 description: "A thirty-year decarbonization LP for a toy economy, stress-tested against the Austrian and Cosmonaut critiques."
-order: 8
+order: 9
 ---
 
 ## Framing
 
-In October 2022 Cockshott, Cottrell, and Dapprich published *Economic Planning in an Age of Climate Crisis* — the trio's argument that the climate transition cannot be accomplished through carbon pricing and market incentives, and requires explicit economy-wide planning of the sort they have been theorizing for thirty years. This is the book where the planning apparatus you've now built in Python gets pointed at the crisis that will define the 21st century. The argument is serious, and it has received serious heterodox critical attention — Michael Roberts is broadly sympathetic; the Cosmonaut review ("How (Not) to Economically Plan in the Age of Climate Crisis") is sharply critical while engaging the substance. For a closing controversy this is the right one because it (a) synthesizes every piece of the prior arc — input-output, LP duality, Morishima-style multi-sector reasoning, labor tokens from Controversy 6, climate as a set of hard physical constraints — into a single concrete application, and (b) puts the whole tradition on trial against a real-world task with a deadline.
+In October 2022 Cockshott, Cottrell, and Dapprich published *Economic Planning in an Age of Climate Crisis* — the trio's argument that the climate transition cannot be accomplished through carbon pricing and market incentives, and requires explicit economy-wide planning of the sort they have been theorizing for thirty years. This is the book where the planning apparatus you've now built in Python gets pointed at the crisis that will define the 21st century. The argument is serious, and it has received serious heterodox critical attention — Michael Roberts is broadly sympathetic; the Cosmonaut review ("How (Not) to Economically Plan in the Age of Climate Crisis") is sharply critical while engaging the substance. For a closing controversy this is the right one because it (a) synthesizes every piece of the prior arc — input-output, LP duality, Morishima-style multi-sector reasoning, labor tokens from Controversy 7, climate as a set of hard physical constraints — into a single concrete application, and (b) puts the whole tradition on trial against a real-world task with a deadline.
 
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-climate/reading-notes)
-- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-climate/questions)
-- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-climate/insights)
-- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-climate/refs)
-- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-07-climate/scratchpad.ipynb)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-08-climate/reading-notes)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-08-climate/questions)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-08-climate/insights)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-08-climate/refs)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-08-climate/scratchpad.ipynb)
 :::
 
 ## Learning objectives
 
-Formulate a climate-constrained planning LP: standard multi-sector planning with the addition of CO₂ emission coefficients and a hard emissions cap that tightens over time. Understand why carbon pricing *alone* cannot accomplish the scale of transition required, and what the planning alternative adds. Know the historical precedent the authors lean on (UK wartime planning 1939–1945 and its continuation into the early postwar period). Be able to critique the book's proposal using tools from Controversies 2 (Austrian critique), 3 (transformation problem — does labor-plus-CO₂ dual accounting hold together?), and 6 (money and investment). Have computationally executed a three-decade decarbonization plan for a toy economy and seen, concretely, how the planner's choices trade off output, consumption, emissions, and investment in green capacity.
+Formulate a climate-constrained planning LP: standard multi-sector planning with the addition of CO₂ emission coefficients and a hard emissions cap that tightens over time. Understand why carbon pricing *alone* cannot accomplish the scale of transition required, and what the planning alternative adds. Know the historical precedent the authors lean on (UK wartime planning 1939–1945 and its continuation into the early postwar period). Be able to critique the book's proposal using tools from Controversies 2 (Austrian critique), 3 (transformation problem — does labor-plus-CO₂ dual accounting hold together?), 6 (realization and the monetary theory of value), and 7 (money and investment). Have computationally executed a three-decade decarbonization plan for a toy economy and seen, concretely, how the planner's choices trade off output, consumption, emissions, and investment in green capacity.
 
 ## Core concepts
 
@@ -39,7 +39,7 @@ Approximately 7 days.
 
 ## Mini project — A thirty-year decarbonization LP for a toy economy
 
-Take your planning LP machinery from Week 8 and Controversy 6 Version 4. Extend to include climate constraints and run a full transition scenario.
+Take your planning LP machinery from Week 8 and Controversy 7 Version 4. Extend to include climate constraints and run a full transition scenario.
 
 *Setup.* Build a 6-sector economy: (1) fossil electricity, (2) renewable electricity, (3) heavy industry, (4) agriculture, (5) consumer manufacturing, (6) services. Pick plausible technical coefficients A (6×6, Perron-Frobenius eigenvalue < 1) and labor coefficients l. Critically: build an emissions-coefficient vector e, where eᵢ is direct CO₂ emissions per unit of sector-i output. Fossil electricity is by far the largest — say 10× any other sector. Renewable electricity is near zero. Heavy industry is moderately high. Agriculture is moderately high (methane, fertilizer). Consumer manufacturing and services are low. Compute *embodied* emissions per unit of final demand: ε = e(I − A)⁻¹, analogous to labor values.
 

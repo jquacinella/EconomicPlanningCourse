@@ -2,7 +2,7 @@
 
 [Ravel](https://www.patreon.com/hpcoder) is Steve Keen's commercial multidimensional-data exploration tool, extending Minsky's modelling apparatus toward what is effectively a pivot-table-meets-system-dynamics interface for empirical economic data. It is distributed via Patreon (commercial) rather than as open source.
 
-It is most directly relevant to **Controversy 5** (empirical profit-rate measurement on BEA / BLS data) and **Controversy 6** (SFC modelling with empirical calibration). Optional throughout — the course can complete without it.
+It is most directly relevant to **Controversy 5** (empirical profit-rate measurement on BEA / BLS data) and **Controversy 7** (SFC modelling with empirical calibration). Optional throughout — the course can complete without it.
 
 ## Where to download
 
