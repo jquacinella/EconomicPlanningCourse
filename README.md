@@ -88,8 +88,11 @@ Same pattern — `cd courses/<name>` then `uv sync` and `quarto preview`.
 The landing page (`site-root/index.html`) uses root-relative links (`/courses/...`, `/notes/...`) that only work when the full stitched `_site/` is served from its root — the same layout the CI produces for GitHub Pages. Use the `Makefile` to build and serve it:
 
 ```bash
-# Build everything (all courses + Quartz notes) and serve at http://localhost:8000
+# Build everything (all courses + Quartz notes) and serve at http://localhost:9200
 make preview
+
+# Override the port:
+make preview PORT=8080
 
 # Or build without serving:
 make build

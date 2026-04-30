@@ -2,7 +2,7 @@
 #
 # Targets:
 #   make build          — build all courses + notes into _site/
-#   make preview        — build everything then serve _site/ at http://localhost:8000
+#   make preview        — build everything then serve _site/ at http://localhost:$(PORT) (default 9200)
 #   make build-calc     — build only the Calculation Course
 #   make build-notes    — build only the Quartz notes site
 #   make clean          — remove _site/ and all course _book/ dirs
@@ -11,7 +11,7 @@
 
 COURSES := the_calculation_course 201 the_crypto_course
 SITE    := _site
-PORT    := 8000
+PORT    := 9200
 
 .PHONY: build preview build-calc build-notes clean help
 
