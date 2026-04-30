@@ -1,8 +1,8 @@
-# Quarto build output
-/_book/
-/_site/
-/.quarto/
-/_freeze/
+# Quarto build output (matches at any depth — covers courses/*/_book/ etc.)
+_book/
+_site/
+.quarto/
+_freeze/
 
 # Python
 __pycache__/
