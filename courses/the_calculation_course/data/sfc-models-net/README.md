@@ -8,7 +8,7 @@ Provenance: <https://sfc-models.net> — Brian Romanchuk's canonical site for st
 
 ## When to populate
 
-The author should populate this directory only if, during work on Controversy 6, having local copies of the canonical eViews files proves necessary for archival or reproducibility purposes. Otherwise leave it empty — the canonical reference is the upstream site, and `sfc_models.gl_book` already provides validated Python implementations for the common Godley–Lavoie models.
+The author should populate this directory only if, during work on Controversy 7, having local copies of the canonical eViews files proves necessary for archival or reproducibility purposes. Otherwise leave it empty — the canonical reference is the upstream site, and `sfc_models.gl_book` already provides validated Python implementations for the common Godley–Lavoie models.
 
 ## If populated
 

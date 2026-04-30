@@ -1,6 +1,6 @@
 # `sfc-notebooks/` — Stock-flow consistent reference notebooks
 
-Working notebooks alongside **Controversy 6** (monetary theory of production). These reproduce baseline Godley–Lavoie models from `sfc_models.gl_book` and serve as the scaffolding on which the controversy's capstone versions are built.
+Working notebooks alongside **Controversy 7** (monetary theory of production). These reproduce baseline Godley–Lavoie models from `sfc_models.gl_book` and serve as the scaffolding on which the controversy's capstone versions are built.
 
 ## Tool positioning
 
@@ -13,11 +13,11 @@ Working notebooks alongside **Controversy 6** (monetary theory of production). T
 
 ## Notebooks
 
-- `01-sim-baseline.ipynb` — stub. Will reproduce SIM (the simplest Godley–Lavoie model). Populated during Controversy 6, Version 1.
+- `01-sim-baseline.ipynb` — stub. Will reproduce SIM (the simplest Godley–Lavoie model). Populated during Controversy 7, Version 1.
 - `02-pc-portfolio-choice.ipynb` — stub. Portfolio choice (PC) model.
-- `03-bmw-banks-and-money.ipynb` — stub. Banks-and-money (BMW) model. Backbone for Controversy 6, Version 2.
+- `03-bmw-banks-and-money.ipynb` — stub. Banks-and-money (BMW) model. Backbone for Controversy 7, Version 2.
 
-Each stub is intentionally minimal in v1; the author fills them in when working through the relevant version of the Controversy 6 capstone.
+Each stub is intentionally minimal in v1; the author fills them in when working through the relevant version of the Controversy 7 capstone.
 
 ## `kennt-monetary-economics/` (optional submodule)
 

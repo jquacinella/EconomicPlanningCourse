@@ -1,3 +1,3 @@
-# Reading notes — Controversy 6 — Endogenous Money
+# Reading notes — Controversy 7 — Endogenous Money
 
 _Notes from videos, papers, textbook sections. Date-stamp entries._

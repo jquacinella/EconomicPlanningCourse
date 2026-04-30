@@ -1,21 +1,21 @@
 ---
-title: "Controversy 6 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy"
+title: "Controversy 7 — Monetary Theory of Production, Endogenous Money, and Money in a Planned Economy"
 description: "From Godley-Lavoie SFC modelling to Keen's debt dynamics to Cockshott-Dapprich labor tokens — the capstone."
-order: 7
+order: 8
 ---
 
 ## Framing
 
-The 20th-century Marxian tradition inherited Sraffa's neglect of money. Modern mainstream macroeconomics has a theory of money that is demonstrably wrong about how banks actually work (it's been admitted by the Bank of England itself, in a now-famous 2014 paper). In parallel, a heterodox tradition — post-Keynesian, circuitist, Minskyan — has developed the **monetary theory of production**, centered on the claim that money is endogenously created by banks through the act of lending, and that this monetary circuit is essential to how capitalism actually functions. Key figures: Wynne Godley and Marc Lavoie, who gave us stock-flow consistent (SFC) modeling; Augusto Graziani and the Italian circuitists; Hyman Minsky and his intellectual heir Steve Keen. This controversy is the direct answer to a question your Week 8 project merely gestured at: once you have a planned-economy LP, how do *investment*, *intertemporal coordination*, and *transition from capitalism* work? The Cockshott-Cottrell proposal uses labor tokens (IOUs for consumer goods, non-circulating, redeemable in consumption); Dapprich's 2023 extension lets token prices on consumer goods adjust toward market-clearing rates. This is the capstone. Everything connects.
+The 20th-century Marxian tradition inherited Sraffa's neglect of money. Modern mainstream macroeconomics has a theory of money that is demonstrably wrong about how banks actually work (it's been admitted by the Bank of England itself, in a now-famous 2014 paper). In parallel, a heterodox tradition — post-Keynesian, circuitist, Minskyan — has developed the **monetary theory of production**, centered on the claim that money is endogenously created by banks through the act of lending, and that this monetary circuit is essential to how capitalism actually functions. Controversy 6 made the *theoretical* case for why this matters — that monetary validation is the constitutive moment of value, not just its accounting register, and that crisis is the structural enforcement of the validation requirement. This chapter is the *constructive* counterpart: the formal machinery that makes the circuit computable. Key figures: Wynne Godley and Marc Lavoie, who gave us stock-flow consistent (SFC) modeling; Augusto Graziani and the Italian circuitists; Hyman Minsky and his intellectual heir Steve Keen. This controversy is the direct answer to a question your Week 8 project merely gestured at: once you have a planned-economy LP, how do *investment*, *intertemporal coordination*, and *transition from capitalism* work? The Cockshott-Cottrell proposal uses labor tokens (IOUs for consumer goods, non-circulating, redeemable in consumption); Dapprich's 2023 extension lets token prices on consumer goods adjust toward market-clearing rates. This is the capstone. Everything connects.
 
 ::: {.callout-note appearance="minimal" collapse="true" .author-notes}
 ## Author's notes for this chapter
 
-- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/reading-notes)
-- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/questions)
-- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/insights)
-- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-06-money/refs)
-- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-06-money/scratchpad.ipynb)
+- [Reading notes]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-money/reading-notes)
+- [Open questions]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-money/questions)
+- [Insights and connections]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-money/insights)
+- [References to revisit]({{< var notes-base >}}/the_calculation_course/controversies/controversy-07-money/refs)
+- [Scratchpad notebook](https://github.com/jquacinella/EconomicPlanningCourse/blob/main/courses/the_calculation_course/notes/controversies/controversy-07-money/scratchpad.ipynb)
 :::
 
 ## Learning objectives
@@ -65,4 +65,4 @@ State the endogenous money thesis. Why does the textbook "loanable funds" story 
 
 ## Bridge
 
-There's one more controversy worth attending to before you step away from this framework and apply it — because the single most politically urgent use case for the whole Cockshott-Cottrell-Dapprich planning program is climate. Controversy 7 is where the tools stop being just mathematically interesting and start being a serious candidate for how humanity might actually organize the decarbonization transition. It's the capstone-after-the-capstone.
+There's one more controversy worth attending to before you step away from this framework and apply it — because the single most politically urgent use case for the whole Cockshott-Cottrell-Dapprich planning program is climate. Controversy 8 is where the tools stop being just mathematically interesting and start being a serious candidate for how humanity might actually organize the decarbonization transition. It's the capstone-after-the-capstone.

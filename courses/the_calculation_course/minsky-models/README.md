@@ -2,7 +2,7 @@
 
 [Minsky](https://sourceforge.net/projects/minsky/) is Steve Keen's open-source system-dynamics modelling tool, designed specifically for monetary economics with built-in stock-flow-consistent accounting (Godley tables) on a graphical canvas.
 
-It is most directly relevant to **Controversy 6** (monetary theory of production) and the Minsky-Keen debt dynamics in Version 3 of that controversy's capstone project. Optionally also for **Controversy 5** (the ergodicity sidebar's distributional debt simulations).
+It is most directly relevant to **Controversy 7** (monetary theory of production) and the Minsky-Keen debt dynamics in Version 3 of that controversy's capstone project. Optionally also for **Controversy 5** (the ergodicity sidebar's distributional debt simulations).
 
 ## Where to download
 

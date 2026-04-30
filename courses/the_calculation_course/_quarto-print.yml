@@ -29,8 +29,9 @@ book:
         - controversies/controversy-04-sraffa.qmd
         - controversies/controversy-05-okishio.qmd
         - controversies/seminar-chinese-critique.qmd
-        - controversies/controversy-06-money.qmd
-        - controversies/controversy-07-climate.qmd
+        - controversies/controversy-06-realization.qmd
+        - controversies/controversy-07-money.qmd
+        - controversies/controversy-08-climate.qmd
     - 201/placeholder.qmd
     - where-this-lands.qmd
 
