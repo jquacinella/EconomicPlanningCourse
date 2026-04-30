@@ -1,4 +1,4 @@
- I #!/usr/bin/env bash
+#!/usr/bin/env bash
 # Fetch Quartz v4 into this directory without overwriting our overrides.
 # Idempotent: re-running pulls latest Quartz v4 changes without clobbering
 # the committed config files (quartz.config.ts, quartz.layout.ts, package.json,
