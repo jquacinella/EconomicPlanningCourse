@@ -29,7 +29,7 @@ dependencies = [
     # Game theory (Zhang's prisoner's dilemma and repeated-game extensions)
     "nashpy>=0.0.19",
     # Stochastic processes / Markov chains (realization uncertainty, unemployment dynamics)
-    "markovchain>=0.3.0",
+    # quantecon (above) covers Markov chains; add a dedicated package here if needed later.
 ]
 
 [project.optional-dependencies]
