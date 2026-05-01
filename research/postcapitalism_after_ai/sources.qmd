@@ -1,0 +1,36 @@
+---
+title: "Source Texts"
+description: "The five primary pieces in the late-2025 / early-2026 socialism / AI / postcapitalism debate."
+---
+
+## The exchange
+
+Five pieces in conversation, late 2025 to early 2026. Pieces 2, 3, and 4 appeared together in *Ideas Letter* 57 as a triple response to piece 1.
+
+| # | Piece | Author | Venue | Date | URL |
+|---|-------|--------|-------|------|-----|
+| 1 | Socialism After AI | Evgeny Morozov | *The Ideas Letter* 54 | Dec 11, 2025 | <https://theideasletter.org/essay/socialism-after-ai/> |
+| 2 | A Real Political Economy of Technology | Aaron Benanav | *The Ideas Letter* 57 | Feb 5, 2026 | <https://theideasletter.org/essay/a-real-political-economy-of-technology/> |
+| 3 | The Socialist Charcuterie Board | Evgeny Morozov | *The Ideas Letter* 57 | Feb 5, 2026 | <https://theideasletter.org/essay/the-socialist-charcuterie-board/> |
+| 4 | Automate the C-Suite | Leif Weatherby | *The Ideas Letter* 57 | Feb 5, 2026 | <https://theideasletter.org/essay/automate-the-c-suite/> |
+| 5 | Postcapitalism and Agentic AI: Part 2 | Paul Mason | *Conflict & Democracy* (Substack) | Apr 23, 2026 | <https://htsf.substack.com/p/postcapitalism-and-agentic-ai-part> |
+
+Mason's piece is part 2 of a three-part essay; part 1 is at <https://htsf.substack.com/p/postcapitalism-and-agentic-artificial> and the bulk of part 2 is paywalled.
+
+## What each piece is doing
+
+**Morozov 1 — *Socialism After AI*** is the opening salvo. It poses the question the rest of the debate orbits around: can socialism offer a better way of *living with* AI than capitalism does — a distinct form of life worth wanting — rather than just a fairer distribution of what capital has already built? The piece reads Benanav's two *NLR* essays as the most sophisticated recent socialist proposal and argues they nonetheless reproduce the neutrality-of-technology assumption at a higher level of sophistication. The positive proposal is "socialist baroque," following Bolívar Echeverría: ecologies of experiment rather than a single Data Matrix; technology as a primary site of value formation rather than a tool to which pre-formed values get applied.
+
+**Benanav 2 — *A Real Political Economy of Technology*** is the rebuttal. The title is pointed: Morozov's "worldmaking" is *not* real political economy. Reframes the debate as a competition between two technological revolutions (generative AI vs. green transition) for limited investment capacity. Restates the framework (dual currency, Investment Boards, Data Matrix) and accuses Morozov of misreading it as a values-first administrative apparatus, when in fact it institutionalizes ongoing political contestation among rival sociotechnical projects.
+
+**Morozov 3 — *The Socialist Charcuterie Board*** is the reply. Highly polemical. Quotes Benanav back at himself to show the misreading charge is misplaced. Names what Morozov says Benanav has actually missed: the post-1991 neoliberal turn (Buchanan & Vanberg), the Habermasian binary inherited unwittingly from Benanav's two-realm / two-action commitments, the Postone / value-form objection that "efficiency" is not a neutral category. Constructs a 2×2 grid (realm-question × action-question) that situates Benanav at "Socialist Housekeeping" and points to a "Worldmaking" quadrant Benanav cannot reach.
+
+**Weatherby 4 — *Automate the C-Suite*** is a third-party intervention with different conceptual furniture than either Morozov or Benanav. Argues both reach for pre-WWII figures and miss the intervening century, in which optimization mathematics, decision/game theory, computing hardware, and neoliberal economics formed a single phenomenon — the "really existing rationality" of contemporary capitalism. Diagnoses the C-suite, not the proletariat, as the class capitalism has rendered logically vestigial: the work of the spreadsheet jockey is fundamentally continuous with that of the CEO. Reads Anthropic's Project Vend as a symptom, not a roadmap.
+
+**Mason 5 — *Postcapitalism and Agentic AI: Part 2*** is from a different venue and a different register: empirical political economy of labor markets under agentic-AI rollout. Surveys Acemoglu-Restrepo (2018), Aghion et al. (2019) on Baumol's Disease, the Stanford HAI Index 2026, the Crane-Soto and Garciano findings on which workers are being replaced; argues mainstream economics is "trapped in a Baumol cul-de-sac" because it ignores free time, unpaid labor, and play. Re-grounds the bullshit-jobs phenomenon as financialization-driven rather than (per Graeber) corporate-self-aggrandizement-driven.
+
+## Author / venue notes
+
+- *The Ideas Letter* is a project run out of the Open Society / SCF orbit; its editors curate exchanges of this form.
+- *New Left Review* is where Benanav's two-part "Beyond Capitalism" originally appeared (Issues 152, 153, 2025); those are the framework papers Morozov is responding to.
+- Mason's *Conflict & Democracy* Substack continues the *Postcapitalism* (2015) program. Part 1 of the agentic-AI essay (publicly accessible) frames the technology; Part 2 (mostly paywalled) does the labor-market work; Part 3 was forthcoming at time of writing.

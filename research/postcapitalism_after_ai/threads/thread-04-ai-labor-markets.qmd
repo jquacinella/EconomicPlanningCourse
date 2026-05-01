@@ -1,0 +1,69 @@
+---
+title: "Thread 4 — The Empirical Political Economy of AI Labor Markets"
+description: "Mason's data-led arc: Acemoglu-Restrepo, Aghion / Baumol's Disease, the Stanford HAI Index, the bullshit-jobs-as-financialization claim, the late-2020s capital-scarcity overlay."
+order: 4
+---
+
+## The animating question
+
+Paul Mason's *Postcapitalism and Agentic AI: Part 2* is in a different register than the *Ideas Letter* exchange. The question is empirical: **what does the next decade of labor markets actually look like under agentic-AI rollout, given mainstream economics' apparent inability to model it well?**
+
+Mason's diagnosis: mainstream models are trapped in a "Baumol cul-de-sac." Acemoglu & Restrepo (2018) build automation-vs.-reinstatement around the (false) assumption that digital information networks create roughly as many jobs as they destroy. Aghion et al. (2019) frame the problem around Baumol's Disease (1967) and produce three possible outcomes: balanced growth with capital share well below 100%; AI imitates patented technology, killing the entrepreneur; singularity. "A very wide range of outcomes from a single model and certainly does not rule out the collapse of paid employment."
+
+Empirical data through 2026 shows:
+
+- LLMs replace tasks more than entire jobs.
+- "Weak bundles" of tasks (Garciano 2026) are most at risk.
+- Crane and Soto (2026): the US workforce is missing ~500,000 junior software coders vs. pre-LLM trends.
+- Stanford HAI Index 2026: US developers ages 22–25 saw employment fall ~20% from 2024 even as older developer headcount kept growing.
+- Productivity / revenue gains 10–20% at leading-edge firms; strongest in strategy, corporate finance, product, marketing/sales.
+
+Mason argues the empirical evidence to date is misleading because LLM rollout is in its infancy. Once agentic AI + robotics + autonomy + network effects roll out, impacts will be much stronger.
+
+The specific Mason move that distinguishes this thread from Thread 3: the *bullshit jobs* phenomenon. Graeber (2018) ascribed bullshit jobs to corporate inefficiency / self-aggrandizement. Mason argues they are emergent from financialization — financialized capital needs not just workers but credit-card borrowers, renters, loan repayers, smartphone owners. Without high employment plus respectable credit scores at the bottom, rentier business models can't run. So the system as a whole keeps generating minimally-paid jobs that don't need to exist plus rising welfare dependency.
+
+The complication, late 2020s: capital and credit have become expensive (global shocks + demographic ageing). A jobs cull at the low-skill end coinciding with credit scarcity for the same deciles could create a Depression-scale event. If a jobs massacre at the middle-to-high end (junior marketers, programmers, lawyers, consultants) hits simultaneously — unprecedented social crisis. Xu (2023): the top three UK salary deciles each almost doubled their incomes between 1993 and 2023; the barbell. What happens to professional / managerial sectors is therefore crucial.
+
+Mason teases — but the rest is paywalled in Part 2 — that the way out of the Baumol cul-de-sac is to factor in *free time*, unpaid labor, collaborative production, and play. That is the Postcapitalism Thesis.
+
+## What this thread investigates
+
+1. **Reproduce the data.** The Crane-Soto, Garciano, Sajadieh / Stanford HAI 2026 numbers. Pull the underlying datasets where available (BLS, ONS, Stanford HAI's open data). Replicate the headline charts (especially the 22–25-year-old developer plot). Test the "weak bundle" classification empirically.
+2. **Read the mainstream models with care.** Acemoglu & Restrepo (2018), the Aghion et al. (2019) Baumol model, and any 2024–2026 follow-ups. Identify the assumptions Mason is right to flag as problematic and any he overstates.
+3. **Test the bullshit-jobs-as-financialization claim.** Mason's argument is structural: rentier business models require a high-employment-plus-credit-access substrate. Look for empirical traction — wage-share data, employment-to-population ratio, household debt service ratios — that supports or undermines this account against Graeber's.
+4. **The barbell.** Xu (2023) on the UK; replicate for the US (CPS or ASEC), perhaps for the EU. Where does the middle disappear and what happens to it?
+5. **The capital-scarcity overlay.** Real interest rates, term spreads, and demographic transition data through 2026. How tight is the credit constraint for the bottom-three deciles at the moment a labor cull might hit?
+6. **Free time, unpaid labor, play.** The Postcapitalism Thesis frame. Marx's *Grundrisse* "Fragment on Machines" and the contemporary literature on collaborative production (Rifkin, Benkler). Does the Mason framing actually pull mainstream models out of the Baumol cul-de-sac, or does it relocate the puzzle?
+
+## Primary texts
+
+- Paul Mason, *Postcapitalism and Agentic AI: Part 2* — see [Source texts](../sources.qmd). Pursue Part 1 (publicly available) and Part 3 when published.
+- Paul Mason, *Postcapitalism: A Guide to Our Future* (Allen Lane, 2015) — the original Postcapitalism Thesis.
+- Daron Acemoglu & Pascual Restrepo, "Artificial Intelligence, Automation and Work" (NBER WP 24196, 2018).
+- Philippe Aghion, Benjamin F. Jones, Charles I. Jones, "Artificial Intelligence and Economic Growth" (NBER WP 23928 / *The Economics of AI* volume, 2019).
+- William J. Baumol, "Macroeconomics of Unbalanced Growth," *American Economic Review* 57(3), 1967.
+- Sajadieh et al., *Stanford HAI AI Index Report 2026*. <https://hai.stanford.edu/ai-index>.
+- Crane & Soto, 2026 — the missing-junior-coders paper. Citation to be confirmed; track via the Stanford HAI Index references.
+- Garciano, 2026 — "weak bundles" of tasks. Citation to be confirmed.
+- David Graeber, *Bullshit Jobs* (Simon & Schuster, 2018).
+
+## Adjacent texts
+
+- Carlota Perez, *Technological Revolutions and Financial Capital* (Edward Elgar, 2002).
+- Erik Brynjolfsson, Lin & Mollick et al. on AI productivity gains (the McKinsey / GitHub Copilot / BCG study lineage).
+- Xu, 2023 — UK income deciles. Citation to be confirmed.
+- Mariana Mazzucato, *The Entrepreneurial State* (Anthem, 2013) — the role of public investment in producing the green transition Benanav prioritizes.
+- Andrew Glyn, *Capitalism Unleashed* (Oxford, 2006) — the prior generation's empirical political economy of neoliberalism, useful for calibrating "what does it look like when a regime breaks."
+
+## Prospective artifacts
+
+- A reproducible notebook that pulls the Stanford HAI 2026 data and replicates the headline labor-market charts. Public, citable, useful as a baseline that other researchers can fork.
+- A working paper or essay: *The Barbell at the Edge of Agentic AI*. Synthesizes the empirical picture as of mid-2026; argues for or against the "Depression-scale event" risk Mason flags.
+- An annotated bibliography of the AI-labor-market literature 2018–2026.
+- (Optional, more ambitious) a small extension of Aghion et al. (2019) that endogenizes free time / unpaid labor / play, in the spirit of Mason's Postcapitalism Thesis. This is what the paywalled section of Mason's Part 2 is presumably attempting.
+
+## Cross-thread connections
+
+- Thread 2 — Benanav's two-revolutions framing depends on empirical claims about AI's productivity track record that this thread examines closely. The "AI is unproven" position rests on data that may already be moot by Stanford HAI 2026.
+- Thread 3 — Mason's empirical claims map directly to specific points on Thread 3's genealogy of optimization-economics-computing. The reinforcement-learning chain-of-thought training that's driving 2025–2026 LLM gains is the technology behind the labor-market data Mason cites.
+- Thread 5 — the Postcapitalism Thesis's "free time / unpaid labor / play" frame is closer to Morozov's worldmaking than to Benanav's multi-criterial framework, even though Mason's mode is quantitative rather than philosophical.

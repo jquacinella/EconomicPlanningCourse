@@ -25,15 +25,16 @@
 
 ```
 https://jquacinella.github.io/EconomicPlanningCourse/
-├── /                           ← Landing page (site-root/index.html)
+├── /                                     ← Landing page (site-root/index.html)
 ├── /courses/
-│   ├── /the_calculation_course/  ← Quarto book
-│   ├── /201/                     ← Quarto book
-│   └── /the_crypto_course/       ← Quarto book
-└── /notes/                      ← Quartz notes site
+│   └── /the_calculation_course/          ← Quarto book
+├── /research/
+│   ├── /marxian_formalization/           ← Quarto book
+│   └── /postcapitalism_after_ai/         ← Quarto book
+└── /notes/                                ← Quartz notes site
     ├── /the_calculation_course/
-    ├── /201/
-    └── /the_crypto_course/
+    ├── /marxian_formalization/
+    └── /postcapitalism_after_ai/
 ```
 
 ### File System → Deployment Mapping
@@ -115,14 +116,17 @@ The deployment has **3 jobs** that run in sequence:
 
 #### Job 1: `render-books` (matrix strategy)
 
-Renders each course book independently:
+Renders each book independently:
 
 ```yaml
 matrix:
-  course: [the_calculation_course, 201, the_crypto_course]
+  include:
+    - { path: courses/the_calculation_course,    slug: the_calculation_course }
+    - { path: research/marxian_formalization,    slug: marxian_formalization }
+    - { path: research/postcapitalism_after_ai,  slug: postcapitalism_after_ai }
 ```
 
-For each course:
+For each book:
 1. Checkout code
 2. Set up Python (version from `.python-version`)
 3. Install `uv` and sync dependencies (`uv sync`)
@@ -217,12 +221,12 @@ notes-base: "https://jquacinella.github.io/EconomicPlanningCourse/notes"
 ### Quartz Configuration
 
 #### `quartz/content/`
-Symlinks to course notes directories:
+Symlinks to per-book notes directories:
 
 ```bash
-the_calculation_course -> ../../courses/the_calculation_course/notes
-201 -> ../../courses/201/notes
-the_crypto_course -> ../../courses/the_crypto_course/notes
+the_calculation_course   -> ../../courses/the_calculation_course/notes
+marxian_formalization    -> ../../research/marxian_formalization/notes
+postcapitalism_after_ai  -> ../../research/postcapitalism_after_ai/notes
 ```
 
 **Quartz reads these symlinks** to find content. They're created by `quartz/setup.sh`.

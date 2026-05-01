@@ -1,0 +1,58 @@
+---
+title: "Thread 6 — Crypto and Blockchain as Coordination Infrastructure"
+description: "Reframed from the prior crypto-course stub: do blockchain mechanisms (DAOs, governance tokens, labor tokens, on-chain coordination) constitute an alternative to the worlds Morozov and Benanav fight over, or another expression of the optimization-economics-computing complex?"
+order: 6
+---
+
+## The animating question
+
+This thread absorbs the prior *Crypto Calculation Course* stub and reframes it under the research track's animating question.
+
+The original framing was: what do these technologies actually do, what do they claim to do, and how do they relate to the ecosocialist planning tradition developed in the Calculation Course?
+
+The reframed question is sharper: **do blockchain mechanisms (DAOs, governance tokens, labor tokens, on-chain coordination) constitute an alternative to the worlds Morozov and Benanav fight over, or another expression of the optimization-economics-computing complex Weatherby diagnoses?**
+
+The honest answer is that almost no one has asked this. Crypto discourse pulls toward two camps: Bitcoin-Austrian on the right ("denationalization of money," Hayek, hard-money), and a small ecosocialist literature on the left (Cockshott / Dapprich-adjacent labor tokens, Plurality / RadicalxChange-adjacent governance experiments). Neither camp engages the Morozov / Benanav / Weatherby exchange. This thread is positioned to do that work.
+
+## What this thread investigates
+
+1. **Cryptographic and technical foundations.** Hash functions, Merkle trees, public-key cryptography, consensus mechanisms (PoW, PoS, BFT family), smart contracts. Not as a tutorial but as a precondition for the political-economic claims that follow. Without the technical floor, the political claims float free.
+2. **Bitcoin and the Austrian connection.** The ideological roots of Bitcoin in Austrian economics; Hayek's *Denationalization of Money* (1976); Szabo's "shelling out" essay; the gold-standard nostalgia. Read against Thread 1's Buchanan-Vanberg material: is Bitcoin the actually-existing version of the post-Hayekian market-as-creative-process, or is it an older, simpler hard-money project that pre-dates the philosophical move?
+3. **Ethereum and programmable money.** Smart contracts as planning primitives. DAOs as coordination mechanisms. The limits of on-chain governance (voter apathy, plutocratic capture, oracle dependence, the famous "code is law" / DAO-hack contradiction). Read against Thread 2 — DAOs are the most concrete contemporary attempt at the kind of architecture Benanav describes; what does the empirical experience teach?
+4. **DeFi and financialization.** Automated market makers, liquidity pools, yield farming. How DeFi reproduces and amplifies capitalist financial dynamics rather than escaping them. Read against Thread 3 — the optimization apparatus (constant-product AMM curves, MEV optimization, on-chain RL agents) shows up in DeFi in particularly legible form.
+5. **The ecosocialist critique.** Can blockchain technology serve planning rather than markets? Token systems, labor tokens (the Cockshott-Dapprich tradition's natural attempt), what a socialist blockchain would actually need to do. The specific question: is on-chain coordination a viable substrate for Investment Boards in Benanav's sense, or does it inherit market-coordination structure too deeply to escape it?
+6. **Empirical analysis.** On-chain data analysis with Python; measuring concentration, energy use, financial flows. The same data-led mode as Thread 4, applied to crypto markets specifically.
+7. **The question this thread can ask that the original crypto course couldn't.** With agentic AI in the mix, on-chain coordination potentially becomes machine-mediated in a way that changes the political-economic stakes. Agent-to-agent transactions on blockchain rails (the Anthropic MCP / agent-payment direction) raise the C-suite-automation question (Thread 3) at the level of *the entire economy*, not just within a single firm. Whether this is utopia, dystopia, or just legibly the same structure dressed differently is the question.
+
+## Primary texts
+
+- Satoshi Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System" (2008).
+- Vitalik Buterin, "Ethereum White Paper" (2014); the Plurality / radicalxchange essays (Buterin & Weyl, *Plurality* book, 2024).
+- Friedrich Hayek, *Denationalisation of Money* (Institute of Economic Affairs, 1976).
+- Nick Szabo, "Shelling Out: The Origins of Money" (essay).
+- Paul Cockshott & Allin Cottrell, *Towards a New Socialism* (1993) — the labor-token tradition.
+- Jan Philipp Dapprich's recent work on consumer-feedback planning (cite to be confirmed; *Review of Political Economy* article ca. 2023).
+
+## Adjacent texts
+
+- Finn Brunton, *Digital Cash* (Princeton, 2019) — the cypherpunk genealogy.
+- David Golumbia, *The Politics of Bitcoin: Software as Right-Wing Extremism* (Minnesota, 2016) — the obvious antagonist position; useful for sharpening what is actually being claimed.
+- Lana Swartz, *New Money: How Payment Became Social Media* (Yale, 2020).
+- Bill Maurer, *Mutual Life, Limited* (Princeton, 2005); *How Would You Like to Pay?* (Duke, 2015).
+- Stefan Eich, *The Currency of Politics* (Princeton, 2022) — the philosophical history of money.
+- Glen Weyl, Audrey Tang et al., *Plurality* (2024) — the actually-existing techno-democracy proposal.
+- The Friend.tech, ENS, Optimism RetroPGF, and Gitcoin Grants experiments — empirical case studies of governance / public-goods funding via crypto.
+
+## Prospective artifacts
+
+- Reproducible notebooks for on-chain analysis: token concentration, energy use, MEV flows. The data-led artifacts the original crypto course was already aimed at.
+- A working paper: *On-Chain Coordination in the Postcapitalism-After-AI Frame*. The piece that the prior crypto-course framing couldn't write, because it didn't have the Morozov / Benanav / Weatherby axis to work against.
+- An annotated bibliography of the ecosocialist crypto literature, separating the serious work (Cockshott-adjacent, Plurality-adjacent) from the libertarian / right-accelerationist material it gets confused with.
+- (Optional) a small simulator: a Benanav-style Investment Board allocator (from Thread 2) implemented as an on-chain DAO contract, run on a test network, to surface what actually fails when you try to put a multi-criterial allocator on a blockchain.
+
+## Cross-thread connections
+
+- Thread 1 — Bitcoin reads as the actually-existing version of post-Hayekian market-as-creative-process, possibly the most successful one. The Buchanan-Vanberg lens may explain Bitcoin's political traction better than the standard "monetary nostalgia" lens.
+- Thread 2 — DAOs and governance tokens are the concrete contemporary attempt at multi-criterial coordination outside the firm; the empirical track record (mostly bad) is data Benanav's framework has to digest.
+- Thread 3 — DeFi is the optimization-economics-computing complex in maximally legible form; AMM curves, MEV, and on-chain RL agents are textbook applications of the same mathematics.
+- Thread 5 — the political imaginary of crypto (Bitcoin's hard-money religion, Ethereum's "world computer" religion, Plurality's pluralism) is a separate cultural object that deserves Castoriadis-style treatment.

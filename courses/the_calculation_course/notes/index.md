@@ -10,7 +10,7 @@ The notes are organized by the same units as the book:
 
 - **Weeks** — the 10-week mathematics arc. See [[weeks/week-01-multivariable/index|Week 1]] through [[weeks/week-10-growth-stability/index|Week 10]].
 - **Controversies** — the eight heterodox-economics controversies plus the Chinese-critique seminar. See [[controversies/controversy-01-cobb-douglas/index|Controversy 1]] through [[controversies/controversy-08-climate/index|Controversy 8]].
-- **201 planning** — sketch of a follow-on course. See [[201-planning/index]].
+- **Marxian Formalization planning** — sketch of the follow-on research project. See [[research-marxian-formalization-planning/index]].
 
 Project meta lives under [[_meta/workflow|workflow]], [[_meta/progress|progress]], [[_meta/deferred|deferred]], [[_meta/decisions|decisions]], and [[_meta/glossary|glossary]].
 

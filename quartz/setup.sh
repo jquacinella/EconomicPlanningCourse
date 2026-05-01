@@ -47,15 +47,16 @@ for path in *; do
   cp -R "$path" "$HERE/"
 done
 
-# Ensure the content/ directory exists with per-course symlinks.
-# content/ is a real directory (not a symlink) containing one symlink per course.
-# Each symlink points at the course's notes/ vault relative to the quartz/ dir.
+# Ensure the content/ directory exists with per-book symlinks.
+# content/ is a real directory (not a symlink) containing one symlink per
+# course or research project. Each symlink points at that book's notes/ vault
+# relative to the quartz/ dir.
 mkdir -p "$HERE/content"
 
 declare -A COURSE_LINKS=(
   ["the_calculation_course"]="../../courses/the_calculation_course/notes"
-  ["201"]="../../courses/201/notes"
-  ["the_crypto_course"]="../../courses/the_crypto_course/notes"
+  ["marxian_formalization"]="../../research/marxian_formalization/notes"
+  ["postcapitalism_after_ai"]="../../research/postcapitalism_after_ai/notes"
 )
 
 for name in "${!COURSE_LINKS[@]}"; do

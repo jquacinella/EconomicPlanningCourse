@@ -1,0 +1,43 @@
+---
+title: "Computational Reconstruction of Zhang's Marxian Formalization"
+description: "Research project: implementing Zhang's game-theoretic, probabilistic, and cybernetic extensions to Marxian economics — toward a publishable computational companion to Zhang 2023."
+---
+
+![](assets/images/cover.png){.cover-banner fig-alt="Zhang's Marxian Formalization — Research Project"}
+
+## About this research project
+
+This is a **research project**, not a course. There is no syllabus, no fixed pacing, no exercises. The goal is a body of work — reading notes, working papers, an open-source library, and (if the work warrants) a methodology paper for *World Review of Political Economy* — that constitutes a computationally rigorous companion to Zhang Xian's 2023 *WRPE* paper "The Formalization of Marx's Economics."
+
+The project will be expanded after the seminar between Controversies 5 and 6 in [The Calculation Course](/courses/the_calculation_course/), once there are real views about what Zhang's positive program warrants.
+
+For the full rationale, planned scope, and prospective endpoints, see the placeholder in the Calculation Course at [`research-marxian-formalization/placeholder.qmd`](/courses/the_calculation_course/research-marxian-formalization/placeholder.html).
+
+## Prerequisites
+
+Complete all 10 weeks and all 7 controversies of [The Calculation Course](/courses/the_calculation_course/), with particular attention to:
+
+- The seminar on the Chinese critique of the Japanese School (between Controversies 5 and 6)
+- Controversy 3 (Transformation Problem) and Controversy 5 (Okishio's Theorem)
+- Zhang, "The Formalization of Marx's Economics: A Summary Attempt Taking as an Example the First Volume of Capital" (*WRPE* 14(1), 2023)
+
+## Planned scope
+
+Eight working areas tracking Zhang's 2023 Vol I formalization. Each is a research thread, not a teaching unit:
+
+1. Value theory formalization (the mapping f: A → w, two senses of SNLT, labor complexity)
+2. Competition as a dynamic game (prisoner's-dilemma payoffs, mixed strategies, repeated games)
+3. Realization uncertainty and crisis probability (distribution F(s) over outcomes, means-of-payment)
+4. The labor process as a cybernetic system (Zhang's y = x · S/(1−SR) equation)
+5. Unemployment dynamics (Zhang's differential equation, empirical calibration)
+6. Capital accumulation and the LTRPF (game-theoretic route; comparison with Okishio and TSSI)
+7. Primitive accumulation / deprivation (Zhang's stochastic deprivation function)
+8. Unified computational framework (single calibrated economy, library backend)
+
+## Prospective endpoints
+
+1. A methodology paper submitted to *WRPE* — co-authored with Zhang if he is interested.
+2. An open-source library (`marxecon` or similar) implementing Morishima-Okishio, TSSI, and Zhang as alternative backends against a shared economy object.
+3. A direct contribution to the Cockshott / Dapprich planning tradition.
+
+*This page will be expanded as the project proceeds.*

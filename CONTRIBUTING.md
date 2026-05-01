@@ -337,19 +337,20 @@ Two pipelines, two preview commands, one stitched output site:
 - **Quarto** renders each course book to `courses/<name>/_book/`. Run `quarto preview` from inside the course directory (e.g. `courses/the_calculation_course/`); serves at `localhost:4444`.
 - **Quartz** renders all course notes vaults to `quartz/public/`. Run `cd quartz && npx quartz build --serve` from the repo root; serves at `localhost:8080`.
 
-In CI (`.github/workflows/render.yml`), all course books render in parallel (matrix strategy), Quartz builds the notes, and the outputs are stitched into `_site/`:
+In CI (`.github/workflows/render.yml`), all course and research-project books render in parallel (matrix strategy), Quartz builds the notes, and the outputs are stitched into `_site/`:
 
 ```
 _site/
-├── index.html                          # Course catalog landing page (site-root/index.html)
+├── index.html                          # Catalog landing page (site-root/index.html)
 ├── courses/
-│   ├── the_calculation_course/         # Quarto book output
-│   ├── 201/
-│   └── the_crypto_course/
+│   └── the_calculation_course/         # Quarto book output
+├── research/
+│   ├── marxian_formalization/
+│   └── postcapitalism_after_ai/
 └── notes/                              # Quartz notes output
     ├── the_calculation_course/
-    ├── 201/
-    └── the_crypto_course/
+    ├── marxian_formalization/
+    └── postcapitalism_after_ai/
 ```
 
 First-time setup of the Quartz install on a new machine: `cd quartz && bash setup.sh && npm ci`. After that, `npx quartz build --serve` is the daily command. See `quartz/README.md` for details. The local URLs (`localhost:4444` vs. `localhost:8080`) differ from the deployed URLs (no port; notes under `/notes/<course>/`); periodically check that cross-links work in the deployed site.

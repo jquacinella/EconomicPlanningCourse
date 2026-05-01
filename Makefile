@@ -1,40 +1,43 @@
-# Makefile for the Heterodox Econ Courses monorepo.
+# Makefile for the Heterodox Econ Courses + Research monorepo.
 #
 # Day-to-day editing (live reload):
-#   make dev / dev-calc  — Calculation Course at http://localhost:4444
-#   make dev-201         — 201 course at http://localhost:4445
-#   make dev-crypto      — Crypto Course at http://localhost:4446
-#   make dev-notes       — Quartz notes site at http://localhost:8080
+#   make dev / dev-calc      — Calculation Course at http://localhost:4444
+#   make dev-marxian         — Marxian Formalization research project at http://localhost:4445
+#   make dev-postcap         — Postcapitalism After AI research track at http://localhost:4446
+#   make dev-notes           — Quartz notes site at http://localhost:8080
 #
 # Full-site build (one-shot, for checking before push):
-#   make build          — build all courses + notes into _site/
+#   make build          — build all courses + research projects + notes into _site/
 #   make preview        — build then serve _site/ at http://localhost:$(PORT) (default 9200)
 #   make build-calc     — build only the Calculation Course
 #   make build-notes    — build only the Quartz notes site
-#   make clean          — remove _site/ and all course _book/ dirs
+#   make clean          — remove _site/ and all _book/ dirs
 #
 # Prerequisites: quarto, uv, node/npm (with Quartz set up via quartz/setup.sh)
 
-COURSES    := the_calculation_course 201 the_crypto_course
+# Each entry is path:slug — path is relative to repo root, slug is the URL segment under /courses/ or /research/.
+COURSES    := courses/the_calculation_course
+RESEARCH   := research/marxian_formalization research/postcapitalism_after_ai
+ALL_BOOKS  := $(COURSES) $(RESEARCH)
 SITE       := _site
 PORT       := 9200
 
-.PHONY: build preview dev dev-calc dev-201 dev-crypto dev-notes build-calc build-notes stitch clean help
+.PHONY: build preview dev dev-calc dev-marxian dev-postcap dev-notes build-calc build-notes stitch clean help
 
 ## dev-calc: Live-reload quarto preview for the Calculation Course (port 4444)
 dev-calc:
 	@echo "Starting quarto preview for the_calculation_course at http://localhost:4444"
 	cd courses/the_calculation_course && uv run quarto preview
 
-## dev-201: Live-reload quarto preview for the 201 course (port 4445)
-dev-201:
-	@echo "Starting quarto preview for 201 at http://localhost:4445"
-	cd courses/201 && uv run quarto preview
+## dev-marxian: Live-reload quarto preview for the Marxian Formalization research project (port 4445)
+dev-marxian:
+	@echo "Starting quarto preview for marxian_formalization at http://localhost:4445"
+	cd research/marxian_formalization && uv run quarto preview
 
-## dev-crypto: Live-reload quarto preview for the Crypto Course (port 4446)
-dev-crypto:
-	@echo "Starting quarto preview for the_crypto_course at http://localhost:4446"
-	cd courses/the_crypto_course && uv run quarto preview
+## dev-postcap: Live-reload quarto preview for the Postcapitalism After AI research track (port 4446)
+dev-postcap:
+	@echo "Starting quarto preview for postcapitalism_after_ai at http://localhost:4446"
+	cd research/postcapitalism_after_ai && uv run quarto preview
 
 ## dev: Alias for dev-calc (default course)
 dev: dev-calc
@@ -45,8 +48,8 @@ dev-notes:
 	@echo "Open http://localhost:8080"
 	cd quartz && npx quartz build --serve --port 8080
 
-## build: Build all courses and notes, stitch into _site/
-build: build-courses build-notes stitch
+## build: Build all courses, research projects, and notes, stitch into _site/
+build: build-books build-notes stitch
 
 ## preview: Build everything and serve _site/ at http://localhost:$(PORT)
 preview: build
@@ -55,11 +58,11 @@ preview: build
 	@echo "Press Ctrl-C to stop."
 	python3 -m http.server $(PORT) --directory $(SITE)
 
-## build-courses: Render all course books (uses freeze cache — only re-executes changed cells)
-build-courses:
-	@for course in $(COURSES); do \
-		echo "==> Building $$course ..."; \
-		(cd courses/$$course && uv run quarto render --to html) || exit 1; \
+## build-books: Render all course and research books (uses freeze cache — only re-executes changed cells)
+build-books:
+	@for path in $(ALL_BOOKS); do \
+		echo "==> Building $$path ..."; \
+		(cd $$path && uv run quarto render --to html) || exit 1; \
 	done
 
 ## build-calc: Build only the Calculation Course
@@ -79,14 +82,14 @@ stitch:
 	# Landing page at root
 	cp site-root/index.html $(SITE)/index.html
 	cp site-root/favicon.svg $(SITE)/favicon.svg
-	# Each course book at /courses/<name>/
-	@for course in $(COURSES); do \
-		if [ -d "courses/$$course/_book" ]; then \
-			mkdir -p "$(SITE)/courses/$$course"; \
-			cp -r "courses/$$course/_book/." "$(SITE)/courses/$$course/"; \
-			echo "  stitched: courses/$$course"; \
+	# Each book at /<path>/ — path is courses/<name>/ or research/<name>/
+	@for path in $(ALL_BOOKS); do \
+		if [ -d "$$path/_book" ]; then \
+			mkdir -p "$(SITE)/$$path"; \
+			cp -r "$$path/_book/." "$(SITE)/$$path/"; \
+			echo "  stitched: $$path"; \
 		else \
-			echo "  skipped (no _book/): courses/$$course"; \
+			echo "  skipped (no _book/): $$path"; \
 		fi; \
 	done
 	# Notes site at /notes/
@@ -96,12 +99,12 @@ stitch:
 	@echo ""
 	@echo "$(SITE)/ is ready. Run 'make preview' to serve it."
 
-## clean: Remove _site/ and all course _book/ directories
+## clean: Remove _site/ and all _book/ directories
 clean:
 	rm -rf $(SITE)
-	@for course in $(COURSES); do \
-		rm -rf "courses/$$course/_book"; \
-		echo "  cleaned: courses/$$course/_book"; \
+	@for path in $(ALL_BOOKS); do \
+		rm -rf "$$path/_book"; \
+		echo "  cleaned: $$path/_book"; \
 	done
 	rm -rf quartz/public
 	@echo "Clean done."

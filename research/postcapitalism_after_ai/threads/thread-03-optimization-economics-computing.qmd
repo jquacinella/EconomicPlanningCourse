@@ -1,0 +1,69 @@
+---
+title: "Thread 3 — Optimization, Economics, and Computing as One Phenomenon"
+description: "Weatherby's thread, traced through von Neumann / Wald / Savage / Dantzig / RAND / Becker / Friedman / ML / RL / LLMs; Recht's *The Irrational Decision* as the touchstone; Anthropic's Project Vend as a symptom."
+order: 3
+---
+
+## The animating question
+
+Leif Weatherby's *Automate the C-Suite* opens:
+
+> When Marxists talk about technology, they forget about capitalism. When they talk about capitalism, they forget that technology is embedded in that capitalism.
+
+Weatherby's claim is that both Morozov and Benanav reach for pre-WWII figures (Heidegger, Neurath) and miss what the intervening century actually built: a single linked phenomenon in which optimization mathematics, decision/game theory, computing hardware, neoliberal economic theory, and machine learning are *not separable*. They formed together; they grew together; they are now visible as one apparatus in the form of LLMs and agentic AI.
+
+The genealogy:
+
+- John von Neumann & Oskar Morgenstern, *Theory of Games and Economic Behavior* (1944) — expected utility formalized.
+- Abraham Wald — statistical decision functions (1945).
+- Jimmy Savage and Milton Friedman — canonical decision theory for economists.
+- George Dantzig — Simplex algorithm conceived watching the Berlin Airlift; linear programming; objective functions.
+- The CPU itself — von Neumann at Princeton, late 1940s, partly to run Dantzig's optimization problems.
+- George Stigler — minimum-acceptable-diet linear program.
+- Kenneth Arrow & RAND — social choice; the optimizers' migration through Cold War institutions.
+- Gary Becker — *The Economic Approach to Human Behavior* (1976): stable preferences, market equilibrium, *maximizing behavior*. Becker is "deep relativist" about *what* gets maximized (Weatherby's reading). Hence Jameson's "admirably totalizing" line.
+- Machine Learning as optimization-over-data: discrimination, classification, generation.
+- Reinforcement Learning over chains of reasoning (post-2024) for LLM problem-solving.
+- LLMs and agentic AI: optimization plus a hallucinatory cultural surface, returning the apparatus that was once aimed *away from* human culture (Becker excepted) back into it.
+
+The theoretical move that follows from this genealogy, in Weatherby's reading, is the *automation of the C-suite*. The classical Marxist account of automation proletarianizes the worker on the shop floor; the proletarianization of the knowledge worker, however, has nowhere to *split* — the work of the spreadsheet jockey is fundamentally continuous with that of the CEO. Anthropic's Project Vend (the vending-machine-running Claude experiment with the Seymour Cash CEO model) is taken seriously as a *symptom*: the histrionic register of the contemporary wealth class (Ackman tweetstorms, Thiel's gnostic Christianity, AI-doomer fictions) is the affective signature of a class that has been rendered logically vestigial by the very apparatus it presides over.
+
+## What this thread investigates
+
+1. **Reconstruct the genealogy in technical detail.** Not as biography but as a single technical-ideological line. The specific question: *where exactly does the "optimization" framing migrate from one discipline to another, and what does it lose or gain at each crossing?* Wald → Savage is one crossing; Simplex → input-output planning is another; LP → ML risk minimization is another; statistical learning theory → deep learning → LLMs is another. Recht's *The Irrational Decision* is the methodologically careful version of the story this thread wants to write; reading him is the obvious starting point.
+2. **Becker as the missing link.** The standard Marxist read of Chicago is "neoclassical price theory plus politics." Weatherby's read is that Becker's relativism about the maximand — let people maximize whatever they want — is what made the apparatus *cultural*, and what enabled the contemporary fusion of Silicon Valley pitch decks with linear programming back-ends. Test this reading by working through Becker (1976) carefully and seeing whether the relativism claim survives.
+3. **Project Vend as data, not anecdote.** Anthropic's [Project Vend write-up](https://www.anthropic.com/research/project-vend-1) and the WSJ replication. What did the experiment actually show? Where were the failures, and were they failures of *the model* or of *the C-suite role* the model was placed into? Weatherby's claim that the conclusion ("CEO needs to be well-calibrated") is symptomatic — read it for what it is, not as a model of what should happen but as evidence that the practitioner-class has noticed what their tools imply.
+4. **Recht's "when is it safe to optimize?"** Ben Recht's *The Irrational Decision* (forthcoming) argues optimization has been improperly applied to reason itself, to RCTs, and to the digital economy. Trace the specific cases Recht develops and ask which of them touch the planning-LP register from Calculation Course Controversy 2.
+5. **The healthcare and university examples.** Weatherby's "doctor as liability-avoiding decision-switch" and the "abolish dean / provost / president" thought experiments. Diagnosis, not policy. But diagnosis of what, exactly? Where do those thought experiments take you if you take them seriously rather than dismissing them?
+6. **Where does this leave Cockshott?** Cockshott's planning LP is *also* part of this genealogy. The Marxist who wins the calculation debate by bringing in linear programming has, in Weatherby's frame, also imported the optimization apparatus and its single-criterion structure. Does this thread's reconstruction support Morozov's critique of Benanav, weaken it, or recast it?
+
+## Primary texts
+
+- Weatherby, *Automate the C-Suite* — see [Source texts](../sources.qmd).
+- Ben Recht, *The Irrational Decision* (forthcoming, 2026). Recht's blog at <https://www.argmin.net> contains much of the developing argument.
+- Paul Erickson, Judy Klein, Lorraine Daston, Rebecca Lemov, Thomas Sturm, Michael Gordin, *How Reason Almost Lost Its Mind: The Strange Career of Cold War Rationality* (Chicago, 2013).
+- Anthropic, [Project Vend](https://www.anthropic.com/research/project-vend-1) — the original write-up; supplemented by *Wall Street Journal* coverage of the parallel experiment.
+
+## Adjacent texts
+
+- John von Neumann & Oskar Morgenstern, *Theory of Games and Economic Behavior* (Princeton, 1944).
+- Abraham Wald, *Statistical Decision Functions* (Wiley, 1950).
+- George Dantzig, *Linear Programming and Extensions* (Princeton, 1963).
+- Gary Becker, *The Economic Approach to Human Behavior* (Chicago, 1976).
+- Friedrich Hayek, *The Road to Serfdom* (1944) — the contemporaneous reaction to wartime planning that Weatherby flags.
+- Wassily Leontief — the input-output framework Dantzig borrowed from for his matrix arithmetic.
+- Viktor Mayer-Schönberger & Thomas Ramge, *Reinventing Capitalism in the Age of Big Data* (Basic Books, 2018) — the "data replaces money" hypothesis Weatherby cites.
+- Alex Imas's experimental economics work testing whether agent societies endogenously develop money.
+
+## Prospective artifacts
+
+- An annotated genealogy / timeline: a single visual + text artifact that makes the optimization-economics-computing line legible. Possibly a long-form essay; possibly an interactive notebook with a network diagram of which mathematician / department / RAND project / corporation is connected to which.
+- A close reading of Project Vend with the source code (if available) and / or a small replication at toy scale, asking the diagnostic question Weatherby asks: not whether agentic AI can run a business, but what the experiment *reveals* about how the capitalist class understands its own role.
+- A working paper: *The Single Phenomenon — Optimization, Economics, and Computing in One Frame*. Synthesizes Weatherby + Recht + the genealogy work; probably the longest-running artifact this thread produces.
+
+## Cross-thread connections
+
+- Thread 1 — Buchanan-Vanberg's reframe is what Becker's relativism made *politically* legible; this thread supplies the technical history Thread 1 needs.
+- Thread 2 — Benanav's framework, on Weatherby's reading, is genuinely on the "single-criterion" side of capitalism's structure; the multi-criterial form is grafted on top of an optimization core.
+- Thread 4 — the labor-market consequences (Mason) are downstream of the technical apparatus this thread reconstructs; Mason's empirical claims about LLM impact map to specific points on this thread's genealogy.
+- Thread 6 — blockchain coordination has its own optimization core (consensus mechanisms, MEV optimization, AMM curves); the same genealogy applies, often via Hayekian rhetoric.

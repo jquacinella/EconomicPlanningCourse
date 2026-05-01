@@ -17,14 +17,16 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-# Build budget: HTML render for each course plus Quartz build.
-# Stub courses (201, the_crypto_course) render quickly — only one placeholder
-# chapter. The calculation course dominates once executable Python is added;
-# revisit the timeout then.
+# Build budget: HTML render for each book plus Quartz build.
+# Stub research projects (marxian_formalization, postcapitalism_after_ai)
+# render quickly. The calculation course dominates once executable Python is
+# added; revisit the timeout then.
 jobs:
   # -----------------------------------------------------------------------
-  # Render each course book independently (matrix strategy).
-  # Each course has its own Python env (pyproject.toml) and _quarto.yml.
+  # Render each book independently (matrix strategy).
+  # Each book has its own Python env (pyproject.toml) and _quarto.yml.
+  # The matrix passes a `path` (relative to the repo root) and a `slug` (the
+  # URL segment used for the artifact name and the deployed location).
   # -----------------------------------------------------------------------
   render-books:
     runs-on: ubuntu-latest
@@ -32,10 +34,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        course:
-          - the_calculation_course
-          - 201
-          - the_crypto_course
+        include:
+          - path: courses/the_calculation_course
+            slug: the_calculation_course
+          - path: research/marxian_formalization
+            slug: marxian_formalization
+          - path: research/postcapitalism_after_ai
+            slug: postcapitalism_after_ai
 
     steps:
       - uses: actions/checkout@v5
@@ -43,13 +48,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version-file: courses/${{ matrix.course }}/.python-version
+          python-version-file: ${{ matrix.path }}/.python-version
 
       - name: Install uv
         uses: astral-sh/setup-uv@v6
 
       - name: Install Python dependencies
-        working-directory: courses/${{ matrix.course }}
+        working-directory: ${{ matrix.path }}
         run: |
           if [ -f uv.lock ]; then
             uv sync --frozen
@@ -67,11 +72,11 @@ jobs:
         uses: typst-community/setup-typst@v3
 
       - name: Render HTML (book)
-        working-directory: courses/${{ matrix.course }}
+        working-directory: ${{ matrix.path }}
         run: uv run quarto render --to html
 
       - name: Verify HTML render produced an index page
-        working-directory: courses/${{ matrix.course }}
+        working-directory: ${{ matrix.path }}
         run: |
           if [ ! -f _book/index.html ]; then
             echo "::error::_book/index.html missing after render — refusing to deploy."
@@ -83,13 +88,13 @@ jobs:
       # PDF/EPUB only on tagged releases (Typst callout bug; see _quarto.yml comment).
       - name: Render PDF
         if: startsWith(github.ref, 'refs/tags/v')
-        working-directory: courses/${{ matrix.course }}
+        working-directory: ${{ matrix.path }}
         run: uv run quarto render --to pdf
         continue-on-error: true
 
       - name: Render EPUB
         if: startsWith(github.ref, 'refs/tags/v')
-        working-directory: courses/${{ matrix.course }}
+        working-directory: ${{ matrix.path }}
         run: uv run quarto render --to epub
         continue-on-error: true
 
@@ -98,14 +103,14 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            courses/${{ matrix.course }}/_book/*.pdf
-            courses/${{ matrix.course }}/_book/*.epub
+            ${{ matrix.path }}/_book/*.pdf
+            ${{ matrix.path }}/_book/*.epub
 
       - name: Upload book artifact
         uses: actions/upload-artifact@v4
         with:
-          name: book-${{ matrix.course }}
-          path: courses/${{ matrix.course }}/_book/
+          name: book-${{ matrix.slug }}
+          path: ${{ matrix.path }}/_book/
           retention-days: 1
 
   # -----------------------------------------------------------------------
@@ -187,19 +192,26 @@ jobs:
           rm -rf _site
           mkdir -p _site
 
-          # Course catalog landing page at the root
+          # Catalog landing page at the root
           cp site-root/index.html _site/index.html
 
-          # Each course book at /courses/<name>/
-          for course in the_calculation_course 201 the_crypto_course; do
-            mkdir -p "_site/courses/$course"
-            if [ -d "_artifacts/books/book-$course" ]; then
-              cp -r "_artifacts/books/book-$course/." "_site/courses/$course/"
-              echo "Stitched: courses/$course"
+          # Each book at /<path>/ — keep the matrix's (path, slug) pairs in sync with render-books above.
+          # Slug is the artifact suffix; path is where the book lives in the deployed _site tree.
+          stitch_book () {
+            local slug="$1"
+            local path="$2"
+            mkdir -p "_site/$path"
+            if [ -d "_artifacts/books/book-$slug" ]; then
+              cp -r "_artifacts/books/book-$slug/." "_site/$path/"
+              echo "Stitched: $path"
             else
-              echo "::warning::No book artifact for $course — skipping."
+              echo "::warning::No book artifact for $slug — skipping."
             fi
-          done
+          }
+
+          stitch_book the_calculation_course   courses/the_calculation_course
+          stitch_book marxian_formalization    research/marxian_formalization
+          stitch_book postcapitalism_after_ai  research/postcapitalism_after_ai
 
           # Notes site at /notes/
           mkdir -p _site/notes

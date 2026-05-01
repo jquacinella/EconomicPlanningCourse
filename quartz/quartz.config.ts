@@ -2,22 +2,22 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz configuration for the multi-course notes section.
+ * Quartz configuration for the multi-book notes section.
  *
  * The notes site is published as a sub-section of the main site at `/notes/`.
- * Content is organized by course under quartz/content/:
- *   content/the_calculation_course/ -> courses/the_calculation_course/notes/
- *   content/201/                    -> courses/201/notes/
- *   content/the_crypto_course/      -> courses/the_crypto_course/notes/
+ * Content is organized by book under quartz/content/:
+ *   content/the_calculation_course/    -> courses/the_calculation_course/notes/
+ *   content/marxian_formalization/     -> research/marxian_formalization/notes/
+ *   content/postcapitalism_after_ai/   -> research/postcapitalism_after_ai/notes/
  *
  * Resulting URLs:
  *   /notes/the_calculation_course/weeks/...
- *   /notes/201/weeks/...
- *   /notes/the_crypto_course/weeks/...
+ *   /notes/marxian_formalization/...
+ *   /notes/postcapitalism_after_ai/...
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Heterodox Econ Courses — Notes",
+    pageTitle: "Heterodox Econ Courses + Research — Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -27,14 +27,14 @@ const config: QuartzConfig = {
     ignorePatterns: [
       "private",
       "templates",
-      // Obsidian vault config dirs (one per course vault)
+      // Obsidian vault config dirs (one per book vault)
       "the_calculation_course/.obsidian",
-      "201/.obsidian",
-      "the_crypto_course/.obsidian",
+      "marxian_formalization/.obsidian",
+      "postcapitalism_after_ai/.obsidian",
       // Don't serve raw PDF attachments
       "the_calculation_course/attachments/**/*.pdf",
-      "201/attachments/**/*.pdf",
-      "the_crypto_course/attachments/**/*.pdf",
+      "marxian_formalization/attachments/**/*.pdf",
+      "postcapitalism_after_ai/attachments/**/*.pdf",
     ],
     defaultDateType: "modified",
     theme: {
