@@ -17,6 +17,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 PROTECTED=(
   quartz.config.ts
   quartz.layout.ts
+  notes-overrides.tsx
   README.md
   setup.sh
   .gitignore

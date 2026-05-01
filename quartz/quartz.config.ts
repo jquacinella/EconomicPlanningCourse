@@ -79,7 +79,12 @@ const config: QuartzConfig = {
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
+      // markdownLinkResolution: "relative" — sibling wiki-links like [[questions]]
+      // from a per-week notes page must resolve to the local sibling file. With
+      // many questions.md / insights.md / refs.md files across the vault, the
+      // default "shortest" mode cannot pick a unique target by basename and
+      // produces broken links.
+      Plugin.CrawlLinks({ markdownLinkResolution: "relative" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
