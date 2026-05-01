@@ -2,8 +2,7 @@
 
 Reads every ``.qmd`` file under the configured chapter directories
 (``weeks/``, ``controversies/``, ``appendices/``, plus the top-level
-``index.qmd``, ``research-tracks.qmd``, etc.) and writes a copy
-with every fenced div
+``index.qmd`` etc.) and writes a copy with every fenced div
 that carries the ``author-notes`` class removed. Output lands in
 ``build-print/`` mirroring the source layout.
 
@@ -47,7 +46,6 @@ DEFAULT_TOP_LEVEL = (
     "index.qmd",
     "master-resources.qmd",
     "post-course.qmd",
-    "research-tracks.qmd",
     "where-this-lands.qmd",
 )
 

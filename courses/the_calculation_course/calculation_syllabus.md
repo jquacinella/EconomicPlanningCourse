@@ -638,7 +638,7 @@ From here, the natural next steps are: publishing (your SemPKM project is alread
 
 ## Research Tracks
 
-Two long-form research projects sit downstream of this course. They are framed in the [Research Tracks](research-tracks.qmd) chapter of the book and live under `research/` in the repo.
+Two long-form research projects sit downstream of this course. They are framed in the [Where this lands](where-this-lands.qmd) chapter of the book and live under `research/` in the repo.
 
 - **Marxian Formalization** ([research/marxian_formalization/](../../research/marxian_formalization/)) — a computational companion to Zhang Xian's 2023 *WRPE* paper. Game-theoretic, probabilistic, cybernetic extensions to Marxian economics. Best opened *after* the Chinese-critique seminar between Controversies 5 and 6. Three plausible endpoints: a methodology paper for *WRPE*, an open-source library implementing Morishima-Okishio / TSSI / Zhang as alternative backends, or a Zhang-compatible extension of the Cockshott / Dapprich planning tradition.
 - **Postcapitalism After AI** ([research/postcapitalism_after_ai/](../../research/postcapitalism_after_ai/)) — a reading and writing program on the late-2025 / early-2026 socialism / AI / postcapitalism debate (Morozov, Benanav, Weatherby, Mason) and its conceptual hinterland. Six threads. Thread 1 (the Calculation Debate after 1991) is the direct sequel to Controversy 2 and can be opened immediately; the rest are best after Controversies 6–8.

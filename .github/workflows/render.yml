@@ -194,6 +194,7 @@ jobs:
 
           # Catalog landing page at the root
           cp site-root/index.html _site/index.html
+          cp site-root/favicon.svg _site/favicon.svg
 
           # Each book at /<path>/ — keep the matrix's (path, slug) pairs in sync with render-books above.
           # Slug is the artifact suffix; path is where the book lives in the deployed _site tree.

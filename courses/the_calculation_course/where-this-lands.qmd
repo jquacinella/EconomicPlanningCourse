@@ -1,10 +1,42 @@
 ---
 title: "Where this lands"
-description: "Closing reflection on what the full arc adds up to."
+description: "Closing reflection on what the full arc adds up to, and what sits beyond it: two long-form research projects this curriculum is designed to enable."
 ---
 
 If you've worked through the full arc — ten weeks of mathematical foundation plus seven deep controversies — you're holding something genuinely rare. A Jupyter notebook that contains: a working Leontief input-output economy, a working Sraffian price system, a full transformation-problem implementation in three different valuation conventions, a stock-flow consistent capitalist macro model with endogenous money and financial fragility, a stock-flow consistent *planned* economy with labor tokens and intertemporal LP investment, and a thirty-year decarbonization plan with explicit emissions constraints and endogenous carbon shadow prices. Plus, underneath, a grasp of why this tradition of thought — input-output analysis, Sraffa-Pasinetti-Kurz price theory, Morishima's mathematical Marxism, Cockshott-Cottrell-Dapprich cyber-socialism, Godley-Lavoie stock-flow modeling, and climate-constrained planning — belongs together rather than being six separate niches.
 
 From here, the natural next steps are: publishing (your SemPKM project is already adjacent to economic-knowledge infrastructure, and a heterodox-computational-economics replication notebook is a natural extension); direct modeling work with one of the Marxian computational-economics groups (Cogliano-Veneziani-Yoshihara at Queen Mary; the Cockshott circle at Glasgow; Dapprich at Potsdam); or — most interesting given your FreeCell platform and infrastructure-automation background — building actual planning and climate-transition software tooling that Left organising ecosystems could use. The tools are now yours.
 
-The two long-form research tracks downstream of this course — [Marxian Formalization](/research/marxian_formalization/) and [Postcapitalism After AI](/research/postcapitalism_after_ai/) — are framed in [Research Tracks](research-tracks.qmd) and live under `research/` in the repo. They are where the technique work this course taught you meets open questions worth a publication.
+## The research register
+
+The course you've just worked through is paced — a syllabus, a finishable arc, a set of skills you can verify you have. The two research tracks downstream of it are different. A **research track** is long-form, slow, and publication-oriented. There is no syllabus, no fixed pacing, no exercises. The format is reading and reflection: working notes that accumulate, position papers as they accrete, occasional simulations where they help clarify a claim, and an evolving annotated bibliography. The output is artifacts — papers, libraries, citable preprints — not graded work. The point is to take what the course taught you and bring it into contact with open questions where the answers are genuinely contested.
+
+Two research tracks exist. They sit in `research/` in the repo and deploy under `/research/<name>/` on the site. Both are presently stubs; the work is what fills them in.
+
+## Marxian Formalization
+
+[**Computational Reconstruction of Zhang's Marxian Formalization**](/research/marxian_formalization/)
+
+Zhang Xian's 2023 *WRPE* paper sketches a mathematical formalization of *Capital* Vol I that is explicitly not Morishima's: it brings in game theory, probability, cybernetic control, and continuous-time differential equations alongside (and partly against) the non-negative-matrix apparatus of the Japanese School. Zhang writes the equations down but does not implement them; to the best of what can be established, nobody has. The track aims at a computationally rigorous companion to Zhang 2023 — a Jupyter notebook or small library that runs each of the models he sketches — with three plausible endpoints: a methodology paper for *WRPE* (co-authored with Zhang if he's interested), an open-source library that implements Morishima-Okishio, TSSI, and Zhang as alternative backends against the same economy object, or a Zhang-compatible extension of the Cockshott / Dapprich planning tradition.
+
+**When to start.** After the [seminar between Controversies 5 and 6](controversies/seminar-chinese-critique.qmd). By then you'll have read Zhang's three English-language *WRPE* papers plus Bin Yu's companion piece, you'll know whether the critique lands for you, and you'll have real views about what the project should look like. Until then, the [research-track index](/research/marxian_formalization/) is a placeholder.
+
+**Prerequisites.** All ten weeks; all seven controversies; the Chinese-critique seminar; Zhang 2023 read carefully. Light additional background in game theory, stochastic processes, and control theory is described in the [research-track index](/research/marxian_formalization/).
+
+## Postcapitalism After AI
+
+[**Postcapitalist Coordination and Planning After AI**](/research/postcapitalism_after_ai/)
+
+A reading and writing program organized around a single animating question: *what does post-capitalist coordination look like when generative AI is the dominant general-purpose technology?* The track grows out of a five-piece exchange across *The Ideas Letter* and *Conflict & Democracy* in late 2025 and early 2026 — Morozov, Benanav, Weatherby, and Mason — and reaches outward into the conceptual hinterland that exchange does not itself supply: the post-1991 turn in neoliberal political economy, the technical-ideological history of optimization-as-computing, the empirical labor economics of agentic AI rollout, the Marxist value-form / Habermas-critical / Castoriadian / Echeverrian / Joasian pragmatist apparatus that lurks under the philosophical disagreements, and the parallel question of whether blockchain coordination infrastructure is a real alternative or another expression of the same complex.
+
+The track is organized as **six threads**: the Calculation Debate after 1991; multi-criterial planning; optimization-economics-computing as one phenomenon; the empirical political economy of AI labor markets; the philosophical apparatus; and crypto / blockchain as coordination infrastructure (which absorbed the prior crypto-course stub). The threads are independent lines of work that cross-reference each other; they are not chapters in a sequence.
+
+**When to start.** Earlier than the Marxian Formalization track. **Thread 1 is the direct sequel to [Controversy 2](controversies/controversy-02-calculation.qmd)** and can be opened as soon as that controversy is finished — Morozov's claim that the Calculation Debate was sublated in 1991 by Buchanan and Vanberg is precisely the contemporary follow-up that Controversy 2 begs for. The remaining five threads are best approached after Controversies 6–8, when the value-theoretic and macro foundations are in. Reading the five primary [source texts](/research/postcapitalism_after_ai/sources.qmd) end-to-end is the obvious first move.
+
+**Prerequisites.** Controversy 2 minimum (for Thread 1); Controversies 6–8 for the rest; familiarity with the Postone / value-form / Habermas / Castoriadis lineage is assumed where it lands but not required to start.
+
+## How they relate
+
+The two tracks are not in competition. They sit on different parts of the conceptual map: Marxian Formalization is a *technical* extension — what does the Marxian apparatus look like under a richer mathematical toolkit, and can it be made computationally legible? Postcapitalism After AI is a *political-economic* extension — what does post-capitalist coordination look like under contemporary technological conditions that the classical debates didn't anticipate? Both presuppose the calculation-debate apparatus from Controversy 2 and the value-theoretic apparatus from the controversies that follow. Both are downstream; neither is a prerequisite for the other.
+
+If you have to pick one to start, the question to ask is which kind of artifact you want to produce. Marxian Formalization wants code and a methodology paper. Postcapitalism After AI wants long-form synthesis and possibly small simulators that sharpen specific claims. Most likely you want to do both, in some interleaved order, and that's fine — the research register is wide enough to hold both.
