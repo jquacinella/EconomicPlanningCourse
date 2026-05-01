@@ -1726,6 +1726,58 @@ wheels = [
 ]
 
 [[package]]
+name = "postcapitalism-after-ai"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "cryptography" },
+    { name = "httpx" },
+    { name = "jupyter" },
+    { name = "jupyterlab" },
+    { name = "matplotlib" },
+    { name = "networkx" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "plotly" },
+    { name = "pyarrow" },
+    { name = "pycryptodome" },
+    { name = "requests" },
+    { name = "scipy" },
+    { name = "statsmodels" },
+    { name = "sympy" },
+    { name = "web3" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cryptography", specifier = ">=42.0" },
+    { name = "httpx", specifier = ">=0.27" },
+    { name = "jupyter", specifier = ">=1.0" },
+    { name = "jupyterlab", specifier = ">=4.1" },
+    { name = "matplotlib", specifier = ">=3.8" },
+    { name = "networkx", specifier = ">=3.2" },
+    { name = "numpy", specifier = ">=1.26" },
+    { name = "pandas", specifier = ">=2.2" },
+    { name = "plotly", specifier = ">=5.20" },
+    { name = "pyarrow", specifier = ">=15.0" },
+    { name = "pycryptodome", specifier = ">=3.20" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
+    { name = "requests", specifier = ">=2.31" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.4" },
+    { name = "scipy", specifier = ">=1.12" },
+    { name = "statsmodels", specifier = ">=0.14" },
+    { name = "sympy", specifier = ">=1.12" },
+    { name = "web3", specifier = ">=6.0" },
+]
+provides-extras = ["dev"]
+
+[[package]]
 name = "prometheus-client"
 version = "0.25.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2415,58 +2467,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/8a/11/965c6fd8e5cc254f1
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6a/9e/2064975477fdc887e47ad42157e214526dcad8f317a948dee17e1659a62f/terminado-0.18.1-py3-none-any.whl", hash = "sha256:a4468e1b37bb318f8a86514f65814e1afc977cf29b3992a4500d9dd305dcceb0", size = 14154, upload-time = "2024-03-12T14:34:36.569Z" },
 ]
-
-[[package]]
-name = "the-crypto-course"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "cryptography" },
-    { name = "httpx" },
-    { name = "jupyter" },
-    { name = "jupyterlab" },
-    { name = "matplotlib" },
-    { name = "networkx" },
-    { name = "numpy" },
-    { name = "pandas" },
-    { name = "plotly" },
-    { name = "pyarrow" },
-    { name = "pycryptodome" },
-    { name = "requests" },
-    { name = "scipy" },
-    { name = "statsmodels" },
-    { name = "sympy" },
-    { name = "web3" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "cryptography", specifier = ">=42.0" },
-    { name = "httpx", specifier = ">=0.27" },
-    { name = "jupyter", specifier = ">=1.0" },
-    { name = "jupyterlab", specifier = ">=4.1" },
-    { name = "matplotlib", specifier = ">=3.8" },
-    { name = "networkx", specifier = ">=3.2" },
-    { name = "numpy", specifier = ">=1.26" },
-    { name = "pandas", specifier = ">=2.2" },
-    { name = "plotly", specifier = ">=5.20" },
-    { name = "pyarrow", specifier = ">=15.0" },
-    { name = "pycryptodome", specifier = ">=3.20" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
-    { name = "requests", specifier = ">=2.31" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.4" },
-    { name = "scipy", specifier = ">=1.12" },
-    { name = "statsmodels", specifier = ">=0.14" },
-    { name = "sympy", specifier = ">=1.12" },
-    { name = "web3", specifier = ">=6.0" },
-]
-provides-extras = ["dev"]
 
 [[package]]
 name = "tinycss2"
