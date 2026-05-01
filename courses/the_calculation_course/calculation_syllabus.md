@@ -636,17 +636,19 @@ From here, the natural next steps are: publishing (your SemPKM project is alread
 
 ---
 
-## 201 — Placeholder for a Computational Reconstruction of Zhang's Marxian Formalization Program
+## Placeholder — Computational Reconstruction of Zhang's Marxian Formalization (Research Project)
 
-**This is a placeholder, not a syllabus.** It exists so the thread isn't lost. The full 201 course should be written *after* the seminar in the 101 course (between Controversies 5 and 6), because until you've read Zhang 2023 carefully and sat with it, neither you nor I can design a sequel course properly. The time to expand this placeholder is when you have actual views about what you want from a 201, not before.
+**This is a placeholder, not a research plan.** It exists so the thread isn't lost. The full [Marxian Formalization research project](../../research/marxian_formalization/) should be elaborated *after* the seminar in this course (between Controversies 5 and 6), because until you've read Zhang 2023 carefully and sat with it, neither you nor I can scope the work properly. The time to expand this placeholder is when you have actual views about what you want from the research project, not before.
 
-### Why this course exists
+The project lives at `research/marxian_formalization/` in the repo. It is a research project (long-form, slow, publication-oriented), not a course. The original framing of "201" as a sequel course has been retired in favor of treating Zhang's program as research from the start; the substance below is the same.
+
+### Why this project exists
 
 Zhang's 2023 paper ("The Formalization of Marx's Economics: A Summary Attempt Taking as an Example the First Volume of Capital," *WRPE* 14(1): 4–33) sketches a mathematical formalization of Marx's Vol I apparatus that is explicitly not Morishima's. Where Morishima and the Japanese School formalize using non-negative matrix theory and input-output analysis, Zhang brings in a wider toolkit: game theory (producer competition as a prisoner's dilemma), probability theory (commodity realization as a random variable with a distribution over successful/partial/failed outcomes), cybernetic control systems (the labor process as a feedback-regulated system), and continuous-time differential equations (unemployment-rate dynamics, capital accumulation). Zhang writes these equations down but does not implement them. To the best of what can be established from a literature search, nobody has. A computationally rigorous companion to Zhang 2023 — a Jupyter notebook or small library that actually runs each of the models he sketches — would be a genuine scholarly contribution and a plausible methodology paper for *WRPE* or a similar venue.
 
-### What the course would cover, in broad strokes
+### What the project would cover, in broad strokes
 
-Roughly eight to ten weeks, parallel in structure to the 101 controversies (framing, objectives, concepts, resources, project, self-check, bridge per week). The natural chapter divisions follow Zhang's 2023 paper structure:
+Eight working areas tracking Zhang's 2023 paper structure. Each is a research thread, not a teaching unit — there is no fixed pacing, no exercises, no "weeks." Each thread produces some combination of working notes, a short paper, a notebook, or library code:
 
 - *Value theory formalization.* The mapping f: A → w, socially-necessary-labor-time in both the Vol I and Vol III senses, the fundamental theorem of the labor theory of value (W inversely proportional to labor productivity), labor complexity via h(t). Project: implement Zhang's value system and demonstrate numerically that his distinction between the two senses of SNLT produces different results than Morishima's conflated version. Compare with your Week 7 input-output value calculations.
 
@@ -674,7 +676,7 @@ Roughly eight to ten weeks, parallel in structure to the 101 controversies (fram
 
 ### Where this could actually go
 
-Three plausible endpoints if the course succeeds:
+Three plausible endpoints if the project succeeds:
 
 1. **A methodology paper submitted to WRPE** presenting the computational companion to Zhang 2023, co-authored with Zhang himself if he's interested (his email is in the papers: zxscu@126.com). This is the most ambitious endpoint and not the obvious one to start with.
 
@@ -682,22 +684,22 @@ Three plausible endpoints if the course succeeds:
 
 3. **A direct contribution to the Cockshott / Dapprich planning tradition** — Dapprich's 2023 consumer-feedback planning paper already has code (in *Review of Political Economy*). A Zhang-compatible version of Dapprich's apparatus would be interesting work. Dapprich is at Potsdam and reachable.
 
-### Pre-course prerequisites, when it's time
+### Background that would help, when it's time
 
-You'll already have most of what's needed from the 101 course. Additional prerequisites that would help:
+You'll already have most of what's needed from this course. Additional background that would help:
 
 - A game theory refresher: Osborne and Rubinstein's *A Course in Game Theory* (free PDF) or Fudenberg and Tirole for the more advanced material. A week's reading.
 - Basic stochastic processes / Markov chains: the relevant chapters of Grinstead and Snell's *Introduction to Probability* (free CC PDF).
 - Control theory at an introductory level: Åström and Murray's *Feedback Systems* (free PDF).
 - Agent-based modeling: the *Mesa* Python library has a good tutorial; one afternoon's work to get oriented.
 
-None of these are massive investments individually. The 201 course would thread them in as needed rather than frontloading them.
+None of these are massive investments individually. The research project would thread them in as needed rather than frontloading them.
 
 ### When to come back to this
 
-After the seminar between Controversies 5 and 6 in the 101 course. By then you'll have read all three of Zhang's English WRPE papers plus Bin Yu's companion piece, you'll know whether the critique lands for you and whether the positive program holds water, and you'll have real views about what the sequel course should look like. If at that point you still want to build 201, come back to this placeholder and expand it into a full syllabus. If by then you've decided Zhang's program is more promising as a future research contribution than as a second course of study, the placeholder still served its purpose — it named the thing so you could find it again.
+After the seminar between Controversies 5 and 6 in this course. By then you'll have read all three of Zhang's English WRPE papers plus Bin Yu's companion piece, you'll know whether the critique lands for you and whether the positive program holds water, and you'll have real views about what the project should look like. If at that point you still want to push the work forward, come back to this placeholder and expand the [research project skeleton](../../research/marxian_formalization/) into actual working artifacts. If by then you've decided Zhang's program is more promising as a future research contribution than as something to elaborate now, the placeholder still served its purpose — it named the thing so you could find it again.
 
-Whatever version of 201 actually gets written: the deliverable should be concrete, public, and citable. That's what separates this from another year of reading.
+Whatever version of the project actually gets done: the deliverable should be concrete, public, and citable. That's what separates this from another year of reading.
 
 ---
 

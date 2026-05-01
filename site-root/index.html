@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Heterodox Econ Courses</title>
+  <title>Heterodox Econ Courses + Research</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -160,6 +160,19 @@
       color: var(--bg);
     }
 
+    .section-heading {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2.5rem 0 1rem;
+    }
+
+    .section-heading:first-of-type {
+      margin-top: 0;
+    }
+
     footer {
       margin-top: 4rem;
       padding-top: 1.5rem;
@@ -181,10 +194,11 @@
 <body>
   <div class="container">
     <header>
-      <h1>Heterodox Econ Courses</h1>
-      <p>A collection of computational-economics courses built as Quarto books with executable Python, interactive widgets, and Obsidian notes. Each course has a polished book track and a working notes track.</p>
+      <h1>Heterodox Econ Courses + Research</h1>
+      <p>A collection of computational-economics courses and research projects built as Quarto books with executable Python, interactive widgets, and Obsidian notes. Each book has a polished render track and a working-notes track.</p>
     </header>
 
+    <h2 class="section-heading">Courses</h2>
     <div class="courses">
 
       <div class="course-card">
@@ -204,16 +218,21 @@
         </div>
       </div>
 
+    </div>
+
+    <h2 class="section-heading">Research projects</h2>
+    <div class="courses">
+
       <div class="course-card">
         <div>
-          <div class="course-title">201 — Zhang's Marxian Formalization</div>
+          <div class="course-title">Marxian Formalization</div>
           <div class="course-subtitle">Computational Reconstruction of Zhang's Marxian Formalization Program</div>
           <div class="course-description">
-            A sequel to the Calculation Course. Implements Zhang Xian's game-theoretic, probabilistic, and cybernetic extensions to Marxian economics — the positive program sketched in his 2023 <em>WRPE</em> paper. Prerequisite: complete the Calculation Course including the Chinese-critique seminar.
+            A research project, not a course. Implements Zhang Xian's game-theoretic, probabilistic, and cybernetic extensions to Marxian economics — the positive program sketched in his 2023 <em>WRPE</em> paper. Aimed at a computational companion paper, an open-source library (Morishima / TSSI / Zhang as alternative backends), and adjacent contributions to the Cockshott-Dapprich planning tradition. Prerequisite: complete the Calculation Course including the Chinese-critique seminar.
           </div>
           <div class="course-links">
-            <a href="courses/201/">Open book →</a>
-            <a href="notes/201/">Open notes →</a>
+            <a href="research/marxian_formalization/">Open book →</a>
+            <a href="notes/marxian_formalization/">Open notes →</a>
           </div>
         </div>
         <div class="course-meta">
@@ -223,14 +242,14 @@
 
       <div class="course-card">
         <div>
-          <div class="course-title">The Crypto Calculation Course</div>
-          <div class="course-subtitle">Cryptocurrency, Blockchain, and the Ecosocialist Planning System</div>
+          <div class="course-title">Postcapitalism After AI</div>
+          <div class="course-subtitle">A Reading and Writing Program on the 2025–2026 Socialism / AI / Postcapitalism Debate</div>
           <div class="course-description">
-            Examines cryptocurrency and blockchain technology through the lens of heterodox political economy. Covers cryptographic foundations, Bitcoin's Austrian ideological roots, Ethereum and programmable money, DeFi financialization, and the ecosocialist critique — asking what a socialist blockchain would actually need to do. Prerequisite: Calculation Course through Week 8 and Controversies 2 and 6.
+            A research track around a single animating question: what does post-capitalist coordination look like when generative AI is the dominant general-purpose technology? Six threads — the post-1991 Calculation Debate, multi-criterial planning, optimization-as-ideology, AI labor markets, the philosophical apparatus, and on-chain coordination (absorbing the prior crypto-course material). Reading-and-reflection format, no fixed pacing, publication-oriented.
           </div>
           <div class="course-links">
-            <a href="courses/the_crypto_course/">Open book →</a>
-            <a href="notes/the_crypto_course/">Open notes →</a>
+            <a href="research/postcapitalism_after_ai/">Open book →</a>
+            <a href="notes/postcapitalism_after_ai/">Open notes →</a>
           </div>
         </div>
         <div class="course-meta">

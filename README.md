@@ -1,36 +1,47 @@
-# Heterodox Econ Courses
+# Heterodox Econ Courses + Research
 
-A monorepo of computational-economics courses built as Quarto books with executable Python, interactive widgets, Hypothesis annotation, and Obsidian notes vaults. Each course has a polished book track and a working notes track.
+A monorepo of computational-economics courses *and* research projects built as Quarto books with executable Python, interactive widgets, Hypothesis annotation, and Obsidian notes vaults. Each book has a polished render track and a working-notes track.
 
 The deployed site lives at: **https://jquacinella.github.io/EconomicPlanningCourse/**
+
+## Two registers: courses and research
+
+The repo distinguishes between two registers. **Courses** (`courses/`) are paced curricula with implementation projects, intended for someone working through the material in order. **Research projects** (`research/`) are long-form, slow, publication-oriented, reading-and-reflection programs without fixed pacing or exercises.
 
 ## Courses
 
 | Course | Status | Description |
 |--------|--------|-------------|
 | [The Calculation Course](courses/the_calculation_course/) | In progress | 10-week math arc (calculus → LP → IO → dynamics) + 7 heterodox controversies → climate-constrained planning |
-| [201 — Zhang's Marxian Formalization](courses/201/) | Stub | Sequel: game-theoretic, probabilistic, and cybernetic extensions to Marxian economics |
-| [The Crypto Calculation Course](courses/the_crypto_course/) | Stub | Cryptocurrency, blockchain, and the ecosocialist planning system |
+
+## Research projects
+
+| Project | Status | Description |
+|---------|--------|-------------|
+| [Marxian Formalization](research/marxian_formalization/) | Stub | Computational reconstruction of Zhang's Marxian formalization program — game theory, probability, cybernetics applied to Vol I |
+| [Postcapitalism After AI](research/postcapitalism_after_ai/) | Stub | Reading and writing program on the late-2025 socialism / AI / postcapitalism debate (Morozov, Benanav, Weatherby, Mason) and its conceptual hinterland; absorbs the prior crypto-course material as one of six threads |
 
 ## Repository layout
 
 ```
 EconomicPlanningCourse/
 ├── courses/
-│   ├── the_calculation_course/   ← The Calculation Course (book + notes + apps + data)
-│   ├── 201/                      ← 201 sequel course (stub)
-│   └── the_crypto_course/        ← Crypto course (stub)
+│   └── the_calculation_course/   ← The Calculation Course (book + notes + apps + data)
+│
+├── research/
+│   ├── marxian_formalization/    ← Marxian Formalization research project (stub)
+│   └── postcapitalism_after_ai/  ← Postcapitalism After AI research track (stub)
 │
 ├── shared/
-│   ├── _quarto-base.yml          ← Shared Quarto format/theme config (inherited by all courses)
+│   ├── _quarto-base.yml          ← Shared Quarto format/theme config (inherited by all books)
 │   ├── assets/                   ← Shared CSS, fonts, images, scripts, widgets
 │   └── extensions/               ← Shared Quarto extensions
 │
 ├── site-root/
-│   └── index.html                ← Course-catalog landing page (deployed at /)
+│   └── index.html                ← Catalog landing page (deployed at /)
 │
-├── quartz/                       ← Quartz install (renders all course notes/ vaults)
-│   └── content/                  ← Per-course symlinks → courses/<name>/notes/
+├── quartz/                       ← Quartz install (renders all notes/ vaults)
+│   └── content/                  ← Per-book symlinks → <path>/notes/
 │
 ├── tests/                        ← Repo-level tests
 ├── .github/workflows/            ← CI/CD (render matrix + deploy)
@@ -39,10 +50,10 @@ EconomicPlanningCourse/
 └── README.md
 ```
 
-Each course directory has the same internal structure:
+Each course or research project directory has the same internal structure:
 
 ```
-courses/<name>/
+courses/<name>/   or   research/<name>/
 ├── _quarto.yml          ← Course book config (inherits from shared/_quarto-base.yml)
 ├── index.qmd            ← Course landing page
 ├── weeks/               ← Weekly chapters (.qmd)
@@ -79,9 +90,9 @@ npm ci
 npx quartz build --serve     # serve notes at http://localhost:8080
 ```
 
-### Other courses
+### Other courses or research projects
 
-Same pattern — `cd courses/<name>` then `uv sync` and `quarto preview`.
+Same pattern — `cd courses/<name>` or `cd research/<name>` then `uv sync` and `quarto preview`.
 
 ### Day-to-day editing (live reload)
 
@@ -134,19 +145,22 @@ python ../../shared/assets/scripts/strip-author-notes.py
 QUARTO_PROFILE=print quarto render build-print/ --to pdf
 ```
 
-## Adding a new course
+## Adding a new course or research project
 
-1. `mkdir -p courses/<new-course>/{weeks,notes/_meta,notes/_book-aliases,notes/attachments,notebooks,apps,data}`
-2. Copy `courses/201/_quarto.yml` as a template; update title/subtitle.
-3. Create `courses/<new-course>/index.qmd`, `pyproject.toml`, `.python-version`.
+Substitute `courses/<new>` for a course or `research/<new>` for a research project below.
+
+1. `mkdir -p <courses|research>/<new>/{notes/_meta,notes/_book-aliases,notes/attachments,notebooks,data}` (courses also need `weeks/`; research projects often have `threads/` instead).
+2. Copy `research/marxian_formalization/_quarto.yml` as a template; update title/subtitle, the `site-url`, and the preview port.
+3. Create `<path>/index.qmd`, `pyproject.toml`, `.python-version`.
 4. Create notes stubs: `notes/index.md`, `notes/README.md`, `notes/_meta/{workflow,progress,decisions,deferred,glossary}.md`.
-5. Add a symlink in `quartz/content/`: `ln -s ../../../courses/<new-course>/notes <new-course>`.
+5. Add a symlink in `quartz/content/`: `ln -s ../../<path>/notes <new>`.
 6. Update `quartz/quartz.config.ts` `ignorePatterns` to include the new vault's `.obsidian` dir.
 7. Update `quartz/setup.sh` `COURSE_LINKS` array.
-8. Add the course to the matrix in `.github/workflows/render.yml`.
-9. Add the course to the stitch loop in the `stitch-and-deploy` job.
+8. Add the path to the matrix in `.github/workflows/render.yml`.
+9. Add the path to the stitch loop in the `stitch-and-deploy` job.
 10. Add a card to `site-root/index.html`.
-11. Add a row to this README's courses table.
+11. Add a row to this README's courses or research table.
+12. Update the `COURSES` / `RESEARCH` variables at the top of `Makefile`.
 
 ## License
 

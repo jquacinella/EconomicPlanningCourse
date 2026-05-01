@@ -1,0 +1,63 @@
+---
+title: "Thread 2 — Multi-Criterial Planning Under AI"
+description: "Benanav's Investment Boards / Data Matrix / dual-currency framework on its own terms; Morozov's structural objections; an attempt at an honest reconstruction."
+order: 2
+---
+
+## The animating question
+
+Aaron Benanav's two-part *NLR* manifesto "Beyond Capitalism" (Issues 152, 153, 2025) is the most detailed proposal for post-capitalist political economy currently in circulation. It sets out a multi-criterial economy organized around:
+
+- A **dual digital currency** — credits for personal consumption (basic income style), points for inter-firm transactions; the two are non-convertible.
+- **Investment Boards** — sectoral and regional bodies of elected workers, consumers, community representatives, and technical experts that allocate dedicated investment funds across firm-led proposals; investments earn no monetary return; what counts is improvement of social outcomes at given cost.
+- A **Data Matrix** — an open, democratically governed statistical and modeling infrastructure that aggregates production / consumption / ecological / social-impact data and lets anyone run "what-if" scenarios.
+- A **Free Sector** — publicly funded space for artists, movements, and associations to develop ideas without justifying themselves in advance.
+- **Inter-industry coordinating committees** with renewable five-year mandates, chosen via citizens' assemblies, to align cross-sector investments on large-scale missions (greening the economy, shortening the working week).
+
+Morozov's three objections in *Socialism After AI* and *The Socialist Charcuterie Board* are:
+
+1. **The architecture leaks values one way.** Free Sector → Investment Boards → firms → users. Even granting Benanav's "values evolve" language, there is no return path from production back into the Free Sector. Quoted Benanav verbs ("revealing," "shape," "bring to bear") suggest a revealed-preference structure dressed in socialist clothing.
+2. **The framework inherits the firm and efficiency.** Once "the firm" is the primary unit, "efficiency" is constitutive of how alternatives become legible at all. Other values (care, sustainability) are then *defined* as efficiency's remainder. You cannot balance what has already been subordinated in the act of definition.
+3. **There is no theory of legitimacy.** The architecture is exquisite at adjudicating trade-offs but says nothing about how it becomes plausible, contestable, or lovable. Strip away the procedural machinery and the only motivating force is negative: ecological constraint.
+
+Benanav's reply in *A Real Political Economy of Technology* is that these are misreadings — that the framework institutionalizes ongoing political contestation among rival sociotechnical projects, that the Data Matrix is informational not executive, and that "the object of collective choice is not values as such but rival political and existential projects."
+
+Whether the architecture, taken on its own terms, can carry the load Benanav asks of it — *and* whether Morozov's structural objections survive a charitable reconstruction — is the question this thread investigates.
+
+## What this thread investigates
+
+1. **A charitable reconstruction of the framework.** The two *NLR* essays plus the rebuttal: write down the proposal in technical detail, including the points/credits accounting, the Investment Board procedures, the Data Matrix data flows, the inter-industry committee mandates. Make the implicit operating assumptions explicit (about firm size and structure, the meaning of "competition" in a profit-stripped market, the granularity of social-outcome metrics).
+2. **Stress-test the value-flow claim.** Map the explicit and implicit channels by which values and priorities can move *from* production *to* the Free Sector or to political deliberation. Does Benanav's framework actually have a return valve, or does Morozov's "one-way pipeline" reading hold up under careful re-reading?
+3. **Stress-test the firm-and-efficiency claim.** Take the value-form theoretic objection seriously (Postone, Clarke, the German value-form theorists Benanav explicitly dismisses in a footnote). Is the multi-criterial framework genuinely escaping efficiency-as-master-criterion, or is "efficient pursuit of care" the actual semantic outcome?
+4. **The Data Matrix specifically.** What does it actually look like? Benanav frames it as informational and contestable. But its claim to democratic legitimacy depends on the modeling assumptions baked into its forecasts. Who builds the models? Who validates them? What makes a Data Matrix forecast a *legitimate* basis for a 30-billion-point investment decision rather than an authoritative-looking artifact that simply embeds prior assumptions?
+5. **AI as the test case.** Morozov's specific claim is that AI breaks the framework because AI is worldmaking — its uses, values, and meanings only emerge through deployment. Benanav's reply is that indeterminacy isn't unique to AI (railroads, electricity, internet were all the same). Who is right, and does it matter for the framework's design?
+6. **The two-revolutions framing.** Benanav frames generative AI vs. green transition as competing technological revolutions for limited investment capacity. Test the framing: are the cost-decline patterns Benanav cites for the green transition (solar, wind, batteries) really diagnostic of "genuine" technological revolutions, or is this an ex-post pattern that AI may yet fit?
+
+## Primary texts
+
+- Aaron Benanav, "How to Make a Pencil," *New Left Review* 152 (Mar–Apr 2025).
+- Aaron Benanav, "A World to Win," *New Left Review* 153 (May–Jun 2025).
+- Benanav, *A Real Political Economy of Technology* — see [Source texts](../sources.qmd).
+- Morozov, *Socialism After AI* and *The Socialist Charcuterie Board* — see [Source texts](../sources.qmd).
+
+## Adjacent texts
+
+- Otto Neurath, *Economic Writings 1904–1945*, ed. Uebel & Cohen (Kluwer, 2004) — Benanav's pragmatist anchor.
+- John Dewey, *The Public and Its Problems* (1927) — the other pragmatist anchor.
+- Daniel Saros, *Information Technology and Socialist Construction* (Routledge, 2014) — the digital-socialism proposal Morozov praised in *NLR* and Benanav dismisses; worth checking what Saros actually claims and why he abandoned it.
+- Eden Medina, *Cybernetic Revolutionaries* (MIT, 2011) — the Project Cybersyn history Benanav characterizes as exhausted; reading with the Buchanan-Vanberg lens from Thread 1 may suggest a different verdict.
+- Stafford Beer, *Brain of the Firm* (1972), *The Heart of Enterprise* (1979) — Beer's actual texts, not the "equilibrium-restoring" caricature Benanav gives.
+- Amartya Sen, *Development as Freedom* (1999); Martha Nussbaum, *Creating Capabilities* (2011) — the values-first capabilities approach Benanav explicitly criticizes.
+
+## Prospective artifacts
+
+- A working paper: a fair, technically detailed reconstruction of Benanav's framework, with each major design decision spelled out and the strongest objections enumerated. The kind of thing Benanav himself could read and recognize as not-a-strawman.
+- A small **Investment Board allocator** simulator. Inputs: a fixed annual point budget per sector; competing firm proposals each described as a vector of (cost, ecological-impact, work-quality, free-time, care-output, etc.); a deliberation procedure (e.g., approval voting; quadratic voting; pairwise project comparison). Outputs: which proposals are funded, what the resulting portfolio's social-outcome profile looks like, how stable the portfolio is to changes in deliberation procedure or board composition. Purpose: to test, computationally, what kind of *political* artifact a Benanav-style Investment Board produces — does the procedure dominate the substance, as Morozov implies? Does the procedure have surprising properties (Arrow / Gibbard-Satterthwaite)?
+- A separate **Data Matrix mock-up** — even just a wireframe — that surfaces the modeling assumptions a real Data Matrix would have to bake in. Shows what "open and contestable" forecasting actually looks like in practice and where the contestation pressure points are.
+
+## Cross-thread connections
+
+- Thread 1 — the framework is what a Marxist who hears the Buchanan-Vanberg challenge might still build; whether it answers the challenge is contested.
+- Thread 5 — Morozov's structural objections are downstream of philosophical commitments (Habermas, value-form theory, Castoriadis) that this thread does not adjudicate but does not need to settle to take the objections seriously.
+- Thread 4 — Benanav's two-revolutions framing depends on empirical claims about AI's productivity track record that overlap directly with Mason's labor-market data.
+- Thread 6 — DAOs, governance tokens, and on-chain coordination are the most concrete contemporary attempts at the kind of architecture Benanav describes; what does that experience teach (or fail to teach) about the framework?

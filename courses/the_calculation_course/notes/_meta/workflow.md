@@ -10,7 +10,7 @@ Knowing about that two-track structure is most of what you need to use the repo 
 
 Two kinds of content live here, and they go in different places.
 
-**Book content** is the polished output. It lives in `weeks/`, `controversies/`, `seminar-chinese-critique.qmd`, `201/`, the appendices, and a few top-level files like `index.qmd`. It's written in Quarto Markdown (`.qmd`), which is regular Markdown plus YAML front matter and executable code blocks. This is what gets rendered into the public-facing book — both the website and the PDF.
+**Book content** is the polished output. It lives in `weeks/`, `controversies/`, `seminar-chinese-critique.qmd`, `research-marxian-formalization/`, the appendices, and a few top-level files like `index.qmd`. It's written in Quarto Markdown (`.qmd`), which is regular Markdown plus YAML front matter and executable code blocks. This is what gets rendered into the public-facing book — both the website and the PDF.
 
 **Notes content** is the working layer. It lives in `notes/`, organized as an Obsidian vault. Plain Markdown (`.md`) with wiki-links, no front matter required. This is your scratchpad, your reading log, your place to write questions you haven't answered yet, your accumulating store of insights that connect across chapters. It renders to a separate section of the public site (under `/notes/`) so you can click around and see your own work, but it's excluded from the PDF and the print artifact.
 
@@ -24,7 +24,8 @@ A condensed view, with the parts you'll touch most often called out:
 calculation-course/
 ├── weeks/                              ← Book chapters (polished, you edit weekly)
 ├── controversies/                      ← Book chapters (polished, you edit during the controversies)
-├── 201/, appendices/, ...              ← More book content (polished)
+├── research-marxian-formalization/     ← Placeholder pointing at research/marxian_formalization/
+├── appendices/, ...                    ← More book content (polished)
 ├── index.qmd                           ← Book landing page
 │
 ├── notes/                              ← Your Obsidian vault (scratch, you write here daily)

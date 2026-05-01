@@ -1,0 +1,99 @@
+---
+title: "Bibliography"
+description: "Incremental annotated bibliography for the research track. Grows as references appear in any thread."
+---
+
+This bibliography is incremental. Entries are added as references surface in any [thread](index.qmd#threads). It is meant to be the index of secondary literature and historical source material the track relies on, not a comprehensive reading list to start with.
+
+For the five primary texts of the late-2025 / early-2026 exchange, see [Source texts](sources.qmd).
+
+The taxonomy below is a working scaffold; entries can move as the project clarifies what each tradition is doing.
+
+## I. Marxist political economy and post-capitalist proposals
+
+- Aaron Benanav, *Automation and the Future of Work* (Verso, 2020).
+- Aaron Benanav, "How to Make a Pencil," *New Left Review* 152 (Mar–Apr 2025).
+- Aaron Benanav, "A World to Win," *New Left Review* 153 (May–Jun 2025).
+- Paul Cockshott & Allin Cottrell, *Towards a New Socialism* (1993; 2nd ed. 2003).
+- Paul Cockshott & Allin Cottrell, "Information and Economics: A Critique of Hayek" (1997).
+- Jan Philipp Dapprich, work on consumer-feedback planning (*Review of Political Economy*, ca. 2023; full citation to confirm).
+- David Graeber, *Bullshit Jobs* (Simon & Schuster, 2018).
+- Daniel Saros, *Information Technology and Socialist Construction* (Routledge, 2014).
+- Paul Mason, *Postcapitalism: A Guide to Our Future* (Allen Lane, 2015).
+- Otto Neurath, *Economic Writings 1904–1945*, ed. Uebel & Cohen (Kluwer, 2004).
+
+## II. Value-form theory and Marxist critique of efficiency / labor
+
+- Moishe Postone, *Time, Labor, and Social Domination* (Cambridge, 1993).
+- Simon Clarke, *Marx, Marginalism and Modern Sociology* (Macmillan, 1991).
+- Michael Heinrich, *An Introduction to the Three Volumes of Karl Marx's Capital* (Monthly Review, 2012).
+- Werner Bonefeld, ed., *Subverting the Present, Imagining the Future* (Autonomedia, 2008).
+- Hans-Georg Backhaus, *Dialektik der Wertform* (ça Ira Verlag, 1997).
+- Christopher J. Arthur, *The New Dialectic and Marx's Capital* (Brill, 2002).
+
+## III. Continental philosophy of action, technology, imagination
+
+- Cornelius Castoriadis, *The Imaginary Institution of Society* (MIT, 1987).
+- Bolívar Echeverría, *La modernidad de lo barroco* (Era, 1998); *Modernidad y blanquitud* (Era, 2010).
+- Hans Joas, *The Creativity of Action* (Chicago, 1996).
+- Jürgen Habermas, *The Theory of Communicative Action*, vols I–II (Beacon, 1981 / 1987).
+- Gillian Rose, *The Broken Middle* (Blackwell, 1992); *Hegel Contra Sociology* (Athlone, 1981).
+- Andrew Feenberg, *Transforming Technology* (Oxford, 2002).
+- Martin Heidegger, "Die Frage nach der Technik" (1954).
+- György Márkus, *Marxism and Anthropology* (Modem, 1978).
+- Evald Ilyenkov, *Dialectical Logic* (Progress, 1977).
+- Marshall Sahlins, *Culture and Practical Reason* (Chicago, 1976).
+- Harry Braverman, *Labor and Monopoly Capital* (Monthly Review, 1974).
+- David Noble, *Forces of Production* (Knopf, 1984).
+
+## IV. Neoliberal political economy (the post-1990 turn)
+
+- James M. Buchanan & Viktor J. Vanberg, "The Market as a Creative Process," *Economics and Philosophy* 7(2), 1991.
+- Friedrich Hayek, *Law, Legislation and Liberty*, vols 1–3 (Routledge, 1973–1979).
+- Friedrich Hayek, *Denationalisation of Money* (IEA, 1976).
+- Gary Becker, *The Economic Approach to Human Behavior* (Chicago, 1976).
+- Philip Mirowski, *Never Let a Serious Crisis Go to Waste* (Verso, 2013).
+- John O'Neill, *The Market: Ethics, Knowledge, and Politics* (Routledge, 1998).
+
+## V. Optimization, decision theory, computing — the Cold War complex
+
+- John von Neumann & Oskar Morgenstern, *Theory of Games and Economic Behavior* (Princeton, 1944).
+- Abraham Wald, *Statistical Decision Functions* (Wiley, 1950).
+- George Dantzig, *Linear Programming and Extensions* (Princeton, 1963).
+- Paul Erickson, Judy Klein, Lorraine Daston, Rebecca Lemov, Thomas Sturm, Michael Gordin, *How Reason Almost Lost Its Mind* (Chicago, 2013).
+- Ben Recht, *The Irrational Decision* (forthcoming, 2026).
+
+## VI. AI labor markets and mainstream AI economics
+
+- Daron Acemoglu & Pascual Restrepo, "Artificial Intelligence, Automation and Work" (NBER WP 24196, 2018).
+- Philippe Aghion, Benjamin F. Jones, Charles I. Jones, "Artificial Intelligence and Economic Growth" (NBER WP 23928, 2019).
+- William J. Baumol, "Macroeconomics of Unbalanced Growth," *American Economic Review* 57(3), 1967.
+- Sajadieh et al., *Stanford HAI AI Index Report 2026*.
+- Crane & Soto, 2026 (citation to be confirmed).
+- Garciano, 2026 (citation to be confirmed).
+- Xu, 2023 — UK income deciles (citation to be confirmed).
+- Carlota Perez, *Technological Revolutions and Financial Capital* (Edward Elgar, 2002).
+- Mariana Mazzucato, *The Entrepreneurial State* (Anthem, 2013).
+
+## VII. Crypto / blockchain / on-chain coordination
+
+- Satoshi Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System" (2008).
+- Vitalik Buterin, "Ethereum White Paper" (2014).
+- Glen Weyl, Audrey Tang et al., *Plurality* (2024).
+- David Golumbia, *The Politics of Bitcoin* (Minnesota, 2016).
+- Finn Brunton, *Digital Cash* (Princeton, 2019).
+- Lana Swartz, *New Money* (Yale, 2020).
+- Bill Maurer, *Mutual Life, Limited* (Princeton, 2005); *How Would You Like to Pay?* (Duke, 2015).
+- Stefan Eich, *The Currency of Politics* (Princeton, 2022).
+- Eden Medina, *Cybernetic Revolutionaries* (MIT, 2011).
+
+## VIII. AI infrastructure and discourse
+
+- Anthropic, [Project Vend](https://www.anthropic.com/research/project-vend-1).
+- Cory Doctorow's "enshittification" essays (Pluralistic, 2023–).
+
+## Heterodox economics of imagination / uncertainty
+
+- G. L. S. Shackle, *Epistemics and Economics* (Cambridge, 1972).
+
+*This list is partial and provisional. Annotations will be added thread-by-thread as material is read.*

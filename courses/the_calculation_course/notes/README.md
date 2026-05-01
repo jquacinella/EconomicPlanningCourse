@@ -12,7 +12,7 @@ Open Obsidian, choose "Open folder as vault", and point it at this directory (`n
 
 - `weeks/week-NN-*/` — per-week notes (one directory per book chapter under `weeks/`).
 - `controversies/controversy-NN-*/` — per-controversy notes.
-- `201-planning/` — notes for the 201 placeholder course.
+- `research-marxian-formalization-planning/` — notes for the Marxian Formalization research-project placeholder.
 - `_book-aliases/` — short alias pages that wiki-links resolve to. They link out to the corresponding book chapter and notes directory. See `_meta/workflow.md` for the convention.
 - `_meta/` — workflow doc, progress log, deferred items, decisions, glossary.
 - `attachments/` — images, PDFs, screenshots referenced in notes.

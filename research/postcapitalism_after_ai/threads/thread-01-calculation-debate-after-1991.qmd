@@ -1,0 +1,51 @@
+---
+title: "Thread 1 — The Calculation Debate after 1991"
+description: "Buchanan-Vanberg's reframe of the market as a creative process; the Hayek → entrepreneur shift; why Cockshott-style answers don't engage what neoliberalism actually became."
+order: 1
+---
+
+## The animating question
+
+The Calculation Debate as the Marxist tradition still imagines it freezes around 1945: Mises, Hayek, Lange, Neurath, the Bavarian Soviet. The Cockshott / Cottrell / Dapprich computational reply to Hayek won (or at least neutralized) the *informational* version of the argument. But Morozov's central polemical claim in *The Socialist Charcuterie Board* is that the game has moved on while Marxists have been polishing input-output tables:
+
+> The Socialist Calculation Debate, in other words, was sublated — *Aufgehoben*, lifted and cancelled, the whole Hegelian two-step — by Hegel-hating neoliberals, not the Hegel-admiring Marxists who should have seen the move coming.
+
+The pivot text is James Buchanan and Viktor Vanberg, "The Market as a Creative Process" (*Economics and Philosophy* 7(2), 1991). The argument is no longer that markets calculate or distribute *better*; it is that markets are not in the business of optimizing anything to begin with. Markets are described as a rule-system enabling bounded experimentation in which ends themselves are generated, not given:
+
+> The market economy … neither maximizes nor minimizes anything. It simply allows participants to pursue that which they value, subject to the preferences and endowments of others, and within the constraints of general "rules of the game" that allow, and provide incentives for, individuals to try out new ways of doing things. There simply is no "external," independently defined objective against which the results of market processes can be evaluated.
+
+If this reframe is the post-1990 neoliberal terrain, then a planning LP — even a multi-criterial one — is not the answer to the question being asked. It is an answer to a question (allocational efficiency under given ends) that the neoliberal canon stopped asking forty years ago.
+
+## What this thread investigates
+
+1. **Is Morozov's reading of Buchanan-Vanberg accurate?** What exactly does the 1991 paper claim, and does the rest of Buchanan's later corpus (the Whitehead-citing essays on "becoming") sustain the reading? Cross-reference O'Neill (*The Market: Ethics, Knowledge, and Politics*, 1998), who notices Buchanan-Vanberg in passing but dismisses it as economically irrelevant.
+2. **How does this reframe relate to Hayek's own late work?** Hayek's *Law, Legislation and Liberty* (1973–1979) and his moves on "spontaneous order" already prefigure the shift. Vanberg is a Hayek-Buchanan hybrid; the 1991 paper is partly a synthesis.
+3. **Is the Silicon Valley entrepreneurial register a separate phenomenon or the same?** Morozov's claim is that "Thiels and Musks" are operationalizing the Buchanan-Vanberg view in the form of consumer products. Steve Jobs / Peter Thiel / Elon Musk pitches as a *practical* delivery mechanism for the same theoretical move.
+4. **What does this do to the Cockshott / Cottrell / Dapprich reply?** Cockshott answers Mises and Hayek. He arguably does not need to answer Buchanan-Vanberg because his program has different goals — but Morozov's claim is that this is precisely the point: Cockshott-style planning can win the 1945 debate while still losing the 1991 one.
+5. **What would a Marxist response to Buchanan-Vanberg actually look like?** Postone's *Time, Labor, and Social Domination* (1993) is, in a sense, a contemporary attempt — written from a value-form theoretic position rather than a Cockshott-Cottrell information-theoretic one. Are there others?
+
+## Primary texts
+
+- Morozov, *The Socialist Charcuterie Board* — see [Source texts](../sources.qmd). Read the Buchanan-Vanberg passage and the surrounding "Hegel-hating neoliberals" passage with care; that is the move this thread is testing.
+- James M. Buchanan & Viktor J. Vanberg, "The Market as a Creative Process," *Economics and Philosophy* 7(2), 1991, pp. 167–186.
+- Friedrich A. Hayek, *Law, Legislation and Liberty*, Volume 1 (1973), Volume 3 (1979) — the spontaneous-order chapters.
+- Cockshott & Cottrell, "Information and Economics: A Critique of Hayek" (1997) — the Calculation Course's existing Controversy 2 reading; useful here as the position Morozov says is fighting yesterday's war.
+
+## Adjacent texts
+
+- John O'Neill, *The Market: Ethics, Knowledge, and Politics* (Routledge, 1998) — particularly his treatment of "radical subjectivism" and why he thinks it's economically irrelevant.
+- Moishe Postone, *Time, Labor, and Social Domination* (Cambridge, 1993) — the value-form theory side.
+- Philip Mirowski, *Never Let a Serious Crisis Go to Waste* (Verso, 2013), particularly on the "neoliberal thought collective" and how the post-1990 turn was self-conscious.
+- Carlota Perez, *Technological Revolutions and Financial Capital* (2002) — pairs with Thread 4's Aghion-Acemoglu material.
+
+## Prospective artifacts
+
+- A working paper: *Sublated, Not Refuted: The Calculation Debate After 1991*. Argues the Cockshott program addresses a debate the right has already exited and proposes what the actual contemporary debate is.
+- A bibliographic appendix: post-1990 neoliberal political economy as it bears on the Calculation Debate.
+- (Optional) a small experiment: take a Cockshott-style planning LP from Calculation Course Controversy 2 and run it under a Buchanan-Vanberg-style "no external objective" constraint — i.e., make the objective itself a degree of freedom — and see what computationally remains of the optimization framing.
+
+## Cross-thread connections
+
+- Thread 2 (multi-criterial planning) is what a Marxist who *accepts* the Buchanan-Vanberg challenge might offer. The two threads talk to each other directly.
+- Thread 3 (optimization-economics-computing) supplies the parallel technical history: while Buchanan was reframing the market away from optimization, the optimization apparatus was migrating from operations research into machine learning and back into economics by other doors.
+- Thread 5 (philosophical apparatus) is where the Hegel charge is adjudicated.

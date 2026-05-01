@@ -1,0 +1,67 @@
+---
+title: "Placeholder — Computational Reconstruction of Zhang's Marxian Formalization (Research Project)"
+description: "Sketch of a research project that should not be elaborated until after the seminar in this course."
+---
+
+**This is a placeholder, not a research plan.** It exists so the thread isn't lost. The full [Marxian Formalization research project](/research/marxian_formalization/) should be elaborated *after* the seminar in this course (between Controversies 5 and 6), because until you've read Zhang 2023 carefully and sat with it, neither you nor I can scope the work properly. The time to expand this placeholder is when you have actual views about what you want from the research project, not before.
+
+The project lives at `research/marxian_formalization/` in the repo and renders to `/research/marxian_formalization/` on the deployed site. It is a research project (long-form, slow, publication-oriented), not a course. The original framing of "201" as a sequel course has been retired in favor of treating Zhang's program as research from the start; the substance below is the same.
+
+## Why this project exists
+
+Zhang's 2023 paper ("The Formalization of Marx's Economics: A Summary Attempt Taking as an Example the First Volume of Capital," *WRPE* 14(1): 4–33) sketches a mathematical formalization of Marx's Vol I apparatus that is explicitly not Morishima's. Where Morishima and the Japanese School formalize using non-negative matrix theory and input-output analysis, Zhang brings in a wider toolkit: game theory (producer competition as a prisoner's dilemma), probability theory (commodity realization as a random variable with a distribution over successful/partial/failed outcomes), cybernetic control systems (the labor process as a feedback-regulated system), and continuous-time differential equations (unemployment-rate dynamics, capital accumulation). Zhang writes these equations down but does not implement them. To the best of what can be established from a literature search, nobody has. A computationally rigorous companion to Zhang 2023 — a Jupyter notebook or small library that actually runs each of the models he sketches — would be a genuine scholarly contribution and a plausible methodology paper for *WRPE* or a similar venue.
+
+## What the project would cover, in broad strokes
+
+Eight working areas tracking Zhang's 2023 paper structure. Each is a research thread, not a teaching unit — there is no fixed pacing, no exercises, no "weeks." Each thread produces some combination of working notes, a short paper, a notebook, or library code:
+
+- *Value theory formalization.* The mapping f: A → w, socially-necessary-labor-time in both the Vol I and Vol III senses, the fundamental theorem of the labor theory of value (W inversely proportional to labor productivity), labor complexity via h(t). Project: implement Zhang's value system and demonstrate numerically that his distinction between the two senses of SNLT produces different results than Morishima's conflated version. Compare with your Week 7 input-output value calculations.
+
+- *Competition as a dynamic game.* The prisoner's-dilemma payoff matrix for technology adoption, the mixed-strategy and repeated-game extensions Zhang sketches but doesn't fully develop. Project: build a multi-agent simulation of N producers with heterogeneous technologies, each choosing to adopt or not, and track the emergence of Zhang's claimed dynamics (technology generalization, excess-return disappearance, value decline). This is where you'd be *extending* Zhang, not just implementing him.
+
+- *Realization uncertainty and crisis probability.* The distribution F(s) = P(S ≤ s) over commodity-realization outcomes, the means-of-payment function and debt-crisis probability. Project: a simple stochastic simulation of a multi-period commodity economy with realization failures, tracking how crisis propagates through the payment system. This connects directly to the SFC work in Controversy 7 and to the realization framework in Controversy 6, and to the ergodicity sidebar.
+
+- *The labor process as a cybernetic system.* Zhang's equation y = x · S/(1−SR) from his "labor as cybernetic process" section. This is the sketchiest part of his program. Project: actually build the control-theoretic model of the labor process as Zhang implies it should work, using `scipy.signal` or similar, and see whether it produces the qualitative results Zhang claims (the "expansion capacity of capital," the quality-weighted production function).
+
+- *Unemployment dynamics.* Zhang's differential equation da_u/dt = λ_u(1−a_u) − λ_e·a_u and its solution for the steady-state unemployment rate. Project: simulate under different transition probabilities; compare with BEA/BLS unemployment time series; examine the relative-surplus-population claim empirically.
+
+- *Capital accumulation and the LTRPF.* Zhang's reformulation of the Okishio debate — the "prisoner's dilemma" route to a falling rate of profit as compound result of individual capital pursuing excess returns. This is the piece that extends most directly from 101-Controversy-5. Project: implement Zhang's game-theoretic LTRPF mechanism as an N-agent simulation; compare trajectories with Okishio's simultaneist rate and TSSI's temporal rate on the same underlying economy.
+
+- *The primitive accumulation / deprivation process.* Zhang's stochastic deprivation function N_b = t·R^F·N_a. This is interesting and almost nobody works on it formally. Project: historical calibration exercise.
+
+- *Putting it together.* A unified computational framework that runs through Zhang's Vol I formalization end-to-end, tied to a single running economy (probably a calibrated toy with 3-5 sectors).
+
+## Outside sources that would pair naturally
+
+- Bin Yu's Engels School work on Okishio and value theory (*WRPE* 13(2), 2022 and beyond — search the WRPE back catalog).
+- Zhang's Chinese-language corpus (Zhang 2009, 2011, 2018) — these are in *Teaching and Research* and *Studies on Marxism* and would need translation, machine or otherwise.
+- Cogliano, Veneziani, and Yoshihara, "Computational Methods and Classical-Marxian Economics" (*Journal of Economic Surveys* 36(2), 2022) — the QMUL group's survey of computational approaches to classical-Marxian theory.
+- Duncan Foley and Ernesto Screpanti work on formal interpretations of Marx.
+- The China Political Economy journal (Emerald) for adjacent work.
+
+## Where this could actually go
+
+Three plausible endpoints if the project succeeds:
+
+1. **A methodology paper submitted to WRPE** presenting the computational companion to Zhang 2023, co-authored with Zhang himself if he's interested (his email is in the papers: zxscu@126.com). This is the most ambitious endpoint and not the obvious one to start with.
+
+2. **An open-source library** — `marxecon` or similar — that implements the Morishima-Okishio framework, the TSSI framework, and the Zhang framework as alternative backends against the same economy object. This would let any future researcher do side-by-side comparison numerically rather than just rhetorically, which currently they can't. This is probably the highest-leverage endpoint given your infrastructure-engineering background.
+
+3. **A direct contribution to the Cockshott / Dapprich planning tradition** — Dapprich's 2023 consumer-feedback planning paper already has code (in *Review of Political Economy*). A Zhang-compatible version of Dapprich's apparatus would be interesting work. Dapprich is at Potsdam and reachable.
+
+## Background that would help, when it's time
+
+You'll already have most of what's needed from the Calculation Course. Additional background that would help:
+
+- A game theory refresher: Osborne and Rubinstein's *A Course in Game Theory* (free PDF) or Fudenberg and Tirole for the more advanced material. A week's reading.
+- Basic stochastic processes / Markov chains: the relevant chapters of Grinstead and Snell's *Introduction to Probability* (free CC PDF).
+- Control theory at an introductory level: Åström and Murray's *Feedback Systems* (free PDF).
+- Agent-based modeling: the *Mesa* Python library has a good tutorial; one afternoon's work to get oriented.
+
+None of these are massive investments individually. The research project would thread them in as needed rather than frontloading them.
+
+## When to come back to this
+
+After the seminar between Controversies 5 and 6 in this course. By then you'll have read all three of Zhang's English WRPE papers plus Bin Yu's companion piece, you'll know whether the critique lands for you and whether the positive program holds water, and you'll have real views about what the project should look like. If at that point you still want to push the work forward, come back to this placeholder and expand the [research project skeleton](/research/marxian_formalization/) into actual working artifacts. If by then you've decided Zhang's program is more promising as a future research contribution than as something to elaborate now, the placeholder still served its purpose — it named the thing so you could find it again.
+
+Whatever version of the project actually gets done: the deliverable should be concrete, public, and citable. That's what separates this from another year of reading.
