@@ -50,6 +50,12 @@ Each thread can produce one or more of:
 
 The track does not commit to any specific publication endpoint in advance. The point is to learn the terrain; if the work warrants a paper, that comes later.
 
+## When to start
+
+Unlike the Marxian Formalization track, which depends on the Chinese-critique seminar between Controversies 5 and 6, this track has a much earlier on-ramp. Thread 1 (the Calculation Debate after 1991) is the direct sequel to [Controversy 2](/courses/the_calculation_course/controversies/controversy-02-calculation.html) and can be opened as soon as that controversy is finished. The remaining five threads are best approached after Controversies 6–8 (money, realization, climate-constrained planning) — the empirical and philosophical material lands harder once the value-theoretic and macro foundations are in.
+
+Reading the five primary [source texts](sources.qmd) end-to-end is the obvious first move. From there, threads can be picked up in any order; the cross-thread connections noted in each thread page tell you where one will pull in another.
+
 ## Source texts
 
 The five primary texts plus their URLs are kept in [Source texts](sources.qmd). Read them at least once before starting any thread.
