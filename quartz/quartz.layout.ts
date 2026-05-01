@@ -1,17 +1,19 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import NotesOverrides from "./notes-overrides"
 
 /**
  * Layout overrides for the Calculation Course notes section.
  *
  * The book proper is rendered by Quarto and lives at the root of the deployed
  * site. Quartz handles only the `/notes/` subtree. The header link back to the
- * book lives in `pageBody`.
+ * book lives in `pageBody`. NotesOverrides injects a graph-ruled paper
+ * background on every page (see notes-overrides.tsx).
  */
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [NotesOverrides()],
   footer: Component.Footer({
     links: {
       "Back to the book": "/",
