@@ -1,8 +1,8 @@
 """Strip ``.author-notes`` callout blocks from Quarto chapter sources.
 
 Reads every ``.qmd`` file under the configured chapter directories
-(``weeks/``, ``controversies/``, ``research-marxian-formalization/``,
-``appendices/``, plus the top-level ``index.qmd`` etc.) and writes a copy
+(``weeks/``, ``controversies/``, ``appendices/``, plus the top-level
+``index.qmd``, ``research-tracks.qmd``, etc.) and writes a copy
 with every fenced div
 that carries the ``author-notes`` class removed. Output lands in
 ``build-print/`` mirroring the source layout.
@@ -41,13 +41,13 @@ AUTHOR_NOTES_PATTERN = re.compile(
 DEFAULT_INCLUDES = (
     "weeks",
     "controversies",
-    "research-marxian-formalization",
     "appendices",
 )
 DEFAULT_TOP_LEVEL = (
     "index.qmd",
     "master-resources.qmd",
     "post-course.qmd",
+    "research-tracks.qmd",
     "where-this-lands.qmd",
 )
 
