@@ -60,6 +60,7 @@ book:
     - appendices/appendix-a-prereq.qmd
     - appendices/appendix-b-extra-depth.qmd
     - appendices/appendix-c-absorption.qmd
+    - appendices/appendix-d-calculation-in-kind.qmd
 
 # Format, theme, and execute settings.
 # Paths are relative to this course directory.
