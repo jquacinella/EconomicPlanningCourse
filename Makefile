@@ -22,7 +22,7 @@ ALL_BOOKS  := $(COURSES) $(RESEARCH)
 SITE       := _site
 PORT       := 9200
 
-.PHONY: build preview dev dev-calc dev-marxian dev-postcap dev-notes build-calc build-notes stitch clean help
+.PHONY: build preview dev dev-calc dev-marxian dev-postcap dev-notes build-calc build-notes sync-quartz-static stitch clean help
 
 ## dev-calc: Live-reload quarto preview for the Calculation Course (port 4444)
 dev-calc:
@@ -43,10 +43,18 @@ dev-postcap:
 dev: dev-calc
 
 ## dev-notes: Live-reload Quartz notes site
-dev-notes:
+dev-notes: sync-quartz-static
 	@echo "Starting Quartz notes site with live reload ..."
 	@echo "Open http://localhost:8080"
 	cd quartz && npx quartz build --serve --port 8080
+
+## sync-quartz-static: Overlay quartz/static/ (user assets) onto quartz/quartz/static/ (where Plugin.Static reads from)
+# Quartz's Plugin.Static emitter reads from <quartz_install>/quartz/static/, NOT
+# the top-level quartz/static/ that survives setup.sh. We keep our authoritative
+# assets at the top level (so re-running setup.sh doesn't clobber them) and
+# overlay them into the framework dir before each build.
+sync-quartz-static:
+	@cp -R quartz/static/. quartz/quartz/static/ 2>/dev/null || true
 
 ## build: Build all courses, research projects, and notes, stitch into _site/
 build: build-books build-notes stitch
@@ -70,7 +78,7 @@ build-calc:
 	cd courses/the_calculation_course && uv run quarto render --to html
 
 ## build-notes: Build the Quartz notes site into quartz/public/
-build-notes:
+build-notes: sync-quartz-static
 	@echo "==> Building Quartz notes site ..."
 	cd quartz && npx quartz build
 

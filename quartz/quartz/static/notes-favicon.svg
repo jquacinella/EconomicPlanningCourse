@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark-blue rounded-square background (matches site accent color #284b63). -->
+  <rect width="32" height="32" rx="6" fill="#284b63"/>
+  <!-- A small notepaper with a folded top-right corner, in the off-white site color. -->
+  <g transform="translate(7, 5)">
+    <path d="M 0 0 L 14 0 L 18 4 L 18 22 L 0 22 Z" fill="#faf8f8"/>
+    <path d="M 14 0 L 14 4 L 18 4 Z" fill="#cbcbcb"/>
+    <!-- Four horizontal note lines (last one short, like an unfinished sentence). -->
+    <rect x="3" y="8"    width="11" height="1" fill="#284b63" opacity="0.55"/>
+    <rect x="3" y="11.5" width="11" height="1" fill="#284b63" opacity="0.55"/>
+    <rect x="3" y="15"   width="11" height="1" fill="#284b63" opacity="0.55"/>
+    <rect x="3" y="18.5" width="7"  height="1" fill="#284b63" opacity="0.55"/>
+  </g>
+</svg>

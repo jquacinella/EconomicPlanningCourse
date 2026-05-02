@@ -10,7 +10,15 @@ npm-debug.log*
 # only our overrides (quartz.config.ts, quartz.layout.ts, README.md, setup.sh,
 # .gitignore, content symlink); everything below is pulled in on first
 # `bash setup.sh && npm ci`.
-quartz/
+#
+# Why `quartz/*` and not `quartz/`: a directory ignore can never be undone by a
+# later `!` rule on a path inside it (documented .gitignore semantic). The Quartz
+# Static emitter calls globby with `gitignore: true` and follows the same rule,
+# so ignoring the whole `quartz/` tree silently dropped icon.png / og-image.png
+# from public/static/, 404'ing the favicon on deep pages of the deployed notes
+# site. Listing children with `quartz/*` keeps `!quartz/static/` effective.
+quartz/*
+!quartz/static/
 docs/
 content/.gitkeep
 *.lock
@@ -24,11 +32,6 @@ index.d.ts
 # this directory and not in the ignored subpaths.
 !quartz.config.ts
 !quartz.layout.ts
-
-# Un-ignore the static assets directory so globby (gitignore:true) copies
-# icon.png and og-image.png into public/static/ at build time.
-!quartz/static/
-!quartz/static/**
 
 # OS junk
 .DS_Store

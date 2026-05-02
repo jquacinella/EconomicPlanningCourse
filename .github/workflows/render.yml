@@ -142,6 +142,13 @@ jobs:
             npm install
           fi
 
+      # Plugin.Static reads from quartz/quartz/static/ (the framework dir), not
+      # the top-level quartz/static/ where we keep our authoritative assets.
+      # Overlay before build so icon.png, og-image.png, and notes-favicon.svg
+      # actually land in public/static/ and resolve on the deployed site.
+      - name: Sync custom static assets into Quartz framework dir
+        run: cp -R quartz/static/. quartz/quartz/static/
+
       - name: Build notes site with Quartz
         working-directory: ./quartz
         run: npx quartz build
