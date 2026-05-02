@@ -47,6 +47,7 @@ format:
     fig-cap-location: margin
     include-in-header:
       - ../../shared/assets/jsxgraph-include.html
+      - ../../shared/assets/font-picker.html
     comments:
       hypothesis: true
 
