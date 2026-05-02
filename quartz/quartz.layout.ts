@@ -16,7 +16,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [NotesOverrides()],
   footer: Component.Footer({
     links: {
-      "Back to the book": "/",
+      "Economic Planning Research Home": "https://jquacinella.github.io/EconomicPlanningCourse",
       "GitHub": "https://github.com/jquacinella/EconomicPlanningCourse",
     },
   }),
