@@ -1,13 +1,24 @@
-// Quartz layout override that injects a graph-ruled paper background on every
-// notes page. Lives at the top of the quartz/ directory (alongside
-// quartz.config.ts and quartz.layout.ts) so it survives `bash setup.sh`,
-// which protects this filename via the PROTECTED list.
+// Quartz layout override that injects (a) a graph-ruled paper background and
+// (b) an absolute-URL favicon link on every notes page. Lives at the top of
+// the quartz/ directory (alongside quartz.config.ts and quartz.layout.ts) so
+// it survives `bash setup.sh`, which protects this filename via the PROTECTED
+// list.
 //
-// The component renders a single <style> element. The CSS uses CSS variables
-// so the grid line color shifts between light and dark mode. The grid pattern
-// is fixed-attachment so it doesn't scroll with content.
+// The favicon link is here (rather than relying on Quartz's default Head)
+// because Quartz emits a *relative* href for the icon. On deep pages such as
+// /notes/the_calculation_course/weeks/week-01-multivariable/reading-notes the
+// relative href resolves to a non-existent path and the browser 404s the
+// favicon on reload. An absolute URL bypasses that. Browsers honour the
+// last-declared <link rel="icon">, so this body-rendered link wins over the
+// default one in head.
+//
+// The SVG itself lives at quartz/static/notes-favicon.svg and is emitted by
+// Plugin.Static under /notes/static/.
 
-import { h } from "preact"
+import { h, Fragment } from "preact"
+
+const FAVICON_HREF =
+  "https://jquacinella.github.io/EconomicPlanningCourse/notes/static/notes-favicon.svg"
 
 const STYLES = `
 :root {
@@ -30,7 +41,12 @@ body {
 // type definition only exists after `bash setup.sh` runs — keeping this file
 // type-safe without a build-time dependency on the upstream tree.
 const NotesOverrides = () =>
-  h("style", { dangerouslySetInnerHTML: { __html: STYLES } })
+  h(
+    Fragment,
+    null,
+    h("style", { dangerouslySetInnerHTML: { __html: STYLES } }),
+    h("link", { rel: "icon", type: "image/svg+xml", href: FAVICON_HREF }),
+  )
 
 export default function notesOverridesConstructor(_opts?: unknown) {
   return NotesOverrides
